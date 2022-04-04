@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _playerSpeed = 2.0f;
+    private float _playerSpeed = 3.0f;
 
     private CharacterController _controller;
 
@@ -40,13 +40,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerMovement();
+        PlayerMovement(); // Calls method to handle movement
 
-        if (_lightAttack)
+        if (_lightAttack) // If Light Attack is pressed
         {
             LightAttack();
         }
-        else if (_heavyAttack)
+        else if (_heavyAttack) // If Heavy Attack is pressed
         {
             HeavyAttack();
         }
@@ -55,7 +55,11 @@ public class PlayerController : MonoBehaviour
     // Handles player movement and animations
     public void PlayerMovement()
     {
-        _controller.Move(_movementInput * Time.deltaTime * _playerSpeed);
+        // Adjusts vertical movement speed (halves it)
+        Vector2 movement = new Vector2(_movementInput.x, _movementInput.y / 2);
+
+        // Uses character controller component to move character
+        _controller.Move(movement * Time.deltaTime * _playerSpeed);
     }
 
     public void LightAttack()

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692a82b559ae724098f21153ac3b70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 2
+  _playerSpeed: 3.5
 --- !u!143 &1408092298334436583
 CharacterController:
   m_ObjectHideFlags: 0
@@ -187,10 +187,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.24
-  m_Radius: 0.544
+  m_Height: 1.12
+  m_Radius: 0.35
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.1, y: 0.55, z: 0}
