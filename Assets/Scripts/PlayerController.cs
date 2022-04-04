@@ -3,21 +3,33 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))] // Ensures object will have a CharacterController
+[RequireComponent(typeof(Animator))] // Ensures object will have an Animator
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float _playerSpeed = 3.0f;
+    [SerializeField]
+    private Transform attackPos;
+    [SerializeField]
+    private LayerMask enemyLayer;
+    [SerializeField]
+    private float attackRange;
+    [SerializeField]
+    private int lightDamage;
+    [SerializeField]
+    private int heavyDamage;
 
     private CharacterController _controller;
-
+    private Animator playerAnim;
     private Vector2 _movementInput = Vector2.zero;
-    private bool _lightAttack = false;
-    private bool _heavyAttack = false;
 
     private void Start()
     {
         // Sets Character Controller component
         _controller = gameObject.GetComponent<CharacterController>();
+
+        // Sets player animator
+        playerAnim = gameObject.GetComponent<Animator>();
     }
 
     // Gets direction from player input
@@ -29,27 +41,28 @@ public class PlayerController : MonoBehaviour
     // Called when player presses light attack button
     public void OnLightAttack(InputAction.CallbackContext context)
     {
-        _lightAttack = context.action.triggered;
+        if (context.performed) // Ensures functions only performed once on button press
+        {
+            Debug.Log("Light Attack!");
+            // TODO: Add light attack animation
+            AttackEnemies(lightDamage);
+        }
     }
 
     // Called when player presses heavy attack button
     public void OnHeavyAttack(InputAction.CallbackContext context)
     {
-        _heavyAttack = context.action.triggered;
+        if (context.performed) // Ensures functions only performed once on button press
+        {
+            Debug.Log("Heavy Attack!");
+            // TODO: Add heavy attack animation
+            AttackEnemies(heavyDamage);
+        }
     }
 
     void Update()
     {
         PlayerMovement(); // Calls method to handle movement
-
-        if (_lightAttack) // If Light Attack is pressed
-        {
-            LightAttack();
-        }
-        else if (_heavyAttack) // If Heavy Attack is pressed
-        {
-            HeavyAttack();
-        }
     }
 
     // Handles player movement and animations
@@ -62,15 +75,20 @@ public class PlayerController : MonoBehaviour
         _controller.Move(movement * Time.deltaTime * _playerSpeed);
     }
 
-    public void LightAttack()
+    // Finds enemies in range and calls their TakeDamage() method.
+    public void AttackEnemies(int damage)
     {
-        Debug.Log("Light Attack!");
-        _lightAttack = false;
+        Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemyLayer);
+        for (int i = 0; i < enemiesToHit.Length; i++)
+        {
+            enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage);
+        }
     }
 
-    public void HeavyAttack()
+    // Creates a gizmo for attack area in editor
+    public void OnDrawGizmosSelected()
     {
-        Debug.Log("Heavy Attack!");
-        _heavyAttack = false;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 }

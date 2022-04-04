@@ -93,4 +93,10 @@ public class EnemyAgent : MonoBehaviour
     {
         Debug.Log("Enemy attacks!");
     }
+
+    // Handles incoming attacks
+    public void TakeDamage(int damage)
+    {
+        Debug.Log(gameObject.name + " took " + damage + " damage.");
+    }
 }
