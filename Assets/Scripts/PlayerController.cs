@@ -2,34 +2,34 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))] // Ensures object will have a CharacterController
+[RequireComponent(typeof(Rigidbody2D))] // Ensures object will have a Rigidbody2D
 [RequireComponent(typeof(Animator))] // Ensures object will have an Animator
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float _playerSpeed = 3.0f;
     [SerializeField]
-    private Transform attackPos;
+    private Transform _attackPos;
     [SerializeField]
-    private LayerMask enemyLayer;
+    private LayerMask _enemyLayer;
     [SerializeField]
-    private float attackRange;
+    private float _attackRange;
     [SerializeField]
-    private int lightDamage;
+    private int _lightDamage;
     [SerializeField]
-    private int heavyDamage;
+    private int _heavyDamage;
 
-    private CharacterController _controller;
-    private Animator playerAnim;
+    private Rigidbody2D _rigidBody;
+    private Animator _playerAnim;
     private Vector2 _movementInput = Vector2.zero;
 
     private void Start()
     {
         // Sets Character Controller component
-        _controller = gameObject.GetComponent<CharacterController>();
+        _rigidBody = gameObject.GetComponent<Rigidbody2D>();
 
         // Sets player animator
-        playerAnim = gameObject.GetComponent<Animator>();
+        _playerAnim = gameObject.GetComponent<Animator>();
     }
 
     // Gets direction from player input
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Light Attack!");
             // TODO: Add light attack animation
-            AttackEnemies(lightDamage);
+            AttackEnemies(_lightDamage);
         }
     }
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Heavy Attack!");
             // TODO: Add heavy attack animation
-            AttackEnemies(heavyDamage);
+            AttackEnemies(_heavyDamage);
         }
     }
 
@@ -71,14 +71,14 @@ public class PlayerController : MonoBehaviour
         // Adjusts vertical movement speed (halves it)
         Vector2 movement = new Vector2(_movementInput.x, _movementInput.y / 2);
 
-        // Uses character controller component to move character
-        _controller.Move(movement * Time.deltaTime * _playerSpeed);
+        // Moves character using rigidbody
+        _rigidBody.MovePosition(_rigidBody.position + (movement * Time.deltaTime * _playerSpeed));
     }
 
     // Finds enemies in range and calls their TakeDamage() method.
     public void AttackEnemies(int damage)
     {
-        Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemyLayer);
+        Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _enemyLayer);
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage);
@@ -89,6 +89,6 @@ public class PlayerController : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireSphere(_attackPos.position, _attackRange);
     }
 }
