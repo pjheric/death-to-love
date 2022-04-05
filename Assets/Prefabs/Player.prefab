@@ -209,13 +209,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 5
-  _attackPos: {fileID: 0}
+  _attackPos: {fileID: 56146107}
   _enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
-  _attackRange: 0
-  _lightDamage: 0
-  _heavyDamage: 0
+    m_Bits: 64
+  _attackRange: 0.75
+  _lightDamage: 1
+  _heavyDamage: 2
 --- !u!95 &5488050115168530994
 Animator:
   serializedVersion: 3
