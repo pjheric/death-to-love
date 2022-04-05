@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _playerSpeed = 3.0f;
+    private float _playerSpeed = 5.0f;
     [SerializeField]
     private Transform _attackPos;
     [SerializeField]
@@ -69,10 +69,20 @@ public class PlayerController : MonoBehaviour
     public void PlayerMovement()
     {
         // Adjusts vertical movement speed (halves it)
-        Vector2 movement = new Vector2(_movementInput.x, _movementInput.y / 2);
+        Vector2 velocity = (new Vector2(_movementInput.x, _movementInput.y / 2)) * Time.deltaTime * _playerSpeed;
+
+        //_playerAnim.SetFloat("Speed", velocity.x);
+        if (velocity != Vector2.zero)
+        {
+            _playerAnim.SetBool("Walking", true);
+        }
+        else
+        {
+            _playerAnim.SetBool("Walking", false);
+        }
 
         // Moves character using rigidbody
-        _rigidBody.MovePosition(_rigidBody.position + (movement * Time.deltaTime * _playerSpeed));
+        _rigidBody.MovePosition(_rigidBody.position + velocity);
     }
 
     // Finds enemies in range and calls their TakeDamage() method.
