@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private Animator _playerAnim;
     private Vector2 _movementInput = Vector2.zero;
+    private bool _facingRight = true;
 
     private void Start()
     {
@@ -68,11 +69,10 @@ public class PlayerController : MonoBehaviour
     // Handles player movement and animations
     public void PlayerMovement()
     {
-        // Adjusts vertical movement speed (halves it)
+        // Adjusts vertical movement speed (halves it) and multiplies vector by time and speed
         Vector2 velocity = (new Vector2(_movementInput.x, _movementInput.y / 2)) * Time.deltaTime * _playerSpeed;
 
-        //_playerAnim.SetFloat("Speed", velocity.x);
-        if (velocity != Vector2.zero)
+        if (velocity != Vector2.zero) // Controls walking animation
         {
             _playerAnim.SetBool("Walking", true);
         }
@@ -80,9 +80,24 @@ public class PlayerController : MonoBehaviour
         {
             _playerAnim.SetBool("Walking", false);
         }
+        if (velocity.x < 0 && _facingRight) // Controls direction player is facing
+        {
+            Flip();
+        }
+        else if (velocity.x > 0 && !_facingRight)
+        {
+            Flip();
+        }
 
         // Moves character using rigidbody
         _rigidBody.MovePosition(_rigidBody.position + velocity);
+    }
+
+    // Flips character horizontally
+    public void Flip()
+    {
+        _facingRight = !_facingRight;
+        transform.Rotate(Vector3.up * 180);
     }
 
     // Finds enemies in range and calls their TakeDamage() method.
