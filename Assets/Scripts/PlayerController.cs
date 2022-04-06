@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private int _lightDamage;
     [SerializeField]
     private int _heavyDamage;
+    [SerializeField]
+    private FloatAsset _health;
 
     private Rigidbody2D _rigidBody;
     private Animator _playerAnim;
