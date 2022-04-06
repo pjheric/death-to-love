@@ -91,7 +91,7 @@ public class EnemyAgent : MonoBehaviour
 
     private void attack()
     {
-        Debug.Log("Enemy attacks!");
+        //Debug.Log("Enemy attacks!");
     }
 
     // Handles incoming attacks
