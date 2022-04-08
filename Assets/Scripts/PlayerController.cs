@@ -63,6 +63,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnSlide(InputAction.CallbackContext context)
+    {
+        if (context.performed) // Ensures functions only performed once on button press
+        {
+            Debug.Log("Slide");
+        }
+    }
+
     void Update()
     {
         PlayerMovement(); // Calls method to handle movement
