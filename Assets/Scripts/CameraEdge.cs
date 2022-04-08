@@ -39,7 +39,7 @@ public class CameraEdge : MonoBehaviour
             float dot = Vector3.Dot(entryDirection, collisionDirection);
             // if dot < 0, it is coming from the entryDirection
             // else, it is coming from the wrong direction
-            if(dot < 0) {
+            if (dot < 0) {
                 Physics.IgnoreCollision(collider, other, false);
             } else {
                 Physics.IgnoreCollision(collider, other, true);

@@ -34,20 +34,26 @@ public class CinemachineController : MonoBehaviour {
         // then make some changes to ensure this condition doesn't keep getting checked and increment the counter
         if ((Mathf.Abs(track.m_Waypoints[counter].position.x - cm.gameObject.transform.position.x) <= 0.05f) && !snapped) {
             cm.gameObject.transform.position = new Vector2(track.m_Waypoints[counter].position.x, cm.gameObject.transform.position.y);
-            cm.enabled = false;
-            snapped = true;
+            Snap();
             counter++;
             StartCoroutine(Test());
+            Unsnap();
         }
     }
 
     // placeholder coroutine function to simulate the "battle scenes" where the camera is lockec in place
     IEnumerator Test() {
-        Debug.Log("Starting 5 second wait");
         yield return new WaitForSeconds(5.0f);
-        Debug.Log("5 second wait over");
+    }
+    void Snap() {
+        cm.enabled = false;
+        snapped = true;
+    }
+    void Unsnap() {
+
         cm.enabled = true;
         snapped = false;
+
     }
 
 
