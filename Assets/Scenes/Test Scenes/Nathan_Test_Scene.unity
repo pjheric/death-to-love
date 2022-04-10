@@ -456,22 +456,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: _playerSpeed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -518,10 +502,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436582, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5488050115168530994, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

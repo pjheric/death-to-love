@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692a82b559ae724098f21153ac3b70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 5
+  _playerSpeed: 25
   _attackPos: {fileID: 56146107}
   _enemyLayer:
     serializedVersion: 2
