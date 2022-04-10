@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _attackRange;
     [SerializeField]
-    private int _lightDamage;
+    private int _lightDamage = 1;
     [SerializeField]
-    private int _heavyDamage;
+    private int _heavyDamage = 4;
     [SerializeField]
     private FloatAsset _health;
 

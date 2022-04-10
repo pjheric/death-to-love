@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyAgent : MonoBehaviour
 {
+    [SerializeField] public int Health = 5;
+
     //the object this agent is moving towards
     [SerializeField] Transform target;
     [SerializeField] private float attackRange = 1f; //distance the enemy's attack can reach
@@ -98,5 +100,11 @@ public class EnemyAgent : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log(gameObject.name + " took " + damage + " damage.");
+        Health -= damage; 
+        if(Health <= 0)
+        {
+            Debug.Log("He's dead, you can stop mashing now");
+            Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
+        }
     }
 }
