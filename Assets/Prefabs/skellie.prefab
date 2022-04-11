@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2639694782295226565}
   - component: {fileID: 2639694782295226564}
+  - component: {fileID: 6076978087766607421}
   - component: {fileID: 2639694782295226566}
   - component: {fileID: 2639694782295226567}
   - component: {fileID: 2639694782295226560}
@@ -85,6 +86,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!95 &6076978087766607421
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639694782295226555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &2639694782295226566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,9 +145,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 5
   target: {fileID: 0}
-  attackRange: 1
+  attackRange: 1.5
   MoveSpeed: 1.5
-  AttackSpeed: 1
+  AttackSpeed: 5
+  BackupDist: 5
 --- !u!195 &2639694782295226560
 NavMeshAgent:
   m_ObjectHideFlags: 0

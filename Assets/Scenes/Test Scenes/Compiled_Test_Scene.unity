@@ -741,17 +741,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2639694782295226567, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
-      propertyPath: BackupDist
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2639694782295226567, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
-      propertyPath: AttackSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2639694782295226567, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
-      propertyPath: attackRange
-      value: 1.5
-      objectReference: {fileID: 0}
+    - target: {fileID: 6076978087766607421, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 52fc16febf8db7942878d1d2e06721f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}

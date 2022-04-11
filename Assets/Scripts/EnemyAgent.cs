@@ -8,7 +8,7 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] public int Health = 5;
 
     //the object this agent is moving towards
-    [SerializeField] Transform target;
+    [SerializeField] Vector3 target;
     [SerializeField] private float attackRange = 1f; //distance the enemy's attack can reach
     [SerializeField] private float MoveSpeed = 1.5f; //speed that the agent moves at
     [SerializeField] private float AttackSpeed = 3f; //rate at which enemy can attack, higher number means less frequent attacks
@@ -20,22 +20,31 @@ public class EnemyAgent : MonoBehaviour
     //references the sprite renderer for the enemy
     private SpriteRenderer Sprite;
 
+    //Controls the animations for the AI
+    private Animator Anim;
+
     //bool that determines if the AI is chasing the player or not, in theory the AI should chase if the player is outside of attack range
     private bool chase = true;
 
     //if true, AI can attack, if false, AI is in a state where he cannot attack
     private bool Attack = true;
 
+    //if true, AI is walking somewhere
+    private bool walking = false;
+
+    //reference to the player
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         if(player)
         {
-            target = player.transform; //get the player's transform
+            target = player.transform.position; //get the player's transform
         }
-        
 
+        Anim = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -50,50 +59,66 @@ public class EnemyAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target) //if a player was found
+        Anim.SetBool("Walking", walking);
+        if(target != null) //if a player was found
         {
-            checkSide(); //make sure the enemy is oriented to be facing the player
+            checkSide(); //make sure the enemy is oriented to be facing the target
             
-            if(Attack) //if we're able to attack
+            if(Attack) //if we're able to attack and we are targeting a player
             {
                 attack();
             }
             else
             {
-                backup();
+                float distanceToTarget = Vector3.Distance(transform.position, target);
+                if (distanceToTarget < 0.5)
+                {
+                    idle();
+                }
             }
                 
+            
+
         }
         else
         {
             //because the player doesnt spawn until input is given, we have to keep checking for a player
             //This will 100% be removed before the final version
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindGameObjectWithTag("Player");
             if(player)
             {
-                target = player.transform; //get the player's transform
+                target = player.transform.position; //get the player's transform
+            }
+            else
+            {
+                idle();
             }
         }
     }
 
+    //when the agent isnt attacking, make them run away by the backup dist
     private void backup()
     {
-        int headsOrTails = Random.Range(0, 1);
+        int headsOrTails = Random.Range(0, 2);
         if (headsOrTails == 0)
         {
-            agent.SetDestination(target.position - new Vector3(BackupDist, 0f, 0f)); //when the agent isnt attacking, make them run away by the backup dist
+            Debug.Log("Minus");
+            target = target - new Vector3(BackupDist, 0f, 0f);
         }
         else
         {
-            agent.SetDestination(target.position + new Vector3(BackupDist, 0f, 0f));
+            Debug.Log("Plus");
+            target = target - new Vector3(BackupDist, 0f, 0f);
         }
+        agent.SetDestination(target); 
+        walking = true;
     }
 
     //I imagine flipping an enemy will take more than just flipping the sprite, so this flips the enemy
     private void checkSide()
     {
         //check the sprite's relative distance to the player, if the distance on the X is negative, then the enemy is on the left of the player and we need to flip it
-        if ((this.transform.position - target.position).x < 0)
+        if ((this.transform.position - player.transform.position).x < 0)
         {
             Sprite.flipX = true;
         }
@@ -105,14 +130,18 @@ public class EnemyAgent : MonoBehaviour
 
     private void attack()
     {
-        if (Vector3.Distance(target.position, transform.position) < attackRange) //if enemy is in range of player, attack
+        
+        target = player.transform.position;
+        walking = true;
+        if (Vector3.Distance(target, transform.position) < attackRange) //if enemy is in range of player, attack
         {
             Debug.Log("Enemy attacks!");
-            StartCoroutine(AttackCooldown()); 
+            Anim.SetTrigger("Attack");
+            StartCoroutine(AttackCooldown());
         }
         else
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target);
         }
     }
 
@@ -132,13 +161,16 @@ public class EnemyAgent : MonoBehaviour
     private void idle()
     {
         agent.SetDestination(agent.transform.position);
+        walking = false;
     }
 
     //waits AttackSpeed Seconds between attacks
     IEnumerator AttackCooldown()
     {
+        backup();
         Attack = false;
         yield return new WaitForSeconds(Mathf.Abs(AttackSpeed));
         Attack = true;
     }
+
 }
