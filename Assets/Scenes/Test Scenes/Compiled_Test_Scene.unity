@@ -379,6 +379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436582, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -736,6 +740,18 @@ PrefabInstance:
     - target: {fileID: 2639694782295226565, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639694782295226567, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
+      propertyPath: BackupDist
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639694782295226567, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
+      propertyPath: AttackSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639694782295226567, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
+      propertyPath: attackRange
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}

@@ -11,7 +11,8 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] private float attackRange = 1f; //distance the enemy's attack can reach
     [SerializeField] private float MoveSpeed = 1.5f; //speed that the agent moves at
-    [SerializeField] private float AttackSpeed = 1f; //rate at which enemy can attack
+    [SerializeField] private float AttackSpeed = 3f; //rate at which enemy can attack, higher number means less frequent attacks
+    [SerializeField] private float BackupDist = 3f; //rate at which enemy can attack, higher number means less frequent attacks
 
     //reference to the NavmeshAgent component on this gameobject
     private NavMeshAgent agent;
@@ -22,10 +23,18 @@ public class EnemyAgent : MonoBehaviour
     //bool that determines if the AI is chasing the player or not, in theory the AI should chase if the player is outside of attack range
     private bool chase = true;
 
+    //if true, AI can attack, if false, AI is in a state where he cannot attack
+    private bool Attack = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform; //get the player's transform
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player)
+        {
+            target = player.transform; //get the player's transform
+        }
+        
 
         Sprite = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
@@ -43,29 +52,15 @@ public class EnemyAgent : MonoBehaviour
     {
         if(target) //if a player was found
         {
-            //if the target is in attack range, stop chasing the player
-            if(Vector3.Distance(target.position, transform.position) < attackRange)
+            checkSide(); //make sure the enemy is oriented to be facing the player
+            
+            if(Attack) //if we're able to attack
             {
-                chase = false;
+                attack();
             }
             else
             {
-                chase = true;
-            }
-
-            if(chase)//if we're chasing the target
-            {
-                //bool stops agent's movement
-                agent.isStopped = false;
-
-                checkSide(); //make sure the enemy is oriented to be facing the player
-
-                agent.SetDestination(target.position); //go to wherever the player is
-            }
-            else //if we're in attack range
-            {
-                attack();
-                agent.isStopped = true;
+                backup();
             }
                 
         }
@@ -73,7 +68,24 @@ public class EnemyAgent : MonoBehaviour
         {
             //because the player doesnt spawn until input is given, we have to keep checking for a player
             //This will 100% be removed before the final version
-            target = GameObject.FindGameObjectWithTag("Player").transform; //get the player's transform
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if(player)
+            {
+                target = player.transform; //get the player's transform
+            }
+        }
+    }
+
+    private void backup()
+    {
+        int headsOrTails = Random.Range(0, 1);
+        if (headsOrTails == 0)
+        {
+            agent.SetDestination(target.position - new Vector3(BackupDist, 0f, 0f)); //when the agent isnt attacking, make them run away by the backup dist
+        }
+        else
+        {
+            agent.SetDestination(target.position + new Vector3(BackupDist, 0f, 0f));
         }
     }
 
@@ -93,7 +105,15 @@ public class EnemyAgent : MonoBehaviour
 
     private void attack()
     {
-        //Debug.Log("Enemy attacks!");
+        if (Vector3.Distance(target.position, transform.position) < attackRange) //if enemy is in range of player, attack
+        {
+            Debug.Log("Enemy attacks!");
+            StartCoroutine(AttackCooldown()); 
+        }
+        else
+        {
+            agent.SetDestination(target.position);
+        }
     }
 
     // Handles incoming attacks
@@ -106,5 +126,19 @@ public class EnemyAgent : MonoBehaviour
             Debug.Log("He's dead, you can stop mashing now");
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
+    }
+
+    //set agent to just stand where it is located
+    private void idle()
+    {
+        agent.SetDestination(agent.transform.position);
+    }
+
+    //waits AttackSpeed Seconds between attacks
+    IEnumerator AttackCooldown()
+    {
+        Attack = false;
+        yield return new WaitForSeconds(Mathf.Abs(AttackSpeed));
+        Attack = true;
     }
 }
