@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314172564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.159276, y: -0.41, z: -10}
+  m_LocalPosition: {x: -8.159276, y: 0.29, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1864397387}
@@ -208,7 +208,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -225,7 +225,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 4.69
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -422,7 +422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641644072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.159276, y: -0.41, z: -10}
+  m_LocalPosition: {x: -8.159276, y: 0.29, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1052409453}
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1806249019}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 4.69
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Path: {fileID: 1279080900}
   m_PathPosition: 0.19693686
   m_PositionUnits: 0
-  m_PathOffset: {x: 0, y: 0, z: 0}
+  m_PathOffset: {x: 0, y: 0.7, z: 0}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 1
