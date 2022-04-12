@@ -101,8 +101,8 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        // Moves character using rigidbody
-        _rigidBody.MovePosition(_rigidBody.position + velocity);
+        // Moves character
+        transform.position += new Vector3(velocity.x, velocity.y, 0);
     }
 
     // Flips character horizontally
