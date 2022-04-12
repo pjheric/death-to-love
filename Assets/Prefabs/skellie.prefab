@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 5
-  target: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
   attackRange: 1.5
   MoveSpeed: 1.5
   AttackSpeed: 5

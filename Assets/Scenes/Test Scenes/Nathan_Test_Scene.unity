@@ -225,11 +225,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &206142210 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1408092298334436582, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-  m_PrefabInstance: {fileID: 1147629575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &278918193
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,18 +512,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: skellie
       objectReference: {fileID: 0}
-    - target: {fileID: 2639694782295226560, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
-      propertyPath: m_Height
-      value: 0.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 2639694782295226560, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
-      propertyPath: m_Radius
-      value: 0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 2639694782295226560, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
-      propertyPath: m_BaseOffset
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2639694782295226565, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -573,10 +556,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2639694782295226567, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 206142210}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
 --- !u!1 &1384909861
