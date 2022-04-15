@@ -1,3 +1,4 @@
+// Contributor(s): Ben, Nathan More
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] protected float MoveSpeed = 1.5f; //speed that the agent moves at
     [SerializeField] protected float AttackSpeed = 3f; //rate at which enemy can attack, higher number means less frequent attacks
     [SerializeField] protected float BackupDist = 3f; //rate at which enemy can attack, higher number means less frequent attacks
+    [SerializeField] private Transform attackPos; // Location of attack range circle
+    [SerializeField] private LayerMask playerLayer; // Player layer mask
+    [SerializeField] private int attackDamage;
 
     //reference to the NavmeshAgent component on this gameobject
     protected NavMeshAgent agent;
@@ -137,7 +141,17 @@ public class EnemyAgent : MonoBehaviour
         {
             Debug.Log("Enemy attacks!");
             Anim.SetTrigger("Attack");
-            StartCoroutine(AttackCooldown());
+            if (Attack == true)
+            {
+                Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackRange, playerLayer);
+                for (int i = 0; i < enemiesToHit.Length; i++)
+                {
+                    enemiesToHit[i].GetComponent<PlayerController>().TakeDamage(attackDamage);
+                }
+
+                StartCoroutine(AttackCooldown());
+            }
+            
         }
         else
         {
@@ -171,6 +185,13 @@ public class EnemyAgent : MonoBehaviour
         Attack = false;
         yield return new WaitForSeconds(Mathf.Abs(AttackSpeed));
         Attack = true;
+    }
+
+    // Creates a gizmo for attack area in editor
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
 }

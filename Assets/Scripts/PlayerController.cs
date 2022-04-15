@@ -128,4 +128,9 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_attackPos.position, _attackRange);
     }
+
+    public void TakeDamage(int damage)
+    {
+        _health.Value -= damage;
+    }
 }

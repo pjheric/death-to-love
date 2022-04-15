@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1049657973790070632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6924266061176324363}
+  m_Layer: 6
+  m_Name: AttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6924266061176324363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049657973790070632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.386, y: 0.155, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2639694782295226565}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2639694782295226555
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,8 +61,9 @@ Transform:
   m_GameObject: {fileID: 2639694782295226555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.68, y: -4.05, z: 0}
-  m_LocalScale: {x: -3, y: 3, z: 3}
-  m_Children: []
+  m_LocalScale: {x: -4, y: 4, z: 1}
+  m_Children:
+  - {fileID: 6924266061176324363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119,7 +150,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0015080571, y: 0.056847062}
+  m_Offset: {x: 0.0039172173, y: 0.08094016}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.37, y: 0}
@@ -130,7 +161,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31381613, y: 0.113694124}
+  m_Size: {x: 0.26081133, y: 0.16188031}
   m_EdgeRadius: 0
 --- !u!114 &2639694782295226567
 MonoBehaviour:
@@ -146,10 +177,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 5
   target: {x: 0, y: 0, z: 0}
-  attackRange: 1.5
+  attackRange: 1
   MoveSpeed: 1.5
   AttackSpeed: 5
   BackupDist: 5
+  attackPos: {fileID: 6924266061176324363}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  attackDamage: 1
 --- !u!195 &2639694782295226560
 NavMeshAgent:
   m_ObjectHideFlags: 0
