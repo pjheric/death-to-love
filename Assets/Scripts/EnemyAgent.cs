@@ -106,12 +106,12 @@ public class EnemyAgent : MonoBehaviour
         int headsOrTails = Random.Range(0, 2);
         if (headsOrTails == 0)
         {
-            Debug.Log("Minus");
+            //Debug.Log("Minus");
             target -= new Vector3(BackupDist, 0f, 0f);
         }
         else
         {
-            Debug.Log("Plus");
+            //Debug.Log("Plus");
             target += new Vector3(BackupDist, 0f, 0f);
         }
         agent.SetDestination(target); 
@@ -141,16 +141,8 @@ public class EnemyAgent : MonoBehaviour
         {
             Debug.Log("Enemy attacks!");
             Anim.SetTrigger("Attack");
-            if (Attack == true)
-            {
-                Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackRange, playerLayer);
-                for (int i = 0; i < enemiesToHit.Length; i++)
-                {
-                    enemiesToHit[i].GetComponent<PlayerController>().TakeDamage(attackDamage);
-                }
-
-                StartCoroutine(AttackCooldown());
-            }
+            MeleeAttack();
+            StartCoroutine(AttackCooldown());
             
         }
         else
@@ -194,4 +186,12 @@ public class EnemyAgent : MonoBehaviour
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
+    public void MeleeAttack()
+    {
+        Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackRange, playerLayer);
+        for (int i = 0; i < enemiesToHit.Length; i++)
+        {
+            enemiesToHit[i].GetComponent<PlayerController>().TakeDamage(attackDamage);
+        }
+    }
 }

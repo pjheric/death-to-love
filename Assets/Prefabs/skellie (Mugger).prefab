@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 8
   target: {x: 0, y: 0, z: 0}
-  attackRange: 1
+  attackRange: 0.7
   MoveSpeed: 2
   AttackSpeed: 3
   BackupDist: 3
