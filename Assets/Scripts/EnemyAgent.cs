@@ -16,7 +16,8 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] protected float BackupDist = 3f; //rate at which enemy can attack, higher number means less frequent attacks
     [SerializeField] private Transform attackPos; // Location of attack range circle
     [SerializeField] private LayerMask playerLayer; // Player layer mask
-    [SerializeField] private int attackDamage;
+    [SerializeField] private int attackDamage; // Damage dealt
+    [SerializeField] private float attackArea; // Area of circle for melee attacks
 
     //reference to the NavmeshAgent component on this gameobject
     protected NavMeshAgent agent;
@@ -139,7 +140,7 @@ public class EnemyAgent : MonoBehaviour
         walking = true;
         if (Vector3.Distance(target, transform.position) < attackRange) //if enemy is in range of player, attack
         {
-            Debug.Log("Enemy attacks!");
+            //Debug.Log("Enemy attacks!");
             Anim.SetTrigger("Attack");
             MeleeAttack();
             StartCoroutine(AttackCooldown());
@@ -183,14 +184,15 @@ public class EnemyAgent : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireSphere(attackPos.position, attackArea);
     }
 
     public void MeleeAttack()
     {
-        Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackRange, playerLayer);
+        Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackArea, playerLayer);
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
+            Debug.Log("At least one player");
             enemiesToHit[i].GetComponent<PlayerController>().TakeDamage(attackDamage);
         }
     }
