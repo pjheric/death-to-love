@@ -131,6 +131,14 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log("Player hit");
         _health.Value -= damage;
+        Debug.Log("Player health: " + _health.Value);
+
+        if (_health.Value <= 0)
+        {
+            Debug.Log("Player Dead");
+        }
+
     }
 }

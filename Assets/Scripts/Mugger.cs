@@ -83,12 +83,12 @@ public class Mugger : EnemyAgent
         Vector3 tempTarget = target;
         if(this.transform.position.x - tempTarget.x > 0)
         {
-            Debug.Log("Target on left");
+            //Debug.Log("Target on left");
             tempTarget += new Vector3(BackupDist, 0f, 0f);
         }
         else if (this.transform.position.x - tempTarget.x < 0)
         {
-            Debug.Log("Target on right");
+            //Debug.Log("Target on right");
             tempTarget -= new Vector3(BackupDist, 0f, 0f);
         }
         agent.SetDestination(tempTarget);
