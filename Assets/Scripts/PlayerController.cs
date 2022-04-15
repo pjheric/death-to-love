@@ -1,6 +1,7 @@
 // Contributor(s): Nathan More
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))] // Ensures object will have a Rigidbody2D
 [RequireComponent(typeof(Animator))] // Ensures object will have an Animator
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private Animator _playerAnim;
     private Vector2 _movementInput = Vector2.zero;
     private bool _facingRight = true;
+    private bool _sliding = false;
 
     private void Start()
     {
@@ -65,12 +67,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnSlide(InputAction.CallbackContext context)
-    {
+    public void OnSlide(InputAction.CallbackContext context) {
         if (context.performed) // Ensures functions only performed once on button press
         {
             Debug.Log("Slide");
+            _playerAnim.SetTrigger("Slide");
+            _sliding = true;
+            _playerSpeed *= 1.5f;
+            float duration = _playerAnim.GetFloat("Slide Duration");
+            StartCoroutine(SlideSpeedReset(duration));
         }
+    }
+
+    private IEnumerator SlideSpeedReset(float duration) {
+        yield return new WaitForSeconds(duration);
+        _playerAnim.SetTrigger("Slide");
+        _playerSpeed /= 1.5f;
+        _sliding = false;
+
     }
 
     void Update()
@@ -131,12 +145,11 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _health.Value -= damage;
-
-        if (_health.Value <= 0)
-        {
-            Debug.Log("Player Dead");
+        if (!_sliding) {
+            _health.Value -= damage;
+            if (_health.Value <= 0) {
+                Debug.Log("Player Dead");
+            }
         }
-
     }
 }
