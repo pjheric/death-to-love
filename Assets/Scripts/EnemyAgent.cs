@@ -19,6 +19,9 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private int attackDamage; // Damage dealt
     [SerializeField] private float attackArea; // Area of circle for melee attacks
 
+    // Determines if enemy is facing right
+    private bool facingRight = false;
+
     //reference to the NavmeshAgent component on this gameobject
     protected NavMeshAgent agent;
 
@@ -123,14 +126,23 @@ public class EnemyAgent : MonoBehaviour
     protected void checkSide()
     {
         //check the sprite's relative distance to the player, if the distance on the X is negative, then the enemy is on the left of the player and we need to flip it
-        if ((this.transform.position - player.transform.position).x < 0)
+        if ((this.transform.position - player.transform.position).x < 0 && facingRight == false)
         {
-            Sprite.flipX = true;
+            //Sprite.flipX = true;
+            Flip();
         }
-        else
+        else if ((this.transform.position - player.transform.position).x > 0 && facingRight == true)
         {
-            Sprite.flipX = false;
+            //Sprite.flipX = false;
+            Flip();
         }
+    }
+
+    // Flips character horizontally
+    public void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(Vector3.up * 180);
     }
 
     protected virtual void attack()
