@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Float Value", menuName = "ScriptableObjects/FloatValue", order = 1)]
 public class FloatAsset : ScriptableObject
 {
-    [SerializeField]
+    [SerializeField][Tooltip("Max health should be 30")]
     private float _floatValue;
 
     public float Value
