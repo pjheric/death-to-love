@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 535924931}
   m_Layer: 0
   m_Name: RightEdge
-  m_TagString: Untagged
+  m_TagString: Edges
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 768762048}
   m_Layer: 0
   m_Name: LeftEdge
-  m_TagString: Untagged
+  m_TagString: Edges
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1656,6 +1656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: skellie
       objectReference: {fileID: 0}
+    - target: {fileID: 2639694782295226555, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2639694782295226565, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1868,7 +1872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3790472127396023127, guid: 7302c48a2943cff44bee999b06aa1508, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7302c48a2943cff44bee999b06aa1508, type: 3}

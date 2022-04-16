@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Mugger : EnemyAgent
 {
+    [SerializeField] protected GameObject Knife;
+
     // Start is called before the first frame update
     override protected void Start()
     {
@@ -68,7 +70,20 @@ public class Mugger : EnemyAgent
         walking = true;
         if(Vector3.Distance(target, transform.position) < BackupDist)
         {
-            Debug.Log("Throw");
+            if(Knife)
+            {
+                GameObject newKnife;
+                if(facingRight)
+                {
+                    newKnife = Instantiate(Knife, transform.position + new Vector3(1f, Sprite.bounds.size.y / 2f, 0f), Quaternion.identity);
+                }
+                else
+                {
+                    newKnife = Instantiate(Knife, transform.position - new Vector3(1f, -1 * (Sprite.bounds.size.y / 2f), 0f), Quaternion.identity);
+                }
+                KnifeDamage KD  = newKnife.GetComponentInChildren<KnifeDamage>();
+                KD.setThrower(this.gameObject);
+            }
             Anim.SetTrigger("Attack");
             StartCoroutine(AttackCooldown());
         }

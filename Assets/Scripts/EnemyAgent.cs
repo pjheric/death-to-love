@@ -20,7 +20,7 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private float attackArea; // Area of circle for melee attacks
 
     // Determines if enemy is facing right
-    private bool facingRight = false;
+    protected bool facingRight = false;
 
     //reference to the NavmeshAgent component on this gameobject
     protected NavMeshAgent agent;
