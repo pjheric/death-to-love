@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private bool _facingRight = true;
     private bool _sliding = false;
     private bool _canAttack = true;
+    private PlayerInput _input;
 
     private void Start()
     {
@@ -40,6 +41,9 @@ public class PlayerController : MonoBehaviour
 
         // Sets player animator
         _playerAnim = gameObject.GetComponent<Animator>();
+
+        _input = gameObject.GetComponent<PlayerInput>();
+        Debug.Log(_input.currentControlScheme);
     }
 
     // Gets direction from player input

@@ -231,7 +231,7 @@ MonoBehaviour:
     m_Bits: 64
   _attackRange: 0.75
   _lightDamage: 1
-  _heavyDamage: 2
+  _heavyDamage: 3
   _health: {fileID: 11400000, guid: 660044cbaf09562459c5354f299328f0, type: 2}
   _lightAtkCooldown: 0.5
   _heavyAtkCooldown: 1.5
