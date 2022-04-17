@@ -21,12 +21,17 @@ public class PlayerController : MonoBehaviour
     private int _heavyDamage = 4;
     [SerializeField]
     private FloatAsset _health;
+    [SerializeField]
+    private float _lightAtkCooldown = 0.5f;
+    [SerializeField]
+    private float _heavyAtkCooldown = 1.5f;
 
     private Rigidbody2D _rigidBody;
     private Animator _playerAnim;
     private Vector2 _movementInput = Vector2.zero;
     private bool _facingRight = true;
     private bool _sliding = false;
+    private bool _canAttack = true;
 
     private void Start()
     {
@@ -48,10 +53,13 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed) // Ensures functions only performed once on button press
         {
-            Debug.Log("Light Attack!");
-            _playerAnim.SetTrigger("Light Attack");
-            // TODO: Add light attack animation
-            AttackEnemies(_lightDamage);
+            if (_canAttack)
+            {
+                Debug.Log("Light Attack!");
+                _playerAnim.SetTrigger("Light Attack");
+                AttackEnemies(_lightDamage);
+                StartCoroutine(AttackCooldown(_lightAtkCooldown));
+            }
         }
     }
 
@@ -60,10 +68,13 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed) // Ensures functions only performed once on button press
         {
-            //Debug.Log("Heavy Attack!");
-            _playerAnim.SetTrigger("Heavy Attack");
-            // TODO: Add heavy attack animation
-            AttackEnemies(_heavyDamage);
+            if (_canAttack)
+            {
+                Debug.Log("Heavy Attack!");
+                _playerAnim.SetTrigger("Heavy Attack");
+                AttackEnemies(_heavyDamage);
+                StartCoroutine(AttackCooldown(_heavyAtkCooldown));
+            }
         }
     }
 
@@ -151,5 +162,12 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Player Dead");
             }
         }
+    }
+
+    public IEnumerator AttackCooldown(float cooldown)
+    {
+        _canAttack = false;
+        yield return new WaitForSeconds(cooldown);
+        _canAttack = true;
     }
 }
