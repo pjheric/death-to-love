@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed) // Ensures functions only performed once on button press
         {
-            //Debug.Log("Light Attack!");
+            Debug.Log("Light Attack!");
             _playerAnim.SetTrigger("Light Attack");
             // TODO: Add light attack animation
             AttackEnemies(_lightDamage);
