@@ -49,7 +49,10 @@ public class PlayerController : MonoBehaviour
     // Gets direction from player input
     public void OnMove(InputAction.CallbackContext context)
     {
-        _movementInput = context.ReadValue<Vector2>();
+        if (_sliding == false)
+        {
+            _movementInput = context.ReadValue<Vector2>();
+        }
     }
 
     // Called when player presses light attack button
@@ -113,7 +116,7 @@ public class PlayerController : MonoBehaviour
         // Adjusts vertical movement speed (halves it) and multiplies vector by time and speed
         Vector2 velocity = (new Vector2(_movementInput.x, _movementInput.y / 2)) * Time.deltaTime * _playerSpeed;
 
-        if (velocity != Vector2.zero) // Controls walking animation
+        if (velocity != Vector2.zero && _sliding == false) // Controls walking animation
         {
             _playerAnim.SetBool("Walking", true);
         }
