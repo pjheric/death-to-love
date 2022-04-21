@@ -75,14 +75,22 @@ public class Mugger : EnemyAgent
                 GameObject newKnife;
                 if(facingRight)
                 {
-                    newKnife = Instantiate(Knife, transform.position + new Vector3(1f, Sprite.bounds.size.y / 2f, 0f), Quaternion.identity);
+                    newKnife = Instantiate(Knife, transform.position + new Vector3(1f, Sprite.bounds.size.y / 2f, 0f), Quaternion.Euler(0f,0f, 90f));
                 }
                 else
                 {
-                    newKnife = Instantiate(Knife, transform.position - new Vector3(1f, -1 * (Sprite.bounds.size.y / 2f), 0f), Quaternion.identity);
+                    newKnife = Instantiate(Knife, transform.position - new Vector3(1f, -1 * (Sprite.bounds.size.y / 2f), 0f), Quaternion.Euler(0f, 0f, 90f));
                 }
-                KnifeDamage KD  = newKnife.GetComponentInChildren<KnifeDamage>();
-                KD.setThrower(this.gameObject);
+                KnifeDamage KD  = newKnife.GetComponent<KnifeDamage>();
+                if(KD)
+                {
+                    Debug.Log("KD found");
+                    KD.setThrower(this.gameObject);
+                }
+                else
+                {
+                    Debug.Log("KD not found");
+                }
             }
             Anim.SetTrigger("Attack");
             StartCoroutine(AttackCooldown());

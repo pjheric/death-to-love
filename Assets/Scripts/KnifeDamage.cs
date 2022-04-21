@@ -11,11 +11,10 @@ public class KnifeDamage : MonoBehaviour
 
     private void Awake()
     {
-        transform.parent.transform.eulerAngles = new Vector3(
-            transform.parent.transform.eulerAngles.x,
-            transform.parent.transform.eulerAngles.y,
-            transform.parent.transform.eulerAngles.z + 90
-            );
+        Sprite.gameObject.transform.eulerAngles = new Vector3(
+                    Sprite.transform.eulerAngles.x,
+                    Sprite.transform.eulerAngles.y,
+                    -135f);
     }
     //gets a reference to the enemy throwing the knife so that we can orient the knife the correct directioin
     public void setThrower(GameObject thrower)
@@ -26,11 +25,19 @@ public class KnifeDamage : MonoBehaviour
             {
                 Debug.Log("Knife is flying right");
                 Sprite.flipY = true;
+                Sprite.gameObject.transform.eulerAngles = new Vector3(
+                    Sprite.gameObject.transform.eulerAngles.x,
+                    Sprite.gameObject.transform.eulerAngles.y,
+                    -135f);
             }
             else if ((this.transform.position - thrower.transform.position).x < 0)
             {
                 Debug.Log("Knife is flying Left");
                 Sprite.flipY = false;
+                Sprite.gameObject.transform.eulerAngles = new Vector3(
+                    Sprite.gameObject.transform.eulerAngles.x,
+                    Sprite.gameObject.transform.eulerAngles.y,
+                    135f);
                 Speed *= -1; //if the knife is on the left, we make its speed negative so it flies the opposite direction
 
             }
@@ -44,7 +51,7 @@ public class KnifeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.parent.transform.position += new Vector3(Speed * Time.deltaTime, 0f, 0f);
+        this.transform.position += new Vector3(Speed * Time.deltaTime, 0f, 0f);
     }
 
     protected void OnTriggerEnter2D(Collider2D other)
@@ -54,13 +61,13 @@ public class KnifeDamage : MonoBehaviour
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
             player.TakeDamage(Damage);
-            Destroy(transform.parent.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
     //gets called when an object is not visible by any camera
     private void OnBecameInvisible()
     {
-        Destroy(transform.parent.gameObject);
+        Destroy(this.gameObject);
     }
 }
