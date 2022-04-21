@@ -18,7 +18,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int _lightDamage = 1;
     [SerializeField]
+    private float _lightHitstun = 1f;
+    [SerializeField]
     private int _heavyDamage = 4;
+    [SerializeField]
+    private float _heavyHitstun = 1f;
     [SerializeField]
     private FloatAsset _health;
     [SerializeField]
@@ -62,9 +66,9 @@ public class PlayerController : MonoBehaviour
         {
             if (_canAttack)
             {
-                Debug.Log("Light Attack!");
+                //Debug.Log("Light Attack!");
                 _playerAnim.SetTrigger("Light Attack");
-                AttackEnemies(_lightDamage);
+                AttackEnemies(_lightDamage, _lightHitstun);
                 StartCoroutine(AttackCooldown(_lightAtkCooldown));
             }
         }
@@ -77,9 +81,9 @@ public class PlayerController : MonoBehaviour
         {
             if (_canAttack)
             {
-                Debug.Log("Heavy Attack!");
+                //Debug.Log("Heavy Attack!");
                 _playerAnim.SetTrigger("Heavy Attack");
-                AttackEnemies(_heavyDamage);
+                AttackEnemies(_heavyDamage, _heavyHitstun);
                 StartCoroutine(AttackCooldown(_heavyAtkCooldown));
             }
         }
@@ -88,7 +92,7 @@ public class PlayerController : MonoBehaviour
     public void OnSlide(InputAction.CallbackContext context) {
         if (context.performed) // Ensures functions only performed once on button press
         {
-            Debug.Log("Slide");
+            //Debug.Log("Slide");
             _playerAnim.SetTrigger("Slide");
             _sliding = true;
             _playerSpeed *= 1.5f;
@@ -145,12 +149,12 @@ public class PlayerController : MonoBehaviour
     }
 
     // Finds enemies in range and calls their TakeDamage() method.
-    public void AttackEnemies(int damage)
+    public void AttackEnemies(int damage, float Hitstun)
     {
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _enemyLayer);
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
-            enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage);
+            enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
         }
     }
 
@@ -166,7 +170,7 @@ public class PlayerController : MonoBehaviour
         if (!_sliding) {
             _health.Value -= damage;
             if (_health.Value <= 0) {
-                Debug.Log("Player Dead");
+                //Debug.Log("Player Dead");
             }
         }
     }

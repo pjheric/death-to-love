@@ -34,34 +34,42 @@ public class Mugger : EnemyAgent
     override protected void Update()
     {
         Anim.SetBool("Walking", walking);
-        if (target != null) //if a player was found
+        if (!Staggered)
         {
-            target = player.transform.position;
-            checkSide(); //make sure the enemy is oriented to be facing the target
-
-            if (Attack) //if we're able to attack and we are targeting a player
+            if (target != null) //if a player was found
             {
-                attack();
+                target = player.transform.position;
+                checkSide(); //make sure the enemy is oriented to be facing the target
+
+                if (Attack) //if we're able to attack and we are targeting a player
+                {
+                    attack();
+                }
+                else
+                {
+
+                    backup();
+                }
             }
             else
             {
-                
-                backup();
+                //because the player doesnt spawn until input is given, we have to keep checking for a player
+                //This will 100% be removed before the final version
+                player = GameObject.FindGameObjectWithTag("Player");
+                if (player)
+                {
+                    target = player.transform.position; //get the player's transform
+                }
+                else
+                {
+                    idle();
+                }
             }
         }
         else
         {
-            //because the player doesnt spawn until input is given, we have to keep checking for a player
-            //This will 100% be removed before the final version
-            player = GameObject.FindGameObjectWithTag("Player");
-            if (player)
-            {
-                target = player.transform.position; //get the player's transform
-            }
-            else
-            {
-                idle();
-            }
+            Anim.SetTrigger("Staggered");
+            Debug.Log("Staggered");
         }
     }
 
@@ -84,12 +92,12 @@ public class Mugger : EnemyAgent
                 KnifeDamage KD  = newKnife.GetComponent<KnifeDamage>();
                 if(KD)
                 {
-                    Debug.Log("KD found");
+                    //Debug.Log("KD found");
                     KD.setThrower(this.gameObject);
                 }
                 else
                 {
-                    Debug.Log("KD not found");
+                    //Debug.Log("KD not found");
                 }
             }
             Anim.SetTrigger("Attack");

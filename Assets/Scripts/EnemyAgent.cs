@@ -37,6 +37,9 @@ public class EnemyAgent : MonoBehaviour
     //if true, AI can attack, if false, AI is in a state where he cannot attack
     protected bool Attack = true;
 
+    //if true, AI can attack, if false, AI is in a state where he cannot attack
+    protected bool Staggered = false;
+
     //if true, AI is walking somewhere
     protected bool walking = false;
 
@@ -68,39 +71,49 @@ public class EnemyAgent : MonoBehaviour
     virtual protected void Update()
     {
         Anim.SetBool("Walking", walking);
-        if(target != null) //if a player was found
+        if (!Staggered)
         {
-            checkSide(); //make sure the enemy is oriented to be facing the target
             
-            if(Attack) //if we're able to attack and we are targeting a player
+            if (target != null) //if a player was found
             {
-                attack();
+                checkSide(); //make sure the enemy is oriented to be facing the target
+
+                if (Attack) //if we're able to attack and we are targeting a player
+                {
+                    attack();
+                }
+                else
+                {
+                    float distanceToTarget = Vector3.Distance(transform.position, target);
+                    if (distanceToTarget < 0.5)
+                    {
+                        idle();
+                    }
+                }
+
+
+
             }
             else
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target);
-                if (distanceToTarget < 0.5)
+                //because the player doesnt spawn until input is given, we have to keep checking for a player
+                //This will 100% be removed before the final version
+                player = GameObject.FindGameObjectWithTag("Player");
+                if (player)
+                {
+                    target = player.transform.position; //get the player's transform
+                }
+                else
                 {
                     idle();
                 }
             }
-                
-            
-
         }
         else
         {
-            //because the player doesnt spawn until input is given, we have to keep checking for a player
-            //This will 100% be removed before the final version
-            player = GameObject.FindGameObjectWithTag("Player");
-            if(player)
-            {
-                target = player.transform.position; //get the player's transform
-            }
-            else
-            {
-                idle();
-            }
+            //play stagger animation
+            Debug.Log("Staggered");
+            Anim.SetTrigger("Staggered");
         }
     }
 
@@ -165,15 +178,32 @@ public class EnemyAgent : MonoBehaviour
     }
 
     // Handles incoming attacks
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, float hitstun)
     {
-        Debug.Log(gameObject.name + " took " + damage + " damage.");
+        //Debug.Log(gameObject.name + " took " + damage + " damage.");
         Health -= damage; 
         if(Health <= 0)
         {
             Debug.Log("He's dead, you can stop mashing now");
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
+        else
+        {
+            //stagger the enemy
+            StartCoroutine(Stagger(hitstun));
+        }
+
+    }
+
+    protected IEnumerator Stagger(float hitstun)
+    {
+        Staggered = true;
+        walking = false;
+        agent.isStopped = true;
+        yield return new WaitForSeconds(Mathf.Abs(hitstun)); //the 0.01f converts seconds into an increment of 10 milliseconds
+        Staggered = false;
+        walking = true;
+        agent.isStopped = false;
     }
 
     //set agent to just stand where it is located
@@ -204,7 +234,7 @@ public class EnemyAgent : MonoBehaviour
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackArea, playerLayer);
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
-            Debug.Log("At least one player");
+            //Debug.Log("At least one player");
             enemiesToHit[i].GetComponent<PlayerController>().TakeDamage(attackDamage);
         }
     }

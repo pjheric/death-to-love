@@ -37,7 +37,7 @@ public class KnifeDamage : MonoBehaviour
                 Sprite.gameObject.transform.eulerAngles = new Vector3(
                     Sprite.gameObject.transform.eulerAngles.x,
                     Sprite.gameObject.transform.eulerAngles.y,
-                    135f);
+                    135f + 180f);
                 Speed *= -1; //if the knife is on the left, we make its speed negative so it flies the opposite direction
 
             }

@@ -49,6 +49,9 @@ TagManager:
   - name: Level
     uniqueID: 1237784743
     locked: 0
+  - name: Items
+    uniqueID: 3809063033
+    locked: 0
   - name: Character
     uniqueID: 3799915285
     locked: 0
