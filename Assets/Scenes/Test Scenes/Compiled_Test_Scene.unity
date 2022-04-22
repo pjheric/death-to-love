@@ -1779,7 +1779,7 @@ MonoBehaviour:
   - {fileID: 1965147651}
   - {fileID: 1119578915}
   - {fileID: 661681949}
-  maxHealth: 100
+  maxHealth: 30
   health: {fileID: 11400000, guid: 660044cbaf09562459c5354f299328f0, type: 2}
   lerpSpeed: 3
 --- !u!114 &1303606014
