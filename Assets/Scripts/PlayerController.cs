@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _movementInput = Vector2.zero;
     private bool _facingRight = true;
     private bool _sliding = false;
+    private bool _canSlide = true;
     private bool _canAttack = true;
     private PlayerInput _input;
 
@@ -53,8 +54,11 @@ public class PlayerController : MonoBehaviour
     // Gets direction from player input
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (_sliding == false)
-        {
+        // not 100% sure why, but if you hold another direction while sliding,
+        // the player will keep moving in the same direction
+        // will reset when you let go of a direction/input a different direction
+        //if (!_sliding && _canSlide) {
+        if (!_sliding) {
             _movementInput = context.ReadValue<Vector2>();
         }
     }
@@ -90,11 +94,12 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnSlide(InputAction.CallbackContext context) {
-        if (context.performed) // Ensures functions only performed once on button press
+        if (context.performed && _canSlide) // Ensures functions only performed once on button press
         {
             //Debug.Log("Slide");
             _playerAnim.SetTrigger("Slide");
             _sliding = true;
+            _canSlide = false;
             _playerSpeed *= 1.5f;
             float duration = _playerAnim.GetFloat("Slide Duration");
             StartCoroutine(SlideSpeedReset(duration));
@@ -106,7 +111,9 @@ public class PlayerController : MonoBehaviour
         _playerAnim.SetTrigger("Slide");
         _playerSpeed /= 1.5f;
         _sliding = false;
-
+        // extra delay so a player can't spam sliding?
+        yield return new WaitForSeconds(0.5f);
+        _canSlide = true;
     }
 
     void Update()
