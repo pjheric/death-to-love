@@ -3,6 +3,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
+public enum ComboState {
+    NONE,
+    LP1,
+    LP2,
+    LP3
+}
+
 [RequireComponent(typeof(Rigidbody2D))] // Ensures object will have a Rigidbody2D
 [RequireComponent(typeof(Animator))] // Ensures object will have an Animator
 public class PlayerController : MonoBehaviour
@@ -39,6 +46,13 @@ public class PlayerController : MonoBehaviour
     private bool _canAttack = true;
     private PlayerInput _input;
 
+    // light attack combo fields
+    private bool _comboCheck;
+    private float _defaultComboTimer = 0.4f;
+    private float _currentComboTimer;
+    private int _lightComboDamageIncrease = 1;
+    private ComboState _currentComboState;
+
     private void Start()
     {
         // Sets Character Controller component
@@ -49,6 +63,9 @@ public class PlayerController : MonoBehaviour
 
         _input = gameObject.GetComponent<PlayerInput>();
         Debug.Log(_input.currentControlScheme);
+
+        _currentComboTimer = _defaultComboTimer;
+        _currentComboState = ComboState.NONE;
     }
 
     // Gets direction from player input
@@ -68,11 +85,53 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed) // Ensures functions only performed once on button press
         {
+            //Debug.Log("light attack input");
             if (_canAttack)
             {
                 //Debug.Log("Light Attack!");
+                if (_currentComboState == ComboState.LP3)
+                    return;
+
+
+                // starts on ComboState.NONE by the Start()
+                _currentComboState++;
+                _comboCheck = true;
+                _currentComboTimer = _defaultComboTimer;
+                int _currentLightDamage = _lightDamage;
+                // need to add code to change the actual animations to match
+                if(_currentComboState == ComboState.LP1) {
+
+                    Debug.Log("light attack1 performed");
+                }
+
+                if (_currentComboState == ComboState.LP2) {
+                    _currentLightDamage += _lightComboDamageIncrease;
+                    Debug.Log("light attack2 performed");
+                }
+
+                if (_currentComboState == ComboState.LP3) {
+                    _currentLightDamage += 2 * _lightComboDamageIncrease;
+                    Debug.Log("light attack3 performed");
+                }
+
                 _playerAnim.SetTrigger("Light Attack");
-                AttackEnemies(_lightDamage, _lightHitstun);
+                AttackEnemies(_currentLightDamage, _lightHitstun); 
+                //StartCoroutine(AttackCooldown(_lightAtkCooldown));
+            }
+        }
+    }
+    
+    void ResetComboState() {
+        // if the player has initiated a light attack
+        if (_comboCheck) {
+            _currentComboTimer -= Time.deltaTime;
+
+            if(_currentComboTimer <= 0f) {
+                // resets the fields to the default state to check for combos again
+                _currentComboState = ComboState.NONE;
+                _comboCheck = false;
+                _currentComboTimer = _defaultComboTimer;
+                // used to enforce a cooldown, but it is after the combo window has expired
                 StartCoroutine(AttackCooldown(_lightAtkCooldown));
             }
         }
@@ -111,6 +170,8 @@ public class PlayerController : MonoBehaviour
         _playerAnim.SetTrigger("Slide");
         _playerSpeed /= 1.5f;
         _sliding = false;
+        // temporary bandage for game not taking input during a slide
+        _movementInput = Vector2.zero;
         // extra delay so a player can't spam sliding?
         yield return new WaitForSeconds(0.5f);
         _canSlide = true;
@@ -119,6 +180,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement(); // Calls method to handle movement
+        ResetComboState();
     }
 
     // Handles player movement and animations
@@ -158,6 +220,7 @@ public class PlayerController : MonoBehaviour
     // Finds enemies in range and calls their TakeDamage() method.
     public void AttackEnemies(int damage, float Hitstun)
     {
+        Debug.Log("damage: " + damage);
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _enemyLayer);
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
