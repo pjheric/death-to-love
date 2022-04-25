@@ -19,6 +19,7 @@ public class CharacterSelectIcon : MonoBehaviour
     private Vector3 _initialPos;
     private Vector3 _leftCharacterPos;
     private Vector3 _rightCharacterPos;
+    private bool _lockedInChoice;
 
     private PlayerInput _playerInput;
     private SpriteRenderer _spriteRenderer;
@@ -30,6 +31,7 @@ public class CharacterSelectIcon : MonoBehaviour
 
         SetSprite();
         _selectedChar = CharacterChoices.None;
+        _lockedInChoice = false;
     }
 
     private void Start()
@@ -51,13 +53,54 @@ public class CharacterSelectIcon : MonoBehaviour
         }
     }
 
-    public void OnSelect(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            //SetSprite();
+            if (_lockedInChoice == false)
+            {
+                MoveSelector(context.ReadValue<Vector2>().x);
+            }
+        }
+    }
 
-            MoveSelector(context.ReadValue<Vector2>().x);
+    public void OnSelect(InputAction.CallbackContext context)
+    {
+        if (context.performed) {
+            if (_selectedChar != CharacterChoices.None)
+            {
+                if (_selectedChar == CharacterChoices.Liz)
+                {
+                    if (PlayerManager.Instance.lizChosen == false)
+                    {
+                        PlayerManager.Instance.lizChosen = true;
+                        _lockedInChoice = true;
+                    }
+                }
+                else if (_selectedChar == CharacterChoices.Jay)
+                {
+                    if (PlayerManager.Instance.jayChosen == false)
+                    {
+                        PlayerManager.Instance.jayChosen = true;
+                        _lockedInChoice = true;
+                    }
+                }
+            }
+        }
+    }
+
+    public void OnBack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (_lockedInChoice == true)
+            {
+                _lockedInChoice = false;
+            }
+            else
+            {
+                GameManagerScript.Instance.LoadMainMenu();
+            }
         }
     }
 

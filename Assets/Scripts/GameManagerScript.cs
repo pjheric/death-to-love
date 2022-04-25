@@ -46,4 +46,9 @@ public class GameManagerScript : MonoBehaviour
 
         SceneManager.LoadScene("Level 1");
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Start Menu");
+    }
 }

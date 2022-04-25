@@ -113,7 +113,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6879708947925551705}
         m_TargetAssemblyTypeName: CharacterSelectIcon, Assembly-CSharp
-        m_MethodName: OnSelect
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -125,6 +125,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 35d612e6-74e5-4ce8-bc84-c6922b74d0a7
     m_ActionName: Character/Select[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6879708947925551705}
+        m_TargetAssemblyTypeName: CharacterSelectIcon, Assembly-CSharp
+        m_MethodName: OnSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7f860a97-feaf-4fdb-8b35-ba2ab9871c30
+    m_ActionName: Character/Select[/Keyboard/e,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6879708947925551705}
+        m_TargetAssemblyTypeName: CharacterSelectIcon, Assembly-CSharp
+        m_MethodName: OnBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0fdd775a-08bd-4655-a1c9-cb8e11db368b
+    m_ActionName: Character/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Character
@@ -142,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5818e1a2e201e42b0a436844107314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selectedChar: 0
   _keyboardSprite: {fileID: 21300000, guid: b7c569e91d4e6bf4ca010a3f754c007a, type: 3}
   _controllerSprite: {fileID: 21300000, guid: fcec510a87079644fb7bfd5ba8f62be4, type: 3}
   _characterSelectOffsetX: 5.5
