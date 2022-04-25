@@ -144,3 +144,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _keyboardSprite: {fileID: 21300000, guid: b7c569e91d4e6bf4ca010a3f754c007a, type: 3}
   _controllerSprite: {fileID: 21300000, guid: fcec510a87079644fb7bfd5ba8f62be4, type: 3}
+  _characterSelectOffsetX: 5.5
