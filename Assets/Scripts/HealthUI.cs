@@ -7,30 +7,28 @@ public class HealthUI : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
     [SerializeField] private Image[] healthTicks;
-    [SerializeField] private float maxHealth = 30f; //Delete later, here for testing only
+    [SerializeField] private FloatAsset maxHealth; // Max health stored in float asset
     [SerializeField] private FloatAsset health;
     [SerializeField] private float lerpSpeed = 3f;
 
     private float healthBarStep; // Determines how many health points each tick represents
 
     private void Start()
-    {
-        health.Value = maxHealth;
-
-        healthBarStep = maxHealth / healthTicks.Length; // Sets healthBarStep based on max health and num of ticks
+    { 
+        healthBarStep = maxHealth.Value / healthTicks.Length; // Sets healthBarStep based on max health and num of ticks
     }
     private void Update()
     {
-        if(health.Value > maxHealth)
+        if(health.Value > maxHealth.Value)
         {
-            health.Value = maxHealth; //Prevents overhealing 
+            health.Value = maxHealth.Value; //Prevents overhealing 
         }
         lerpSpeed *= Time.deltaTime;
         FillBar();
     }
     private void FillBar()
     {
-        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (health.Value / maxHealth), lerpSpeed);
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (health.Value / maxHealth.Value), lerpSpeed);
 
         for(int i = 0; i < healthTicks.Length; i++)
         {

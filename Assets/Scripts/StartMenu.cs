@@ -6,7 +6,7 @@ public class StartMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Level 1");
+        GameManagerScript.Instance.NewGame();
     }
 
     public void QuitGame()
