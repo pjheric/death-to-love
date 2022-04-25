@@ -435,6 +435,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lizChosen: 0
   jayChosen: 0
+  twoPlayers: 0
+  keyboardChoice: 2
+  lizPrefab: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+  jayPrefab: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+  spawnPoints: []
 --- !u!1 &425518370
 GameObject:
   m_ObjectHideFlags: 0

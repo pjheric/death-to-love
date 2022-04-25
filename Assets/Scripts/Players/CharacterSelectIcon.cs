@@ -9,8 +9,8 @@ using UnityEngine.InputSystem;
 public class CharacterSelectIcon : MonoBehaviour
 {
 
-    public enum CharacterChoices { Liz, Jay, None};
     public CharacterChoices _selectedChar;
+    public bool IsKeyboard { get; set; }
 
     [SerializeField] private Sprite _keyboardSprite;
     [SerializeField] private Sprite _controllerSprite;
@@ -46,10 +46,12 @@ public class CharacterSelectIcon : MonoBehaviour
         if (_playerInput.currentControlScheme == "Keyboard")
         {
             _spriteRenderer.sprite = _keyboardSprite;
+            IsKeyboard = true;
         }
         else if (_playerInput.currentControlScheme == "Controller")
         {
             _spriteRenderer.sprite = _controllerSprite;
+            IsKeyboard = false;
         }
     }
 
@@ -73,7 +75,7 @@ public class CharacterSelectIcon : MonoBehaviour
                 {
                     if (PlayerManager.Instance.lizChosen == false)
                     {
-                        PlayerManager.Instance.lizChosen = true;
+                        PlayerManager.Instance.ChoseCharacter(CharacterChoices.Liz, IsKeyboard);
                         _lockedInChoice = true;
                     }
                 }
@@ -81,7 +83,7 @@ public class CharacterSelectIcon : MonoBehaviour
                 {
                     if (PlayerManager.Instance.jayChosen == false)
                     {
-                        PlayerManager.Instance.jayChosen = true;
+                        PlayerManager.Instance.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
                         _lockedInChoice = true;
                     }
                 }
@@ -134,3 +136,5 @@ public class CharacterSelectIcon : MonoBehaviour
         }
     }
 }
+
+public enum CharacterChoices { Liz, Jay, None };
