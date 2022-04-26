@@ -23,13 +23,10 @@ public class HealthUI : MonoBehaviour
         {
             health.Value = maxHealth.Value; //Prevents overhealing 
         }
-        lerpSpeed *= Time.deltaTime;
         FillBar();
     }
     private void FillBar()
     {
-        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (health.Value / maxHealth.Value), lerpSpeed);
-
         for(int i = 0; i < healthTicks.Length; i++)
         {
             healthTicks[i].enabled = !DisplayHealthPoint(health.Value, i); 

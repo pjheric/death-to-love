@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     private float _lightAtkCooldown = 0.5f;
     [SerializeField]
     private float _heavyAtkCooldown = 1.5f;
+    [SerializeField]
+    private GameObject _pausePanel; 
 
     private Rigidbody2D _rigidBody;
     private Animator _playerAnim;
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private bool _sliding = false;
     private bool _canSlide = true;
     private bool _canAttack = true;
+    private bool _isPaused = false; 
     private PlayerInput _input;
 
     // light attack combo fields
@@ -162,6 +165,23 @@ public class PlayerController : MonoBehaviour
             _playerSpeed *= 1.5f;
             float duration = _playerAnim.GetFloat("Slide Duration");
             StartCoroutine(SlideSpeedReset(duration));
+        }
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (!_isPaused)
+            {
+                _pausePanel.SetActive(true);
+                _isPaused = true;
+            }
+            else
+            {
+                _pausePanel.SetActive(false);
+                _isPaused = false;
+            }
         }
     }
 
