@@ -4,9 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement; 
 public class StartMenu : MonoBehaviour
 {
+    private LevelLoader levelLoader;
+    private void Start()
+    {
+        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
+    }
     public void StartGame()
     {
-        SceneManager.LoadScene("Character Select");
+        if(levelLoader)
+        {
+            levelLoader.LoadLevel("Character Select");
+        }
     }
 
     public void QuitGame()
