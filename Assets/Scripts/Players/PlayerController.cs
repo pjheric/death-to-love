@@ -174,13 +174,11 @@ public class PlayerController : MonoBehaviour
         {
             if (!_isPaused)
             {
-                _pausePanel.SetActive(true);
-                _isPaused = true;
+                pause(); 
             }
             else
             {
-                _pausePanel.SetActive(false);
-                _isPaused = false;
+                Resume(); //I put these into their own functions because we need the continue button on the pause menu to Resume and set _isPaused to false
             }
         }
     }
@@ -270,5 +268,19 @@ public class PlayerController : MonoBehaviour
         _canAttack = false;
         yield return new WaitForSeconds(cooldown);
         _canAttack = true;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        _pausePanel.SetActive(false);
+        _isPaused = false;
+    }
+
+    public void pause()
+    {
+        Time.timeScale = 0;
+        _pausePanel.SetActive(true);
+        _isPaused = true;
     }
 }

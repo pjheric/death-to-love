@@ -2101,7 +2101,7 @@ MonoBehaviour:
   m_VoxelSize: 0.06666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: b4db90892570f7c4889d7f6e0be93dd2, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1f259d11d8575724d971655022395dea, type: 2}
 --- !u!4 &1384909863
 Transform:
   m_ObjectHideFlags: 0
@@ -3152,18 +3152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1612331749}
     m_Modifications:
-    - target: {fileID: 1877404778999528742, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404778999528742, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404778999528742, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1877404779111447375, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3251,34 +3239,6 @@ PrefabInstance:
     - target: {fileID: 1877404779111447376, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
       propertyPath: m_Name
       value: Pause Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404779111447376, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404779973836271, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404779973836271, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404779973836271, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404779978824221, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_text
-      value: PAUSED
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404779978824221, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_fontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877404779978824222, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a187dfd5fddc84e92dfec923080e22, type: 3}

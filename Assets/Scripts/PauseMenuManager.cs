@@ -5,10 +5,12 @@ using UnityEngine;
 public class PauseMenuManager : MonoBehaviour
 {
     private LevelLoader levelLoader;
+    private PlayerController PC;
     // Start is called before the first frame update
     void Start()
     {
         levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
+        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,11 @@ public class PauseMenuManager : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+    }
+
+    public void Resume()
+    {
+        PC.Resume();
     }
 
 }
