@@ -15,6 +15,10 @@ public class StartMenu : MonoBehaviour
         {
             levelLoader.LoadLevel("Character Select");
         }
+        else
+        {
+            SceneManager.LoadScene("Character Select");
+        }
     }
 
     public void QuitGame()

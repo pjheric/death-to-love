@@ -12,6 +12,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private FloatAsset _player1Health;
     [SerializeField] private FloatAsset _player2Health;
 
+    private LevelLoader levelLoader;
+
     public static GameManagerScript Instance
     {
         get
@@ -39,12 +41,24 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
+    }
+
     public void NewGame()
     {
         _player1Health.Value = _playerMaxHealth.Value;
         _player2Health.Value = _playerMaxHealth.Value;
 
-        SceneManager.LoadScene("Level 1");
+        if (levelLoader)
+        {
+            levelLoader.LoadLevel("Level 1");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level 1");
+        }
     }
 
     public void LoadMainMenu()
