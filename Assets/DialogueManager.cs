@@ -18,8 +18,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject SpeakerName2;
     [SerializeField] TextMeshProUGUI DialogueLine;
 
-    [SerializeField] AudioSource musicSource;
-
+    
     
     //All dialogue is just an array of list of strings
     //Array index: wave (0, 1, 2, 3, 4)
@@ -36,7 +35,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
-        musicSource.volume = 0.30f;
         DialoguePanel.SetActive(true); 
         inGameUI.SetActive(false);
         //First, freeze time
@@ -50,18 +48,12 @@ public class DialogueManager : MonoBehaviour
         string speakerBody = content.Substring(2);
         if(speakername == 'M')
         {
-            // Vector3 audioPos = Vector3.right*1;      
-            // GameObject temp = Instantiate(runner,audioPos,Quaternion.identity);//spawns in left ear
-            // temp.GetComponent<SFXRunner>().clip = speechClip;
             DialogueLine.alignment = TextAlignmentOptions.TopRight;
             SpeakerName1.SetActive(false);
             SpeakerName2.SetActive(true); 
         }
         else if(speakername == 'G')
         {
-            // Vector3 audioPos = Vector3.left*1;      
-            // GameObject temp = Instantiate(runner,audioPos,Quaternion.identity);//spawns in left ear
-            // temp.GetComponent<SFXRunner>().clip = speechClip;
             DialogueLine.alignment = TextAlignmentOptions.TopLeft;
             SpeakerName1.SetActive(true);
             SpeakerName2.SetActive(false);
@@ -70,31 +62,20 @@ public class DialogueManager : MonoBehaviour
     }
     public void OnPressNextButton()
     {
-        if(currentIndex == dialogue[waveManager.currentWaveNum].lines.Count - 1)
+        if(currentIndex == dialogue[1].lines.Count - 1)
         {
             EndDialogue();
             return; 
         }
         currentIndex += 1;
-        DisplayDialogue(dialogue[waveManager.currentWaveNum].lines[currentIndex]);
+        DisplayDialogue(dialogue[1].lines[currentIndex]);
     }
 
     public void EndDialogue()
     {
-        lockPlayerManager.ganglimLock = false;
-        lockPlayerManager.morriganLock = false;
-        musicSource.volume = .70f;
         currentIndex = 0;
         DialoguePanel.SetActive(false);
         inGameUI.SetActive(true);
         Time.timeScale = 1f;
-        if (waveManager.currentWaveNum == 0)
-        {
-            mm.gameStartFunc();
-        }
-        else
-        {
-            wm.startWave();
-        }
     }
 }

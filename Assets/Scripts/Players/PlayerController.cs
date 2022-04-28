@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using TMPro; 
 
 public enum ComboState {
     NONE,
@@ -36,8 +37,14 @@ public class PlayerController : MonoBehaviour
     private float _lightAtkCooldown = 0.5f;
     [SerializeField]
     private float _heavyAtkCooldown = 1.5f;
+
+    //UI Elements
     [SerializeField]
-    private GameObject _pausePanel; 
+    private GameObject _pausePanel;
+    [SerializeField]
+    private GameObject _heatPanel;
+    [SerializeField]
+    private TextMeshProUGUI _heatNumber; 
 
     private Rigidbody2D _rigidBody;
     private Animator _playerAnim;
@@ -55,6 +62,12 @@ public class PlayerController : MonoBehaviour
     private float _currentComboTimer;
     private int _lightComboDamageIncrease = 1;
     private ComboState _currentComboState;
+
+
+    //Heat System Fields
+    private bool _heatCheck = true;
+    private float _currentHeatNum = 0;
+    private float _heatFalloffTime; 
 
     private void Start()
     {
@@ -118,12 +131,39 @@ public class PlayerController : MonoBehaviour
                 }
 
                 _playerAnim.SetTrigger("Light Attack");
-                AttackEnemies(_currentLightDamage, _lightHitstun); 
+                AttackEnemies(_currentLightDamage, _lightHitstun);
                 //StartCoroutine(AttackCooldown(_lightAtkCooldown));
             }
         }
     }
-    
+
+    private void UpdateHeat()
+    {
+        //Step 1: determine heat falloff
+        //Heat falls off either if no one attacked within the falloff time OR if the damaged received (total combined) exceeds 5
+        if (_heatCheck)
+        {
+            _heatPanel.SetActive(true);
+            _currentHeatNum += 1;
+            _heatNumber.SetText(_currentHeatNum.ToString()); 
+            if(_currentHeatNum >= 10 && _currentHeatNum < 20)
+            {
+                _heatNumber.color = Color.cyan; 
+            }
+            else if(_currentHeatNum >= 20)
+            {
+                _heatNumber.color = Color.magenta; 
+            }
+        }
+        else
+        {
+            _heatPanel.SetActive(false);
+            _currentHeatNum = 0; 
+        }
+
+    }
+
+
     void ResetComboState() {
         // if the player has initiated a light attack
         if (_comboCheck) {
@@ -182,6 +222,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+   
 
     private IEnumerator SlideSpeedReset(float duration) {
         yield return new WaitForSeconds(duration);
@@ -244,6 +286,7 @@ public class PlayerController : MonoBehaviour
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
         }
+        UpdateHeat(); 
     }
 
     // Creates a gizmo for attack area in editor

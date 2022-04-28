@@ -4,8 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement; 
 public class GameOver : MonoBehaviour
 {
+    private LevelLoader levelLoader;
+    private void Start()
+    {
+        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>(); 
+    }
     public void BackToStart()
     {
-        SceneManager.LoadScene("Start Menu");
+        if(levelLoader)
+        {
+            levelLoader.LoadLevel("Start Menu"); 
+        }
+        else
+        {
+            Debug.LogError("Level Loader not found in Game Over Script"); 
+        }
     }
 }
