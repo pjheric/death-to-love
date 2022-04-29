@@ -18,7 +18,8 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private LayerMask playerLayer; // Player layer mask
     [SerializeField] private int attackDamage; // Damage dealt
     [SerializeField] private float attackArea; // Area of circle for melee attacks
-    
+    [SerializeField] protected GameObject ParticleEmitter;
+
 
 
     // Determines if enemy is facing right
@@ -47,10 +48,8 @@ public class EnemyAgent : MonoBehaviour
 
     //reference to the player
     protected GameObject player;
-
-
-    [Header("Camera Settings")]
-    [SerializeField] private CinemachineController Cam;
+    
+    protected CinemachineController Cam;
     
     // Start is called before the first frame update
     virtual protected void Start()
@@ -200,6 +199,7 @@ public class EnemyAgent : MonoBehaviour
             StartCoroutine(Stagger(hitstun));
         }
 
+        Instantiate(ParticleEmitter, this.gameObject.transform.position, Quaternion.identity);
         if(Cam)
         {
             Cam.shake();

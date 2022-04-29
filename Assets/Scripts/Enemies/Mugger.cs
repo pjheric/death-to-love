@@ -10,6 +10,7 @@ public class Mugger : EnemyAgent
     // Start is called before the first frame update
     override protected void Start()
     {
+        Cam = GameObject.FindGameObjectWithTag("Cmvcam").GetComponent<CinemachineController>();
         player = GameObject.FindGameObjectWithTag("Player");
         if (player)
         {
