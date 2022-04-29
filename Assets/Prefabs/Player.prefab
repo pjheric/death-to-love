@@ -254,6 +254,8 @@ MonoBehaviour:
   _lightAtkCooldown: 0.5
   _heavyAtkCooldown: 1.5
   _pausePanel: {fileID: 0}
+  _heatPanel: {fileID: 0}
+  _heatNumber: {fileID: 0}
 --- !u!95 &5488050115168530994
 Animator:
   serializedVersion: 3
