@@ -22,10 +22,13 @@ public class CinemachineController : MonoBehaviour {
     private float startingIntensity;
 
     [SerializeField] private float intensity = 1f;
-    [SerializeField] private float length = 0.1f;
+    [SerializeField] private float length = 1f;
+    [SerializeField] private float SleepTime = 20f;
 
     private void Start() {
         //frustumWidth = cm.m_Lens.OrthographicSize * cm.m_Lens.Aspect;
+        length *= 0.01f; //converts length and sleeptime from seconds to milliseconds
+        SleepTime *= 0.01f;
     }
 
     // Update is called once per frame
@@ -77,7 +80,13 @@ public class CinemachineController : MonoBehaviour {
         shakeTimer = length;
         shakeTimerTotal = length;
         startingIntensity = intensity;
+        StartCoroutine(Sleep());
     }
 
-
+    private IEnumerator Sleep()
+    {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(Mathf.Abs(SleepTime));
+        Time.timeScale = 1;
+    }
 }

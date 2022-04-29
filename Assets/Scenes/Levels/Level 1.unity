@@ -477,8 +477,9 @@ MonoBehaviour:
   track: {fileID: 1279080900}
   leftEdge: {fileID: 768762046}
   rightEdge: {fileID: 535924929}
-  intensity: 3
-  length: 0.2
+  intensity: 5
+  length: 20
+  SleepTime: 5
 --- !u!114 &641644075
 MonoBehaviour:
   m_ObjectHideFlags: 0
