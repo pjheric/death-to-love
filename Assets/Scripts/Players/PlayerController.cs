@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     private float _lightAtkCooldown = 0.5f;
     [SerializeField]
     private float _heavyAtkCooldown = 1.5f;
+    [SerializeField] 
+    private float _lightAtkAnimationTime = 1.0f;
 
     //UI Elements
     [SerializeField]
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
     private bool _canAttack = true;
     private bool _isPaused = false; 
     private PlayerInput _input;
+    private bool _canMove = true;
 
     // light attack combo fields
     private bool _comboCheck;
@@ -87,12 +90,20 @@ public class PlayerController : MonoBehaviour
     // Gets direction from player input
     public void OnMove(InputAction.CallbackContext context)
     {
-        // not 100% sure why, but if you hold another direction while sliding,
-        // the player will keep moving in the same direction
-        // will reset when you let go of a direction/input a different direction
-        //if (!_sliding && _canSlide) {
-        if (!_sliding) {
-            _movementInput = context.ReadValue<Vector2>();
+        if (_canMove)
+        {
+            // not 100% sure why, but if you hold another direction while sliding,
+            // the player will keep moving in the same direction
+            // will reset when you let go of a direction/input a different direction
+            //if (!_sliding && _canSlide) {
+            if (!_sliding)
+            {
+                _movementInput = context.ReadValue<Vector2>();
+            }
+        }
+        else
+        {
+            _movementInput = Vector2.zero;
         }
     }
 
@@ -104,6 +115,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("light attack input");
             if (_canAttack)
             {
+                _canMove = false;
                 //Debug.Log("Light Attack!");
                 if (_currentComboState == ComboState.LP3)
                     return;
@@ -132,6 +144,7 @@ public class PlayerController : MonoBehaviour
 
                 _playerAnim.SetTrigger("Light Attack");
                 AttackEnemies(_currentLightDamage, _lightHitstun);
+                StartCoroutine(AnimationTime(_lightAtkAnimationTime));
                 //StartCoroutine(AttackCooldown(_lightAtkCooldown));
             }
         }
@@ -311,6 +324,13 @@ public class PlayerController : MonoBehaviour
         _canAttack = false;
         yield return new WaitForSeconds(cooldown);
         _canAttack = true;
+    }
+
+    public IEnumerator AnimationTime(float cooldown)
+    {
+        _canMove = false;
+        yield return new WaitForSeconds(cooldown);
+        _canMove = true;
     }
 
     public void Resume()
