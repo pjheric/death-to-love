@@ -7,6 +7,6 @@ public class ParticleDestroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(this, 2f);
+        Destroy(this.gameObject, 2f);
     }
 }
