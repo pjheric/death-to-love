@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2639694782295226555, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
       propertyPath: m_Name
-      value: skellie (Bouncer)
+      value: skellie (Bouncer) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2639694782295226564, guid: e22cb69375436c947b3780fd09ab6c7c, type: 3}
       propertyPath: m_Color.b
