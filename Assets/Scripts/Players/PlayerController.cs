@@ -4,13 +4,6 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro; 
 
-public enum ComboState {
-    NONE,
-    LP1,
-    LP2,
-    LP3
-}
-
 [RequireComponent(typeof(Rigidbody2D))] // Ensures object will have a Rigidbody2D
 [RequireComponent(typeof(Animator))] // Ensures object will have an Animator
 public class PlayerController : MonoBehaviour
@@ -38,8 +31,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _heavyAtkCooldown = 1.5f;
     [SerializeField] 
-    private float _lightAtkAnimationTime = 1.0f;
-    [SerializeField] 
     private GameObject ParticleEmitter;
 
     //UI Elements
@@ -61,14 +52,6 @@ public class PlayerController : MonoBehaviour
     private PlayerInput _input;
     private bool _canMove = true;
 
-    // light attack combo fields
-    private bool _comboCheck;
-    private float _defaultComboTimer = 0.4f;
-    private float _currentComboTimer;
-    private int _lightComboDamageIncrease = 1;
-    private ComboState _currentComboState;
-
-
     //Heat System Fields
     private bool _heatCheck = true;
     private float _currentHeatNum = 0;
@@ -84,9 +67,6 @@ public class PlayerController : MonoBehaviour
 
         _input = gameObject.GetComponent<PlayerInput>();
         Debug.Log(_input.currentControlScheme);
-
-        _currentComboTimer = _defaultComboTimer;
-        _currentComboState = ComboState.NONE;
     }
 
     // Gets direction from player input
@@ -117,37 +97,9 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("light attack input");
             if (_canAttack)
             {
-                _canMove = false;
-                //Debug.Log("Light Attack!");
-                if (_currentComboState == ComboState.LP3)
-                    return;
-
-
-                // starts on ComboState.NONE by the Start()
-                _currentComboState++;
-                _comboCheck = true;
-                _currentComboTimer = _defaultComboTimer;
-                int _currentLightDamage = _lightDamage;
-                // need to add code to change the actual animations to match
-                if(_currentComboState == ComboState.LP1) {
-
-                    Debug.Log("light attack1 performed");
-                }
-
-                if (_currentComboState == ComboState.LP2) {
-                    _currentLightDamage += _lightComboDamageIncrease;
-                    Debug.Log("light attack2 performed");
-                }
-
-                if (_currentComboState == ComboState.LP3) {
-                    _currentLightDamage += 2 * _lightComboDamageIncrease;
-                    Debug.Log("light attack3 performed");
-                }
-
                 _playerAnim.SetTrigger("Light Attack");
-                AttackEnemies(_currentLightDamage, _lightHitstun);
-                StartCoroutine(AnimationTime(_lightAtkAnimationTime));
-                //StartCoroutine(AttackCooldown(_lightAtkCooldown));
+                AttackEnemies(_lightDamage, _lightHitstun);
+                StartCoroutine(AttackCooldown(_lightAtkCooldown));
             }
         }
     }
@@ -178,23 +130,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-    void ResetComboState() {
-        // if the player has initiated a light attack
-        if (_comboCheck) {
-            _currentComboTimer -= Time.deltaTime;
-
-            if(_currentComboTimer <= 0f) {
-                // resets the fields to the default state to check for combos again
-                _currentComboState = ComboState.NONE;
-                _comboCheck = false;
-                _currentComboTimer = _defaultComboTimer;
-                // used to enforce a cooldown, but it is after the combo window has expired
-                StartCoroutine(AttackCooldown(_lightAtkCooldown));
-            }
-        }
-    }
-
     // Called when player presses heavy attack button
     public void OnHeavyAttack(InputAction.CallbackContext context)
     {
@@ -216,6 +151,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Slide");
             _playerAnim.SetTrigger("Slide");
             _sliding = true;
+            _canAttack = false;
             _canSlide = false;
             _playerSpeed *= 1.5f;
             float duration = _playerAnim.GetFloat("Slide Duration");
@@ -255,7 +191,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement(); // Calls method to handle movement
-        ResetComboState();
     }
 
     // Handles player movement and animations

@@ -13,9 +13,12 @@ public class CinemachineController : MonoBehaviour {
 
     // Fields for setting the left/right edges to the camera 
     private float frustumWidth;
+    private float frustumHeight;
     private float offset = 0.5f;
     [SerializeField] private GameObject leftEdge;
     [SerializeField] private GameObject rightEdge;
+    [SerializeField] private GameObject bottomEdge;
+    [SerializeField] private GameObject topEdge;
 
     private float shakeTimer;
     private float shakeTimerTotal;
@@ -34,10 +37,14 @@ public class CinemachineController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         frustumWidth = cm.m_Lens.OrthographicSize * cm.m_Lens.Aspect;
+        frustumHeight = cm.m_Lens.OrthographicSize;
         // this is to update the borders to fit the size of the screen
         // frustumWidth is used in case the resolution changes and the screen doesn't scale
+
         leftEdge.transform.position = new Vector2(cm.gameObject.transform.position.x - (frustumWidth + offset), leftEdge.transform.position.y);
         rightEdge.transform.position = new Vector2(cm.gameObject.transform.position.x + (frustumWidth + offset), rightEdge.transform.position.y);
+        bottomEdge.transform.position = new Vector2(cm.gameObject.transform.position.x, cm.gameObject.transform.position.y - (frustumHeight + offset));
+        topEdge.transform.position = new Vector2(cm.gameObject.transform.position.x, cm.gameObject.transform.position.y + (frustumHeight - offset));
 
         // check if the camera has reached/gotten near a waypoint on the dolly and IS NOT SNAPPED
         // if so, set the camera to the waypoint,
