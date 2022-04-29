@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -19,10 +20,20 @@ public class PauseMenuManager : MonoBehaviour
         
     }
 
+    public void RestartLevel() {
+        Debug.Log("Restart Level");
+        if (levelLoader) {
+            levelLoader.LoadLevel(SceneManager.GetActiveScene().name);
+        } else {
+            Debug.LogError("Level Loader nott found in Pause Menu Script");
+        }
+    }
+
     public void ReturnToMainMenu()
     {
-        if(levelLoader)
-        {
+        Debug.Log("Main Menu");
+        if(levelLoader) {
+            Time.timeScale = 1;
             levelLoader.LoadLevel("Start Menu");
         }
         else
@@ -33,11 +44,13 @@ public class PauseMenuManager : MonoBehaviour
 
     public void quit()
     {
+        Debug.Log("Quit");
         Application.Quit();
     }
 
     public void Resume()
     {
+        Debug.Log("Resume");
         PC.Resume();
     }
 

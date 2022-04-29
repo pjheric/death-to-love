@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject _pausePanel;
     [SerializeField]
+    private GameObject _gameOverPanel;
+    [SerializeField]
     private GameObject _heatPanel;
     [SerializeField]
     private TextMeshProUGUI _heatNumber; 
@@ -236,8 +238,8 @@ public class PlayerController : MonoBehaviour
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
             Instantiate(ParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
+            UpdateHeat();
         }
-        UpdateHeat(); 
     }
 
     // Creates a gizmo for attack area in editor
@@ -253,6 +255,7 @@ public class PlayerController : MonoBehaviour
             _health.Value -= damage;
             if (_health.Value <= 0) {
                 //Debug.Log("Player Dead");
+                gameOver();
             }
         }
     }
@@ -282,6 +285,12 @@ public class PlayerController : MonoBehaviour
     {
         Time.timeScale = 0;
         _pausePanel.SetActive(true);
+        _isPaused = true;
+    }
+
+    public void gameOver() {
+        Time.timeScale = 0;
+        _gameOverPanel.SetActive(true);
         _isPaused = true;
     }
 }
