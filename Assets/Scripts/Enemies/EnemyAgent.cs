@@ -18,6 +18,8 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private LayerMask playerLayer; // Player layer mask
     [SerializeField] private int attackDamage; // Damage dealt
     [SerializeField] private float attackArea; // Area of circle for melee attacks
+    
+
 
     // Determines if enemy is facing right
     protected bool facingRight = false;
@@ -46,6 +48,10 @@ public class EnemyAgent : MonoBehaviour
     //reference to the player
     protected GameObject player;
 
+
+    [Header("Camera Settings")]
+    [SerializeField] private CinemachineController Cam;
+    
     // Start is called before the first frame update
     virtual protected void Start()
     {
@@ -58,6 +64,7 @@ public class EnemyAgent : MonoBehaviour
         Anim = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
+        Cam = GameObject.FindGameObjectWithTag("Cmvcam").GetComponent<CinemachineController>();
 
         agent.speed = MoveSpeed; //sets the movement speed of the agent
 
@@ -193,6 +200,10 @@ public class EnemyAgent : MonoBehaviour
             StartCoroutine(Stagger(hitstun));
         }
 
+        if(Cam)
+        {
+            Cam.shake();
+        }
     }
 
     protected IEnumerator Stagger(float hitstun)

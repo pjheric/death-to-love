@@ -230,4 +230,5 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 2
   attackArea: 0.7
+  Cam: {fileID: 0}
   Knife: {fileID: 7087842027889347651, guid: 4a9b452bb9dbd4b47a98a4a46c64b73d, type: 3}
