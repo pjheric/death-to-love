@@ -8,6 +8,7 @@ TagManager:
   - Edges
   - Spawn
   - LevelLoader
+  - Cmvcam
   layers:
   - Default
   - TransparentFX

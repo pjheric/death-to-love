@@ -17,6 +17,13 @@ public class CinemachineController : MonoBehaviour {
     [SerializeField] private GameObject leftEdge;
     [SerializeField] private GameObject rightEdge;
 
+    private float shakeTimer;
+    private float shakeTimerTotal;
+    private float startingIntensity;
+
+    [SerializeField] private float intensity = 1f;
+    [SerializeField] private float length = 0.1f;
+
     private void Start() {
         //frustumWidth = cm.m_Lens.OrthographicSize * cm.m_Lens.Aspect;
     }
@@ -39,6 +46,13 @@ public class CinemachineController : MonoBehaviour {
             StartCoroutine(Test());
             Unsnap();
         }
+
+        if(shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            CinemachineBasicMultiChannelPerlin Noise = cm.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            Noise.m_AmplitudeGain = Mathf.Lerp(startingIntensity, 0f, (1-shakeTimer/shakeTimerTotal));
+        }
     }
 
     // placeholder coroutine function to simulate the "battle scenes" where the camera is lockec in place
@@ -56,6 +70,14 @@ public class CinemachineController : MonoBehaviour {
 
     }
 
+    public void shake()
+    {
+        CinemachineBasicMultiChannelPerlin Noise = cm.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        Noise.m_AmplitudeGain = intensity;
+        shakeTimer = length;
+        shakeTimerTotal = length;
+        startingIntensity = intensity;
+    }
 
 
 }

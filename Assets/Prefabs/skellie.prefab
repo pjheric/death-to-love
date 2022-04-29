@@ -187,6 +187,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 1
   attackArea: 0.8
+  Cam: {fileID: 0}
 --- !u!195 &2639694782295226560
 NavMeshAgent:
   m_ObjectHideFlags: 0
