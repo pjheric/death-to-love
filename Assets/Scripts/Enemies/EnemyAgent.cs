@@ -18,7 +18,7 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private LayerMask playerLayer; // Player layer mask
     [SerializeField] private int attackDamage; // Damage dealt
     [SerializeField] private float attackArea; // Area of circle for melee attacks
-    [SerializeField] protected GameObject ParticleEmitter;
+    
 
 
 
@@ -198,8 +198,6 @@ public class EnemyAgent : MonoBehaviour
             //stagger the enemy
             StartCoroutine(Stagger(hitstun));
         }
-
-        Instantiate(ParticleEmitter, this.gameObject.transform.position, Quaternion.identity);
         if(Cam)
         {
             Cam.shake();

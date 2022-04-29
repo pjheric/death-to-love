@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     private float _heavyAtkCooldown = 1.5f;
     [SerializeField] 
     private float _lightAtkAnimationTime = 1.0f;
+    [SerializeField] 
+    private GameObject ParticleEmitter;
 
     //UI Elements
     [SerializeField]
@@ -298,6 +300,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
+            Instantiate(ParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
         }
         UpdateHeat(); 
     }
