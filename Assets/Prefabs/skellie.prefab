@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035d62df7e262854291ac46a52c94e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 5
   target: {x: 0, y: 0, z: 0}
   attackRange: 2
   MoveSpeed: 1.5
@@ -187,7 +187,8 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 1
   attackArea: 0.8
-  ParticleEmitter: {fileID: 3798439677663074714, guid: d1d34f5dd3bb4c54fa3f453cfed4653c, type: 3}
+  knockbackDist: 2
+  KnockbackVelocity: 2
 --- !u!195 &2639694782295226560
 NavMeshAgent:
   m_ObjectHideFlags: 0

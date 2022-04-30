@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private float _heavyAtkCooldown = 1.5f;
     [SerializeField] 
     private GameObject ParticleEmitter;
+    [SerializeField]
+    private bool Invincible;
 
     //UI Elements
     [SerializeField]
@@ -251,9 +253,11 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (!_sliding) {
+        if (!_sliding && !Invincible) 
+        {
             _health.Value -= damage;
-            if (_health.Value <= 0) {
+            if (_health.Value <= 0) 
+            {
                 //Debug.Log("Player Dead");
                 gameOver();
             }

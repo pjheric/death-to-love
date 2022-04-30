@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ab7599d9474c544b6baa5dfdcc3ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 8
+  Health: 2
   target: {x: 0, y: 0, z: 0}
   attackRange: 2
   MoveSpeed: 2
@@ -230,5 +230,6 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 2
   attackArea: 0.7
-  ParticleEmitter: {fileID: 3798439677663074714, guid: d1d34f5dd3bb4c54fa3f453cfed4653c, type: 3}
+  knockbackDist: 2
+  KnockbackVelocity: 2
   Knife: {fileID: 7087842027889347651, guid: 4a9b452bb9dbd4b47a98a4a46c64b73d, type: 3}

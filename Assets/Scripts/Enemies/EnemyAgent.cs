@@ -18,7 +18,8 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private LayerMask playerLayer; // Player layer mask
     [SerializeField] private int attackDamage; // Damage dealt
     [SerializeField] private float attackArea; // Area of circle for melee attacks
-    
+    [SerializeField] private float knockbackDist = 1f;
+    [SerializeField] protected float KnockbackVelocity = 1f;
 
 
 
@@ -50,7 +51,10 @@ public class EnemyAgent : MonoBehaviour
     protected GameObject player;
     
     protected CinemachineController Cam;
-    
+
+    protected Vector3 knockbackVector;
+    protected Vector3 knockbackVelocityVector;
+
     // Start is called before the first frame update
     virtual protected void Start()
     {
@@ -59,7 +63,7 @@ public class EnemyAgent : MonoBehaviour
         {
             target = player.transform.position; //get the player's transform
         }
-
+        knockbackVelocityVector = new Vector3(KnockbackVelocity, 0f, 0f);
         Anim = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
@@ -120,6 +124,7 @@ public class EnemyAgent : MonoBehaviour
             //play stagger animation
             Debug.Log("Staggered");
             Anim.SetTrigger("Staggered");
+            this.transform.position = Vector3.SmoothDamp(transform.position, knockbackVector, ref knockbackVelocityVector, 1f);
         }
     }
 
@@ -147,12 +152,10 @@ public class EnemyAgent : MonoBehaviour
         //check the sprite's relative distance to the player, if the distance on the X is negative, then the enemy is on the left of the player and we need to flip it
         if ((this.transform.position - player.transform.position).x < 0 && facingRight == false)
         {
-            //Sprite.flipX = true;
             Flip();
         }
         else if ((this.transform.position - player.transform.position).x > 0 && facingRight == true)
         {
-            //Sprite.flipX = false;
             Flip();
         }
     }
@@ -188,6 +191,15 @@ public class EnemyAgent : MonoBehaviour
     {
         //Debug.Log(gameObject.name + " took " + damage + " damage.");
         Health -= damage; 
+        if(facingRight)
+        {
+            knockbackVector = this.transform.position - new Vector3(knockbackDist, 0f, 0f);
+        }
+        else
+        {
+            knockbackVector = this.transform.position + new Vector3(knockbackDist, 0f, 0f);
+        }
+
         if(Health <= 0)
         {
             Debug.Log("He's dead, you can stop mashing now");
