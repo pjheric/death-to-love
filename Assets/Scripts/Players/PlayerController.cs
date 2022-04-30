@@ -185,10 +185,12 @@ public class PlayerController : MonoBehaviour
         _playerAnim.SetTrigger("Slide");
         _playerSpeed /= 1.5f;
         _sliding = false;
+        _canAttack = true;
         // temporary bandage for game not taking input during a slide
         _movementInput = Vector2.zero;
         // extra delay so a player can't spam sliding?
         yield return new WaitForSeconds(0.5f);
+        Debug.Log("Slide disabled");
         _canSlide = true;
     }
 
