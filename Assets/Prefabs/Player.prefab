@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5488050115168530994}
   - component: {fileID: 589820892}
   - component: {fileID: 589820887}
+  - component: {fileID: 5397214822968664006}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -251,11 +252,12 @@ MonoBehaviour:
   _heavyDamage: 3
   _heavyHitstun: 1
   _health: {fileID: 11400000, guid: 660044cbaf09562459c5354f299328f0, type: 2}
-  _lightAtkCooldown: 0.5
-  _heavyAtkCooldown: 1.5
+  _lightAtkCooldown: 0.3
+  _heavyAtkCooldown: 0.5
+  ParticleEmitter: {fileID: 3798439677663074714, guid: d1d34f5dd3bb4c54fa3f453cfed4653c, type: 3}
+  Invincible: 1
   _pausePanel: {fileID: 0}
-  _heatPanel: {fileID: 0}
-  _heatNumber: {fileID: 0}
+  _gameOverPanel: {fileID: 0}
 --- !u!95 &5488050115168530994
 Animator:
   serializedVersion: 3
@@ -322,3 +324,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3651269, y: 0.27485374}
   m_EdgeRadius: 0
+--- !u!114 &5397214822968664006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408092298334436580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d9819c5c1147d459755dc73e0d4b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heatPanel: {fileID: 0}
+  _heatNumber: {fileID: 0}
+  _heatPerHit: 1
+  _heatInitialLevel: 20
+  _heatLevelIncrement: 0

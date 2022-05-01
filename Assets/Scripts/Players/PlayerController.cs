@@ -40,10 +40,6 @@ public class PlayerController : MonoBehaviour
     private GameObject _pausePanel;
     [SerializeField]
     private GameObject _gameOverPanel;
-    [SerializeField]
-    private GameObject _heatPanel;
-    [SerializeField]
-    private TextMeshProUGUI _heatNumber; 
 
     private Rigidbody2D _rigidBody;
     private Animator _playerAnim;
@@ -56,11 +52,8 @@ public class PlayerController : MonoBehaviour
     private PlayerInput _input;
     private bool _canMove = true;
 
-    //Heat System Fields
-    private bool _heatCheck = true;
-    private float _currentHeatNum = 0;
-    private float _heatFalloffTime; 
-
+    //Heat System
+    private HeatManager _heatManager; 
     private void Start()
     {
         // Sets Character Controller component
@@ -106,32 +99,6 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(AttackCooldown(_lightAtkCooldown));
             }
         }
-    }
-
-    private void UpdateHeat()
-    {
-        //Step 1: determine heat falloff
-        //Heat falls off either if no one attacked within the falloff time OR if the damaged received (total combined) exceeds 5
-        if (_heatCheck)
-        {
-            _heatPanel.SetActive(true);
-            _currentHeatNum += 1;
-            _heatNumber.SetText(_currentHeatNum.ToString()); 
-            if(_currentHeatNum >= 10 && _currentHeatNum < 20)
-            {
-                _heatNumber.color = Color.cyan; 
-            }
-            else if(_currentHeatNum >= 20)
-            {
-                _heatNumber.color = Color.magenta; 
-            }
-        }
-        else
-        {
-            _heatPanel.SetActive(false);
-            _currentHeatNum = 0; 
-        }
-
     }
 
     // Called when player presses heavy attack button
@@ -242,8 +209,9 @@ public class PlayerController : MonoBehaviour
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
             Instantiate(ParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
-            UpdateHeat();
+            _heatManager.UpdateHeat(); 
         }
+
     }
 
     // Creates a gizmo for attack area in editor
