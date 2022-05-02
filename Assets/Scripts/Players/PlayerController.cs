@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
         _playerAnim = gameObject.GetComponent<Animator>();
 
         _input = gameObject.GetComponent<PlayerInput>();
+
+        _heatManager = gameObject.GetComponent<HeatManager>();
         Debug.Log(_input.currentControlScheme);
     }
 
