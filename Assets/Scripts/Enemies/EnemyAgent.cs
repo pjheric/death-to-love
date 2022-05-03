@@ -250,6 +250,8 @@ public class EnemyAgent : MonoBehaviour
                 Die();
                 yield break;
             }
+            knockbackVector = Vector3.zero;
+            StartCoroutine(Stagger(1f));
             yield return new WaitForSeconds(1f);
         }
     }
