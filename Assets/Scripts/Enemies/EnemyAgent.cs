@@ -23,6 +23,7 @@ public class EnemyAgent : MonoBehaviour
 
 
 
+
     // Determines if enemy is facing right
     protected bool facingRight = false;
 
@@ -55,10 +56,24 @@ public class EnemyAgent : MonoBehaviour
     protected Vector3 knockbackVector;
     protected Vector3 knockbackVelocityVector;
 
+    private bool dying = false;
+
     // Start is called before the first frame update
     virtual protected void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        /*
+        int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
+        if(targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+        else 
+        {
+            player = GameObject.FindGameObjectWithTag("Player2");
+        }*/
+
+
         if(player)
         {
             target = player.transform.position; //get the player's transform
@@ -106,9 +121,18 @@ public class EnemyAgent : MonoBehaviour
             }
             else
             {
-                //because the player doesnt spawn until input is given, we have to keep checking for a player
-                //This will 100% be removed before the final version
-                player = GameObject.FindGameObjectWithTag("Player");
+                //If we can't find a player, we should keep looking for one
+                int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
+                if (targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
+                {
+                    player = GameObject.FindGameObjectWithTag("Player");
+                }
+                else
+                {
+                    player = GameObject.FindGameObjectWithTag("Player2");
+                }
+
+                
                 if (player)
                 {
                     target = player.transform.position; //get the player's transform
@@ -203,7 +227,7 @@ public class EnemyAgent : MonoBehaviour
         if(Health <= 0)
         {
             Debug.Log("He's dead, you can stop mashing now");
-            Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
+            Die();
         }
         else
         {
@@ -214,6 +238,30 @@ public class EnemyAgent : MonoBehaviour
         {
             Cam.shake();
         }
+    }
+
+    public IEnumerator DamageOverTime(int DPS)
+    {
+        while(true)
+        {
+            Health -= DPS;
+            if (Health <= 0)
+            {
+                Die();
+                yield break;
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    public void Die()
+    {
+        if(!dying)
+        {
+            dying = true;
+            Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
+        }
+        
     }
 
     protected IEnumerator Stagger(float hitstun)

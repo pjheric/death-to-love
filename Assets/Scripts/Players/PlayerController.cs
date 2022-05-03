@@ -31,7 +31,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _heavyAtkCooldown = 1.5f;
     [SerializeField] 
-    private GameObject ParticleEmitter;
+    private GameObject HitParticleEmitter;
+    [SerializeField]
+    private GameObject SlideEffect;
     [SerializeField]
     private bool Invincible;
 
@@ -53,7 +55,11 @@ public class PlayerController : MonoBehaviour
     private bool _canMove = true;
 
     //Heat System
-    private HeatManager _heatManager; 
+    private HeatManager _heatManager;
+
+    private Vector3 _startPos;
+    private Vector3 _endPos;
+
     private void Start()
     {
         // Sets Character Controller component
@@ -127,6 +133,7 @@ public class PlayerController : MonoBehaviour
             _canAttack = false;
             _canSlide = false;
             _playerSpeed *= 1.5f;
+            _startPos = this.gameObject.transform.position;
             float duration = _playerAnim.GetFloat("Slide Duration");
             StartCoroutine(SlideSpeedReset(duration));
         }
@@ -154,6 +161,10 @@ public class PlayerController : MonoBehaviour
         _playerAnim.SetTrigger("Slide");
         _playerSpeed /= 1.5f;
         _sliding = false;
+        _endPos = this.gameObject.transform.position;
+        Instantiate(SlideEffect, (_startPos + _endPos) / 2, Quaternion.identity);
+        _startPos = Vector3.zero;
+        _endPos = Vector3.zero;
         _canAttack = true;
         // temporary bandage for game not taking input during a slide
         _movementInput = Vector2.zero;
@@ -210,7 +221,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
-            Instantiate(ParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
+            Instantiate(HitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
             _heatManager.UpdateHeat(); 
         }
 

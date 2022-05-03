@@ -9,6 +9,7 @@ TagManager:
   - Spawn
   - LevelLoader
   - Cmvcam
+  - Player2
   layers:
   - Default
   - TransparentFX
