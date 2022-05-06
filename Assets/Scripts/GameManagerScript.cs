@@ -14,6 +14,8 @@ public class GameManagerScript : MonoBehaviour
 
     private LevelLoader levelLoader;
 
+    public CharacterChoices Player1Character { get; set; }
+
     public static GameManagerScript Instance
     {
         get
@@ -44,6 +46,12 @@ public class GameManagerScript : MonoBehaviour
     private void Start()
     {
         levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
+    }
+
+    // In future this will check for save. If there is one, it will load it. If not, then it calls new game.
+    public void StartGame()
+    {
+        NewGame();
     }
 
     public void NewGame()

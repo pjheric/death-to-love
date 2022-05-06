@@ -9,6 +9,8 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
+    private string _characterName;
+    [SerializeField]
     private float _playerSpeed = 5.0f;
     [SerializeField]
     private Transform _attackPos;
@@ -42,6 +44,8 @@ public class PlayerController : MonoBehaviour
     private GameObject _pausePanel;
     [SerializeField]
     private GameObject _gameOverPanel;
+    [SerializeField]
+    private GameObject _playerUIPanel;
 
     private Rigidbody2D _rigidBody;
     private Animator _playerAnim;
@@ -60,6 +64,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 _startPos;
     private Vector3 _endPos;
 
+    public string CharacterName { get { return _characterName; } set { _characterName = value; } }
+
     private void Start()
     {
         // Sets Character Controller component
@@ -72,6 +78,8 @@ public class PlayerController : MonoBehaviour
 
         _heatManager = gameObject.GetComponent<HeatManager>();
         Debug.Log(_input.currentControlScheme);
+
+        EnableUI(); // Activates player UI if player is spawned in
     }
 
     // Gets direction from player input
@@ -279,5 +287,12 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0;
         _gameOverPanel.SetActive(true);
         _isPaused = true;
+    }
+
+    public void EnableUI()
+    {
+        TextMeshProUGUI nametag = _playerUIPanel.GetComponentInChildren<TextMeshProUGUI>();
+        nametag.text = _characterName;
+        _playerUIPanel.SetActive(true);
     }
 }

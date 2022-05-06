@@ -12,6 +12,7 @@ public class CharacterSelectIcon : MonoBehaviour
     public CharacterChoices _selectedChar;
     public bool IsKeyboard { get; set; }
 
+    [SerializeField] private CharacterSelectManager _characterSelectManager;
     [SerializeField] private Sprite _keyboardSprite;
     [SerializeField] private Sprite _controllerSprite;
     //[SerializeField] private float _characterSelectOffsetX;
@@ -86,20 +87,33 @@ public class CharacterSelectIcon : MonoBehaviour
             {
                 if (_selectedChar == CharacterChoices.Liz)
                 {
-                    if (PlayerManager.Instance.lizChosen == false)
+                    if (_characterSelectManager.LizChosen == false)
                     {
-                        PlayerManager.Instance.ChoseCharacter(CharacterChoices.Liz, IsKeyboard);
+                        _characterSelectManager.ChoseCharacter(CharacterChoices.Liz, IsKeyboard);
                         _lockedInChoice = true;
                     }
+                    //if (PlayerManager.Instance.lizChosen == false)
+                    //{
+                    //    PlayerManager.Instance.ChoseCharacter(CharacterChoices.Liz, IsKeyboard);
+                    //    _lockedInChoice = true;
+                    //}
                 }
                 else if (_selectedChar == CharacterChoices.Jay)
                 {
-                    if (PlayerManager.Instance.jayChosen == false)
+                    if (_characterSelectManager.JayChosen == false)
                     {
-                        PlayerManager.Instance.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
-                        _lockedInChoice = true;
+                        _characterSelectManager.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
+                        _lockedInChoice= true;
                     }
+
+                    //if (PlayerManager.Instance.jayChosen == false)
+                    //{
+                    //    PlayerManager.Instance.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
+                    //    _lockedInChoice = true;
+                    //}
                 }
+
+                _characterSelectManager.CheckStartGame();
             }
         }
     }

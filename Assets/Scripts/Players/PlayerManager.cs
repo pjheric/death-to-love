@@ -76,7 +76,7 @@ public class PlayerManager : MonoBehaviour
             if (lizChosen && jayChosen)
             {
                 _playerInputManager.gameObject.SetActive(false);
-                GameManagerScript.Instance.NewGame();
+                GameManagerScript.Instance.StartGame();
             }
         }
     }
