@@ -9,35 +9,17 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private string _characterName;
+    private CharacterData _characterData;
     [SerializeField]
-    private float _playerSpeed = 5.0f;
+    private FloatAsset _health;
+
+    [SerializeField]
+    private bool Invincible;
+
     [SerializeField]
     private Transform _attackPos;
     [SerializeField]
     private LayerMask _enemyLayer;
-    [SerializeField]
-    private float _attackRange;
-    [SerializeField]
-    private int _lightDamage = 1;
-    [SerializeField]
-    private float _lightHitstun = 1f;
-    [SerializeField]
-    private int _heavyDamage = 4;
-    [SerializeField]
-    private float _heavyHitstun = 1f;
-    [SerializeField]
-    private FloatAsset _health;
-    [SerializeField]
-    private float _lightAtkCooldown = 0.5f;
-    [SerializeField]
-    private float _heavyAtkCooldown = 1.5f;
-    [SerializeField] 
-    private GameObject HitParticleEmitter;
-    [SerializeField]
-    private GameObject SlideEffect;
-    [SerializeField]
-    private bool Invincible;
 
     //UI Elements
     [SerializeField]
@@ -47,8 +29,34 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject _playerUIPanel;
 
-    private Rigidbody2D _rigidBody;
+
+    //[SerializeField]
+    private string _characterName;
+    //[SerializeField]
+    private float _characterSpeed = 5.0f;
+    //[SerializeField]
+    private float _attackRange;
+    //[SerializeField]
+    private int _lightDamage = 1;
+    //[SerializeField]
+    private float _lightHitstun = 1f;
+    //[SerializeField]
+    private int _heavyDamage = 4;
+    //[SerializeField]
+    private float _heavyHitstun = 1f;  
+    //[SerializeField]
+    private float _lightAtkCooldown = 0.5f;
+    //[SerializeField]
+    private float _heavyAtkCooldown = 1.5f;
+    //[SerializeField] 
+    private GameObject _hitParticleEmitter;
+    //[SerializeField]
+    private GameObject _slideEffect;
+
+    
+
     private Animator _playerAnim;
+    private SpriteRenderer _playerSpriteRenderer;
     private Vector2 _movementInput = Vector2.zero;
     private bool _facingRight = true;
     private bool _sliding = false;
@@ -64,22 +72,49 @@ public class PlayerController : MonoBehaviour
     private Vector3 _startPos;
     private Vector3 _endPos;
 
-    public string CharacterName { get { return _characterName; } set { _characterName = value; } }
+    public CharacterData CharacterData { get { return _characterData; } set { _characterData = value; } }
 
     private void Start()
     {
-        // Sets Character Controller component
-        _rigidBody = gameObject.GetComponent<Rigidbody2D>();
-
-        // Sets player animator
         _playerAnim = gameObject.GetComponent<Animator>();
+
+        _playerSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         _input = gameObject.GetComponent<PlayerInput>();
 
         _heatManager = gameObject.GetComponent<HeatManager>();
         Debug.Log(_input.currentControlScheme);
 
+        SetupCharacter();
+
         EnableUI(); // Activates player UI if player is spawned in
+    }
+
+    public void SetupCharacter()
+    {
+        _characterName = _characterData.CharacterName;
+        _characterSpeed = _characterData.CharacterSpeed;
+        _attackRange = _characterData.AttackRange;
+        _lightDamage = _characterData.LightAtkDamage;
+        _lightHitstun = _characterData.LightHitStun;
+        _heavyDamage = _characterData.HeavyAtkDamage;
+        _heavyHitstun = _characterData.HeavyHitStun;
+        _lightAtkCooldown = _characterData.LightAtkCooldown;
+        _heavyAtkCooldown = _characterData.HeavyAtkCooldown;
+        _hitParticleEmitter = _characterData.HitParticleEmitter;
+        _slideEffect = _characterData.SlideEffect;
+
+        if (_playerAnim == null)
+        {
+            _playerAnim = gameObject.GetComponent<Animator>();
+        }
+        if (_playerSpriteRenderer == null)
+        {
+            _playerSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        }
+
+        _playerAnim.runtimeAnimatorController = _characterData.AnimatorController;
+        _playerSpriteRenderer.sprite = _characterData.DefaultSprite;
     }
 
     // Gets direction from player input
@@ -140,7 +175,7 @@ public class PlayerController : MonoBehaviour
             _sliding = true;
             _canAttack = false;
             _canSlide = false;
-            _playerSpeed *= 1.5f;
+            _characterSpeed *= 1.5f;
             _startPos = this.gameObject.transform.position;
             float duration = _playerAnim.GetFloat("Slide Duration");
             StartCoroutine(SlideSpeedReset(duration));
@@ -167,10 +202,10 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SlideSpeedReset(float duration) {
         yield return new WaitForSeconds(duration);
         _playerAnim.SetTrigger("Slide");
-        _playerSpeed /= 1.5f;
+        _characterSpeed /= 1.5f;
         _sliding = false;
         _endPos = this.gameObject.transform.position;
-        Instantiate(SlideEffect, (_startPos + _endPos) / 2, Quaternion.identity);
+        Instantiate(_slideEffect, (_startPos + _endPos) / 2, Quaternion.identity);
         _startPos = Vector3.zero;
         _endPos = Vector3.zero;
         _canAttack = true;
@@ -191,7 +226,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerMovement()
     {
         // Adjusts vertical movement speed (halves it) and multiplies vector by time and speed
-        Vector2 velocity = (new Vector2(_movementInput.x, _movementInput.y / 2)) * Time.deltaTime * _playerSpeed;
+        Vector2 velocity = (new Vector2(_movementInput.x, _movementInput.y / 2)) * Time.deltaTime * _characterSpeed;
 
         if (velocity != Vector2.zero && _sliding == false) // Controls walking animation
         {
@@ -229,7 +264,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
-            Instantiate(HitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
+            Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
             _heatManager.UpdateHeat(); 
         }
 

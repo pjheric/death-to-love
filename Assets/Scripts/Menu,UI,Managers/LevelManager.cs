@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private PlayerController _player1;
     [SerializeField] private PlayerController _player2;
+    [SerializeField] private CharacterData lizData;
+    [SerializeField] private CharacterData jayData;
 
     private void Start()
     {
@@ -21,21 +23,17 @@ public class LevelManager : MonoBehaviour
     {
         _player2.gameObject.SetActive(true);
 
-        if (GameManagerScript.Instance.Player1Character == CharacterChoices.Liz)
+        if (GameManagerScript.Instance.Player1Character == CharacterChoices.Jay)
         {
-            _player1.GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard");
-            _player1.GetComponent<PlayerInput>().ActivateInput();
-            _player1.CharacterName = "LIZ";
-            _player2.GetComponent<PlayerInput>().SwitchCurrentControlScheme("Controller");
-            _player2.GetComponent<PlayerInput>().ActivateInput();
-            _player2.CharacterName = "JAY";
+            _player1.CharacterData = jayData;
+            _player2.CharacterData = lizData;
         }
         else
         {
-            _player2.GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard");
-            _player2.CharacterName = "LIZ";
-            _player1.GetComponent<PlayerInput>().SwitchCurrentControlScheme("Controller");
-            _player1.CharacterName = "JAY";
+            _player1.CharacterData = lizData;
+            _player2.CharacterData = jayData;
         }
+        _player1.SetupCharacter();
+        _player2.SetupCharacter();
     }
 }

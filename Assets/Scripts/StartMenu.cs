@@ -25,11 +25,11 @@ public class StartMenu : MonoBehaviour
     {
         if(levelLoader)
         {
-            levelLoader.LoadLevel("Character Select");
+            levelLoader.LoadLevel("Character Select Screen");
         }
         else
         {
-            SceneManager.LoadScene("Character Select");
+            SceneManager.LoadScene("Character Select Screen");
         }
     }
 
