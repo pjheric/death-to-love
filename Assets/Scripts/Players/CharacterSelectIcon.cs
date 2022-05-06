@@ -14,7 +14,8 @@ public class CharacterSelectIcon : MonoBehaviour
 
     [SerializeField] private Sprite _keyboardSprite;
     [SerializeField] private Sprite _controllerSprite;
-    [SerializeField] private float _characterSelectOffsetX;
+    //[SerializeField] private float _characterSelectOffsetX;
+    [SerializeField] private Transform[] _positionTransforms;
 
     private Vector3 _initialPos;
     private Vector3 _leftCharacterPos;
@@ -29,16 +30,28 @@ public class CharacterSelectIcon : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        SetSprite();
+        //SetSprite();
         _selectedChar = CharacterChoices.None;
         _lockedInChoice = false;
     }
 
     private void Start()
     {
-        _initialPos = gameObject.transform.position;
-        _leftCharacterPos = _initialPos - new Vector3(_characterSelectOffsetX, 0, 0);
-        _rightCharacterPos = _initialPos + new Vector3(_characterSelectOffsetX, 0, 0);
+        //_initialPos = gameObject.transform.position;
+        //_leftCharacterPos = _initialPos - new Vector3(_characterSelectOffsetX, 0, 0);
+        //_rightCharacterPos = _initialPos + new Vector3(_characterSelectOffsetX, 0, 0);
+
+        if (_positionTransforms.Length >= 3)
+        {
+            _initialPos = _positionTransforms[0].position;
+            _leftCharacterPos = _positionTransforms[1].position;
+            _rightCharacterPos = _positionTransforms[2].position;
+        }
+        else
+        {
+            Debug.Log("Icon position transforms not set. See CharacterSelectIcon Start() method.");
+        }
+        
     }
 
     public void SetSprite()
