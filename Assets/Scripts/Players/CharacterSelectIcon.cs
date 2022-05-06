@@ -52,7 +52,8 @@ public class CharacterSelectIcon : MonoBehaviour
         {
             Debug.Log("Icon position transforms not set. See CharacterSelectIcon Start() method.");
         }
-        
+
+        GameManagerScript.Instance.IsMultiplayer = true; // Sets up game manager for multiplayer
     }
 
     public void SetSprite()

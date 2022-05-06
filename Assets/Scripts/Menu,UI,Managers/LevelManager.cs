@@ -11,7 +11,10 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        SetupMultiplayerCharacters();
+        if (GameManagerScript.Instance.IsMultiplayer == true)
+        {
+            SetupMultiplayerCharacters();
+        }
     }
 
     public void SetupMultiplayerCharacters()

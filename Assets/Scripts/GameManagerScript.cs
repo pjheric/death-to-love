@@ -15,6 +15,7 @@ public class GameManagerScript : MonoBehaviour
     private LevelLoader levelLoader;
 
     public CharacterChoices Player1Character { get; set; }
+    public bool IsMultiplayer { get; set; }
 
     public static GameManagerScript Instance
     {
