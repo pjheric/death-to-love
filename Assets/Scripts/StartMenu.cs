@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     [SerializeField] GameObject _mainMenuPanel;
-
+    [SerializeField] GameObject _gameModePopup; 
     private LevelLoader levelLoader;
     private void Start()
     {
@@ -23,7 +23,26 @@ public class StartMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        if(levelLoader)
+        _gameModePopup.SetActive(true); 
+    }
+
+    public void Singleplayer()
+    {
+        GameManagerScript.Instance.IsMultiplayer = false;
+        if (levelLoader)
+        {
+            levelLoader.LoadLevel("Level 1");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level 1");
+        }
+    }
+
+    public void Multiplayer()
+    {
+        GameManagerScript.Instance.IsMultiplayer = true; 
+        if (levelLoader)
         {
             levelLoader.LoadLevel("Character Select Screen");
         }
