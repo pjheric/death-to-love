@@ -8,6 +8,7 @@ using TMPro;
 [RequireComponent(typeof(Animator))] // Ensures object will have an Animator
 public class PlayerController : MonoBehaviour
 {
+    //ScriptableObjects
     [SerializeField]
     private CharacterData _characterData;
     [SerializeField]
@@ -66,8 +67,18 @@ public class PlayerController : MonoBehaviour
     private PlayerInput _input;
     private bool _canMove = true;
 
-    //Heat System
-    private HeatManager _heatManager;
+    //Heat System: 
+    //UI Fields
+    [SerializeField] private GameObject _heatPanel;
+    [SerializeField] private TextMeshProUGUI _heatNumber;
+
+    //Variable Fields
+    private float _currentHeatFalloff = 1.0f;
+    [SerializeField] private float _heatFalloff = 1.0f;
+    [SerializeField] private int _heatPerHit = 1; //Amount of heat gained per successful hit  
+    private int _currentHeatNum = 0; //Current heat 
+    [SerializeField] private int _heatInitialLevel = 20;
+    [SerializeField] private int _heatLevelIncrement;
 
     private Vector3 _startPos;
     private Vector3 _endPos;
@@ -82,7 +93,6 @@ public class PlayerController : MonoBehaviour
 
         _input = gameObject.GetComponent<PlayerInput>();
 
-        _heatManager = gameObject.GetComponent<HeatManager>();
         Debug.Log(_input.currentControlScheme);
 
         SetupCharacter();
@@ -217,8 +227,16 @@ public class PlayerController : MonoBehaviour
         _canSlide = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        if (_currentHeatFalloff > 0)
+        {
+            _currentHeatFalloff -= _heatFalloff / 50f;
+            if(_currentHeatFalloff < 0)
+            {
+                _currentHeatFalloff = 0.0f; 
+            }
+        }
         PlayerMovement(); // Calls method to handle movement
     }
 
@@ -265,12 +283,36 @@ public class PlayerController : MonoBehaviour
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
             Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
-            _heatManager.UpdateHeat(); 
+            _currentHeatFalloff = _heatFalloff;
+            UpdateHeat(); 
         }
 
     }
 
-    // Creates a gizmo for attack area in editor
+    public void UpdateHeat()
+    {
+        if (_currentHeatFalloff > 0)
+        {
+            _heatPanel.SetActive(true);
+            _currentHeatNum += _heatPerHit;
+            _heatNumber.SetText(_currentHeatNum.ToString());
+            if (_currentHeatNum >= _heatInitialLevel && _currentHeatNum < _heatInitialLevel + _heatLevelIncrement)
+            {
+                _heatNumber.color = Color.cyan;
+            }
+            else if (_currentHeatNum >= 20)
+            {
+                _heatNumber.color = Color.magenta;
+            }
+        }
+        else
+        {
+            _heatPanel.SetActive(false);
+            _currentHeatNum = 0;
+        }
+    }
+
+        // Creates a gizmo for attack area in editor
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
