@@ -73,12 +73,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _heatNumber;
 
     //Variable Fields
-    private float _currentHeatFalloff = 1.0f;
+    private float _currentHeatFalloff = 0.0f;
     [SerializeField] private float _heatFalloff = 1.0f;
     [SerializeField] private int _heatPerHit = 1; //Amount of heat gained per successful hit  
     private int _currentHeatNum = 0; //Current heat 
     [SerializeField] private int _heatInitialLevel = 20;
     [SerializeField] private int _heatLevelIncrement;
+    private bool _heatLvl1 = false;
+    private bool _heatLvl2 = false; 
 
     private Vector3 _startPos;
     private Vector3 _endPos;
@@ -237,6 +239,7 @@ public class PlayerController : MonoBehaviour
                 _currentHeatFalloff = 0.0f; 
             }
         }
+        UpdateHeat(); 
         PlayerMovement(); // Calls method to handle movement
     }
 
@@ -284,7 +287,7 @@ public class PlayerController : MonoBehaviour
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
             Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
             _currentHeatFalloff = _heatFalloff;
-            UpdateHeat(); 
+            _currentHeatNum += _heatPerHit;
         }
 
     }
@@ -294,19 +297,30 @@ public class PlayerController : MonoBehaviour
         if (_currentHeatFalloff > 0)
         {
             _heatPanel.SetActive(true);
-            _currentHeatNum += _heatPerHit;
             _heatNumber.SetText(_currentHeatNum.ToString());
-            if (_currentHeatNum >= _heatInitialLevel && _currentHeatNum < _heatInitialLevel + _heatLevelIncrement)
+            if (_currentHeatNum >= _heatInitialLevel && _heatLvl1 == false)
             {
+                _heatLvl1 = true; 
                 _heatNumber.color = Color.cyan;
+                _lightAtkCooldown *= 1.15f; 
             }
-            else if (_currentHeatNum >= 20)
+            else if (_currentHeatNum >= _heatInitialLevel + _heatLevelIncrement && _heatLvl2 == false)
             {
+                _heatLvl2 = true; 
                 _heatNumber.color = Color.magenta;
+                _attackRange *= 1.25f; 
             }
         }
         else
         {
+            //Reset heat levels
+            _heatLvl1 = false;
+            _heatLvl2 = false;
+            //Reset fonts and buffs
+            _heatNumber.color = Color.black;
+            _lightAtkCooldown = CharacterData.LightAtkCooldown;
+            _attackRange = CharacterData.AttackRange; 
+            //Deactivate panels, reset heat number
             _heatPanel.SetActive(false);
             _currentHeatNum = 0;
         }
