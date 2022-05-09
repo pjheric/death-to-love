@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6879708947925551716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7927d81602cedd547b0d560c9dc3c230, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6879708947925551704
@@ -158,7 +158,7 @@ MonoBehaviour:
     m_ActionId: 0fdd775a-08bd-4655-a1c9-cb8e11db368b
     m_ActionName: Character/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -175,6 +175,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectedChar: 0
-  _keyboardSprite: {fileID: 21300000, guid: b7c569e91d4e6bf4ca010a3f754c007a, type: 3}
-  _controllerSprite: {fileID: 21300000, guid: fcec510a87079644fb7bfd5ba8f62be4, type: 3}
-  _characterSelectOffsetX: 5.5
+  _characterSelectManager: {fileID: 0}
+  _keyboardSprite: {fileID: 21300000, guid: 7927d81602cedd547b0d560c9dc3c230, type: 3}
+  _controllerSprite: {fileID: 21300000, guid: d66013cd826f46f45845fb9efb7f2f46, type: 3}
+  _positionTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
