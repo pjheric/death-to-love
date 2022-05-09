@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour
 {
+    [SerializeField] private float LifeTime = 3f;
+    [SerializeField] private int damage;
+    [SerializeField] private int hitstun;
+
+    private EnemyAgent enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +18,19 @@ public class Lightning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        LifeTime -= Time.deltaTime;
+        if (LifeTime <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            enemy = other.gameObject.GetComponent<EnemyAgent>();
+            enemy.TakeDamage(damage, hitstun, false);
+        }
     }
 }

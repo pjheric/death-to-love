@@ -211,18 +211,22 @@ public class EnemyAgent : MonoBehaviour
     }
 
     // Handles incoming attacks
-    public void TakeDamage(int damage, float hitstun)
+    public void TakeDamage(int damage, float hitstun, bool knockback = true)
     {
         //Debug.Log(gameObject.name + " took " + damage + " damage.");
         Health -= damage; 
-        if(facingRight)
+        if(knockback)
         {
-            knockbackVector = this.transform.position - new Vector3(knockbackDist, 0f, 0f);
+            if (facingRight)
+            {
+                knockbackVector = this.transform.position - new Vector3(knockbackDist, 0f, 0f);
+            }
+            else
+            {
+                knockbackVector = this.transform.position + new Vector3(knockbackDist, 0f, 0f);
+            }
         }
-        else
-        {
-            knockbackVector = this.transform.position + new Vector3(knockbackDist, 0f, 0f);
-        }
+        knockbackVector = Vector3.zero;
 
         if(Health <= 0)
         {
