@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: JAY
   characterSpeed: 5
-  attackRange: 0.75
-  lightAtkDamage: 1
-  lightHitstun: 0.5
+  attackRange: 1
+  lightAtkDamage: 2
+  lightHitstun: 0.75
   heavyAtkDamage: 3
   heavyHitstun: 1
-  lightAtkCooldown: 0.3
+  lightAtkCooldown: 0.6
   heavyAtkCooldown: 0.5
   hitParticleEmitter: {fileID: 3798439677663074714, guid: 95bece2da63f3e246b09057102589f53, type: 3}
   slideEffect: {fileID: 474553784170896560, guid: b757af48d4017b245a57c8af215e1190, type: 3}

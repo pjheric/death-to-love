@@ -772,8 +772,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back to Start/Cancel
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8cecee24e683d3b4780aafadc5ab6a2a, type: 2}
+  m_sharedMaterial: {fileID: 3859129504413058030, guid: 8cecee24e683d3b4780aafadc5ab6a2a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -797,8 +797,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1232,6 +1232,14 @@ PrefabInstance:
       value: Controller
       objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: _keyboardSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7927d81602cedd547b0d560c9dc3c230, type: 3}
+    - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: _controllerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d66013cd826f46f45845fb9efb7f2f46, type: 3}
+    - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: _characterSelectManager
       value: 
       objectReference: {fileID: 880321324}
@@ -1257,7 +1265,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551718, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879708947925551718, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879708947925551718, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551718, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1310,7 +1326,23 @@ PrefabInstance:
     - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fcec510a87079644fb7bfd5ba8f62be4, type: 3}
+      objectReference: {fileID: 21300000, guid: d66013cd826f46f45845fb9efb7f2f46, type: 3}
+    - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -1478,8 +1510,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CHOOSE YOUR FIGHTER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8cecee24e683d3b4780aafadc5ab6a2a, type: 2}
+  m_sharedMaterial: {fileID: 3859129504413058030, guid: 8cecee24e683d3b4780aafadc5ab6a2a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1503,8 +1535,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1754,18 +1786,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6879708947925551704, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard
-      objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: _characterSelectManager
       value: 
       objectReference: {fileID: 880321324}
-    - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
-      propertyPath: _positionTransforms.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: _positionTransforms.Array.data[0]
       value: 
@@ -1784,7 +1808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551718, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551718, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1825,14 +1849,6 @@ PrefabInstance:
     - target: {fileID: 6879708947925551718, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b7c569e91d4e6bf4ca010a3f754c007a, type: 3}
-    - target: {fileID: 6879708947925551719, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
