@@ -157,22 +157,22 @@
                 },
                 {
                     "name": "",
-                    "id": "fe22092c-8e88-4b22-9a6d-d12c8ae6f4b2",
-                    "path": "<Keyboard>/e",
+                    "id": "ff9c0ae8-77e2-48f4-8286-e37085de7642",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3a04eed3-69ff-4c49-8b19-c86e571e17b6",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "634ab309-5637-47a3-9147-c1c18d44925c",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Controller",
+                    "groups": "",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems; 
 public class StartMenu : MonoBehaviour
 {
     [SerializeField] GameObject _mainMenuPanel;
-    [SerializeField] GameObject _gameModePopup; 
     private LevelLoader levelLoader;
     private void Start()
     {
@@ -14,17 +14,20 @@ public class StartMenu : MonoBehaviour
     public void OpenMenu(GameObject _panel)
     {
         _mainMenuPanel.SetActive(false);
-        _panel.SetActive(true); 
+        _panel.SetActive(true);
+        
     }
     public void CloseMenu(GameObject _panel)
     {
         _mainMenuPanel.SetActive(true);
-        _panel.SetActive(false); 
+        _panel.SetActive(false);
     }
-    public void StartGame()
+
+    public void SelectButton(GameObject _selectedObject)
     {
-        _gameModePopup.SetActive(true); 
+        EventSystem.current.SetSelectedGameObject(_selectedObject); 
     }
+    
 
     public void Singleplayer()
     {
