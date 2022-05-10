@@ -3291,6 +3291,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ca6c2c5dfcbacc4ba17447f1a078c74, type: 3}
+--- !u!1 &2086886658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2818222155004744740, guid: 2ca6c2c5dfcbacc4ba17447f1a078c74, type: 3}
+  m_PrefabInstance: {fileID: 2086886657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2086886659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086886658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d9819c5c1147d459755dc73e0d4b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heatPanel: {fileID: 0}
+  _heatNumber: {fileID: 0}
+  _heatPerHit: 1
+  _heatInitialLevel: 20
+  _heatLevelIncrement: 0
 --- !u!1001 &4042382432173714201
 PrefabInstance:
   m_ObjectHideFlags: 0
