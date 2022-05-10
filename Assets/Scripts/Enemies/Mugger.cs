@@ -27,6 +27,7 @@ public class Mugger : EnemyAgent
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+
         if (player)
         {
             target = player.transform.position; //get the player's transform

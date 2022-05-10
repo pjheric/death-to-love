@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using TMPro; 
+using TMPro;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))] // Ensures object will have a Rigidbody2D
 [RequireComponent(typeof(Animator))] // Ensures object will have an Animator
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
     private bool _isPaused = false; 
     private PlayerInput _input;
     private bool _canMove = true;
+    private bool _Downed = false;
 
     //Heat System: 
     //UI Fields
@@ -87,8 +89,18 @@ public class PlayerController : MonoBehaviour
 
     public CharacterData CharacterData { get { return _characterData; } set { _characterData = value; } }
 
+    [Header("Down Settings")]
+    [SerializeField] private float mashGoal = 100;
+    [SerializeField] private float IncreasePerPress = 5;
+    [SerializeField] private float DecreaseRate = 5;
+    [SerializeField] private Canvas DownCanvas;
+    private Slider ReviveBar;
+    private float mashProgress = 0;
     private void Start()
     {
+        ReviveBar = GetComponentInChildren<Slider>();
+        ReviveBar.maxValue = mashGoal;
+        DownCanvas.gameObject.SetActive(false);
         _playerAnim = gameObject.GetComponent<Animator>();
 
         _playerSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -152,14 +164,26 @@ public class PlayerController : MonoBehaviour
     // Called when player presses light attack button
     public void OnLightAttack(InputAction.CallbackContext context)
     {
-        if (context.performed) // Ensures functions only performed once on button press
+        if(!_Downed)
         {
-            //Debug.Log("light attack input");
-            if (_canAttack)
+            if (context.performed) // Ensures functions only performed once on button press
             {
-                _playerAnim.SetTrigger("Light Attack");
-                AttackEnemies(_lightDamage, _lightHitstun);
-                StartCoroutine(AttackCooldown(_lightAtkCooldown));
+                //Debug.Log("light attack input");
+                if (_canAttack)
+                {
+                    _playerAnim.SetTrigger("Light Attack");
+                    AttackEnemies(_lightDamage, _lightHitstun);
+                    StartCoroutine(AttackCooldown(_lightAtkCooldown));
+                }
+            }
+        }
+        else
+        {
+            mashProgress += IncreasePerPress;
+            ReviveBar.value = mashProgress;
+            if(mashProgress >= mashGoal)
+            {
+                GetUp();
             }
         }
     }
@@ -167,20 +191,23 @@ public class PlayerController : MonoBehaviour
     // Called when player presses heavy attack button
     public void OnHeavyAttack(InputAction.CallbackContext context)
     {
-        if (context.performed) // Ensures functions only performed once on button press
+        if(!_Downed)
         {
-            if (_canAttack)
+            if (context.performed) // Ensures functions only performed once on button press
             {
-                //Debug.Log("Heavy Attack!");
-                _playerAnim.SetTrigger("Heavy Attack");
-                AttackEnemies(_heavyDamage, _heavyHitstun);
-                StartCoroutine(AttackCooldown(_heavyAtkCooldown));
+                if (_canAttack)
+                {
+                    //Debug.Log("Heavy Attack!");
+                    _playerAnim.SetTrigger("Heavy Attack");
+                    AttackEnemies(_heavyDamage, _heavyHitstun);
+                    StartCoroutine(AttackCooldown(_heavyAtkCooldown));
+                }
             }
         }
     }
 
     public void OnSlide(InputAction.CallbackContext context) {
-        if (context.performed && _canSlide) // Ensures functions only performed once on button press
+        if (context.performed && _canSlide && !_Downed) // Ensures functions only performed once on button press
         {
             //Debug.Log("Slide");
             _playerAnim.SetTrigger("Slide");
@@ -231,6 +258,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(_Downed)
+        {
+            mashProgress -= DecreaseRate * Time.deltaTime;
+            ReviveBar.value = mashProgress;
+        }
+        else
+        {
+            PlayerMovement(); // Calls method to handle movement
+        }
         if (_currentHeatFalloff > 0)
         {
             _currentHeatFalloff -= _heatFalloff / 50f;
@@ -240,7 +276,6 @@ public class PlayerController : MonoBehaviour
             }
         }
         UpdateHeat(); 
-        PlayerMovement(); // Calls method to handle movement
     }
 
     // Handles player movement and animations
@@ -338,14 +373,41 @@ public class PlayerController : MonoBehaviour
         if (!_sliding && !Invincible) 
         {
             _health.Value -= damage;
-            if (_health.Value <= 0) 
+            if (_health.Value <= 0 && GameManagerScript.Instance.IsMultiplayer == false) 
             {
                 //Debug.Log("Player Dead");
                 gameOver();
             }
+            else if (_health.Value <= 0 && GameManagerScript.Instance.IsMultiplayer == true)
+            {
+                PlayerDown();
+            }
         }
     }
 
+    public void PlayerDown()
+    {
+        _Downed = true;
+        DownCanvas.gameObject.SetActive(true);
+        Debug.Log(this.tag + " Down!");
+        /*
+        if(GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>()._Downed) //if other player is also down
+        {
+            gameOver();
+        }*/
+    }
+
+    public void GetUp()
+    {
+        _Downed = false;
+        DownCanvas.gameObject.SetActive(false);
+        Debug.Log("Player got back up!");
+    }
+
+    public bool checkDown()
+    {
+        return _Downed;
+    }
     public IEnumerator AttackCooldown(float cooldown)
     {
         _canAttack = false;
