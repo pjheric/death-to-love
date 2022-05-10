@@ -258,7 +258,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(tag + " health: " + _health.Value);
         if(_Downed)
         {
             mashProgress -= DecreaseRate * Time.deltaTime;
@@ -403,6 +402,8 @@ public class PlayerController : MonoBehaviour
     public void GetUp()
     {
         _Downed = false;
+        ReviveBar.value = 0;
+        mashProgress = 0;
         DownCanvas.gameObject.SetActive(false);
         _health.Value = 15f;
         Debug.Log("Player got back up!");
