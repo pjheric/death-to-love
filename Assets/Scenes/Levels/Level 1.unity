@@ -2526,6 +2526,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1531616187, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.7163396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531616187, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.7163396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531616187, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.7163396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531616187, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 155
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531616188, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a59163e4f2cd9554c92d2c77fafc26fd, type: 3}
     - target: {fileID: 1891788432, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_Camera
       value: 

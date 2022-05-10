@@ -258,6 +258,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(tag + " health: " + _health.Value);
         if(_Downed)
         {
             mashProgress -= DecreaseRate * Time.deltaTime;
@@ -389,7 +390,9 @@ public class PlayerController : MonoBehaviour
     {
         _Downed = true;
         DownCanvas.gameObject.SetActive(true);
+        ReviveBar.value = 0;
         Debug.Log(this.tag + " Down!");
+        //commented this out because for some reason p1 and p2 have synched health
         /*
         if(GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>()._Downed) //if other player is also down
         {
@@ -401,6 +404,7 @@ public class PlayerController : MonoBehaviour
     {
         _Downed = false;
         DownCanvas.gameObject.SetActive(false);
+        _health.Value = 15f;
         Debug.Log("Player got back up!");
     }
 
