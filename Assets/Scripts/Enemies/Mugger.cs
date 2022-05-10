@@ -11,7 +11,22 @@ public class Mugger : EnemyAgent
     override protected void Start()
     {
         Cam = GameObject.FindGameObjectWithTag("Cmvcam").GetComponent<CinemachineController>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (GameManagerScript.Instance.IsMultiplayer == true)
+        {
+            int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
+            if (targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
+            {
+                player = GameObject.FindGameObjectWithTag("Player");
+            }
+            else
+            {
+                player = GameObject.FindGameObjectWithTag("Player2");
+            }
+        }
+        else
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
         if (player)
         {
             target = player.transform.position; //get the player's transform
