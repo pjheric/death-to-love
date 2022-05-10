@@ -61,17 +61,23 @@ public class EnemyAgent : MonoBehaviour
     // Start is called before the first frame update
     virtual protected void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        /*
-        int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
-        if(targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
+        
+        if(GameManagerScript.Instance.IsMultiplayer == true)
+        {
+            int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
+            if (targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
+            {
+                player = GameObject.FindGameObjectWithTag("Player");
+            }
+            else
+            {
+                player = GameObject.FindGameObjectWithTag("Player2");
+            }
+        }
+        else
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        else 
-        {
-            player = GameObject.FindGameObjectWithTag("Player2");
-        }*/
 
 
         if(player)
