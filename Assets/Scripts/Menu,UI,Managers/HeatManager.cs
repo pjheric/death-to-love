@@ -70,10 +70,7 @@ public class HeatManager : MonoBehaviour
             _heatNumber.color = Color.magenta;
         }
 
-        foreach (PlayerController player in players)
-        {
-            player.BuffPlayer(heatLevel);
-        }
+        applyBuffs();
 
         CurrentHeatFalloff = 1f;
     }
@@ -86,13 +83,18 @@ public class HeatManager : MonoBehaviour
     public void ResetHeat()
     {
         heatLevel = 0;
-        foreach (PlayerController player in players)
-        {
-            player.BuffPlayer(heatLevel);
-        }
+        applyBuffs();
         CurrentHeatNum = 0;
         _heatNumber.color = Color.black;
         _heatNumber.SetText(CurrentHeatNum.ToString());
         _heatPanel.SetActive(false);
+    }
+
+    public void applyBuffs()
+    {
+        foreach (PlayerController player in players)
+        {
+            player.BuffPlayer(heatLevel);
+        }
     }
 }
