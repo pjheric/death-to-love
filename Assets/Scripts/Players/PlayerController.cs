@@ -85,6 +85,7 @@ public class PlayerController : MonoBehaviour
     private bool _heatLvl2 = false; 
 
     private Vector3 _startPos;
+    private Vector3 _centerPos;
     private Vector3 _endPos;
 
     public CharacterData CharacterData { get { return _characterData; } set { _characterData = value; } }
@@ -215,7 +216,7 @@ public class PlayerController : MonoBehaviour
             _sliding = true;
             _canAttack = false;
             _canSlide = false;
-            _characterSpeed *= 1.5f;
+            _characterSpeed *= 2f;
             _startPos = this.gameObject.transform.position;
             float duration = _playerAnim.GetFloat("Slide Duration");
             StartCoroutine(SlideSpeedReset(duration));
@@ -242,10 +243,13 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SlideSpeedReset(float duration) {
         yield return new WaitForSeconds(duration);
         _playerAnim.SetTrigger("Slide");
-        _characterSpeed /= 1.5f;
+        _characterSpeed /= 2f;
         _sliding = false;
         _endPos = this.gameObject.transform.position;
-        Instantiate(_slideEffect, (_startPos + _endPos) / 2, Quaternion.identity);
+        _centerPos = (_startPos + _endPos) / 2;
+        GameObject trail = Instantiate(_slideEffect, _centerPos, Quaternion.identity);
+        float scaleX = Vector3.Distance(new Vector3(_startPos.x, 0, 0), new Vector3(_endPos.x, 0, 0));
+        trail.transform.localScale = new Vector3(scaleX/5, 1, 1);
         _startPos = Vector3.zero;
         _endPos = Vector3.zero;
         _canAttack = true;
