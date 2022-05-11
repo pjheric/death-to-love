@@ -262,6 +262,7 @@ public class PlayerController : MonoBehaviour
         {
             mashProgress -= DecreaseRate * Time.deltaTime;
             ReviveBar.value = mashProgress;
+            
         }
         else
         {
@@ -310,6 +311,7 @@ public class PlayerController : MonoBehaviour
     {
         _facingRight = !_facingRight;
         transform.Rotate(Vector3.up * 180);
+        DownCanvas.gameObject.GetComponent<RectTransform>().LookAt(Camera.main.transform.position);
     }
 
     // Finds enemies in range and calls their TakeDamage() method.
