@@ -172,6 +172,7 @@ public class PlayerController : MonoBehaviour
                 if (_canAttack)
                 {
                     _playerAnim.SetTrigger("Light Attack");
+                    _canSlide = false;
                     AttackEnemies(_lightDamage, _lightHitstun);
                     StartCoroutine(AttackCooldown(_lightAtkCooldown));
                 }
@@ -264,7 +265,7 @@ public class PlayerController : MonoBehaviour
             ReviveBar.value = mashProgress;
             
         }
-        else
+        else 
         {
             PlayerMovement(); // Calls method to handle movement
         }
@@ -282,28 +283,31 @@ public class PlayerController : MonoBehaviour
     // Handles player movement and animations
     public void PlayerMovement()
     {
-        // Adjusts vertical movement speed (halves it) and multiplies vector by time and speed
-        Vector2 velocity = (new Vector2(_movementInput.x, _movementInput.y / 2)) * Time.deltaTime * _characterSpeed;
+        if (!_playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            // Adjusts vertical movement speed (halves it) and multiplies vector by time and speed
+            Vector2 velocity = (new Vector2(_movementInput.x, _movementInput.y / 2)) * Time.deltaTime * _characterSpeed;
 
-        if (velocity != Vector2.zero && _sliding == false) // Controls walking animation
-        {
-            _playerAnim.SetBool("Walking", true);
-        }
-        else
-        {
-            _playerAnim.SetBool("Walking", false);
-        }
-        if (velocity.x < 0 && _facingRight) // Controls direction player is facing
-        {
-            Flip();
-        }
-        else if (velocity.x > 0 && !_facingRight)
-        {
-            Flip();
-        }
+            if (velocity != Vector2.zero && _sliding == false) // Controls walking animation
+            {
+                _playerAnim.SetBool("Walking", true);
+            }
+            else
+            {
+                _playerAnim.SetBool("Walking", false);
+            }
+            if (velocity.x < 0 && _facingRight) // Controls direction player is facing
+            {
+                Flip();
+            }
+            else if (velocity.x > 0 && !_facingRight)
+            {
+                Flip();
+            }
 
-        // Moves character
-        transform.position += new Vector3(velocity.x, velocity.y, 0);
+            // Moves character
+            transform.position += new Vector3(velocity.x, velocity.y, 0);
+        }
     }
 
     // Flips character horizontally
@@ -390,6 +394,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerDown()
     {
         _Downed = true;
+        _playerAnim.SetBool("Walking", false);
         DownCanvas.gameObject.SetActive(true);
         ReviveBar.value = 0;
         Debug.Log(this.tag + " Down!");
