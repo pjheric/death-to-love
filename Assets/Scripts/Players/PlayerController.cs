@@ -265,7 +265,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Handles buffs that the player receives from Heat stacks
+    // Handles buffs that the player receives from Heat stacks, when a 0 is passed it resets the player's stats to normal
     public void BuffPlayer(int level)
     {
         if(level == 1)

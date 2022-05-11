@@ -74,6 +74,7 @@ public class HeatManager : MonoBehaviour
         {
             player.BuffPlayer(heatLevel);
         }
+
         CurrentHeatFalloff = 1f;
     }
 
@@ -90,10 +91,8 @@ public class HeatManager : MonoBehaviour
             player.BuffPlayer(heatLevel);
         }
         CurrentHeatNum = 0;
-        //Reset fonts and buffs
         _heatNumber.color = Color.black;
         _heatNumber.SetText(CurrentHeatNum.ToString());
-        //Deactivate panels, reset heat number
         _heatPanel.SetActive(false);
     }
 }
