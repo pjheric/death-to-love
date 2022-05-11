@@ -10,48 +10,90 @@ public class HeatManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _heatNumber;
 
     //Variable Fields
-    public float CurrentHeatFalloff = 0.0f;
-    public int CurrentHeatNum = 0;
-    public bool HeatLvl1 = false;
-    public bool HeatLvl2 = false;
-    public float HeatFalloff;
-    public int HeatPerHit = 1; 
-    [SerializeField] private int _heatInitialLevel = 20;
-    [SerializeField] private int _heatLevelIncrement;
+    //the heat timer that counts down when the player does not land hits
+    private float CurrentHeatFalloff = 0.0f;
+    //current amount of total heat
+    private int CurrentHeatNum = 0;
+    //player's current level of heat
+    private int heatLevel = 0;
+    //Rate at which the heat decreases if the player does not land a hit
+    [SerializeField] private float HeatFalloff;
+    //how much the heat increases on a successful hit
+    [SerializeField] private int HeatPerHit = 1; 
+    //threshhold to enter heat level 1
+    [SerializeField] private int _heatlevel1 = 20;
+    //threshhold to enter heat level 2
+    [SerializeField] private int _heatlevel2 = 60;
+    private PlayerController[] players;
 
-
-
-
-
-
-    public void UpdateHeatUI()
+    public void Start()
     {
-        if (CurrentHeatFalloff > 0)
+        players = new PlayerController[2];
+        if(GameManagerScript.Instance.IsMultiplayer == true)
         {
-            _heatPanel.SetActive(true);
-            _heatNumber.SetText(CurrentHeatNum.ToString());
-            if (CurrentHeatNum >= _heatInitialLevel && HeatLvl1 == false)
-            {
-                HeatLvl1 = true;
-                _heatNumber.color = Color.cyan;
-            }
-            else if (CurrentHeatNum >= _heatInitialLevel + _heatLevelIncrement && HeatLvl2 == false)
-            {
-                HeatLvl2 = true;
-                _heatNumber.color = Color.magenta;
-            }
+            players[0] = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            players[1] = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>();
         }
         else
         {
-            //Reset heat levels
-            HeatLvl1 = false;
-            HeatLvl2 = false;
-            //Reset fonts and buffs
-            _heatNumber.color = Color.black;
-            //Deactivate panels, reset heat number
-            _heatPanel.SetActive(false);
-            CurrentHeatNum = 0; 
+            players[0] = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        }
+        HeatFalloff /= 10;
+    }
+
+    public void FixedUpdate()
+    {
+        CurrentHeatFalloff -= HeatFalloff * Time.deltaTime;
+        if (CurrentHeatFalloff <= 0f)
+        {
+            ResetHeat();
         }
     }
 
+    public void increaseHeat()
+    {
+        CurrentHeatNum += HeatPerHit; 
+        if(!_heatPanel.activeSelf)
+        {
+            _heatPanel.SetActive(true);
+        }
+        _heatNumber.SetText(CurrentHeatNum.ToString());
+        if (CurrentHeatNum >= _heatlevel1 && heatLevel == 0)
+        {
+            heatLevel = 1;
+            _heatNumber.color = Color.cyan;
+            
+        }
+        else if (CurrentHeatNum >= _heatlevel2 && heatLevel == 1)
+        {
+            heatLevel = 2;
+            _heatNumber.color = Color.magenta;
+        }
+
+        foreach (PlayerController player in players)
+        {
+            player.BuffPlayer(heatLevel);
+        }
+        CurrentHeatFalloff = 1f;
+    }
+
+    public int CurrentHeatLevel()
+    {
+        return heatLevel;
+    }
+
+    public void ResetHeat()
+    {
+        heatLevel = 0;
+        foreach (PlayerController player in players)
+        {
+            player.BuffPlayer(heatLevel);
+        }
+        CurrentHeatNum = 0;
+        //Reset fonts and buffs
+        _heatNumber.color = Color.black;
+        _heatNumber.SetText(CurrentHeatNum.ToString());
+        //Deactivate panels, reset heat number
+        _heatPanel.SetActive(false);
+    }
 }

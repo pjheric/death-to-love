@@ -178,6 +178,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /*
     // Called when player presses heavy attack button
     public void OnHeavyAttack(InputAction.CallbackContext context)
     {
@@ -195,6 +196,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    */
 
     public void OnSlide(InputAction.CallbackContext context) {
         if (context.performed && _canSlide && !_Downed) // Ensures functions only performed once on button press
@@ -261,26 +263,16 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMovement(); // Calls method to handle movement
         }
-        if (_heatManager.CurrentHeatFalloff > 0)
-        {
-            _heatManager.CurrentHeatFalloff -= _heatManager.HeatFalloff / 50f;
-            if(_heatManager.CurrentHeatFalloff < 0)
-            {
-                _heatManager.CurrentHeatFalloff = 0.0f; 
-            }
-        }
-        _heatManager.UpdateHeatUI();
-        BuffPlayer(); 
     }
 
     // Handles buffs that the player receives from Heat stacks
-    private void BuffPlayer()
+    public void BuffPlayer(int level)
     {
-        if(_heatManager.HeatLvl1 && _heatManager.HeatLvl2 == false)
+        if(level == 1)
         {
-            _lightAtkCooldown *= 1.15f; 
+            _lightAtkCooldown *= .85f; 
         }
-        else if (_heatManager.HeatLvl1 && _heatManager.HeatLvl2)
+        else if (level >= 2)
         {
             _attackRange *= 1.25f; 
         }
@@ -340,8 +332,7 @@ public class PlayerController : MonoBehaviour
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
             Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
-            _heatManager.CurrentHeatFalloff = _heatManager.HeatFalloff;
-            _heatManager.CurrentHeatNum += _heatManager.HeatPerHit;
+            _heatManager.increaseHeat();
         }
         _canSlide = true;
     }
