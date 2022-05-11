@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
         _input = gameObject.GetComponent<PlayerInput>();
 
         Debug.Log(_input.currentControlScheme);
-
+        _health.Value = 30;
         SetupCharacter();
 
         EnableUI(); // Activates player UI if player is spawned in
