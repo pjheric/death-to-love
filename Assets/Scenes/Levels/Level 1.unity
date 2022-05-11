@@ -2536,18 +2536,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 930661362, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1891788432, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 314172568}
-    - target: {fileID: 2128370600, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: _heatPanel
       value: 
@@ -3330,6 +3322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heatPanel: {fileID: 0}
   _heatNumber: {fileID: 0}
+  _heatFalloff: 1
   _heatPerHit: 1
   _heatInitialLevel: 20
   _heatLevelIncrement: 0
