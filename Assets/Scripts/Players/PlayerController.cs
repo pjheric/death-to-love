@@ -70,19 +70,7 @@ public class PlayerController : MonoBehaviour
     private bool _Downed = false;
 
     //Heat System: 
-    //UI Fields
-    [SerializeField] private GameObject _heatPanel;
-    [SerializeField] private TextMeshProUGUI _heatNumber;
-
-    //Variable Fields
-    private float _currentHeatFalloff = 0.0f;
-    [SerializeField] private float _heatFalloff = 1.0f;
-    [SerializeField] private int _heatPerHit = 1; //Amount of heat gained per successful hit  
-    private int _currentHeatNum = 0; //Current heat 
-    [SerializeField] private int _heatInitialLevel = 20;
-    [SerializeField] private int _heatLevelIncrement;
-    private bool _heatLvl1 = false;
-    private bool _heatLvl2 = false; 
+    public HeatManager _heatManager; 
 
     private Vector3 _startPos;
     private Vector3 _centerPos;
@@ -273,16 +261,37 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMovement(); // Calls method to handle movement
         }
-        if (_currentHeatFalloff > 0)
+        if (_heatManager.CurrentHeatFalloff > 0)
         {
-            _currentHeatFalloff -= _heatFalloff / 50f;
-            if(_currentHeatFalloff < 0)
+            _heatManager.CurrentHeatFalloff -= _heatManager.HeatFalloff / 50f;
+            if(_heatManager.CurrentHeatFalloff < 0)
             {
-                _currentHeatFalloff = 0.0f; 
+                _heatManager.CurrentHeatFalloff = 0.0f; 
             }
         }
-        UpdateHeat(); 
+        _heatManager.UpdateHeatUI();
+        BuffPlayer(); 
     }
+
+    // Handles buffs that the player receives from Heat stacks
+    private void BuffPlayer()
+    {
+        if(_heatManager.HeatLvl1 && _heatManager.HeatLvl2 == false)
+        {
+            _lightAtkCooldown *= 1.15f; 
+        }
+        else if (_heatManager.HeatLvl1 && _heatManager.HeatLvl2)
+        {
+            _attackRange *= 1.25f; 
+        }
+        else
+        {
+            _lightAtkCooldown = CharacterData.LightAtkCooldown;
+            _attackRange = CharacterData.AttackRange; 
+        }
+    }
+
+
 
     // Handles player movement and animations
     public void PlayerMovement()
@@ -331,46 +340,13 @@ public class PlayerController : MonoBehaviour
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
             Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
-            _currentHeatFalloff = _heatFalloff;
-            _currentHeatNum += _heatPerHit;
+            _heatManager.CurrentHeatFalloff = _heatManager.HeatFalloff;
+            _heatManager.CurrentHeatNum += _heatManager.HeatPerHit;
         }
         _canSlide = true;
     }
 
-    public void UpdateHeat()
-    {
-        if (_currentHeatFalloff > 0)
-        {
-            _heatPanel.SetActive(true);
-            _heatNumber.SetText(_currentHeatNum.ToString());
-            if (_currentHeatNum >= _heatInitialLevel && _heatLvl1 == false)
-            {
-                _heatLvl1 = true; 
-                _heatNumber.color = Color.cyan;
-                _lightAtkCooldown *= 1.15f; 
-            }
-            else if (_currentHeatNum >= _heatInitialLevel + _heatLevelIncrement && _heatLvl2 == false)
-            {
-                _heatLvl2 = true; 
-                _heatNumber.color = Color.magenta;
-                _attackRange *= 1.25f; 
-            }
-        }
-        else
-        {
-            //Reset heat levels
-            _heatLvl1 = false;
-            _heatLvl2 = false;
-            //Reset fonts and buffs
-            _heatNumber.color = Color.black;
-            _lightAtkCooldown = CharacterData.LightAtkCooldown;
-            _attackRange = CharacterData.AttackRange; 
-            //Deactivate panels, reset heat number
-            _heatPanel.SetActive(false);
-            _currentHeatNum = 0;
-        }
-    }
-
+   
         // Creates a gizmo for attack area in editor
     public void OnDrawGizmosSelected()
     {
