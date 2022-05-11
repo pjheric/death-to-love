@@ -225,14 +225,17 @@ public class EnemyAgent : MonoBehaviour
         {
             if (facingRight)
             {
-                knockbackVector = this.transform.position - new Vector3(knockbackDist, 0f, 0f);
+                knockbackVector = new Vector3(this.transform.position.x, 0f, 0f)- new Vector3(knockbackDist, 0f, 0f);
             }
             else
             {
-                knockbackVector = this.transform.position + new Vector3(knockbackDist, 0f, 0f);
+                knockbackVector = new Vector3(this.transform.position.x, 0f, 0f) + new Vector3(knockbackDist, 0f, 0f);
             }
         }
-        knockbackVector = Vector3.zero;
+        else
+        {
+            knockbackVector = this.transform.position;
+        }
 
         if(Health <= 0)
         {
@@ -260,7 +263,7 @@ public class EnemyAgent : MonoBehaviour
                 Die();
                 yield break;
             }
-            knockbackVector = Vector3.zero;
+            knockbackVector = this.transform.position;
             StartCoroutine(Stagger(1f));
             yield return new WaitForSeconds(1f);
         }

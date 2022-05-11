@@ -330,7 +330,7 @@ public class PlayerController : MonoBehaviour
             _currentHeatFalloff = _heatFalloff;
             _currentHeatNum += _heatPerHit;
         }
-
+        _canSlide = true;
     }
 
     public void UpdateHeat()
