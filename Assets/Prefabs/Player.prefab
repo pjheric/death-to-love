@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56146106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.496, y: 0.136, z: 0}
+  m_LocalPosition: {x: 0.59, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1408092298334436582}
@@ -380,7 +380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.474}
+  m_AnchoredPosition: {x: 0.173, y: 1}
   m_SizeDelta: {x: 1028, y: 578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1891788432
@@ -672,7 +672,7 @@ SpriteRenderer:
   m_SortingLayerID: -495052011
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7372649415417231178, guid: 4039a8bde31b0bf48bd06333b09523f8, type: 3}
+  m_Sprite: {fileID: 1797201189882975728, guid: c9b86454ef17a1544a8ff11f802938f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -815,12 +815,7 @@ MonoBehaviour:
   _pausePanel: {fileID: 0}
   _gameOverPanel: {fileID: 0}
   _playerUIPanel: {fileID: 0}
-  _heatPanel: {fileID: 0}
-  _heatNumber: {fileID: 0}
-  _heatFalloff: 1
-  _heatPerHit: 1
-  _heatInitialLevel: 20
-  _heatLevelIncrement: 40
+  _heatManager: {fileID: 0}
   mashGoal: 100
   IncreasePerPress: 5
   DecreaseRate: 5
@@ -878,18 +873,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0032956898, y: 0.13742687}
+  m_Offset: {x: 0.23054999, y: -0.48490468}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.32, y: 0}
-    oldSize: {x: 0.8, y: 1.12}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.24, y: 1.26}
     newSize: {x: 0.6666667, y: 0.93333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3651269, y: 0.27485374}
+  m_Size: {x: 0.8328185, y: 0.2974841}
   m_EdgeRadius: 0
 --- !u!1 &7737092966301997126
 GameObject:
