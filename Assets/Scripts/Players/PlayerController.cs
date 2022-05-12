@@ -161,9 +161,11 @@ public class PlayerController : MonoBehaviour
                 if (_canAttack)
                 {
                     _playerAnim.SetTrigger("Light Attack");
+                    
                     _canSlide = false;
                     AttackEnemies(_lightDamage, _lightHitstun);
-                    StartCoroutine(AttackCooldown(_lightAtkCooldown));
+                    DisableAttack();
+                    //StartCoroutine(AttackCooldown(_lightAtkCooldown));
                 }
             }
         }
@@ -268,11 +270,11 @@ public class PlayerController : MonoBehaviour
     // Handles buffs that the player receives from Heat stacks, when a 0 is passed it resets the player's stats to normal
     public void BuffPlayer(int level)
     {
-        if(level == 1)
+        if(level == 1 && _lightAtkCooldown == CharacterData.LightAtkCooldown)
         {
-            _lightAtkCooldown *= .85f; 
+            _lightAtkCooldown *= 1.15f; 
         }
-        else if (level >= 2)
+        else if (level >= 2 && _attackRange == CharacterData.AttackRange)
         {
             _attackRange *= 1.25f; 
         }
@@ -281,6 +283,7 @@ public class PlayerController : MonoBehaviour
             _lightAtkCooldown = CharacterData.LightAtkCooldown;
             _attackRange = CharacterData.AttackRange; 
         }
+        _playerAnim.SetFloat("LightAttackSpeed", _lightAtkCooldown);
     }
 
 
@@ -430,5 +433,15 @@ public class PlayerController : MonoBehaviour
         TextMeshProUGUI nametag = _playerUIPanel.GetComponentInChildren<TextMeshProUGUI>();
         nametag.text = _characterName;
         _playerUIPanel.SetActive(true);
+    }
+
+    public void EnableAttack()
+    {
+        _canAttack = true;
+    }
+
+    public void DisableAttack()
+    {
+        _canAttack = false;
     }
 }

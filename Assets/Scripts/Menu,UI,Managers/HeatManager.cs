@@ -94,7 +94,10 @@ public class HeatManager : MonoBehaviour
     {
         foreach (PlayerController player in players)
         {
-            player.BuffPlayer(heatLevel);
+            if(player)
+            {
+                player.BuffPlayer(heatLevel);
+            }
         }
     }
 }
