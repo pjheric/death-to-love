@@ -137,11 +137,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 930661362, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2128370600, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: _health
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_TagString
@@ -2553,25 +2553,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 56146107, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_Size.y
-      value: 0.2660892
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.12729561
-      objectReference: {fileID: 0}
     - target: {fileID: 930661362, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1891788429, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1891788432, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_Camera
