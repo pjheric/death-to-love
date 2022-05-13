@@ -34,7 +34,7 @@ public class EnemyAgent : MonoBehaviour
     protected SpriteRenderer Sprite;
 
     //Controls the animations for the AI
-    protected Animator Anim;
+    [SerializeField] protected Animator Anim;
 
     //bool that determines if the AI is chasing the player or not, in theory the AI should chase if the player is outside of attack range
     protected bool chase = true;

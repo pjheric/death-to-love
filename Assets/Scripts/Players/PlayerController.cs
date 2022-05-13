@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))] // Ensures object will have a Rigidbody2D
 [RequireComponent(typeof(Animator))] // Ensures object will have an Animator
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
     //ScriptableObjects
     [SerializeField]
     private CharacterData _characterData;
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField]
     private int _heavyDamage = 4;
     //[SerializeField]
-    private float _heavyHitstun = 1f;  
+    private float _heavyHitstun = 1f;
     //[SerializeField]
     private float _lightAtkCooldown = 0.5f;
     //[SerializeField]
@@ -55,7 +54,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField]
     private GameObject _slideEffect;
 
-    
+
 
     private Animator _playerAnim;
     private SpriteRenderer _playerSpriteRenderer;
@@ -63,6 +62,7 @@ public class PlayerController : MonoBehaviour
     private bool _facingRight = true;
     private bool _sliding = false;
     private bool _canSlide = true;
+    private Vector2 _slideVector = new Vector2(1, 0);
     private bool _canAttack = true;
     private bool _isPaused = false; 
     private PlayerInput _input;
@@ -205,9 +205,10 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Slide");
             _playerAnim.SetTrigger("Slide");
+            _movementInput = _slideVector;
             _sliding = true;
-            _canAttack = false;
             _canSlide = false;
+            _canAttack = false;
             _characterSpeed *= 2f;
             _startPos = this.gameObject.transform.position;
             float duration = _playerAnim.GetFloat("Slide Duration");
@@ -245,7 +246,7 @@ public class PlayerController : MonoBehaviour
         _startPos = Vector3.zero;
         _endPos = Vector3.zero;
         _canAttack = true;
-        // temporary bandage for game not taking input during a slide
+
         _movementInput = Vector2.zero;
         // extra delay so a player can't spam sliding?
         yield return new WaitForSeconds(0.5f);
@@ -322,6 +323,7 @@ public class PlayerController : MonoBehaviour
     public void Flip()
     {
         _facingRight = !_facingRight;
+        _slideVector *= -1;
         transform.Rotate(Vector3.up * 180);
         DownCanvas.gameObject.GetComponent<RectTransform>().LookAt(Camera.main.transform.position);
     }

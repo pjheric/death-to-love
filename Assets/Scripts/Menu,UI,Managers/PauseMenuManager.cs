@@ -22,11 +22,11 @@ public class PauseMenuManager : MonoBehaviour
 
     public void RestartLevel() {
         Debug.Log("Restart Level");
-        if (levelLoader) {
             Time.timeScale = 1;
+        if (levelLoader) {
             levelLoader.LoadLevel(SceneManager.GetActiveScene().name);
         } else {
-            Debug.LogError("Level Loader nott found in Pause Menu Script");
+            Debug.LogError("Level Loader not found in Pause Menu Script");
         }
     }
 
