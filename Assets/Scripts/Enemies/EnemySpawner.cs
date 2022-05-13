@@ -27,7 +27,8 @@ public class EnemySpawner : MonoBehaviour
 
     [Tooltip("if true, keep spawning enemies until it is set to false, or the gameobject is disabled")]
     [SerializeField] private bool infinite;
-    
+
+    private bool complete = false; //if true then this spawner is done spawning
     private float netWeight;
     private Transform spawnpoint;
     private List<GameObject> spawnedEnemies;
@@ -46,34 +47,73 @@ public class EnemySpawner : MonoBehaviour
 
         spawnedEnemies = new List<GameObject>();
         spawnpoint = this.transform;
-
-        InvokeRepeating("SpawnEnemy", SpawnDelay, SpawnRate);
+        if(!complete)
+        {
+            startSpawning();
+        }
     }
 
     public void SpawnEnemy()
     {
-        if(spawnedEnemies.Count < maxEnemies || infinite)
+        if (spawnedEnemies.Count < maxEnemies || infinite)
         {
-            GameObject newEnemy;
-
-            float randomWeight = Random.Range(0f, netWeight);
-            for(int i = 0; i < weights.Count; i++)
+            if(!complete)
             {
-                randomWeight -= weights[i];
-                if(randomWeight < 0)
+                GameObject newEnemy;
+
+                float randomWeight = Random.Range(0f, netWeight);
+                for (int i = 0; i < weights.Count; i++)
                 {
-                    newEnemy = Instantiate(Enemies[i], spawnpoint.position, Quaternion.identity);
-                    spawnedEnemies.Add(newEnemy);
-                    break;
+                    randomWeight -= weights[i];
+                    if (randomWeight < 0)
+                    {
+                        newEnemy = Instantiate(Enemies[i], spawnpoint.position, Quaternion.identity);
+                        spawnedEnemies.Add(newEnemy);
+                        break;
+                    }
                 }
             }
-            
+        }
+        else if(!infinite)
+        {
+            doneSpawning();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void doneSpawning()
     {
-        
+        complete = true;
+    }
+
+    public void startSpawning()
+    {
+        complete = false;
+        InvokeRepeating("SpawnEnemy", SpawnDelay, SpawnRate);
+    }
+
+    public void setMaxEnemies(int max)
+    {
+        maxEnemies = max;
+    }
+
+    public void setEnemyWeights(float Henchman = 0f, float mugger = 0f, float bouncer = 0f)
+    {
+        HenchmanWeight = Henchman;
+        MuggerWeight = mugger;
+        BouncerWeight = bouncer;
+    }
+
+    public void setHencmanWeight(float Henchman = 0f)
+    {
+        HenchmanWeight = Henchman;
+    }
+
+    public void setMuggerWeight(float mugger = 0f)
+    {
+        MuggerWeight = mugger;
+    }
+    public void setBouncerWeight(float bouncer = 0f)
+    {
+        BouncerWeight = bouncer;
     }
 }
