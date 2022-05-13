@@ -161,6 +161,8 @@ public class EnemyAgent : MonoBehaviour
     //when the agent isnt attacking, make them run away by the backup dist
     protected virtual void backup()
     {
+        walking = false;
+        Anim.SetBool("BackingUp", true);
         int headsOrTails = Random.Range(0, 2);
         if (headsOrTails == 0)
         {
@@ -173,7 +175,6 @@ public class EnemyAgent : MonoBehaviour
             target += new Vector3(BackupDist, 0f, 0f);
         }
         agent.SetDestination(target); 
-        walking = true;
     }
 
     //I imagine flipping an enemy will take more than just flipping the sprite, so this flips the enemy
@@ -202,6 +203,7 @@ public class EnemyAgent : MonoBehaviour
         
         target = player.transform.position;
         walking = true;
+        Anim.SetBool("BackingUp", false);
         if (Vector3.Distance(target, transform.position) < attackRange) //if enemy is in range of player, attack
         {
             //Debug.Log("Enemy attacks!");
@@ -283,6 +285,7 @@ public class EnemyAgent : MonoBehaviour
     {
         Staggered = true;
         walking = false;
+        Anim.SetBool("BackingUp", false);
         agent.isStopped = true;
         yield return new WaitForSeconds(Mathf.Abs(hitstun)); //the 0.01f converts seconds into an increment of 10 milliseconds
         Staggered = false;
@@ -295,6 +298,7 @@ public class EnemyAgent : MonoBehaviour
     {
         agent.SetDestination(agent.transform.position);
         walking = false;
+        Anim.SetBool("BackingUp", false);
     }
 
     //waits AttackSpeed Seconds between attacks
