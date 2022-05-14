@@ -8,13 +8,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] Enemies;
 
     [Tooltip("Higher means more will spawn")]
-    [SerializeField] private float HenchmanWeight = 1f;
+    private float HenchmanWeight = 0f;
 
     [Tooltip("Higher means more will spawn")]
-    [SerializeField] private float MuggerWeight = 1f;
+    private float MuggerWeight = 0f;
 
     [Tooltip("Higher means more will spawn")]
-    [SerializeField] private float BouncerWeight = 1f;
+    private float BouncerWeight = 0f;
 
     [Tooltip("the time between when this gameobject is activated and when InvokeRepeating gets called the first time")]
     [SerializeField] private float SpawnDelay;
@@ -23,39 +23,38 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float SpawnRate;
 
     [Tooltip("the max enemies this spawner will produce")]
-    [SerializeField] private int maxEnemies;
+    private float maxEnemies;
 
     [Tooltip("if true, keep spawning enemies until it is set to false, or the gameobject is disabled")]
-    [SerializeField] private bool infinite;
+    private bool infinite;
+
+    private bool grounded = false;
+
+    private bool endsWithDialogue;
 
     private bool complete = false; //if true then this spawner is done spawning
     private float netWeight;
     private Transform spawnpoint;
     private List<GameObject> spawnedEnemies;
     private List<float> weights;
+    private CircleCollider2D circle;
    
     // Start is called before the first frame update
     void Start()
     {
         weights = new List<float>();
 
-        weights.Add(HenchmanWeight);
-        weights.Add(MuggerWeight);
-        weights.Add(BouncerWeight);
-
-        netWeight = HenchmanWeight + MuggerWeight + BouncerWeight;
-
         spawnedEnemies = new List<GameObject>();
         spawnpoint = this.transform;
-        if(!complete)
-        {
-            startSpawning();
-        }
+        circle = this.GetComponent<CircleCollider2D>();
     }
 
     public void SpawnEnemy()
     {
-        if (spawnedEnemies.Count < maxEnemies || infinite)
+        Debug.Log(grounded);
+        Debug.Log(this.gameObject.name + " spawned: " + spawnedEnemies.Count);
+        Debug.Log(this.gameObject.name + " Max: " + maxEnemies);
+        if ((spawnedEnemies.Count < maxEnemies || infinite) && grounded)
         {
             if(!complete)
             {
@@ -74,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
         }
-        else if(!infinite)
+        else if(!infinite && spawnedEnemies.Count >= maxEnemies)
         {
             doneSpawning();
         }
@@ -82,38 +81,59 @@ public class EnemySpawner : MonoBehaviour
 
     public void doneSpawning()
     {
+        
         complete = true;
     }
 
     public void startSpawning()
     {
+        weights.Add(HenchmanWeight);
+        weights.Add(MuggerWeight);
+        weights.Add(BouncerWeight);
+        netWeight = HenchmanWeight + MuggerWeight + BouncerWeight;
         complete = false;
         InvokeRepeating("SpawnEnemy", SpawnDelay, SpawnRate);
     }
 
-    public void setMaxEnemies(int max)
+    public void setMaxEnemies(float max)
     {
         maxEnemies = max;
     }
 
-    public void setEnemyWeights(float Henchman = 0f, float mugger = 0f, float bouncer = 0f)
+    public void setEnemyWeights(float Henchman, float mugger, float bouncer)
     {
         HenchmanWeight = Henchman;
         MuggerWeight = mugger;
         BouncerWeight = bouncer;
     }
 
-    public void setHencmanWeight(float Henchman = 0f)
+    public void setHencmanWeight(float Henchman)
     {
         HenchmanWeight = Henchman;
     }
 
-    public void setMuggerWeight(float mugger = 0f)
+    public void setMuggerWeight(float mugger)
     {
         MuggerWeight = mugger;
     }
-    public void setBouncerWeight(float bouncer = 0f)
+    public void setBouncerWeight(float bouncer)
     {
         BouncerWeight = bouncer;
+    }
+
+    public void setInfinite(bool inf)
+    {
+        infinite = inf;
+    }
+
+    public bool checkGrounded()
+    {
+       
+        return grounded;
+    }
+
+    public void setGrounded(bool ground)
+    {
+        grounded = ground;
     }
 }

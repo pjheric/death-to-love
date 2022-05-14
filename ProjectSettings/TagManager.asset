@@ -10,6 +10,8 @@ TagManager:
   - LevelLoader
   - Cmvcam
   - Player2
+  - EnemySpawner
+  - Ground
   layers:
   - Default
   - TransparentFX
