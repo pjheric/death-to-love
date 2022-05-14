@@ -17,6 +17,8 @@ public class WaveManager : MonoBehaviour
     private bool Fighting = false;
 
     [Header("Dialogue variables")] //put any necessary variables for dialogue system under here
+    //Array containing DialogueData. One DialogueData = one wave worth of dialogue
+    [SerializeField] private DialogueData[] _dialogueList; 
     //if true, dialogue plays right when player enters the trigger
     [SerializeField] private bool startWithDialogue;
 
