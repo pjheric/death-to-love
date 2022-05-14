@@ -51,9 +51,6 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        Debug.Log(grounded);
-        Debug.Log(this.gameObject.name + " spawned: " + spawnedEnemies.Count);
-        Debug.Log(this.gameObject.name + " Max: " + maxEnemies);
         if ((spawnedEnemies.Count < maxEnemies || infinite) && grounded)
         {
             if(!complete)
@@ -81,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void doneSpawning()
     {
-        
+        CancelInvoke();
         complete = true;
     }
 
@@ -135,5 +132,16 @@ public class EnemySpawner : MonoBehaviour
     public void setGrounded(bool ground)
     {
         grounded = ground;
+    }
+
+    public bool checkComplete()
+    {
+        return complete;
+    }
+
+    public void resetSpawner()
+    {
+        complete = false;
+        spawnedEnemies.Clear();
     }
 }

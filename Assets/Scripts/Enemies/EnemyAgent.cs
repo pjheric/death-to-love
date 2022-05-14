@@ -154,7 +154,7 @@ public class EnemyAgent : MonoBehaviour
             //play stagger animation
             Debug.Log("Staggered");
             Anim.SetTrigger("Staggered");
-            this.transform.position = Vector3.SmoothDamp(transform.position, knockbackVector, ref knockbackVelocityVector, 1f);
+            this.transform.position = Vector3.SmoothDamp(transform.position, new Vector3(knockbackVector.x, 0f, 0f), ref knockbackVelocityVector, 1f);
         }
     }
 
@@ -276,6 +276,7 @@ public class EnemyAgent : MonoBehaviour
         if(!dying)
         {
             dying = true;
+            
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
         

@@ -31,7 +31,6 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Out of Bounds");
         if(other.tag == "EnemySpawner")
         {
             other.gameObject.GetComponent<EnemySpawner>().setGrounded(false);
