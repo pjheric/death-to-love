@@ -9,7 +9,8 @@ public class DialogueData : ScriptableObject
     private struct DialoguePair
     {
         public string speaker;
-        public string line; 
+        public string line;
+        public Sprite speakerImage; 
     }
     [SerializeField] List<DialoguePair> dialogue; 
     //Dialogue itself is stored as a string value; the speaker's name is stored as a string key 
@@ -20,6 +21,14 @@ public class DialogueData : ScriptableObject
     public string GetSpeaker(int lineNum)
     {
         return dialogue[lineNum].speaker;
+    }
+    public int GetLength()
+    {
+        return dialogue.Count; 
+    }
+    public Sprite GetImage(int lineNum)
+    {
+        return dialogue[lineNum].speakerImage; 
     }
 
 }

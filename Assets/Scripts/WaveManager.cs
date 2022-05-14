@@ -18,7 +18,10 @@ public class WaveManager : MonoBehaviour
 
     [Header("Dialogue variables")] //put any necessary variables for dialogue system under here
     //Array containing DialogueData. One DialogueData = one wave worth of dialogue
-    [SerializeField] private DialogueData[] _dialogueList; 
+    [SerializeField] private DialogueData[] _dialogueList;
+    private int _currentDialogueSection = 0; 
+    //Dialogue Manager object
+    [SerializeField] private DialogueManager _dialogueManager; 
     //if true, dialogue plays right when player enters the trigger
     [SerializeField] private bool startWithDialogue;
 
@@ -72,6 +75,10 @@ public class WaveManager : MonoBehaviour
                 enemies[i] = null;
             }*/
         }
+        else if(_dialogueManager.IsDialogueOver())
+        {
+            activateSpawners(); 
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -87,6 +94,8 @@ public class WaveManager : MonoBehaviour
             if (startWithDialogue)
             {
                 //do the dialogue, have dialogue call activate spawners when done
+                _dialogueManager.StartDialogue(_dialogueList[_currentDialogueSection]);
+                
             }
             else
             {
