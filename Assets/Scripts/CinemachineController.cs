@@ -73,7 +73,7 @@ public class CinemachineController : MonoBehaviour {
         yield return new WaitForSeconds(5.0f);
         Unsnap();
     }
-    void Snap() {
+    public void Snap() {
         Debug.Log(cm.Follow);
         cm.Follow= null;
         Debug.Log(cm.Follow);
@@ -81,7 +81,7 @@ public class CinemachineController : MonoBehaviour {
         snapped = true;
     }
 
-    void Unsnap() {
+    public void Unsnap() {
         cm.Follow = target;
         //cm.enabled = true;
         snapped = false;

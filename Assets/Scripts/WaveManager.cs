@@ -66,7 +66,7 @@ public class WaveManager : MonoBehaviour
             Debug.Log(enemies.Length);
             if (enemies.Length <= 0)
             {
-                //Cam.unlockCam();
+                Cam.Unsnap();
                 Fighting = false;
             }
             /*
@@ -75,9 +75,12 @@ public class WaveManager : MonoBehaviour
                 enemies[i] = null;
             }*/
         }
-        else if(_dialogueManager.IsDialogueOver())
+        else if(_dialogueManager)
         {
-            activateSpawners(); 
+            if(_dialogueManager.IsDialogueOver())
+            {
+                activateSpawners();
+            }
         }
     }
 
@@ -88,7 +91,7 @@ public class WaveManager : MonoBehaviour
             if(lockCam)
             {
                 //locks camera to current position, commented out because this inadvertedly disables screenshake
-                //Cam.lockCam();
+                Cam.Snap();
             }
 
             if (startWithDialogue)
