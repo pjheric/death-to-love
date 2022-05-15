@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b241ffdf297287a448849b652e67d418, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6529ea12da2d0e143bd23eb85ad53520, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1341,6 +1341,14 @@ PrefabInstance:
       value: Controller
       objectReference: {fileID: 0}
     - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: _jayIcon
+      value: 
+      objectReference: {fileID: 48667428}
+    - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: _lizIcon
+      value: 
+      objectReference: {fileID: 285080704}
+    - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: _keyboardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 7927d81602cedd547b0d560c9dc3c230, type: 3}
@@ -1980,6 +1988,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: _jayIcon
+      value: 
+      objectReference: {fileID: 48667428}
+    - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
+      propertyPath: _lizIcon
+      value: 
+      objectReference: {fileID: 285080704}
+    - target: {fileID: 6879708947925551705, guid: d0861bd6054e8394bbc0d34d9c6f86ee, type: 3}
       propertyPath: _characterSelectManager
       value: 
       objectReference: {fileID: 880321324}
@@ -2456,7 +2472,7 @@ GameObject:
   - component: {fileID: 1860730410}
   - component: {fileID: 1860730409}
   m_Layer: 5
-  m_Name: West
+  m_Name: South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2501,7 +2517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7a09eefd13be084d96bf6e522f86d73, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e755629d74077141bf6c16b28f15140, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

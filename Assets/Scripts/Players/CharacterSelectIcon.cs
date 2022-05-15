@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI; 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class CharacterSelectIcon : MonoBehaviour
@@ -15,8 +15,9 @@ public class CharacterSelectIcon : MonoBehaviour
     [SerializeField] private CharacterSelectManager _characterSelectManager;
     [SerializeField] private Sprite _keyboardSprite;
     [SerializeField] private Sprite _controllerSprite;
-    //[SerializeField] private float _characterSelectOffsetX;
     [SerializeField] private Transform[] _positionTransforms;
+    [SerializeField] private Image _lizIcon;
+    [SerializeField] private Image _jayIcon; 
 
     private Vector3 _initialPos;
     private Vector3 _leftCharacterPos;
@@ -91,6 +92,9 @@ public class CharacterSelectIcon : MonoBehaviour
                     if (_characterSelectManager.LizChosen == false)
                     {
                         _characterSelectManager.ChoseCharacter(CharacterChoices.Liz, IsKeyboard);
+                        var tempColor = _lizIcon.color;
+                        tempColor.a = 1f;
+                        _lizIcon.color = tempColor; 
                         _lockedInChoice = true;
                     }
                     //if (PlayerManager.Instance.lizChosen == false)
@@ -103,6 +107,9 @@ public class CharacterSelectIcon : MonoBehaviour
                 {
                     if (_characterSelectManager.JayChosen == false)
                     {
+                        var tempColor = _jayIcon.color;
+                        tempColor.a = 1f;
+                        _jayIcon.color = tempColor;
                         _characterSelectManager.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
                         _lockedInChoice= true;
                     }
