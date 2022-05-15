@@ -1582,6 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 641644075}
+  target: {fileID: 1806249019}
   track: {fileID: 1279080900}
   leftEdge: {fileID: 768762046}
   rightEdge: {fileID: 535924929}
@@ -2404,12 +2405,12 @@ MonoBehaviour:
   m_Appearance:
     pathColor: {r: 0, g: 1, b: 0, a: 1}
     inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    width: 0.2
+    width: 0.86
   m_Looped: 0
   m_Waypoints:
   - position: {x: -3.65, y: 0, z: 0}
     roll: 0
-  - position: {x: 10, y: 0, z: 0}
+  - position: {x: 2.31, y: 0, z: 0}
     roll: 0
   - position: {x: 13.5, y: 0, z: 0}
     roll: 0

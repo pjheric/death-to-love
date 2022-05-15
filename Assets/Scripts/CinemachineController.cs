@@ -7,6 +7,7 @@ using Cinemachine;
 public class CinemachineController : MonoBehaviour {
     // Fields for checking whether the camera has reached a "battle scene" by using waypoints set by the Cinemachine dolly
     [SerializeField] private CinemachineVirtualCamera cm;
+    [SerializeField] private Transform target;
     [SerializeField] private CinemachineSmoothPath track;
     private bool snapped = false;
     private int counter = 1;
@@ -19,6 +20,8 @@ public class CinemachineController : MonoBehaviour {
     [SerializeField] private GameObject rightEdge;
     [SerializeField] private GameObject bottomEdge;
     [SerializeField] private GameObject topEdge;
+
+
 
     private float shakeTimer;
     private float shakeTimerTotal;
@@ -50,11 +53,11 @@ public class CinemachineController : MonoBehaviour {
         // if so, set the camera to the waypoint,
         // then make some changes to ensure this condition doesn't keep getting checked and increment the counter
         if ((Mathf.Abs(track.m_Waypoints[counter].position.x - cm.gameObject.transform.position.x) <= 0.05f) && !snapped) {
+            Debug.Log("camera hit waypoint");
             cm.gameObject.transform.position = new Vector2(track.m_Waypoints[counter].position.x, cm.gameObject.transform.position.y);
             Snap();
             counter++;
             StartCoroutine(Test());
-            Unsnap();
         }
 
         if(shakeTimer > 0)
@@ -68,16 +71,20 @@ public class CinemachineController : MonoBehaviour {
     // placeholder coroutine function to simulate the "battle scenes" where the camera is lockec in place
     IEnumerator Test() {
         yield return new WaitForSeconds(5.0f);
+        Unsnap();
     }
     void Snap() {
-        cm.enabled = false;
+        Debug.Log(cm.Follow);
+        cm.Follow= null;
+        Debug.Log(cm.Follow);
+        //cm.enabled = false;
         snapped = true;
     }
+
     void Unsnap() {
-
-        cm.enabled = true;
+        cm.Follow = target;
+        //cm.enabled = true;
         snapped = false;
-
     }
 
     public void shake()
