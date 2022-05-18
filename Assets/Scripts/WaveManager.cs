@@ -18,8 +18,7 @@ public class WaveManager : MonoBehaviour
 
     [Header("Dialogue variables")] //put any necessary variables for dialogue system under here
     //Array containing DialogueData. One DialogueData = one wave worth of dialogue
-    [SerializeField] private DialogueData[] _dialogueList;
-    private int _currentDialogueSection = 0; 
+    [SerializeField] private DialogueData _dialogueData; 
     //Dialogue Manager object
     [SerializeField] private DialogueManager _dialogueManager; 
     //if true, dialogue plays right when player enters the trigger
@@ -68,7 +67,7 @@ public class WaveManager : MonoBehaviour
             if (startWithDialogue)
             {
                 //do the dialogue, have dialogue call activate spawners when done
-                _dialogueManager.StartDialogue(_dialogueList[_currentDialogueSection]);
+                _dialogueManager.StartDialogue(_dialogueData);
                 
             }
             else
@@ -130,7 +129,7 @@ public class WaveManager : MonoBehaviour
         {
             Debug.Log("No more fighting");
             Cam.Unsnap();
-            Fighting = false;
+            Fighting = false; 
         }
     }
 

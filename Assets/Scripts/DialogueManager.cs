@@ -11,12 +11,10 @@ public class DialogueManager : MonoBehaviour
     private bool _isDialogue = false; 
     [SerializeField] GameObject DialoguePanel; 
     
-    [SerializeField] Image Speaker1Image;
-    [SerializeField] Image Speaker2Image;
+    [SerializeField] Image SpeakerImage;
  
     [SerializeField] TextMeshProUGUI SpeakerName; 
     [SerializeField] TextMeshProUGUI DialogueLine;
-    [SerializeField] private float imageTransparency = 0.6f; 
     private int currentIndex = 0;
     private DialogueData privateData; 
     
@@ -34,19 +32,9 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueLine.text = privateData.GetLine(currentIndex);
         SpeakerName.text = privateData.GetSpeaker(currentIndex);
-        DisplayImage(); 
+        SpeakerImage.sprite = privateData.GetImage(currentIndex);  
     }
 
-    private void DisplayImage()
-    {
-        Speaker1Image.sprite = privateData.GetImage(currentIndex); 
-        if(privateData.GetLength() != currentIndex + 1)
-        {
-            Speaker2Image.sprite = privateData.GetImage(currentIndex);
-            var tempColor = Speaker2Image.color;
-            tempColor.a = imageTransparency; 
-        }
-    }
     public void OnPressNextButton()
     {
        if(privateData.GetLength() != currentIndex + 1)
