@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour {
                     _playerAnim.SetTrigger("Light Attack");
                     
                     _canSlide = false;
-                    AttackEnemies(_lightDamage, _lightHitstun);
+                   // AttackEnemies(_lightDamage, _lightHitstun);
                     DisableAttack();
                     //StartCoroutine(AttackCooldown(_lightAtkCooldown));
                 }
@@ -329,13 +329,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Finds enemies in range and calls their TakeDamage() method.
-    public void AttackEnemies(int damage, float Hitstun)
+    public void AttackEnemies()
     {
-        Debug.Log("damage: " + damage);
+        Debug.Log("damage: " + _lightDamage);
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _enemyLayer);
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
-            enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(damage, Hitstun);
+            enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(_lightDamage, _lightHitstun);
             Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
             _heatManager.increaseHeat();
         }
