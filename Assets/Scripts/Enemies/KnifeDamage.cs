@@ -11,10 +11,11 @@ public class KnifeDamage : MonoBehaviour
 
     private void Awake()
     {
+        /*
         Sprite.gameObject.transform.eulerAngles = new Vector3(
                     Sprite.transform.eulerAngles.x,
                     Sprite.transform.eulerAngles.y,
-                    -135f);
+                    -135f);*/
     }
     //gets a reference to the enemy throwing the knife so that we can orient the knife the correct directioin
     public void setThrower(GameObject thrower)
@@ -24,20 +25,20 @@ public class KnifeDamage : MonoBehaviour
             if ((this.transform.position - thrower.transform.position).x > 0)
             {
                 Debug.Log("Knife is flying right");
-                Sprite.flipY = true;
-                Sprite.gameObject.transform.eulerAngles = new Vector3(
+                Sprite.flipX = true;
+                /*Sprite.gameObject.transform.eulerAngles = new Vector3(
                     Sprite.gameObject.transform.eulerAngles.x,
                     Sprite.gameObject.transform.eulerAngles.y,
-                    -135f);
+                    -135f);*/
             }
             else if ((this.transform.position - thrower.transform.position).x < 0)
             {
                 Debug.Log("Knife is flying Left");
-                Sprite.flipY = false;
-                Sprite.gameObject.transform.eulerAngles = new Vector3(
+                Sprite.flipX = false;
+                /*Sprite.gameObject.transform.eulerAngles = new Vector3(
                     Sprite.gameObject.transform.eulerAngles.x,
                     Sprite.gameObject.transform.eulerAngles.y,
-                    135f + 180f);
+                    135f + 180f);*/
                 Speed *= -1; //if the knife is on the left, we make its speed negative so it flies the opposite direction
 
             }
