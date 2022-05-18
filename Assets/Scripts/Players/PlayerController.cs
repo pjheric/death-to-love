@@ -346,7 +346,7 @@ public class PlayerController : MonoBehaviour {
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(_lightDamage, _lightHitstun);
-            Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position, Quaternion.identity);
+            Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
             _heatManager.increaseHeat();
         }
         _canSlide = true;

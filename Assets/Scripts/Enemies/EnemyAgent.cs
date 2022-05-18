@@ -156,7 +156,7 @@ public class EnemyAgent : MonoBehaviour
             //play stagger animation
             Debug.Log("Staggered");
             Anim.SetTrigger("Staggered");
-            this.transform.position = Vector3.SmoothDamp(transform.position, new Vector3(knockbackVector.x, 0f, 0f), ref knockbackVelocityVector, 1f);
+            this.transform.position += new Vector3(knockbackVector.x * Time.deltaTime, 0f, 0f); //Vector3.SmoothDamp(transform.position, , ref knockbackVelocityVector, 1f);
         }
     }
 
@@ -272,7 +272,7 @@ public class EnemyAgent : MonoBehaviour
                 yield break;
             }
             knockbackVector = this.transform.position;
-            StartCoroutine(Stagger(1f));
+            StartCoroutine(Stagger(0.1f));
             yield return new WaitForSeconds(1f);
         }
     }

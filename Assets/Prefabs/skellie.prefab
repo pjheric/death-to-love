@@ -189,6 +189,7 @@ MonoBehaviour:
   attackArea: 0.8
   knockbackDist: 2
   KnockbackVelocity: 2
+  Anim: {fileID: 0}
 --- !u!195 &2639694782295226560
 NavMeshAgent:
   m_ObjectHideFlags: 0
