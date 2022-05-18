@@ -82,6 +82,7 @@ public class CinemachineController : MonoBehaviour {
     }
 
     public void Unsnap() {
+        Debug.Log("Unsnapped");
         cm.Follow = target;
         //cm.enabled = true;
         snapped = false;

@@ -128,9 +128,9 @@ public class WaveManager : MonoBehaviour
     {
         if(enemies <= 0)
         {
+            Debug.Log("No more fighting");
             Cam.Unsnap();
             Fighting = false;
-            Debug.Log("No more fighting");
         }
     }
 
