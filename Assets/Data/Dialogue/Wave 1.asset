@@ -13,5 +13,31 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   dialogue:
-  - speaker: 
+  - speaker: Rosie
+    line: 'Cheers everyone! To another successful gig! '
+    speakerImage: {fileID: 0}
+  - speaker: Jay
+    line: And to good friends!
+    speakerImage: {fileID: 0}
+  - speaker: Liz
+    line: And many more to come!
+    speakerImage: {fileID: 0}
+  - speaker: Cops
+    line: '**DEADNAME**, you''re under arrest.'
+    speakerImage: {fileID: 0}
+  - speaker: Rosie
+    line: I go by Rosie now and I haven't done anything.
+    speakerImage: {fileID: 0}
+  - speaker: Liz
+    line: Leave her alone will ya pig? We're in the middle of celebrating here.
+    speakerImage: {fileID: 0}
+  - speaker: Jay
+    line: Yeah! Get away from my friends! I just made a toast to them!
+    speakerImage: {fileID: 0}
+  - speaker: Cops
+    line: '**DEADNAME** is charged with disturbing the peace, and slandering Loveless
+      Inc. Wanna add resisting arrest to that?'
+    speakerImage: {fileID: 0}
+  - speaker: Liz
     line: 
+    speakerImage: {fileID: 0}
