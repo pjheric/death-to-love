@@ -3485,6 +3485,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
+      propertyPath: enemies
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: lockCam
       value: 1
       objectReference: {fileID: 0}

@@ -9,8 +9,6 @@ public class CinemachineController : MonoBehaviour {
     [SerializeField] private CinemachineVirtualCamera cm;
     [SerializeField] private Transform target;
     [SerializeField] private CinemachineSmoothPath track;
-    private bool snapped = false;
-    private int counter = 1;
 
     // Fields for setting the left/right edges to the camera 
     private float frustumWidth;
@@ -49,16 +47,6 @@ public class CinemachineController : MonoBehaviour {
         bottomEdge.transform.position = new Vector2(cm.gameObject.transform.position.x, cm.gameObject.transform.position.y - (frustumHeight + offset));
         topEdge.transform.position = new Vector2(cm.gameObject.transform.position.x, cm.gameObject.transform.position.y + (frustumHeight - offset));
 
-        // check if the camera has reached/gotten near a waypoint on the dolly and IS NOT SNAPPED
-        // if so, set the camera to the waypoint,
-        // then make some changes to ensure this condition doesn't keep getting checked and increment the counter
-        if ((Mathf.Abs(track.m_Waypoints[counter].position.x - cm.gameObject.transform.position.x) <= 0.05f) && !snapped) {
-            Debug.Log("camera hit waypoint");
-            cm.gameObject.transform.position = new Vector2(track.m_Waypoints[counter].position.x, cm.gameObject.transform.position.y);
-            Snap();
-            counter++;
-            StartCoroutine(Test());
-        }
 
         if(shakeTimer > 0)
         {
@@ -74,18 +62,13 @@ public class CinemachineController : MonoBehaviour {
         Unsnap();
     }
     public void Snap() {
-        Debug.Log(cm.Follow);
+        Debug.Log("Snap");
         cm.Follow= null;
-        Debug.Log(cm.Follow);
-        //cm.enabled = false;
-        snapped = true;
     }
 
     public void Unsnap() {
         Debug.Log("Unsnapped");
         cm.Follow = target;
-        //cm.enabled = true;
-        snapped = false;
     }
 
     public void shake()
