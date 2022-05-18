@@ -21,9 +21,9 @@ public class HeatManager : MonoBehaviour
     //how much the heat increases on a successful hit
     [SerializeField] private int HeatPerHit = 1; 
     //threshhold to enter heat level 1
-    [SerializeField] private int _heatlevel1 = 20;
+    [SerializeField] private int _heatlevel1 = 60;
     //threshhold to enter heat level 2
-    [SerializeField] private int _heatlevel2 = 60;
+    [SerializeField] private int _heatlevel2 = 180;
     private PlayerController[] players;
 
     public void Start()

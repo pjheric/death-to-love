@@ -3353,8 +3353,8 @@ MonoBehaviour:
   _heatNumber: {fileID: 1237542840}
   HeatFalloff: 10
   HeatPerHit: 1
-  _heatlevel1: 20
-  _heatlevel2: 60
+  _heatlevel1: 60
+  _heatlevel2: 180
 --- !u!1001 &4042382432173714201
 PrefabInstance:
   m_ObjectHideFlags: 0
