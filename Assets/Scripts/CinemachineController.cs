@@ -104,15 +104,4 @@ public class CinemachineController : MonoBehaviour {
         yield return new WaitForSecondsRealtime(Mathf.Abs(SleepTime));
         Time.timeScale = 1;
     }
-
-    public void lockCam()
-    {
-        cm.enabled = false; //this locks the camera during combat, but the problem is that it disables screenshake as well
-    }
-
-    public void unlockCam()
-    {
-        cm.enabled = true;
-    }
-
 }
