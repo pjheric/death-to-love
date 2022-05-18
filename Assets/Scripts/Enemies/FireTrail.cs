@@ -9,6 +9,8 @@ public class FireTrail : MonoBehaviour
 
     private float damage = 0;
     private EnemyAgent enemy;
+
+    private HeatManager HM;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,7 @@ public class FireTrail : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             enemy = other.gameObject.GetComponent<EnemyAgent>();
-            StartCoroutine(enemy.DamageOverTime(DPS));
+            StartCoroutine(enemy.DamageOverTime(DPS, HM));
         }
     }
 
@@ -42,5 +44,10 @@ public class FireTrail : MonoBehaviour
             enemy.StopCoroutine("DamageOverTime");
             enemy = null;
         }
+    }
+
+    public void setHeatManager(HeatManager Heat)
+    {
+        HM = Heat;
     }
 }

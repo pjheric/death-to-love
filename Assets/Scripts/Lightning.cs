@@ -9,6 +9,7 @@ public class Lightning : MonoBehaviour
     [SerializeField] private int hitstun;
 
     private EnemyAgent enemy;
+    private HeatManager HM;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,12 @@ public class Lightning : MonoBehaviour
         {
             enemy = other.gameObject.GetComponent<EnemyAgent>();
             enemy.TakeDamage(damage, hitstun, false);
+            HM.increaseHeat();
         }
+    }
+
+    public void setHeatManager(HeatManager Heat)
+    {
+        HM = Heat;
     }
 }

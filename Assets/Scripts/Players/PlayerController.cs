@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour {
         _input = gameObject.GetComponent<PlayerInput>();
 
         Debug.Log(_input.currentControlScheme);
-        _health.Value = 30;
+        _health.Value = 60;
         SetupCharacter();
 
         EnableUI(); // Activates player UI if player is spawned in
@@ -241,6 +241,16 @@ public class PlayerController : MonoBehaviour {
         _endPos = this.gameObject.transform.position;
         _centerPos = (_startPos + _endPos) / 2;
         GameObject trail = Instantiate(_slideEffect, _centerPos, Quaternion.identity);
+        FireTrail fire = trail.GetComponent<FireTrail>();
+        Lightning lightning = trail.GetComponent<Lightning>();
+        if(fire)
+        {
+            fire.setHeatManager(_heatManager);
+        }
+        else if(lightning)
+        {
+            lightning.setHeatManager(_heatManager);
+        }
         float scaleX = Vector3.Distance(new Vector3(_startPos.x, 0, 0), new Vector3(_endPos.x, 0, 0));
         trail.transform.localScale = new Vector3(scaleX/5, 1, 1);
         _startPos = Vector3.zero;

@@ -210,7 +210,7 @@ public class EnemyAgent : MonoBehaviour
         {
             //Debug.Log("Enemy attacks!");
             Anim.SetTrigger("Attack");
-            MeleeAttack();
+            //MeleeAttack();
             StartCoroutine(AttackCooldown());
             
         }
@@ -257,11 +257,15 @@ public class EnemyAgent : MonoBehaviour
         }
     }
 
-    public IEnumerator DamageOverTime(int DPS)
+    public IEnumerator DamageOverTime(int DPS, HeatManager HM = null)
     {
         while(true)
         {
             Health -= DPS;
+            if(HM)
+            {
+                HM.increaseHeat();
+            }
             if (Health <= 0)
             {
                 Die();
@@ -278,7 +282,10 @@ public class EnemyAgent : MonoBehaviour
         if(!dying)
         {
             dying = true;
-            _spawner.removeEnemy(this);
+            if(_spawner)
+            {
+                _spawner.removeEnemy(this);
+            }
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
         
