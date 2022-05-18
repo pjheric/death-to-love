@@ -58,6 +58,8 @@ public class EnemyAgent : MonoBehaviour
 
     private bool dying = false;
 
+    private EnemySpawner _spawner;
+
     // Start is called before the first frame update
     virtual protected void Start()
     {
@@ -276,7 +278,7 @@ public class EnemyAgent : MonoBehaviour
         if(!dying)
         {
             dying = true;
-            
+            _spawner.removeEnemy(this);
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
         
@@ -326,5 +328,10 @@ public class EnemyAgent : MonoBehaviour
             //Debug.Log("At least one player");
             enemiesToHit[i].GetComponent<PlayerController>().TakeDamage(attackDamage);
         }
+    }
+
+    public void setSpawner(EnemySpawner spawner)
+    {
+        _spawner = spawner;
     }
 }

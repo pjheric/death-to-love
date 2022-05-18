@@ -28,11 +28,15 @@ public class WaveManager : MonoBehaviour
     //if true, dialogue plays when the wave is done
     [SerializeField] private bool endWithDialogue;
 
+    private List<EnemySpawner> UsableSpawners;
+
+    private int completeSpawners = 0;
     // Start is called before the first frame update
     void Start()
     {
         spawners = new List<EnemySpawner>();
-        foreach(GameObject spawner in GameObject.FindGameObjectsWithTag("EnemySpawner"))
+        UsableSpawners = new List<EnemySpawner>();
+        foreach (GameObject spawner in GameObject.FindGameObjectsWithTag("EnemySpawner"))
         {
             spawners.Add(spawner.GetComponent<EnemySpawner>());
         }
@@ -42,40 +46,7 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawning)
-        {
-            int i = 0;
-            foreach (EnemySpawner spawner in spawners)
-            {
-                if (spawner.checkComplete())
-                {
-                    i++;
-                }
-            }
-
-            if (i == spawners.Count)
-            {
-                resetSpawners();
-                spawning = false;
-            }
-            Fighting = true;
-        }
-        else if(Fighting)
-        {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            Debug.Log(enemies.Length);
-            if (enemies.Length <= 0)
-            {
-                Cam.Unsnap();
-                Fighting = false;
-            }
-            /*
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                enemies[i] = null;
-            }*/
-        }
-        else if(_dialogueManager)
+        if(_dialogueManager)
         {
             if(_dialogueManager.IsDialogueOver())
             {
@@ -110,13 +81,56 @@ public class WaveManager : MonoBehaviour
 
     private void activateSpawners()
     {
+        int canUse = 0;
         foreach(EnemySpawner spawner in spawners)
         {
+            if(spawner.checkGrounded())
+            {
+                UsableSpawners.Add(spawner);
+                canUse++;
+            }
+            else
+            {
+                UsableSpawners.Remove(spawner);
+            }
+        }
+        float tempEnemies = 0;
+        foreach(EnemySpawner spawner in UsableSpawners)
+        {
             spawner.setEnemyWeights(HenchmanWeight, MuggerWeight, BouncerWeight);
-            spawner.setMaxEnemies(Mathf.Ceil(enemies / spawners.Count));
-            spawner.startSpawning();
+            spawner.setMaxEnemies(Mathf.Ceil(enemies / canUse));
             spawner.setInfinite(infinite);
+            spawner.startSpawning(this);
             spawning = true;
+            tempEnemies += spawner.getMaxEnemies();
+        }
+        enemies = tempEnemies;
+    }
+
+    public void completeSpawning()
+    {
+        completeSpawners++;
+        if(completeSpawners >= UsableSpawners.Count)
+        {
+            resetSpawners();
+            spawning = false;
+            Fighting = true;
+        }
+    }
+
+    public void removeEnemy()
+    {
+        enemies--;
+        checkIfDoneFighting();
+    }
+
+    public void checkIfDoneFighting()
+    {
+        if(enemies <= 0)
+        {
+            Cam.Unsnap();
+            Fighting = false;
+            Debug.Log("No more fighting");
         }
     }
 

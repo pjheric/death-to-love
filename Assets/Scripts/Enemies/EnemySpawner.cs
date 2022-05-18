@@ -38,7 +38,8 @@ public class EnemySpawner : MonoBehaviour
     private List<GameObject> spawnedEnemies;
     private List<float> weights;
     private CircleCollider2D circle;
-   
+    private WaveManager WM;
+    private int Spawned;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if ((spawnedEnemies.Count < maxEnemies || infinite) && grounded)
+        if ((Spawned < maxEnemies || infinite) && grounded)
         {
             if(!complete)
             {
@@ -65,12 +66,14 @@ public class EnemySpawner : MonoBehaviour
                     {
                         newEnemy = Instantiate(Enemies[i], spawnpoint.position, Quaternion.identity);
                         spawnedEnemies.Add(newEnemy);
+                        Spawned++;
+                        newEnemy.GetComponent<EnemyAgent>().setSpawner(this);
                         break;
                     }
                 }
             }
         }
-        else if(!infinite && spawnedEnemies.Count >= maxEnemies)
+        else if(!infinite && Spawned >= maxEnemies)
         {
             doneSpawning();
         }
@@ -79,11 +82,13 @@ public class EnemySpawner : MonoBehaviour
     public void doneSpawning()
     {
         CancelInvoke();
+        WM.completeSpawning();
         complete = true;
     }
 
-    public void startSpawning()
+    public void startSpawning(WaveManager waveManager)
     {
+        WM = waveManager;
         weights.Add(HenchmanWeight);
         weights.Add(MuggerWeight);
         weights.Add(BouncerWeight);
@@ -143,5 +148,16 @@ public class EnemySpawner : MonoBehaviour
     {
         complete = false;
         spawnedEnemies.Clear();
+    }
+
+    public float getMaxEnemies()
+    {
+        return maxEnemies;
+    }
+
+    public void removeEnemy(EnemyAgent enemy)
+    {
+        WM.removeEnemy();
+        spawnedEnemies.Remove(enemy.gameObject);
     }
 }
