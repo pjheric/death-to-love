@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: 17840ebb3537fbc49a1febf38b227a66
+guid: e2d41736d9b9d47478a7b5f76f28f227
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7445988173219668419
-    second: rangedwalk_0
+      213: 5900111998793307255
+    second: rangedattack_0
   - first:
-      213: 4167876864683800003
-    second: rangedwalk_1
+      213: 9194616370503377410
+    second: rangedattack_1
   - first:
-      213: -8434670173206880627
-    second: rangedwalk_2
-  - first:
-      213: -997513271164597970
-    second: rangedwalk_3
-  - first:
-      213: -4707634034883551735
-    second: rangedwalk_4
-  - first:
-      213: -7615313191501328723
-    second: rangedwalk_5
-  - first:
-      213: 5847389528900643272
-    second: rangedwalk_6
-  - first:
-      213: 2291977338654716240
-    second: rangedwalk_7
+      213: 4282541285787067405
+    second: rangedattack_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +124,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rangedwalk_0
+      name: rangedattack_0
       rect:
         serializedVersion: 2
         x: 18
@@ -153,19 +138,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3e5b7df4398aa890800000000000000
-      internalID: -7445988173219668419
+      spriteID: 774581f4a9861e150800000000000000
+      internalID: 5900111998793307255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rangedwalk_1
+      name: rangedattack_1
       rect:
         serializedVersion: 2
-        x: 81
+        x: 82
         y: 0
-        width: 39
+        width: 36
         height: 60
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -174,38 +159,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c5fb031de547d930800000000000000
-      internalID: 4167876864683800003
+      spriteID: 20268d1bfd6d99f70800000000000000
+      internalID: 9194616370503377410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rangedwalk_2
+      name: rangedattack_2
       rect:
         serializedVersion: 2
-        x: 149
-        y: 0
-        width: 35
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8edb609a2802fa80800000000000000
-      internalID: -8434670173206880627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rangedwalk_3
-      rect:
-        serializedVersion: 2
-        x: 210
+        x: 146
         y: 0
         width: 38
         height: 60
@@ -216,92 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e290f7507fe1822f0800000000000000
-      internalID: -997513271164597970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rangedwalk_4
-      rect:
-        serializedVersion: 2
-        x: 278
-        y: 0
-        width: 34
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90e1a3299cf1baeb0800000000000000
-      internalID: -4707634034883551735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rangedwalk_5
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 0
-        width: 35
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dae873ffff8f05690800000000000000
-      internalID: -7615313191501328723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rangedwalk_6
-      rect:
-        serializedVersion: 2
-        x: 401
-        y: 0
-        width: 39
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c92675bbc9162150800000000000000
-      internalID: 5847389528900643272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rangedwalk_7
-      rect:
-        serializedVersion: 2
-        x: 466
-        y: 0
-        width: 38
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05172cffe3dbecf10800000000000000
-      internalID: 2291977338654716240
+      spriteID: d04684b0c94ae6b30800000000000000
+      internalID: 4282541285787067405
       vertices: []
       indices: 
       edges: []
