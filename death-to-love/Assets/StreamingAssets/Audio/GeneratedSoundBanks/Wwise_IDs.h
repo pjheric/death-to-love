@@ -11,6 +11,11 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID TEST = 3157003241U;
+    } // namespace EVENTS
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID MASTERVOLUME = 2918011349U;

@@ -11,12 +11,22 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Language="SFX" Hash="1110017348">
+		<SoundBank Id="133642231" Language="SFX" Hash="1364318854">
 			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\General\Test" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="428949498" Language="SFX">
+							<ShortName>Title Temp Implementation.wav</ShortName>
+							<Path>SFX\Title Temp Implementation_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3903775696">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1665485482">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>

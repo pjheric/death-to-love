@@ -20,7 +20,7 @@
 										<PointList>
 											<Point>
 												<XPos>0</XPos>
-												<YPos>-200</YPos>
+												<YPos>-100</YPos>
 												<Flags>5</Flags>
 											</Point>
 											<Point>
@@ -57,7 +57,7 @@
 												<PointList>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>-200</YPos>
+														<YPos>-100</YPos>
 														<Flags>5</Flags>
 													</Point>
 													<Point>
@@ -90,7 +90,7 @@
 												<PointList>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>-200</YPos>
+														<YPos>-100</YPos>
 														<Flags>5</Flags>
 													</Point>
 													<Point>
