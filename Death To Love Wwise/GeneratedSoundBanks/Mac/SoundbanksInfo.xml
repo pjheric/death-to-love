@@ -11,16 +11,16 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Language="SFX" Hash="1364318854">
+		<SoundBank Id="133642231" Language="SFX" Hash="4010963983">
 			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\General\Test" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="428949498" Language="SFX">
-							<ShortName>Title Temp Implementation.wav</ShortName>
-							<Path>SFX\Title Temp Implementation_D79FB2B7.wem</Path>
+						<File Id="1020640563" Language="SFX">
+							<ShortName>Neutral Track Trimmed.wav</ShortName>
+							<Path>SFX\Neutral Track Trimmed_99DFD4A2.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

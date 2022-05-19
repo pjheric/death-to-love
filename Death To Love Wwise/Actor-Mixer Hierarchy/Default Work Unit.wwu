@@ -15,6 +15,7 @@
 					<ChildrenList>
 						<Sound Name="Temp Title Music Implementation" ID="{F1FF0F54-7024-4497-8CB9-2BCFD902B89A}" ShortID="242793315">
 							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -31,17 +32,23 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Title Temp Implementation" ID="{E9743B52-0AD1-4B52-BEC8-AE75E61A5FEB}">
+								<AudioFileSource Name="Neutral Track Trimmed" ID="{47C012F4-32DD-4FDC-AFCC-B33B3127D05B}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="3982.658"/>
+										<Property Name="LoopBegin" Type="Real64" Value="2.247"/>
+										<Property Name="LoopEnd" Type="Real64" Value="183.13"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>Title Temp Implementation.wav</AudioFile>
+									<AudioFile>Neutral Track Trimmed.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="428949498"/>
+										<MediaID ID="1020640563"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ObjectLists/>
 							<ActiveSourceList>
-								<ActiveSource Name="Title Temp Implementation" ID="{E9743B52-0AD1-4B52-BEC8-AE75E61A5FEB}" Platform="Linked"/>
+								<ActiveSource Name="Neutral Track Trimmed" ID="{47C012F4-32DD-4FDC-AFCC-B33B3127D05B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
