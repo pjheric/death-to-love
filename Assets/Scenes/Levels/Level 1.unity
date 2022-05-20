@@ -201,6 +201,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 833359151}
     m_Modifications:
+    - target: {fileID: 56146107, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.574
+      objectReference: {fileID: 0}
+    - target: {fileID: 56146107, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.319
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.69462204
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.28528312
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.26126045
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.13689257
+      objectReference: {fileID: 0}
     - target: {fileID: 930661362, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3511,6 +3535,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 833359151}
     m_Modifications:
+    - target: {fileID: 56146107, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.586
+      objectReference: {fileID: 0}
+    - target: {fileID: 56146107, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.334
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.692808
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.28256097
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.25113973
+      objectReference: {fileID: 0}
+    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1355315
+      objectReference: {fileID: 0}
     - target: {fileID: 930661362, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

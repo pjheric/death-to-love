@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: JAY
   characterSpeed: 5
-  attackRange: 1
+  attackRange: 0.85
   lightAtkDamage: 2
   lightHitstun: 0.75
   heavyAtkDamage: 3
