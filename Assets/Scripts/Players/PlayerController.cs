@@ -130,6 +130,7 @@ public class PlayerController : MonoBehaviour {
 
         _playerAnim.runtimeAnimatorController = _characterData.AnimatorController;
         _playerSpriteRenderer.sprite = _characterData.DefaultSprite;
+        _playerAnim.SetFloat("LightAttackSpeed", _lightAtkCooldown);
     }
 
     // Gets direction from player input
