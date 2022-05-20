@@ -221,7 +221,7 @@ public class EnemyAgent : MonoBehaviour
     }
 
     // Handles incoming attacks
-    public void TakeDamage(int damage, float hitstun, bool knockback = true)
+    public virtual void TakeDamage(int damage, float hitstun, bool knockback = true)
     {
         //Debug.Log(gameObject.name + " took " + damage + " damage.");
         Health -= damage; 
