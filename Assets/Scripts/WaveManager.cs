@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private float HenchmanWeight;
-    [SerializeField] private float MuggerWeight;
+    [SerializeField] private float MeleeWeight;
+    [SerializeField] private float GunWeight;
     [SerializeField] private float BouncerWeight;
     [SerializeField] private float enemies = 30f;
     [SerializeField] private bool infinite = false;
@@ -16,7 +16,7 @@ public class WaveManager : MonoBehaviour
     private CinemachineController Cam;
     private bool spawning = false;
     private bool Fighting = false;
-    [SerializeField] private bool DialogueAfterFight;
+    [SerializeField]private bool DialogueAfterFight;
     [SerializeField] private DialogueTrigger DT;
 
     // Start is called before the first frame update
@@ -32,10 +32,11 @@ public class WaveManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("start wave");
+        
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
         {
-            if(lockCam)
+            Debug.Log("start wave");
+            if (lockCam)
             {
                 //locks camera to current position, commented out because this inadvertedly disables screenshake
                 Cam.Snap();
@@ -52,7 +53,7 @@ public class WaveManager : MonoBehaviour
         float tempEnemies = 0;
         foreach(EnemySpawner spawner in UsableSpawners)
         {
-            spawner.setEnemyWeights(HenchmanWeight, MuggerWeight, BouncerWeight);
+            spawner.setEnemyWeights(MeleeWeight, GunWeight, BouncerWeight);
             spawner.setMaxEnemies(Mathf.Ceil(enemies / UsableSpawners.Count));
             spawner.setInfinite(infinite);
             spawner.startSpawning(this);

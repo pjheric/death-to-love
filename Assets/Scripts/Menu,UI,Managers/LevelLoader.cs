@@ -7,6 +7,7 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     [SerializeField] private float TransitionTime = 1f;
+    
     //loads the scene with the name you give it if it exists in the build
     public void LoadLevel(string SceneName)
     {
@@ -23,7 +24,10 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LevelTransition(string SceneName)
     {
         transition.SetTrigger("Start");
+        
         yield return new WaitForSeconds(TransitionTime);
+        
         SceneManager.LoadScene(SceneName);
+        
     }
 }

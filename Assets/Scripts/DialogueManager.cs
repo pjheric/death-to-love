@@ -28,24 +28,40 @@ public class DialogueManager : MonoBehaviour
         privateData = data;
         DisplayDialogue();
     }
+
     private void DisplayDialogue()
     {
-        DialogueLine.text = privateData.GetLine(currentIndex);
-        SpeakerName.text = privateData.GetSpeaker(currentIndex);
-        SpeakerImage.sprite = privateData.GetImage(currentIndex);  
+        if(privateData)
+        {
+            DialogueLine.text = privateData.GetLine(currentIndex);
+            SpeakerName.text = privateData.GetSpeaker(currentIndex);
+            SpeakerImage.sprite = privateData.GetImage(currentIndex);
+        }
+        else
+        {
+            Debug.Log("No Dialogue Data");
+        }
     }
 
     public void OnPressNextButton()
     {
-       if(privateData.GetLength() != currentIndex + 1)
-       {
-            currentIndex += 1;
-            DisplayDialogue(); 
-       }
-       else
-       {
-            EndDialogue(); 
-       }
+        if(privateData)
+        {
+            if (privateData.GetLength() != currentIndex + 1)
+            {
+                currentIndex += 1;
+                DisplayDialogue();
+            }
+            else
+            {
+                EndDialogue();
+            }
+        }
+        else
+        {
+            Debug.Log("No Dialogue Data");
+            EndDialogue();
+        }
     }
 
     public void EndDialogue()
