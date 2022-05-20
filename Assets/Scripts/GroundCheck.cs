@@ -20,6 +20,13 @@ public class GroundCheck : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemySpawner")
+        {
+            collision.gameObject.GetComponent<EnemySpawner>().setGrounded(true);
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
