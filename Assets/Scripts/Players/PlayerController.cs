@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour {
     private Transform _attackPos;
     [SerializeField]
     private LayerMask _enemyLayer;
+    [SerializeField]
+    private LayerMask _environmentLayer;
 
     //UI Elements
     [SerializeField]
@@ -343,6 +345,13 @@ public class PlayerController : MonoBehaviour {
     {
         Debug.Log("damage: " + _lightDamage);
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _enemyLayer);
+        Collider2D[] destructablestoHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _environmentLayer);
+        for(int i = 0; i < destructablestoHit.Length; i++)
+        {
+            destructablestoHit[i].GetComponent<EnemyAgent>().TakeDamage(_lightDamage, _lightHitstun);
+            Instantiate(_hitParticleEmitter, destructablestoHit[i].gameObject.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
+        }
+
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(_lightDamage, _lightHitstun);

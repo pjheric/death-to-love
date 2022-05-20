@@ -56,7 +56,7 @@ public class EnemyAgent : MonoBehaviour
     protected Vector3 knockbackVector;
     protected Vector3 knockbackVelocityVector;
 
-    private bool dying = false;
+    protected bool dying = false;
 
     private EnemySpawner _spawner;
 
@@ -257,7 +257,7 @@ public class EnemyAgent : MonoBehaviour
         }
     }
 
-    public IEnumerator DamageOverTime(int DPS, HeatManager HM = null)
+    public virtual IEnumerator DamageOverTime(int DPS, HeatManager HM = null)
     {
         while(true)
         {
@@ -277,7 +277,7 @@ public class EnemyAgent : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         if(!dying)
         {
@@ -321,7 +321,7 @@ public class EnemyAgent : MonoBehaviour
     }
 
     // Creates a gizmo for attack area in editor
-    public void OnDrawGizmosSelected()
+    public virtual void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackArea);

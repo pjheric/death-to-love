@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barricade : MonoBehaviour
+public class Barricade : EnemyAgent
 {
-    [SerializeField] private int Health = 200;
-    protected CinemachineController Cam;
-    private bool dying = false;
     // Start is called before the first frame update
-    public void Start()
+    protected override void Start()
     {
         Cam = GameObject.FindGameObjectWithTag("Cmvcam").GetComponent<CinemachineController>();
     }
-    public void TakeDamage(int damage)
+
+    protected override void Update()
     {
+
+    }
+    public override void OnDrawGizmosSelected()
+    {
+    }
+
+    public override void TakeDamage(int damage, float hitstun = 0f, bool knockback = false)
+    {
+        Debug.Log("Barrier took damage");
         Health -= damage;
         if (Health <= 0)
         {
@@ -25,7 +32,9 @@ public class Barricade : MonoBehaviour
             Cam.shake();
         }
     }
-    public void Die()
+
+    
+    public override void Die()
     {
         if (!dying)
         {

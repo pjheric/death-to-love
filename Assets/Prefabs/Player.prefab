@@ -368,7 +368,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891788428}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.001, y: 0.001, z: 1}
   m_Children:
@@ -377,7 +377,7 @@ RectTransform:
   - {fileID: 5317789505831288178}
   m_Father: {fileID: 1408092298334436582}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.173, y: 1.5}
@@ -807,11 +807,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterData: {fileID: 11400000, guid: fc851a3430f43b54db6d695481024a49, type: 2}
   _health: {fileID: 11400000, guid: 660044cbaf09562459c5354f299328f0, type: 2}
-  Invincible: 0
+  Invincible: 1
   _attackPos: {fileID: 56146107}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  _environmentLayer:
+    serializedVersion: 2
+    m_Bits: 256
   _pausePanel: {fileID: 0}
   _gameOverPanel: {fileID: 0}
   _playerUIPanel: {fileID: 0}
