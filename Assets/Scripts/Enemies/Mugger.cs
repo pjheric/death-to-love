@@ -64,7 +64,7 @@ public class Mugger : EnemyAgent
                     {
                         attack();
                     }
-                    else)
+                    else
                     {
 
                         backup();
