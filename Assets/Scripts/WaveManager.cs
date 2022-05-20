@@ -11,6 +11,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private bool infinite = false;
     [SerializeField] private bool lockCam = false;
     [SerializeField] private List<EnemySpawner> UsableSpawners;
+    [SerializeField] private GameObject goPanel; 
 
     private int completeSpawners = 0;
     private CinemachineController Cam;
@@ -36,12 +37,6 @@ public class WaveManager : MonoBehaviour
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
         {
             Debug.Log("start wave");
-            if (lockCam)
-            {
-                //locks camera to current position, commented out because this inadvertedly disables screenshake
-                Cam.Snap();
-            }
-
             activateSpawners();
             this.GetComponent<Collider2D>().enabled = false;
         }
@@ -49,7 +44,15 @@ public class WaveManager : MonoBehaviour
 
     public void activateSpawners()
     {
-        
+        if (lockCam)
+        {
+            if(goPanel.activeSelf)
+            {
+                goPanel.SetActive(false); 
+            }
+            //locks camera to current position, commented out because this inadvertedly disables screenshake
+            Cam.Snap();
+        }
         float tempEnemies = 0;
         foreach(EnemySpawner spawner in UsableSpawners)
         {
@@ -87,6 +90,7 @@ public class WaveManager : MonoBehaviour
         {
             Debug.Log("No more fighting");
             Cam.Unsnap();
+            goPanel.SetActive(true); 
             Fighting = false; 
             if(DialogueAfterFight)
             {
