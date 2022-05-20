@@ -51,43 +51,51 @@ public class Mugger : EnemyAgent
     override protected void Update()
     {
         Anim.SetBool("Walking", walking);
-        if (!Staggered)
+        if(GetComponent<Renderer>().isVisible)
         {
-            if (target != null) //if a player was found
+            if (!Staggered)
             {
-                target = player.transform.position;
-                checkSide(); //make sure the enemy is oriented to be facing the target
-
-                if (Attack) //if we're able to attack and we are targeting a player
+                if (target != null) //if a player was found
                 {
-                    attack();
+                    target = player.transform.position;
+                    checkSide(); //make sure the enemy is oriented to be facing the target
+
+                    if (Attack) //if we're able to attack and we are targeting a player
+                    {
+                        attack();
+                    }
+                    else)
+                    {
+
+                        backup();
+                    }
                 }
                 else
                 {
-
-                    backup();
+                    //because the player doesnt spawn until input is given, we have to keep checking for a player
+                    //This will 100% be removed before the final version
+                    player = GameObject.FindGameObjectWithTag("Player");
+                    if (player)
+                    {
+                        target = player.transform.position; //get the player's transform
+                    }
+                    else
+                    {
+                        idle();
+                    }
                 }
             }
             else
             {
-                //because the player doesnt spawn until input is given, we have to keep checking for a player
-                //This will 100% be removed before the final version
-                player = GameObject.FindGameObjectWithTag("Player");
-                if (player)
-                {
-                    target = player.transform.position; //get the player's transform
-                }
-                else
-                {
-                    idle();
-                }
+                Anim.SetTrigger("Staggered");
+                Debug.Log("Staggered");
             }
         }
         else
         {
-            Anim.SetTrigger("Staggered");
-            Debug.Log("Staggered");
+            agent.SetDestination(player.transform.position);
         }
+        
     }
 
     protected override void attack()
@@ -120,7 +128,7 @@ public class Mugger : EnemyAgent
             Anim.SetTrigger("Attack");
             StartCoroutine(AttackCooldown());
         }
-        else
+        else if (GetComponent<Renderer>().isVisible)
         {
             backup();
         }

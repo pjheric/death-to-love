@@ -2659,6 +2659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave1Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 9086285373127927019, guid: 6da6989f427c746498303625316f2e70, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6da6989f427c746498303625316f2e70, type: 3}
 --- !u!1 &819331706
