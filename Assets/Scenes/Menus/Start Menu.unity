@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9433962, g: 0.25364897, b: 0.73180056, a: 1}
+  m_Color: {r: 0.9150943, g: 0.35826805, b: 0.74425, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c71ccdb287282b4fb40c525e551f262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpritesToSpawn: 250
+  SpritesToSpawn: 50
   backgroundSprites:
   - {fileID: 4597567456071077387, guid: c839551152e23b44f8494cdbbe49cdaa, type: 3}
   - {fileID: 7742538504722991262, guid: 91367cac14c984b4baa1ac8b018a056c, type: 3}
