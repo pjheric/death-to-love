@@ -27,8 +27,7 @@ public class PlayerController : MonoBehaviour {
     //UI Elements
     [SerializeField]
     private GameObject _pausePanel;
-    [SerializeField]
-    private GameObject _gameOverPanel;
+    
     [SerializeField]
     private GameObject _playerUIPanel;
 
@@ -55,6 +54,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject _hitParticleEmitter;
     //[SerializeField]
     private GameObject _slideEffect;
+
+    private DialogueManager _DialogueManager;
 
 
 
@@ -89,6 +90,11 @@ public class PlayerController : MonoBehaviour {
     private float mashProgress = 0;
     private void Start()
     {
+        GameObject _DialogueManagerObj = GameObject.FindGameObjectWithTag("DialogueManager");
+        if(_DialogueManagerObj)
+        {
+            _DialogueManager = _DialogueManagerObj.GetComponent<DialogueManager>();
+        }
         ReviveBar = GetComponentInChildren<Slider>();
         ReviveBar.maxValue = mashGoal;
         DownCanvas.gameObject.SetActive(false);
@@ -156,31 +162,42 @@ public class PlayerController : MonoBehaviour {
     // Called when player presses light attack button
     public void OnLightAttack(InputAction.CallbackContext context)
     {
-        if(!_Downed)
+        if(_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
-            if (context.performed) // Ensures functions only performed once on button press
+            if (!_Downed)
             {
-                //Debug.Log("light attack input");
-                if (_canAttack)
+                if (context.performed) // Ensures functions only performed once on button press
                 {
-                    _playerAnim.SetTrigger("Light Attack");
-                    
-                    _canSlide = false;
-                   // AttackEnemies(_lightDamage, _lightHitstun);
-                    DisableAttack();
-                    //StartCoroutine(AttackCooldown(_lightAtkCooldown));
+                    //Debug.Log("light attack input");
+                    if (_canAttack)
+                    {
+                        _playerAnim.SetTrigger("Light Attack");
+
+                        _canSlide = false;
+                        // AttackEnemies(_lightDamage, _lightHitstun);
+                        DisableAttack();
+                        //StartCoroutine(AttackCooldown(_lightAtkCooldown));
+                    }
+                }
+            }
+            else
+            {
+                if (context.performed) // Ensures functions only performed once on button press
+                {
+                    mashProgress += IncreasePerPress;
+                    ReviveBar.value = mashProgress;
+                    if (mashProgress >= mashGoal)
+                    {
+                        GetUp();
+                    }
                 }
             }
         }
-        else
+        else if (_DialogueManager && context.performed) // Ensures functions only performed once on button press
         {
-            mashProgress += IncreasePerPress;
-            ReviveBar.value = mashProgress;
-            if(mashProgress >= mashGoal)
-            {
-                GetUp();
-            }
+            _DialogueManager.OnPressNextButton();
         }
+        
     }
 
     /*
@@ -225,11 +242,11 @@ public class PlayerController : MonoBehaviour {
         {
             if (!_isPaused)
             {
-                pause(); 
+                _pausePanel.GetComponent<PauseMenuManager>().pause(); 
             }
             else
             {
-                Resume(); //I put these into their own functions because we need the continue button on the pause menu to Resume and set _isPaused to false
+                _pausePanel.GetComponent<PauseMenuManager>().Resume(); //I put these into their own functions because we need the continue button on the pause menu to Resume and set _isPaused to false
             }
         }
     }
@@ -375,12 +392,7 @@ public class PlayerController : MonoBehaviour {
         if (!_sliding && !Invincible) 
         {
             _health.Value -= damage;
-            if (_health.Value <= 0 && GameManagerScript.Instance.IsMultiplayer == false) 
-            {
-                //Debug.Log("Player Dead");
-                gameOver();
-            }
-            else if (_health.Value <= 0 && GameManagerScript.Instance.IsMultiplayer == true)
+            if (_health.Value <= 0)
             {
                 PlayerDown();
             }
@@ -394,12 +406,6 @@ public class PlayerController : MonoBehaviour {
         DownCanvas.gameObject.SetActive(true);
         ReviveBar.value = 0;
         Debug.Log(this.tag + " Down!");
-        //commented this out because for some reason p1 and p2 have synched health
-        /*
-        if(GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>()._Downed) //if other player is also down
-        {
-            gameOver();
-        }*/
     }
 
     public void GetUp()
@@ -430,26 +436,6 @@ public class PlayerController : MonoBehaviour {
         _canMove = true;
     }
 
-    public void Resume()
-    {
-        Time.timeScale = 1;
-        _pausePanel.SetActive(false);
-        _isPaused = false;
-    }
-
-    public void pause()
-    {
-        Time.timeScale = 0;
-        _pausePanel.SetActive(true);
-        _isPaused = true;
-    }
-
-    public void gameOver() {
-        Time.timeScale = 0;
-        _gameOverPanel.SetActive(true);
-        _isPaused = true;
-    }
-
     public void EnableUI()
     {
         TextMeshProUGUI nametag = _playerUIPanel.GetComponentInChildren<TextMeshProUGUI>();
@@ -465,5 +451,10 @@ public class PlayerController : MonoBehaviour {
     public void DisableAttack()
     {
         _canAttack = false;
+    }
+
+    public void setPaused(bool pause)
+    {
+        _isPaused = pause;
     }
 }

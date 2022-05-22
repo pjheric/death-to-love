@@ -7,17 +7,22 @@ public class PauseMenuManager : MonoBehaviour
 {
     private LevelLoader levelLoader;
     private PlayerController PC;
+    private PlayerController PC2;
+    private bool CanPause = true;
     // Start is called before the first frame update
-    void Start()
+    void awake()
     {
         levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if(GameObject.FindGameObjectWithTag("Player2"))
+        {
+            PC2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void setCanPause(bool pause)
     {
-        
+        CanPause = pause;
     }
 
     public void RestartLevel() {
@@ -52,7 +57,34 @@ public class PauseMenuManager : MonoBehaviour
     public void Resume()
     {
         Debug.Log("Resume");
-        PC.Resume();
+        Time.timeScale = 1;
+        this.gameObject.SetActive(false);
+        if (PC)
+        {
+            PC.setPaused(false);
+        }
+        if (PC2)
+        {
+            PC2.setPaused(false);
+        }
+    }
+
+    public void pause()
+    {
+        if(CanPause)
+        {
+            Time.timeScale = 0;
+            this.gameObject.SetActive(true);
+            if (PC)
+            {
+                PC.setPaused(true);
+            }
+            if (PC2)
+            {
+                PC2.setPaused(true);
+            }
+        }
+        
     }
 
 }

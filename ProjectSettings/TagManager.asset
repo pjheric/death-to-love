@@ -12,6 +12,7 @@ TagManager:
   - Player2
   - EnemySpawner
   - Ground
+  - DialogueManager
   layers:
   - Default
   - TransparentFX

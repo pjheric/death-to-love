@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private PlayerController _player2;
     [SerializeField] private CharacterData lizData;
     [SerializeField] private CharacterData jayData;
+    [SerializeField] private GameObject _gameOverPanel;
 
     private void Start()
     {
@@ -35,5 +36,36 @@ public class LevelManager : MonoBehaviour
         }
         _player1.SetupCharacter();
         _player2.SetupCharacter();
+    }
+
+    private void Update()
+    {
+        if(GameManagerScript.Instance.IsMultiplayer == true)
+        {
+            if (_player1.checkDown() && _player2.checkDown())
+            {
+                gameOver();
+            }
+        }
+        else if(_player1.checkDown())
+        {
+            gameOver();
+        }
+    }
+    public void gameOver()
+    {
+        _gameOverPanel.SetActive(true);
+        if (GameManagerScript.Instance.IsMultiplayer == true)
+        {
+            _player1.setPaused(true);
+            _player2.setPaused(true);
+            _player1.gameObject.SetActive(false);
+            _player2.gameObject.SetActive(false);
+        }
+        else if (_player1)
+        {
+            _player1.setPaused(true);
+            _player2.gameObject.SetActive(false);
+        }
     }
 }

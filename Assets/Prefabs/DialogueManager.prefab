@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3281191528475484231}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: DialogueManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129458221942517889}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.73, y: -4.07, z: 92.534935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -47,4 +47,3 @@ MonoBehaviour:
   SpeakerImage: {fileID: 0}
   SpeakerName: {fileID: 0}
   DialogueLine: {fileID: 0}
-  imageTransparency: 0.6
