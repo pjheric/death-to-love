@@ -34,6 +34,24 @@ public class CharacterSelectManager : MonoBehaviour
         }
     }
 
+    public void DeselectCharacter(CharacterChoices character, bool isPlayer1)
+    {
+        if (isPlayer1)
+        {
+            //Player1Choice = character;
+            GameManagerScript.Instance.Player1Character = CharacterChoices.None;
+        }
+
+        if (character == CharacterChoices.Liz)
+        {
+            LizChosen = false;
+        }
+        else if (character == CharacterChoices.Jay)
+        {
+            JayChosen = false;
+        }
+    }
+
     public void CheckStartGame()
     {
         if (LizChosen == true && JayChosen == true)

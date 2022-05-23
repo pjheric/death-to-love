@@ -54,19 +54,20 @@ public class CharacterSelectIcon : MonoBehaviour
             Debug.Log("Icon position transforms not set. See CharacterSelectIcon Start() method.");
         }
 
+        SetControllerIcons();
         GameManagerScript.Instance.IsMultiplayer = true; // Sets up game manager for multiplayer
     }
 
-    public void SetSprite()
+    public void SetControllerIcons()
     {
         if (_playerInput.currentControlScheme == "Keyboard")
         {
-            _spriteRenderer.sprite = _keyboardSprite;
+            //_spriteRenderer.sprite = _keyboardSprite;
             IsKeyboard = true;
         }
         else if (_playerInput.currentControlScheme == "Controller")
         {
-            _spriteRenderer.sprite = _controllerSprite;
+            //_spriteRenderer.sprite = _controllerSprite;
             IsKeyboard = false;
         }
     }
@@ -97,11 +98,6 @@ public class CharacterSelectIcon : MonoBehaviour
                         _lizIcon.color = tempColor; 
                         _lockedInChoice = true;
                     }
-                    //if (PlayerManager.Instance.lizChosen == false)
-                    //{
-                    //    PlayerManager.Instance.ChoseCharacter(CharacterChoices.Liz, IsKeyboard);
-                    //    _lockedInChoice = true;
-                    //}
                 }
                 else if (_selectedChar == CharacterChoices.Jay)
                 {
@@ -113,12 +109,6 @@ public class CharacterSelectIcon : MonoBehaviour
                         _characterSelectManager.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
                         _lockedInChoice= true;
                     }
-
-                    //if (PlayerManager.Instance.jayChosen == false)
-                    //{
-                    //    PlayerManager.Instance.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
-                    //    _lockedInChoice = true;
-                    //}
                 }
 
                 _characterSelectManager.CheckStartGame();
@@ -133,6 +123,20 @@ public class CharacterSelectIcon : MonoBehaviour
             if (_lockedInChoice == true)
             {
                 _lockedInChoice = false;
+                if (_selectedChar == CharacterChoices.Liz)
+                {
+                    var tempColor = _lizIcon.color;
+                    tempColor.a = 0.5f;
+                    _lizIcon.color = tempColor;
+                    _characterSelectManager.DeselectCharacter(CharacterChoices.Liz, IsKeyboard);
+                }
+                else if (_selectedChar == CharacterChoices.Jay)
+                {
+                    var tempColor = _jayIcon.color;
+                    tempColor.a = 0.5f;
+                    _jayIcon.color = tempColor;
+                    _characterSelectManager.DeselectCharacter(CharacterChoices.Jay, IsKeyboard);
+                }
             }
             else
             {
