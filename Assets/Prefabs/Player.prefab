@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56146106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.63, y: 0.31, z: 0}
+  m_LocalPosition: {x: 0.586, y: 0.334, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1408092298334436582}
@@ -672,7 +672,7 @@ SpriteRenderer:
   m_SortingLayerID: -495052011
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1797201189882975728, guid: c9b86454ef17a1544a8ff11f802938f3, type: 3}
+  m_Sprite: {fileID: -5739251348369361577, guid: 8923d9d1d8a48b14bb5cd2be3932a8c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterData: {fileID: 11400000, guid: fc851a3430f43b54db6d695481024a49, type: 2}
   _health: {fileID: 11400000, guid: 660044cbaf09562459c5354f299328f0, type: 2}
-  Invincible: 1
+  Invincible: 0
   _attackPos: {fileID: 56146107}
   _enemyLayer:
     serializedVersion: 2
@@ -816,7 +816,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _pausePanel: {fileID: 0}
-  _gameOverPanel: {fileID: 0}
   _playerUIPanel: {fileID: 0}
   _heatManager: {fileID: 0}
   mashGoal: 100
@@ -876,7 +875,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.23054999, y: 0.12729561}
+  m_Offset: {x: 0.25113973, y: 0.1355315}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -887,7 +886,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8328185, y: 0.2660892}
+  m_Size: {x: 0.692808, y: 0.28256097}
   m_EdgeRadius: 0
 --- !u!1 &7737092966301997126
 GameObject:

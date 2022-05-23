@@ -3575,30 +3575,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 833359151}
     m_Modifications:
-    - target: {fileID: 56146107, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.586
-      objectReference: {fileID: 0}
-    - target: {fileID: 56146107, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.334
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_Size.x
-      value: 0.692808
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_Size.y
-      value: 0.28256097
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.25113973
-      objectReference: {fileID: 0}
-    - target: {fileID: 589820887, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.1355315
-      objectReference: {fileID: 0}
     - target: {fileID: 930661362, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3612,10 +3588,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: Invincible
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: _pausePanel
       value: 
       objectReference: {fileID: 1198390875}
@@ -3624,10 +3596,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2086886659}
     - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: _gameOverPanel
-      value: 
-      objectReference: {fileID: 61114423}
-    - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: _playerUIPanel
       value: 
       objectReference: {fileID: 482641939}
@@ -3635,10 +3603,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1408092298334436581, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -5739251348369361577, guid: 8923d9d1d8a48b14bb5cd2be3932a8c4, type: 3}
     - target: {fileID: 1408092298334436582, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_RootOrder
       value: 0
