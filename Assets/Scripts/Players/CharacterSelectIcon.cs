@@ -98,11 +98,6 @@ public class CharacterSelectIcon : MonoBehaviour
                         _lizIcon.color = tempColor; 
                         _lockedInChoice = true;
                     }
-                    //if (PlayerManager.Instance.lizChosen == false)
-                    //{
-                    //    PlayerManager.Instance.ChoseCharacter(CharacterChoices.Liz, IsKeyboard);
-                    //    _lockedInChoice = true;
-                    //}
                 }
                 else if (_selectedChar == CharacterChoices.Jay)
                 {
@@ -114,12 +109,6 @@ public class CharacterSelectIcon : MonoBehaviour
                         _characterSelectManager.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
                         _lockedInChoice= true;
                     }
-
-                    //if (PlayerManager.Instance.jayChosen == false)
-                    //{
-                    //    PlayerManager.Instance.ChoseCharacter(CharacterChoices.Jay, IsKeyboard);
-                    //    _lockedInChoice = true;
-                    //}
                 }
 
                 _characterSelectManager.CheckStartGame();
@@ -134,6 +123,20 @@ public class CharacterSelectIcon : MonoBehaviour
             if (_lockedInChoice == true)
             {
                 _lockedInChoice = false;
+                if (_selectedChar == CharacterChoices.Liz)
+                {
+                    var tempColor = _lizIcon.color;
+                    tempColor.a = 0.5f;
+                    _lizIcon.color = tempColor;
+                    _characterSelectManager.DeselectCharacter(CharacterChoices.Liz, IsKeyboard);
+                }
+                else if (_selectedChar == CharacterChoices.Jay)
+                {
+                    var tempColor = _jayIcon.color;
+                    tempColor.a = 0.5f;
+                    _jayIcon.color = tempColor;
+                    _characterSelectManager.DeselectCharacter(CharacterChoices.Jay, IsKeyboard);
+                }
             }
             else
             {
