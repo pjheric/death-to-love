@@ -65,6 +65,7 @@ public class StartMenu : MonoBehaviour
 
     public void ButtonClickSound()
     {
+        Debug.Log("Click");
         AkSoundEngine.PostEvent("UI_Button_Press", gameObject);
     }
 
