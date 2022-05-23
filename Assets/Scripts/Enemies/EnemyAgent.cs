@@ -114,6 +114,7 @@ public class EnemyAgent : MonoBehaviour
             float taunt = Random.Range(0, 1001);
             if(taunt <= tauntChance)
             {
+                Debug.Log("Taunt");
                 AkSoundEngine.PostEvent("Enemy_Taunt", gameObject);
             }
 
