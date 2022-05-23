@@ -359,8 +359,4 @@ public class EnemyAgent : MonoBehaviour
     {
         _spawner = spawner;
     }
-    public void footstepSound()
-    {
-        AkSoundEngine.PostEvent("Enemy_Footstep", gameObject);
-    }
 }
