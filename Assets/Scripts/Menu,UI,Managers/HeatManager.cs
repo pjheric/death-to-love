@@ -44,7 +44,7 @@ public class HeatManager : MonoBehaviour
     public void FixedUpdate()
     {
         CurrentHeatFalloff -= HeatFalloff * Time.deltaTime;
-        if (CurrentHeatFalloff <= 0f)
+        if (CurrentHeatFalloff <= 0f && _heatPanel.activeSelf)
         {
             ResetHeat();
         }

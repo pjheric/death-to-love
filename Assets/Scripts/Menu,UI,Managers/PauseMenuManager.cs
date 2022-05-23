@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
-    private LevelLoader levelLoader;
+    [SerializeField] private LevelLoader levelLoader;
     private PlayerController PC;
     private PlayerController PC2;
     private bool CanPause = true;
     // Start is called before the first frame update
     void awake()
     {
-        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
+        //levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         if(GameObject.FindGameObjectWithTag("Player2"))
         {
@@ -38,7 +38,8 @@ public class PauseMenuManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Debug.Log("Main Menu");
-        if(levelLoader) {
+        if(levelLoader) 
+        {
             Time.timeScale = 1;
             levelLoader.LoadLevel("Start Menu");
         }
