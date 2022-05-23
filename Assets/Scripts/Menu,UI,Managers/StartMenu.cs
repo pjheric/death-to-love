@@ -31,6 +31,7 @@ public class StartMenu : MonoBehaviour
 
     public void Singleplayer()
     {
+        AkSoundEngine.PostEvent("Game_Start_Solo", gameObject);
         GameManagerScript.Instance.IsMultiplayer = false;
         if (levelLoader)
         {
@@ -44,6 +45,7 @@ public class StartMenu : MonoBehaviour
 
     public void Multiplayer()
     {
+        AkSoundEngine.PostEvent("Game_Start_Multi", gameObject);
         GameManagerScript.Instance.IsMultiplayer = true; 
         if (levelLoader)
         {
@@ -57,7 +59,13 @@ public class StartMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        AkSoundEngine.PostEvent("Game_Quit", gameObject);
         Application.Quit(); 
+    }
+
+    public void ButtonClickSound()
+    {
+        AkSoundEngine.PostEvent("UI_Button_Press", gameObject);
     }
 
 }
