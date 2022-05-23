@@ -10,17 +10,14 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private DialogueData _dialogueData;
     //Dialogue Manager object
     [SerializeField] private DialogueManager _dialogueManager;
+    [SerializeField] private bool StartSceneWithDialogue = false;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (StartSceneWithDialogue)
+        {
+            triggerDialogue();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,10 +40,5 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.Log("No Dialogue Manager in " + this.gameObject.name);
         }
-    }
-
-    public void HidePlayers()
-    {
-        
     }
 }

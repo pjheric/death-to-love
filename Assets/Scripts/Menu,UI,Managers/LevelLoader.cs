@@ -7,7 +7,7 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     [SerializeField] private float TransitionTime = 1f;
-    
+    private bool isdone = false;
     //loads the scene with the name you give it if it exists in the build
     public void LoadLevel(string SceneName)
     {
@@ -29,5 +29,15 @@ public class LevelLoader : MonoBehaviour
         
         SceneManager.LoadScene(SceneName);
         
+    }
+
+    public void toggleDone()
+    {
+        isdone = !isdone;
+    }
+
+    public bool checkDone()
+    {
+        return isdone;
     }
 }

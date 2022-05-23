@@ -60,11 +60,17 @@ public class EnemyAgent : MonoBehaviour
 
     private EnemySpawner _spawner;
 
+    private DialogueManager _DialogueManager;
+
     // Start is called before the first frame update
     virtual protected void Start()
     {
-        
-        if(GameManagerScript.Instance.IsMultiplayer == true)
+        GameObject _DialogueManagerObj = GameObject.FindGameObjectWithTag("DialogueManager");
+        if (_DialogueManagerObj)
+        {
+            _DialogueManager = _DialogueManagerObj.GetComponent<DialogueManager>();
+        }
+        if (GameManagerScript.Instance.IsMultiplayer == true)
         {
             int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
             if (targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
@@ -103,60 +109,63 @@ public class EnemyAgent : MonoBehaviour
     // Update is called once per frame
     virtual protected void Update()
     {
-        Anim.SetBool("Walking", walking);
-        if (!Staggered)
+        if (_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
-            
-            if (target != null) //if a player was found
+            Anim.SetBool("Walking", walking);
+            if (!Staggered)
             {
-                checkSide(); //make sure the enemy is oriented to be facing the target
 
-                if (Attack) //if we're able to attack and we are targeting a player
+                if (target != null) //if a player was found
                 {
-                    attack();
+                    checkSide(); //make sure the enemy is oriented to be facing the target
+
+                    if (Attack) //if we're able to attack and we are targeting a player
+                    {
+                        attack();
+                    }
+                    else
+                    {
+                        float distanceToTarget = Vector3.Distance(transform.position, target);
+                        if (distanceToTarget < 0.5)
+                        {
+                            idle();
+                        }
+                    }
+
+
+
                 }
                 else
                 {
-                    float distanceToTarget = Vector3.Distance(transform.position, target);
-                    if (distanceToTarget < 0.5)
+                    //If we can't find a player, we should keep looking for one
+                    int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
+                    if (targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
+                    {
+                        player = GameObject.FindGameObjectWithTag("Player");
+                    }
+                    else
+                    {
+                        player = GameObject.FindGameObjectWithTag("Player2");
+                    }
+
+
+                    if (player)
+                    {
+                        target = player.transform.position; //get the player's transform
+                    }
+                    else
                     {
                         idle();
                     }
                 }
-
-
-
             }
             else
             {
-                //If we can't find a player, we should keep looking for one
-                int targetPlayer = Random.Range(0, 2); //randomly picks either player 1 or player 2 as a target
-                if (targetPlayer == 0) //if player1 is selected, or we are in single player mode (add or statement when gamemanager is ready)
-                {
-                    player = GameObject.FindGameObjectWithTag("Player");
-                }
-                else
-                {
-                    player = GameObject.FindGameObjectWithTag("Player2");
-                }
-
-                
-                if (player)
-                {
-                    target = player.transform.position; //get the player's transform
-                }
-                else
-                {
-                    idle();
-                }
+                //play stagger animation
+                Debug.Log("Staggered");
+                Anim.SetTrigger("Staggered");
+                this.transform.position += new Vector3(knockbackVector.x * Time.deltaTime, 0f, 0f); //Vector3.SmoothDamp(transform.position, , ref knockbackVelocityVector, 1f);
             }
-        }
-        else
-        {
-            //play stagger animation
-            Debug.Log("Staggered");
-            Anim.SetTrigger("Staggered");
-            this.transform.position += new Vector3(knockbackVector.x * Time.deltaTime, 0f, 0f); //Vector3.SmoothDamp(transform.position, , ref knockbackVelocityVector, 1f);
         }
     }
 

@@ -16,15 +16,14 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI SpeakerName; 
     [SerializeField] TextMeshProUGUI DialogueLine;
     private int currentIndex = 0;
-    private DialogueData privateData; 
-    
+    private DialogueData privateData;
     
     public void StartDialogue(DialogueData data)
     {
         _isDialogue = true; 
         DialoguePanel.SetActive(true);
         //First, freeze time
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         privateData = data;
         DisplayDialogue();
     }
@@ -67,7 +66,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         _isDialogue = false; 
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         currentIndex = 0;
         DialoguePanel.SetActive(false); 
     }
@@ -75,5 +74,10 @@ public class DialogueManager : MonoBehaviour
     public bool IsDialogueOver()
     {
         return _isDialogue; 
+    }
+
+    public void SetDialogueBool(bool Dialogue)
+    {
+        _isDialogue = Dialogue;
     }
 }

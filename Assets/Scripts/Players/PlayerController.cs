@@ -142,20 +142,23 @@ public class PlayerController : MonoBehaviour {
     // Gets direction from player input
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (_canMove)
+        if (_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
-            // not 100% sure why, but if you hold another direction while sliding,
-            // the player will keep moving in the same direction
-            // will reset when you let go of a direction/input a different direction
-            //if (!_sliding && _canSlide) {
-            if (!_sliding)
+            if (_canMove)
             {
-                _movementInput = context.ReadValue<Vector2>();
+                // not 100% sure why, but if you hold another direction while sliding,
+                // the player will keep moving in the same direction
+                // will reset when you let go of a direction/input a different direction
+                //if (!_sliding && _canSlide) {
+                if (!_sliding)
+                {
+                    _movementInput = context.ReadValue<Vector2>();
+                }
             }
-        }
-        else
-        {
-            _movementInput = Vector2.zero;
+            else
+            {
+                _movementInput = Vector2.zero;
+            }
         }
     }
 
@@ -221,32 +224,38 @@ public class PlayerController : MonoBehaviour {
     */
 
     public void OnSlide(InputAction.CallbackContext context) {
-        if (context.performed && _canSlide && !_Downed) // Ensures functions only performed once on button press
+        if (_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
-            //Debug.Log("Slide");
-            _playerAnim.SetTrigger("Slide");
-            _movementInput = _slideVector;
-            _sliding = true;
-            _canSlide = false;
-            _canAttack = false;
-            _characterSpeed *= 2f;
-            _startPos = this.gameObject.transform.position;
-            float duration = _playerAnim.GetFloat("Slide Duration");
-            StartCoroutine(SlideSpeedReset(duration));
+            if (context.performed && _canSlide && !_Downed) // Ensures functions only performed once on button press
+            {
+                //Debug.Log("Slide");
+                _playerAnim.SetTrigger("Slide");
+                _movementInput = _slideVector;
+                _sliding = true;
+                _canSlide = false;
+                _canAttack = false;
+                _characterSpeed *= 2f;
+                _startPos = this.gameObject.transform.position;
+                float duration = _playerAnim.GetFloat("Slide Duration");
+                StartCoroutine(SlideSpeedReset(duration));
+            }
         }
     }
 
     public void OnPause(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
-            if (!_isPaused)
+            if (context.performed)
             {
-                _pausePanel.GetComponent<PauseMenuManager>().pause(); 
-            }
-            else
-            {
-                _pausePanel.GetComponent<PauseMenuManager>().Resume(); //I put these into their own functions because we need the continue button on the pause menu to Resume and set _isPaused to false
+                if (!_isPaused)
+                {
+                    _pausePanel.GetComponent<PauseMenuManager>().pause();
+                }
+                else
+                {
+                    _pausePanel.GetComponent<PauseMenuManager>().Resume(); //I put these into their own functions because we need the continue button on the pause menu to Resume and set _isPaused to false
+                }
             }
         }
     }
@@ -288,8 +297,11 @@ public class PlayerController : MonoBehaviour {
     {
         if(_Downed)
         {
-            mashProgress -= DecreaseRate * Time.deltaTime;
-            ReviveBar.value = mashProgress;
+            if(mashProgress >= 0)
+            {
+                mashProgress -= DecreaseRate * Time.deltaTime;
+                ReviveBar.value = mashProgress;
+            }
             
         }
         else 

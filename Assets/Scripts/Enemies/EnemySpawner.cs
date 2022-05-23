@@ -40,9 +40,16 @@ public class EnemySpawner : MonoBehaviour
     private CircleCollider2D circle;
     private WaveManager WM;
     private int Spawned;
+
+    private DialogueManager _DialogueManager;
     // Start is called before the first frame update
     void Start()
     {
+        GameObject _DialogueManagerObj = GameObject.FindGameObjectWithTag("DialogueManager");
+        if (_DialogueManagerObj)
+        {
+            _DialogueManager = _DialogueManagerObj.GetComponent<DialogueManager>();
+        }
         weights = new List<float>();
 
         spawnedEnemies = new List<GameObject>();
@@ -52,30 +59,33 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if ((Spawned < maxEnemies || infinite) && grounded)
+        if (_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
-            if(!complete)
+            if ((Spawned < maxEnemies || infinite) && grounded)
             {
-                GameObject newEnemy;
-
-                float randomWeight = Random.Range(0f, netWeight);
-                for (int i = 0; i < weights.Count; i++)
+                if (!complete)
                 {
-                    randomWeight -= weights[i];
-                    if (randomWeight < 0)
+                    GameObject newEnemy;
+
+                    float randomWeight = Random.Range(0f, netWeight);
+                    for (int i = 0; i < weights.Count; i++)
                     {
-                        newEnemy = Instantiate(Enemies[i], spawnpoint.position, Quaternion.identity);
-                        spawnedEnemies.Add(newEnemy);
-                        Spawned++;
-                        newEnemy.GetComponent<EnemyAgent>().setSpawner(this);
-                        break;
+                        randomWeight -= weights[i];
+                        if (randomWeight < 0)
+                        {
+                            newEnemy = Instantiate(Enemies[i], spawnpoint.position, Quaternion.identity);
+                            spawnedEnemies.Add(newEnemy);
+                            Spawned++;
+                            newEnemy.GetComponent<EnemyAgent>().setSpawner(this);
+                            break;
+                        }
                     }
                 }
             }
-        }
-        else if(!infinite && Spawned >= maxEnemies)
-        {
-            doneSpawning();
+            else if (!infinite && Spawned >= maxEnemies)
+            {
+                doneSpawning();
+            }
         }
     }
 
