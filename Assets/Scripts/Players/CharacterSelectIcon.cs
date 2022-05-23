@@ -54,19 +54,20 @@ public class CharacterSelectIcon : MonoBehaviour
             Debug.Log("Icon position transforms not set. See CharacterSelectIcon Start() method.");
         }
 
+        SetControllerIcons();
         GameManagerScript.Instance.IsMultiplayer = true; // Sets up game manager for multiplayer
     }
 
-    public void SetSprite()
+    public void SetControllerIcons()
     {
         if (_playerInput.currentControlScheme == "Keyboard")
         {
-            _spriteRenderer.sprite = _keyboardSprite;
+            //_spriteRenderer.sprite = _keyboardSprite;
             IsKeyboard = true;
         }
         else if (_playerInput.currentControlScheme == "Controller")
         {
-            _spriteRenderer.sprite = _controllerSprite;
+            //_spriteRenderer.sprite = _controllerSprite;
             IsKeyboard = false;
         }
     }
