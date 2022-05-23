@@ -20,7 +20,7 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private float attackArea; // Area of circle for melee attacks
     [SerializeField] private float knockbackDist = 1f;
     [SerializeField] protected float KnockbackVelocity = 1f;
-
+    [SerializeField] protected float tauntChance = 10f;
 
 
 
@@ -111,6 +111,12 @@ public class EnemyAgent : MonoBehaviour
     {
         if (_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
+            float taunt = Random.Range(0, 101);
+            if(taunt <= tauntChance)
+            {
+                AkSoundEngine.PostEvent("Enemy_Taunt", gameObject);
+            }
+
             Anim.SetBool("Walking", walking);
             if (!Staggered)
             {
@@ -295,6 +301,7 @@ public class EnemyAgent : MonoBehaviour
             {
                 _spawner.removeEnemy(this);
             }
+            AkSoundEngine.PostEvent("Enemy_Death", gameObject);
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
         
@@ -338,6 +345,7 @@ public class EnemyAgent : MonoBehaviour
 
     public void MeleeAttack()
     {
+        AkSoundEngine.PostEvent("Enemy_Melee_Attack", gameObject);
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(attackPos.position, attackArea, playerLayer);
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
@@ -349,5 +357,9 @@ public class EnemyAgent : MonoBehaviour
     public void setSpawner(EnemySpawner spawner)
     {
         _spawner = spawner;
+    }
+    public void footstepSound()
+    {
+        AkSoundEngine.PostEvent("Enemy_Footstep", gameObject);
     }
 }

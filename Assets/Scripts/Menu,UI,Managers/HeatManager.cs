@@ -82,6 +82,7 @@ public class HeatManager : MonoBehaviour
 
     public void ResetHeat()
     {
+        AkSoundEngine.PostEvent("Lose_Combo", gameObject);
         heatLevel = 0;
         applyBuffs();
         CurrentHeatNum = 0;

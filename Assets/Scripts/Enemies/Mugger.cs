@@ -106,7 +106,8 @@ public class Mugger : EnemyAgent
             if(Knife)
             {
                 GameObject newKnife;
-                if(facingRight)
+                AkSoundEngine.PostEvent("Enemy_Gun_Fire", gameObject);
+                if (facingRight)
                 {
                     newKnife = Instantiate(Knife, transform.position + new Vector3(1f, Sprite.bounds.size.y / 2f, 0f), Quaternion.Euler(0f,0f, 90f));
                 }

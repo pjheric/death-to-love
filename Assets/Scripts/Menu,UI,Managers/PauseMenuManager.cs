@@ -51,12 +51,14 @@ public class PauseMenuManager : MonoBehaviour
     public void quit()
     {
         Debug.Log("Quit");
+        AkSoundEngine.PostEvent("Game_Quit", gameObject);
         Application.Quit();
     }
 
     public void Resume()
     {
         Debug.Log("Resume");
+        AkSoundEngine.PostEvent("Game_Unpause", gameObject);
         Time.timeScale = 1;
         this.gameObject.SetActive(false);
         if (PC)
@@ -73,6 +75,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         if(CanPause)
         {
+            AkSoundEngine.PostEvent("Game_Pause", gameObject);
             Time.timeScale = 0;
             this.gameObject.SetActive(true);
             if (PC)

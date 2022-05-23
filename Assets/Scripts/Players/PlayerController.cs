@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour {
                     if (_canAttack)
                     {
                         _playerAnim.SetTrigger("Light Attack");
-
+                        AkSoundEngine.PostEvent("Player_Attack", gameObject);
                         _canSlide = false;
                         // AttackEnemies(_lightDamage, _lightHitstun);
                         DisableAttack();
@@ -231,6 +231,7 @@ public class PlayerController : MonoBehaviour {
                 //Debug.Log("Slide");
                 //_playerAnim.SetTrigger("Slide");
                 _playerAnim.SetBool("Sliding", true);
+                AkSoundEngine.PostEvent("Player_Dash", gameObject);
                 _movementInput = _slideVector;
                 _sliding = true;
                 _canSlide = false;
@@ -379,12 +380,14 @@ public class PlayerController : MonoBehaviour {
         Collider2D[] destructablestoHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _environmentLayer);
         for(int i = 0; i < destructablestoHit.Length; i++)
         {
+            AkSoundEngine.PostEvent("Enemy_Hit", gameObject);
             destructablestoHit[i].GetComponent<EnemyAgent>().TakeDamage(_lightDamage, _lightHitstun);
             Instantiate(_hitParticleEmitter, destructablestoHit[i].gameObject.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
         }
 
         for (int i = 0; i < enemiesToHit.Length; i++)
         {
+            AkSoundEngine.PostEvent("Enemy_Hit", gameObject);
             enemiesToHit[i].GetComponent<EnemyAgent>().TakeDamage(_lightDamage, _lightHitstun);
             Instantiate(_hitParticleEmitter, enemiesToHit[i].gameObject.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
             _heatManager.increaseHeat();
@@ -404,6 +407,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (!_sliding && !Invincible) 
         {
+            AkSoundEngine.PostEvent("Player_Hit", gameObject);
             _health.Value -= damage;
             if (_health.Value <= 0)
             {
@@ -415,6 +419,7 @@ public class PlayerController : MonoBehaviour {
     public void PlayerDown()
     {
         _Downed = true;
+        AkSoundEngine.PostEvent("Player_Death", gameObject);
         _playerAnim.SetBool("Walking", false);
         DownCanvas.gameObject.SetActive(true);
         ReviveBar.value = 0;
@@ -469,5 +474,10 @@ public class PlayerController : MonoBehaviour {
     public void setPaused(bool pause)
     {
         _isPaused = pause;
+    }
+
+    public void footstepSound()
+    {
+        AkSoundEngine.PostEvent("Player_Footstep", gameObject);
     }
 }
