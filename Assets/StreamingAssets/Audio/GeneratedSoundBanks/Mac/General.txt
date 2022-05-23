@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3157003241	Test			\Default Work Unit\General\Test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	1020640563	Temp Title Music Implementation	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Mac\SFX\Neutral Track Trimmed_99DFD4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Temp Title Music Implementation		33370896
+
