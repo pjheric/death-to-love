@@ -20,7 +20,7 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private float attackArea; // Area of circle for melee attacks
     [SerializeField] private float knockbackDist = 1f;
     [SerializeField] protected float KnockbackVelocity = 1f;
-    [SerializeField] protected float tauntChance = 10f;
+    [SerializeField] protected float tauntChance = 1f;
 
 
 
@@ -111,7 +111,7 @@ public class EnemyAgent : MonoBehaviour
     {
         if (_DialogueManager && _DialogueManager.IsDialogueOver() == false)
         {
-            float taunt = Random.Range(0, 1001);
+            float taunt = Random.Range(0, 100001);
             if(taunt <= tauntChance)
             {
                 Debug.Log("Taunt");
