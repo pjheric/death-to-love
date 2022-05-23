@@ -475,9 +475,4 @@ public class PlayerController : MonoBehaviour {
     {
         _isPaused = pause;
     }
-
-    public void footstepSound()
-    {
-        AkSoundEngine.PostEvent("Player_Footstep", gameObject);
-    }
 }
