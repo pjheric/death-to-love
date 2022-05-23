@@ -229,7 +229,8 @@ public class PlayerController : MonoBehaviour {
             if (context.performed && _canSlide && !_Downed) // Ensures functions only performed once on button press
             {
                 //Debug.Log("Slide");
-                _playerAnim.SetTrigger("Slide");
+                //_playerAnim.SetTrigger("Slide");
+                _playerAnim.SetBool("Sliding", true);
                 _movementInput = _slideVector;
                 _sliding = true;
                 _canSlide = false;
@@ -264,7 +265,7 @@ public class PlayerController : MonoBehaviour {
 
     private IEnumerator SlideSpeedReset(float duration) {
         yield return new WaitForSeconds(duration);
-        _playerAnim.SetTrigger("Slide");
+        _playerAnim.SetBool("Sliding", false);
         _characterSpeed /= 2f;
         _sliding = false;
         _endPos = this.gameObject.transform.position;
