@@ -1719,7 +1719,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: enemies
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: goPanel
@@ -2382,7 +2382,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: enemies
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: goPanel
@@ -5115,10 +5115,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6930125125830616000, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6930125125830616002, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5175,14 +5171,6 @@ PrefabInstance:
       propertyPath: _playerUIPanel
       value: 
       objectReference: {fileID: 482641938}
-    - target: {fileID: 8333432177378434262, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333432178609685644, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
 --- !u!1001 &9086285373587304919
@@ -5198,7 +5186,7 @@ PrefabInstance:
       objectReference: {fileID: 304550972}
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: enemies
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: goPanel

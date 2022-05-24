@@ -221,16 +221,17 @@ MonoBehaviour:
   Health: 2
   target: {x: 0, y: 0, z: 0}
   attackRange: 2
-  MoveSpeed: 2
-  AttackSpeed: 3
+  MoveSpeed: 4
+  AttackSpeed: 1.5
   BackupDist: 3
   attackPos: {fileID: 248213571}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 2
+  attackDamage: 3
   attackArea: 0.7
   knockbackDist: 2
   KnockbackVelocity: 2
+  tauntChance: 0
   Anim: {fileID: 0}
   Knife: {fileID: 7087842027889347651, guid: 4a9b452bb9dbd4b47a98a4a46c64b73d, type: 3}

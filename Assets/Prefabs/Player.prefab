@@ -820,7 +820,7 @@ MonoBehaviour:
   _heatManager: {fileID: 0}
   mashGoal: 100
   IncreasePerPress: 5
-  DecreaseRate: 5
+  DecreaseRate: 20
   DownCanvas: {fileID: 1891788432}
 --- !u!95 &5488050115168530994
 Animator:

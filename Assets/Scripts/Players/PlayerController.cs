@@ -235,9 +235,9 @@ public class PlayerController : MonoBehaviour {
                 _sliding = true;
                 _canSlide = false;
                 _canAttack = false;
-                _characterSpeed *= 2f;
+                _characterSpeed *= 4f;
                 _startPos = this.gameObject.transform.position;
-                float duration = _playerAnim.GetFloat("Slide Duration");
+                float duration = _playerAnim.GetFloat("Slide Duration")/2f;
                 StartCoroutine(SlideSpeedReset(duration));
             }
         }
@@ -266,7 +266,7 @@ public class PlayerController : MonoBehaviour {
     private IEnumerator SlideSpeedReset(float duration) {
         yield return new WaitForSeconds(duration);
         _playerAnim.SetBool("Sliding", false);
-        _characterSpeed /= 2f;
+        _characterSpeed /= 4f;
         _sliding = false;
         _endPos = this.gameObject.transform.position;
         _centerPos = (_startPos + _endPos) / 2;

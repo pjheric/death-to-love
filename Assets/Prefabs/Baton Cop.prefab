@@ -178,17 +178,18 @@ MonoBehaviour:
   Health: 5
   target: {x: 0, y: 0, z: 0}
   attackRange: 2
-  MoveSpeed: 1.5
-  AttackSpeed: 5
+  MoveSpeed: 3
+  AttackSpeed: 2.5
   BackupDist: 5
   attackPos: {fileID: 6924266061176324363}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 1
+  attackDamage: 2
   attackArea: 0.75
   knockbackDist: 2
   KnockbackVelocity: 2
+  tauntChance: 0
   Anim: {fileID: 0}
 --- !u!195 &2639694782295226560
 NavMeshAgent:

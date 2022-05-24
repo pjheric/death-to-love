@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: LIZ
   m_EditorClassIdentifier: 
   characterName: LIZ
-  characterSpeed: 5
+  characterSpeed: 6
   attackRange: 0.85
-  lightAtkDamage: 1
+  lightAtkDamage: 2
   lightHitstun: 0.5
   heavyAtkDamage: 3
   heavyHitstun: 1
-  lightAtkCooldown: 1
+  lightAtkCooldown: 1.3
   heavyAtkCooldown: 0.5
   hitParticleEmitter: {fileID: 3798439677663074714, guid: d1d34f5dd3bb4c54fa3f453cfed4653c, type: 3}
   slideEffect: {fileID: 5498122311951644183, guid: fc74017bfd7798d4fae43351d5b8b8e4, type: 3}
