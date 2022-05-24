@@ -227,11 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930661362, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2128370600, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: _health
@@ -349,6 +349,10 @@ PrefabInstance:
       propertyPath: _heatNumber
       value: 
       objectReference: {fileID: 1237542840}
+    - target: {fileID: 5488050115168530994, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 64bf0633b8f5d0f449bbcf7fd9963fc5, type: 2}
     m_RemovedComponents:
     - {fileID: 5397214822968664006, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
