@@ -177,9 +177,8 @@ public class PlayerController : MonoBehaviour {
                         _playerAnim.SetTrigger("Light Attack");
                         AkSoundEngine.PostEvent("Player_Attack", gameObject);
                         _canSlide = false;
-                        // AttackEnemies(_lightDamage, _lightHitstun);
                         DisableAttack();
-                        //StartCoroutine(AttackCooldown(_lightAtkCooldown));
+                        //I know this looks weird, but we're calling the attack function in animator on the frames damage is done
                     }
                 }
             }
