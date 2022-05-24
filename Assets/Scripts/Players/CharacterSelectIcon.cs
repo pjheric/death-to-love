@@ -126,14 +126,14 @@ public class CharacterSelectIcon : MonoBehaviour
                 if (_selectedChar == CharacterChoices.Liz)
                 {
                     var tempColor = _lizIcon.color;
-                    tempColor.a = 0.5f;
+                    tempColor.a = 0.69f;
                     _lizIcon.color = tempColor;
                     _characterSelectManager.DeselectCharacter(CharacterChoices.Liz, IsKeyboard);
                 }
                 else if (_selectedChar == CharacterChoices.Jay)
                 {
                     var tempColor = _jayIcon.color;
-                    tempColor.a = 0.5f;
+                    tempColor.a = 0.69f;
                     _jayIcon.color = tempColor;
                     _characterSelectManager.DeselectCharacter(CharacterChoices.Jay, IsKeyboard);
                 }
