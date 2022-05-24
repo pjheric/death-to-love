@@ -24,4 +24,4 @@ MonoBehaviour:
   hitParticleEmitter: {fileID: 3798439677663074714, guid: d1d34f5dd3bb4c54fa3f453cfed4653c, type: 3}
   slideEffect: {fileID: 5498122311951644183, guid: fc74017bfd7798d4fae43351d5b8b8e4, type: 3}
   animatorController: {fileID: 9100000, guid: 72817153ec25886499b77d36e00604c0, type: 2}
-  defaultSprite: {fileID: -7372649415417231178, guid: 4039a8bde31b0bf48bd06333b09523f8, type: 3}
+  defaultSprite: {fileID: 8102104611282628659, guid: b13634c38c092d645b21b2bff8fd074a, type: 3}
