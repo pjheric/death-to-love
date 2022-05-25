@@ -24,11 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 20c6bd6c8766864d84fcc9f1ac95896f
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585489646897155108
-=======
-    m_lastTime: -8585490324683798068
->>>>>>> Stashed changes
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Acoustic Textures.wwu
     PathAndIcons:
@@ -41,11 +37,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Factory Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585489646897155108
-=======
-    m_lastTime: -8585490324683798068
->>>>>>> Stashed changes
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -311,11 +303,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 50fea816a6829f49992005bfd3be4f5c
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585486693436152262
-=======
-    m_lastTime: -8585486702237357359
->>>>>>> Stashed changes
     List:
     - name: Environmental
       guid: bdd82b59b02f784a8a7dd64c367602d7
@@ -391,11 +379,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5aeae7eee79b764d85816114bbc5c3d7
     GuidInternal: 
-<<<<<<< Updated upstream
-    m_lastTime: -8585486693424289645
-=======
-    m_lastTime: -8585482593164969607
->>>>>>> Stashed changes
+    m_lastTime: -8585481584973120212
     List:
     - name: General
       guid: f8a01efa710ed6408c6abbfa7184c20c
@@ -423,11 +407,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 8c66764409b0dc4da6bc6b672ef6b79d
     GuidInternal: 
-<<<<<<< Updated upstream
-    m_lastTime: -8585486693465379790
-=======
-    m_lastTime: -8585482593246022309
->>>>>>> Stashed changes
+    m_lastTime: -8585481584983083526
     List:
     - name: Enemy_Death
       guid: 47a17f50281dba4cb5003d0c40111ade
@@ -467,8 +447,8 @@ MonoBehaviour:
         guid: 2912a4190b85344991d953af9ad60bad
       Path: Events\Default Work Unit\General\Enemy_Gun_Fire
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.759834
+      minDuration: 0.676935
     - name: Enemy_Hit
       guid: fad0a32bbc42104e9e60bd0f8ccd94ef
       id: 1010055213
@@ -487,8 +467,8 @@ MonoBehaviour:
         guid: fad0a32bbc42104e9e60bd0f8ccd94ef
       Path: Events\Default Work Unit\General\Enemy_Hit
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 1.764202
+      minDuration: 1.376739
     - name: Enemy_Melee_Attack
       guid: 3299fe275138474eb377fcceb66d515d
       id: 2565870985
@@ -507,8 +487,8 @@ MonoBehaviour:
         guid: 3299fe275138474eb377fcceb66d515d
       Path: Events\Default Work Unit\General\Enemy_Melee_Attack
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 0.505509
+      minDuration: 0.263312
     - name: Enemy_Taunt
       guid: 1852342616972a45a32eb18082ad8b6f
       id: 1346280638
@@ -804,8 +784,8 @@ MonoBehaviour:
         guid: 52e152cdfdeab942bd29fd24d0776de2
       Path: Events\Default Work Unit\General\UI_Button_Press
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: 2.672696
+      minDuration: 2.672696
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -818,12 +798,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: b22b623a7d1af34ba94650e0c9e84c4b
     GuidInternal: 
-<<<<<<< Updated upstream
-    m_lastTime: -8585486693465339543
-=======
-    m_lastTime: -8585486702244618023
->>>>>>> Stashed changes
+    m_lastTime: -8585481584983034401
     List:
+    - name: General
+      guid: c560cf375ef0094481c71054e9ac4941
+      id: 133642231
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b22b623a7d1af34ba94650e0c9e84c4b
+      - ElementName: General
+        ObjectType: 4
+        guid: c560cf375ef0094481c71054e9ac4941
+      Path: Game Parameters\Default Work Unit\General
     - name: MasterVolume
       guid: 9c88fec2f356e04e87ac2778d5fdfd68
       id: 2918011349
@@ -858,6 +848,23 @@ MonoBehaviour:
         ObjectType: 13
         guid: fd27b576729e7f449a9e10476b430620
       Path: Game Parameters\Default Work Unit\Volume\MusicVolume
+    - name: Player_Combo
+      guid: eb908b40d8275747bdb05cb35e328aa7
+      id: 164852777
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b22b623a7d1af34ba94650e0c9e84c4b
+      - ElementName: General
+        ObjectType: 4
+        guid: c560cf375ef0094481c71054e9ac4941
+      - ElementName: Player_Combo
+        ObjectType: 13
+        guid: eb908b40d8275747bdb05cb35e328aa7
+      Path: Game Parameters\Default Work Unit\General\Player_Combo
     - name: SFXVolume
       guid: b746a86eb3317a48965688982c7cb40b
       id: 988953028
@@ -900,11 +907,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory Motion
     guid: 225213d7dbd1d042adc0930743567776
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585489646905105439
-=======
-    m_lastTime: -8585490324688812609
->>>>>>> Stashed changes
     List:
     - name: Playback_Rate
       guid: e37e38283ac11643b9c3db5c521624af
@@ -945,11 +948,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory SoundSeed Air Game Syncs
     guid: 5577163b42fb8b4598bf96f557afb3b9
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585489646905105439
-=======
-    m_lastTime: -8585490324688812609
->>>>>>> Stashed changes
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -1103,11 +1102,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 4b3d98ef46eb3f48b96f97c4a5fd0081
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585489646897165085
-=======
-    m_lastTime: -8585490324683818087
->>>>>>> Stashed changes
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -1121,11 +1116,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 79767a3de31f614083e4c9a2cf2962f6
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585489646897165085
-=======
-    m_lastTime: -8585490324683808077
->>>>>>> Stashed changes
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -1139,14 +1130,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 608e292cc94c1145a1377562d66d494c
     GuidInternal: 
-<<<<<<< Updated upstream
     m_lastTime: -8585489646897155108
-=======
-    m_lastTime: -8585490324683808077
->>>>>>> Stashed changes
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0c0000000d000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

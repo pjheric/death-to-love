@@ -69,9 +69,10 @@ public class WaveManager : MonoBehaviour
     public void completeSpawning()
     {
         completeSpawners++;
-        UsableSpawners.Clear();
+        
         if(completeSpawners >= UsableSpawners.Count)
         {
+            UsableSpawners.Clear();
             resetSpawners();
             spawning = false;
             Fighting = true;
@@ -81,6 +82,7 @@ public class WaveManager : MonoBehaviour
             resetSpawners();
             spawning = false;
             Fighting = true;
+            UsableSpawners.Clear();
         }
     }
 
