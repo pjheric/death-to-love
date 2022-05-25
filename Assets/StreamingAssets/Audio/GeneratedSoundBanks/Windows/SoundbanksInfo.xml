@@ -11,11 +11,72 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Language="SFX" Hash="4010963983">
+		<SoundBank Id="133642231" Language="SFX" Hash="2275596140">
 			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<IncludedEvents>
+				<Event Id="1205999388" Name="Enemy_Death" ObjectPath="\Events\Default Work Unit\General\Enemy_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3609701047" Name="Enemy_Gun_Fire" ObjectPath="\Events\Default Work Unit\General\Enemy_Gun_Fire" DurationType="OneShot" DurationMin="0.676935" DurationMax="0.759834">
+					<IncludedMemoryFiles>
+						<File Id="334011976" Language="SFX">
+							<ShortName>Enemy_Gun_Fire.wav</ShortName>
+							<Path>SFX\Enemy_Gun_Fire_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1010055213" Name="Enemy_Hit" ObjectPath="\Events\Default Work Unit\General\Enemy_Hit" DurationType="OneShot" DurationMin="1.376739" DurationMax="1.764202">
+					<IncludedMemoryFiles>
+						<File Id="30503697" Language="SFX">
+							<ShortName>Impact Sound.wav</ShortName>
+							<Path>SFX\Impact Sound_B65B68E4.wem</Path>
+						</File>
+						<File Id="352673697" Language="SFX">
+							<ShortName>Enemy_Hit.wav</ShortName>
+							<Path>SFX\Enemy_Hit_10C4C929.wem</Path>
+						</File>
+						<File Id="382986549" Language="SFX">
+							<ShortName>Impact Sound.wav</ShortName>
+							<Path>SFX\Impact Sound_FE2065B4.wem</Path>
+						</File>
+						<File Id="753066837" Language="SFX">
+							<ShortName>Impact Sound.wav</ShortName>
+							<Path>SFX\Impact Sound_738DDAD0.wem</Path>
+						</File>
+						<File Id="859938227" Language="SFX">
+							<ShortName>Impact Sound.wav</ShortName>
+							<Path>SFX\Impact Sound_45E03955.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2565870985" Name="Enemy_Melee_Attack" ObjectPath="\Events\Default Work Unit\General\Enemy_Melee_Attack" DurationType="OneShot" DurationMin="0.263312" DurationMax="0.505509">
+					<IncludedMemoryFiles>
+						<File Id="442883901" Language="SFX">
+							<ShortName>Whoosh 3.wav</ShortName>
+							<Path>SFX\Whoosh 3_10C4C929.wem</Path>
+						</File>
+						<File Id="859150910" Language="SFX">
+							<ShortName>Whoosh 1.wav</ShortName>
+							<Path>SFX\Whoosh 1_10C4C929.wem</Path>
+						</File>
+						<File Id="1038039954" Language="SFX">
+							<ShortName>Whoosh 2.wav</ShortName>
+							<Path>SFX\Whoosh 2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1346280638" Name="Enemy_Taunt" ObjectPath="\Events\Default Work Unit\General\Enemy_Taunt" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2772308904" Name="Game_Pause" ObjectPath="\Events\Default Work Unit\General\Game_Pause" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2356404183" Name="Game_Quit" ObjectPath="\Events\Default Work Unit\General\Game_Quit" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="716833996" Name="Game_Start_Multi" ObjectPath="\Events\Default Work Unit\General\Game_Start_Multi" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="512344028" Name="Game_Start_Solo" ObjectPath="\Events\Default Work Unit\General\Game_Start_Solo" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1359982855" Name="Game_Unpause" ObjectPath="\Events\Default Work Unit\General\Game_Unpause" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="117716555" Name="Logo_Load" ObjectPath="\Events\Default Work Unit\General\Logo_Load" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2898453" Name="Lose_Combo" ObjectPath="\Events\Default Work Unit\General\Lose_Combo" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2824512041" Name="Player_Attack" ObjectPath="\Events\Default Work Unit\General\Player_Attack" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2394582229" Name="Player_Dash" ObjectPath="\Events\Default Work Unit\General\Player_Dash" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\General\Player_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="871813740" Name="Player_Hit" ObjectPath="\Events\Default Work Unit\General\Player_Hit" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\General\Test" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="1020640563" Language="SFX">
@@ -24,9 +85,20 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="12010446" Name="UI_Button_Press" ObjectPath="\Events\Default Work Unit\General\UI_Button_Press" DurationType="OneShot" DurationMin="2.672696" DurationMax="2.672696">
+					<IncludedMemoryFiles>
+						<File Id="933698646" Language="SFX">
+							<ShortName>UI_Button_Press.wav</ShortName>
+							<Path>SFX\UI_Button_Press_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="164852777" Name="Player_Combo" ObjectPath="\Game Parameters\Default Work Unit\General\Player_Combo"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1665485482">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1767777108">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
