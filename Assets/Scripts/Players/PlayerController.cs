@@ -309,6 +309,11 @@ public class PlayerController : MonoBehaviour {
         {
             PlayerMovement(); // Calls method to handle movement
         }
+
+        if(_DialogueManager && _DialogueManager.IsDialogueOver() == true)
+        {
+            _movementInput = Vector2.zero;
+        }
     }
 
     // Handles buffs that the player receives from Heat stacks, when a 0 is passed it resets the player's stats to normal

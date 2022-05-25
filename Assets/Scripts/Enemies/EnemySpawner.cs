@@ -156,7 +156,9 @@ public class EnemySpawner : MonoBehaviour
 
     public void resetSpawner()
     {
+        infinite = false;
         complete = false;
+        CancelInvoke();
         spawnedEnemies.Clear();
     }
 

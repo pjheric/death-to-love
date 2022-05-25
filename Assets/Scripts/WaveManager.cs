@@ -76,6 +76,12 @@ public class WaveManager : MonoBehaviour
             spawning = false;
             Fighting = true;
         }
+        else if(infinite)
+        {
+            resetSpawners();
+            spawning = false;
+            Fighting = true;
+        }
     }
 
     public void removeEnemy()

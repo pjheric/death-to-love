@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Barricade : EnemyAgent
 {
+    [SerializeField] WaveManager WM;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -38,6 +39,7 @@ public class Barricade : EnemyAgent
     {
         if (!dying)
         {
+            WM.completeSpawning();
             dying = true;
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
