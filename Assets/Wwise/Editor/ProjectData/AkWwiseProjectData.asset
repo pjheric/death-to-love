@@ -24,7 +24,11 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 20c6bd6c8766864d84fcc9f1ac95896f
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585489646897155108
+=======
+    m_lastTime: -8585490324683798068
+>>>>>>> Stashed changes
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Acoustic Textures.wwu
     PathAndIcons:
@@ -37,7 +41,11 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Factory Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585489646897155108
+=======
+    m_lastTime: -8585490324683798068
+>>>>>>> Stashed changes
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -303,7 +311,11 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 50fea816a6829f49992005bfd3be4f5c
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585486693436152262
+=======
+    m_lastTime: -8585486702237357359
+>>>>>>> Stashed changes
     List:
     - name: Environmental
       guid: bdd82b59b02f784a8a7dd64c367602d7
@@ -379,7 +391,11 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5aeae7eee79b764d85816114bbc5c3d7
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585486693424289645
+=======
+    m_lastTime: -8585482593164969607
+>>>>>>> Stashed changes
     List:
     - name: General
       guid: f8a01efa710ed6408c6abbfa7184c20c
@@ -407,8 +423,212 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 8c66764409b0dc4da6bc6b672ef6b79d
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585486693465379790
+=======
+    m_lastTime: -8585482593246022309
+>>>>>>> Stashed changes
     List:
+    - name: Enemy_Death
+      guid: 47a17f50281dba4cb5003d0c40111ade
+      id: 1205999388
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Enemy_Death
+        ObjectType: 3
+        guid: 47a17f50281dba4cb5003d0c40111ade
+      Path: Events\Default Work Unit\General\Enemy_Death
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Enemy_Gun_Fire
+      guid: 2912a4190b85344991d953af9ad60bad
+      id: 3609701047
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Enemy_Gun_Fire
+        ObjectType: 3
+        guid: 2912a4190b85344991d953af9ad60bad
+      Path: Events\Default Work Unit\General\Enemy_Gun_Fire
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Enemy_Hit
+      guid: fad0a32bbc42104e9e60bd0f8ccd94ef
+      id: 1010055213
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Enemy_Hit
+        ObjectType: 3
+        guid: fad0a32bbc42104e9e60bd0f8ccd94ef
+      Path: Events\Default Work Unit\General\Enemy_Hit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Enemy_Melee_Attack
+      guid: 3299fe275138474eb377fcceb66d515d
+      id: 2565870985
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Enemy_Melee_Attack
+        ObjectType: 3
+        guid: 3299fe275138474eb377fcceb66d515d
+      Path: Events\Default Work Unit\General\Enemy_Melee_Attack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Enemy_Taunt
+      guid: 1852342616972a45a32eb18082ad8b6f
+      id: 1346280638
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Enemy_Taunt
+        ObjectType: 3
+        guid: 1852342616972a45a32eb18082ad8b6f
+      Path: Events\Default Work Unit\General\Enemy_Taunt
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Game_Pause
+      guid: 006fc7e5a334d94baaf324ff536dd5b7
+      id: 2772308904
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Game_Pause
+        ObjectType: 3
+        guid: 006fc7e5a334d94baaf324ff536dd5b7
+      Path: Events\Default Work Unit\General\Game_Pause
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Game_Quit
+      guid: 9ff0f6a86684eb4cb46e8e81599471c7
+      id: 2356404183
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Game_Quit
+        ObjectType: 3
+        guid: 9ff0f6a86684eb4cb46e8e81599471c7
+      Path: Events\Default Work Unit\General\Game_Quit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Game_Start_Multi
+      guid: 5434770da3500146a5ed212820c70bcb
+      id: 716833996
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Game_Start_Multi
+        ObjectType: 3
+        guid: 5434770da3500146a5ed212820c70bcb
+      Path: Events\Default Work Unit\General\Game_Start_Multi
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Game_Start_Solo
+      guid: 179074c3c42226439514ea3b72958619
+      id: 512344028
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Game_Start_Solo
+        ObjectType: 3
+        guid: 179074c3c42226439514ea3b72958619
+      Path: Events\Default Work Unit\General\Game_Start_Solo
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Game_Unpause
+      guid: b344c08b7434d0449deeaada6d610e78
+      id: 1359982855
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Game_Unpause
+        ObjectType: 3
+        guid: b344c08b7434d0449deeaada6d610e78
+      Path: Events\Default Work Unit\General\Game_Unpause
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: General
       guid: 42eb13e1625aa1458fc087768064e512
       id: 133642231
@@ -426,6 +646,126 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Logo_Load
+      guid: 566eba848a25014181698f269415ec71
+      id: 117716555
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Logo_Load
+        ObjectType: 3
+        guid: 566eba848a25014181698f269415ec71
+      Path: Events\Default Work Unit\General\Logo_Load
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Lose_Combo
+      guid: 841e8a7f2646a74289f885fc7b82e6fa
+      id: 2898453
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Lose_Combo
+        ObjectType: 3
+        guid: 841e8a7f2646a74289f885fc7b82e6fa
+      Path: Events\Default Work Unit\General\Lose_Combo
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Player_Attack
+      guid: 9f6b2718733324419479af33a74221cb
+      id: 2824512041
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Player_Attack
+        ObjectType: 3
+        guid: 9f6b2718733324419479af33a74221cb
+      Path: Events\Default Work Unit\General\Player_Attack
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Player_Dash
+      guid: 8f032d5ea3f8714c89a36008391999db
+      id: 2394582229
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Player_Dash
+        ObjectType: 3
+        guid: 8f032d5ea3f8714c89a36008391999db
+      Path: Events\Default Work Unit\General\Player_Dash
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Player_Death
+      guid: 816a34b90be1de459413eb307d168aa8
+      id: 3083087645
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Player_Death
+        ObjectType: 3
+        guid: 816a34b90be1de459413eb307d168aa8
+      Path: Events\Default Work Unit\General\Player_Death
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Player_Hit
+      guid: 5e4c4c5d91aa954b9da143df40352679
+      id: 871813740
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: Player_Hit
+        ObjectType: 3
+        guid: 5e4c4c5d91aa954b9da143df40352679
+      Path: Events\Default Work Unit\General\Player_Hit
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Test
       guid: 35db58b801339f408c3e793795217156
       id: 3157003241
@@ -446,6 +786,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: UI_Button_Press
+      guid: 52e152cdfdeab942bd29fd24d0776de2
+      id: 12010446
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8c66764409b0dc4da6bc6b672ef6b79d
+      - ElementName: General
+        ObjectType: 4
+        guid: 42eb13e1625aa1458fc087768064e512
+      - ElementName: UI_Button_Press
+        ObjectType: 3
+        guid: 52e152cdfdeab942bd29fd24d0776de2
+      Path: Events\Default Work Unit\General\UI_Button_Press
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -458,7 +818,11 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: b22b623a7d1af34ba94650e0c9e84c4b
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585486693465339543
+=======
+    m_lastTime: -8585486702244618023
+>>>>>>> Stashed changes
     List:
     - name: MasterVolume
       guid: 9c88fec2f356e04e87ac2778d5fdfd68
@@ -536,7 +900,11 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory Motion
     guid: 225213d7dbd1d042adc0930743567776
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585489646905105439
+=======
+    m_lastTime: -8585490324688812609
+>>>>>>> Stashed changes
     List:
     - name: Playback_Rate
       guid: e37e38283ac11643b9c3db5c521624af
@@ -577,7 +945,11 @@ MonoBehaviour:
     ParentPath: Game Parameters\Factory SoundSeed Air Game Syncs
     guid: 5577163b42fb8b4598bf96f557afb3b9
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585489646905105439
+=======
+    m_lastTime: -8585490324688812609
+>>>>>>> Stashed changes
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -731,7 +1103,11 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 4b3d98ef46eb3f48b96f97c4a5fd0081
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585489646897165085
+=======
+    m_lastTime: -8585490324683818087
+>>>>>>> Stashed changes
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -745,7 +1121,11 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 79767a3de31f614083e4c9a2cf2962f6
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585489646897165085
+=======
+    m_lastTime: -8585490324683808077
+>>>>>>> Stashed changes
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -759,10 +1139,14 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 608e292cc94c1145a1377562d66d494c
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585489646897155108
+=======
+    m_lastTime: -8585490324683808077
+>>>>>>> Stashed changes
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0c0000000d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -13,7 +13,24 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ENEMY_DEATH = 1205999388U;
+        static const AkUniqueID ENEMY_GUN_FIRE = 3609701047U;
+        static const AkUniqueID ENEMY_HIT = 1010055213U;
+        static const AkUniqueID ENEMY_MELEE_ATTACK = 2565870985U;
+        static const AkUniqueID ENEMY_TAUNT = 1346280638U;
+        static const AkUniqueID GAME_PAUSE = 2772308904U;
+        static const AkUniqueID GAME_QUIT = 2356404183U;
+        static const AkUniqueID GAME_START_MULTI = 716833996U;
+        static const AkUniqueID GAME_START_SOLO = 512344028U;
+        static const AkUniqueID GAME_UNPAUSE = 1359982855U;
+        static const AkUniqueID LOGO_LOAD = 117716555U;
+        static const AkUniqueID LOSE_COMBO = 2898453U;
+        static const AkUniqueID PLAYER_ATTACK = 2824512041U;
+        static const AkUniqueID PLAYER_DASH = 2394582229U;
+        static const AkUniqueID PLAYER_DEATH = 3083087645U;
+        static const AkUniqueID PLAYER_HIT = 871813740U;
         static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID UI_BUTTON_PRESS = 12010446U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
@@ -21,6 +38,7 @@ namespace AK
         static const AkUniqueID MASTERVOLUME = 2918011349U;
         static const AkUniqueID MUSICVOLUME = 2346531308U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
+        static const AkUniqueID PLAYER_COMBO = 164852777U;
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID SFXVOLUME = 988953028U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
@@ -51,7 +69,6 @@ namespace AK
 
     namespace AUDIO_DEVICES
     {
-        static const AkUniqueID DEFAULT_MOTION_DEVICE = 4230635974U;
         static const AkUniqueID NO_OUTPUT = 2317455096U;
         static const AkUniqueID SYSTEM = 3859886410U;
     } // namespace AUDIO_DEVICES

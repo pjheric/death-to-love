@@ -10,6 +10,16 @@
 						<GameParameter Name="SFXVolume" ID="{6EA846B7-31B3-487A-9656-88982C7CB40B}"/>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="General" ID="{37CF60C5-F05E-4409-81C7-1054E9AC4941}" ShortID="452253544">
+					<ChildrenList>
+						<GameParameter Name="Player_Combo" ID="{408B90EB-27D8-4757-BDB0-5CB35E328AA7}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0.1"/>
+								<Property Name="Max" Type="Real64" Value="1000"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
