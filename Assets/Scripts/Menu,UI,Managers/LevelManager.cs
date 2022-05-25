@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
         _player2.SetupCharacter();
     }
 
+
     private void Update()
     {
         if(GameManagerScript.Instance.IsMultiplayer == true)
