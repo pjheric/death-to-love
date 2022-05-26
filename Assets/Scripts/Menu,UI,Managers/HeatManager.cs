@@ -86,7 +86,7 @@ public class HeatManager : MonoBehaviour
         heatLevel = 0;
         applyBuffs();
         CurrentHeatNum = 0;
-        _heatNumber.color = Color.black;
+        _heatNumber.color = Color.white;
         _heatNumber.SetText(CurrentHeatNum.ToString());
         _heatPanel.SetActive(false);
     }
