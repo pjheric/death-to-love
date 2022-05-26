@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour {
                 _movementInput = _slideVector;
                 _sliding = true;
                 _canSlide = false;
-                _canAttack = false;
+                //_canAttack = false;
                 _characterSpeed *= 4f;
                 _startPos = this.gameObject.transform.position;
                 float duration = _playerAnim.GetFloat("Slide Duration")/2f;

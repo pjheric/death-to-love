@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Barricade : EnemyAgent
 {
     [SerializeField] WaveManager WM;
+    [SerializeField] Slider HealthBar;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -32,6 +34,7 @@ public class Barricade : EnemyAgent
         {
             Cam.shake();
         }
+        HealthBar.value = Health;
     }
 
     

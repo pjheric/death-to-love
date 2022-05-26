@@ -3598,7 +3598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: InvincibilityFlickerRate
-      value: 0.3
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_Name
@@ -3622,7 +3622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436582, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.87
+      value: -6.57
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436582, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4275,41 +4275,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barricade
       objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790469, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_Size.x
-      value: 0.9329326
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790469, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_Size.y
-      value: 1.499177
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790469, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.033533692
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790469, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.7796254
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790470, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790470, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -495052011
-      objectReference: {fileID: 0}
     - target: {fileID: 5155988203330790471, guid: 309594e8c817af4459494d379dafab38, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790471, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5155988203330790471, guid: 309594e8c817af4459494d379dafab38, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5155988203330790471, guid: 309594e8c817af4459494d379dafab38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4355,6 +4323,14 @@ PrefabInstance:
       propertyPath: WM
       value: 
       objectReference: {fileID: 612035534}
+    - target: {fileID: 6963327674758096966, guid: 309594e8c817af4459494d379dafab38, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963327674758096966, guid: 309594e8c817af4459494d379dafab38, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 309594e8c817af4459494d379dafab38, type: 3}
 --- !u!4 &1411754099 stripped
@@ -5382,8 +5358,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 482641938}
     - target: {fileID: 6930125125830616004, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
+      propertyPath: SlideFlickerRate
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6930125125830616004, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
       propertyPath: InvincibilityFlickerRate
-      value: 0.3
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
