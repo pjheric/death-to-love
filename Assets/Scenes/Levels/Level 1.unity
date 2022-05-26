@@ -5301,6 +5301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6930125125830616000, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6930125125830616002, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5364,6 +5368,14 @@ PrefabInstance:
     - target: {fileID: 6930125125830616004, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
       propertyPath: InvincibilityFlickerRate
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333432177378434262, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333432178609685644, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dfa0adf28f76d4b923bf861ac5a137, type: 3}
