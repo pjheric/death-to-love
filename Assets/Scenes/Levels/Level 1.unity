@@ -3593,12 +3593,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 482641939}
     - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: SlideFlickerRate
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408092298334436576, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: InvincibilityFlickerRate
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436580, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408092298334436581, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408092298334436581, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408092298334436581, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1408092298334436582, guid: 347873ec001a87241b1c6768c31742fd, type: 3}
       propertyPath: m_RootOrder

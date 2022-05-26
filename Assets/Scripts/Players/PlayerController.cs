@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
     private float InvincibilitySeconds = 1f;
     [SerializeField]
     private float InvincibilityFlickerRate = 0.2f;
-    private float flickerTimer;
+    private float InvincibilityflickerTimer;
 
     [SerializeField]
     private Transform _attackPos;
@@ -62,6 +62,11 @@ public class PlayerController : MonoBehaviour {
     private GameObject _hitParticleEmitter;
     //[SerializeField]
     private GameObject _slideEffect;
+    [SerializeField]
+    private float SlideFlickerRate = 0.2f;
+    private float SlideflickerTimer;
+    private Color SlideColor;
+    private bool White = true;
 
     private DialogueManager _DialogueManager;
 
@@ -115,7 +120,9 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(_input.currentControlScheme);
         _health.Value = 60;
         SetupCharacter();
-        flickerTimer = InvincibilityFlickerRate;
+        InvincibilityflickerTimer = InvincibilityFlickerRate;
+        SlideflickerTimer = SlideFlickerRate;
+        SlideColor = new Color(254f/255f, 236f / 255f, 44f / 255f, 255f / 255f);
         EnableUI(); // Activates player UI if player is spawned in
     }
 
@@ -323,24 +330,48 @@ public class PlayerController : MonoBehaviour {
             _movementInput = Vector2.zero;
         }
 
-        if (Invincible)
+        if (_sliding)
         {
-            flickerTimer -= Time.deltaTime;
-            if (_playerSpriteRenderer.enabled == true && flickerTimer <= 0)
+            SlideflickerTimer -= Time.deltaTime;
+            if (White && SlideflickerTimer <= 0)
+            {
+                _playerSpriteRenderer.color = SlideColor;
+                //_playerSpriteRenderer.color = Color.green;
+                SlideflickerTimer = SlideFlickerRate;
+                White = false;
+            }
+            else if (!White && SlideflickerTimer <= 0)
+            {
+                _playerSpriteRenderer.color = Color.white;
+                SlideflickerTimer = SlideFlickerRate;
+                White = true;
+            }
+        }
+        else
+        {
+            _playerSpriteRenderer.color = Color.white;
+        }
+        
+        if (Invincible && !_sliding)
+        {
+            InvincibilityflickerTimer -= Time.deltaTime;
+            if (_playerSpriteRenderer.enabled == true && InvincibilityflickerTimer <= 0)
             {
                 _playerSpriteRenderer.enabled = false; //deactivate sprite renderer
-                flickerTimer = InvincibilityFlickerRate;
+                InvincibilityflickerTimer = InvincibilityFlickerRate;
             }
-            else if (_playerSpriteRenderer.enabled == false && flickerTimer <= 0)
+            else if (_playerSpriteRenderer.enabled == false && InvincibilityflickerTimer <= 0)
             {
                 _playerSpriteRenderer.enabled = true; //activate sprite renderer
-                flickerTimer = InvincibilityFlickerRate;
+                InvincibilityflickerTimer = InvincibilityFlickerRate;
             }
         }
         else
         {
             _playerSpriteRenderer.enabled = true;
         }
+
+        
     }
 
     // Handles buffs that the player receives from Heat stacks, when a 0 is passed it resets the player's stats to normal
@@ -525,5 +556,10 @@ public class PlayerController : MonoBehaviour {
     public void footstepSound()
     {
         AkSoundEngine.PostEvent("Player_Footstep", gameObject);
+    }
+
+    public bool isInvincible()
+    {
+        return Invincible;
     }
 }

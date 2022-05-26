@@ -64,8 +64,11 @@ public class KnifeDamage : MonoBehaviour
         if(other.tag == "Player" && hostile)
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            player.TakeDamage(Damage);
-            Destroy(this.gameObject);
+            if (player.isInvincible() == false)
+            {
+                player.TakeDamage(Damage);
+                Destroy(this.gameObject);
+            }
         }
         else if (other.tag == "Enemy" && hostile == false)
         {
