@@ -296,6 +296,9 @@ MonoBehaviour:
   _environmentLayer:
     serializedVersion: 2
     m_Bits: 256
+  _BulletLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _pausePanel: {fileID: 0}
   _playerUIPanel: {fileID: 0}
   _heatManager: {fileID: 0}

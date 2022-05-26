@@ -66,7 +66,7 @@ public class LevelManager : MonoBehaviour
         else if (_player1)
         {
             _player1.setPaused(true);
-            _player2.gameObject.SetActive(false);
+            _player1.gameObject.SetActive(false);
         }
     }
 }

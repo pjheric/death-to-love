@@ -7,6 +7,8 @@ public class KnifeDamage : MonoBehaviour
     [SerializeField] protected int Damage = 5;
     [SerializeField] protected float Speed = 3f;
     [SerializeField] protected SpriteRenderer Sprite;
+    private bool hostile = true;
+    private GameObject Thrower;
 
 
     private void Awake()
@@ -22,6 +24,7 @@ public class KnifeDamage : MonoBehaviour
     {
         if (thrower)
         {
+            Thrower = thrower;
             if ((this.transform.position - thrower.transform.position).x > 0)
             {
                 Debug.Log("Knife is flying right");
@@ -58,10 +61,16 @@ public class KnifeDamage : MonoBehaviour
     protected void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.tag);
-        if(other.tag == "Player")
+        if(other.tag == "Player" && hostile)
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
             player.TakeDamage(Damage);
+            Destroy(this.gameObject);
+        }
+        else if (other.tag == "Enemy" && hostile == false)
+        {
+            EnemyAgent enemy = other.gameObject.GetComponent<EnemyAgent>();
+            enemy.TakeDamage(Damage, 0f, true);
             Destroy(this.gameObject);
         }
     }
@@ -70,5 +79,24 @@ public class KnifeDamage : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(this.gameObject);
+    }
+
+    public void Reflect()
+    {
+        hostile = false;
+        Debug.Log("Reflect");
+        if ((this.transform.position - Thrower.transform.position).x > 0)
+        {
+            Sprite.flipX = false;
+            Speed *= -1;
+        }
+        else if ((this.transform.position - Thrower.transform.position).x < 0)
+        {
+            
+            Sprite.flipX = true;
+            Speed *= -1; //if the knife is on the left, we make its speed negative so it flies the opposite direction
+
+        }
+
     }
 }

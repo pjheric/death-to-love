@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
     private LayerMask _enemyLayer;
     [SerializeField]
     private LayerMask _environmentLayer;
+    [SerializeField]
+    private LayerMask _BulletLayer;
 
     //UI Elements
     [SerializeField]
@@ -382,7 +384,14 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("damage: " + _lightDamage);
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _enemyLayer);
         Collider2D[] destructablestoHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _environmentLayer);
-        for(int i = 0; i < destructablestoHit.Length; i++)
+        Collider2D[] bulletstoHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _BulletLayer);
+
+        for(int i = 0; i < bulletstoHit.Length; i++)
+        {
+            bulletstoHit[i].GetComponent<KnifeDamage>().Reflect();
+        }
+
+        for (int i = 0; i < destructablestoHit.Length; i++)
         {
             AkSoundEngine.PostEvent("Enemy_Hit", gameObject);
             destructablestoHit[i].GetComponent<EnemyAgent>().TakeDamage(_lightDamage, _lightHitstun);
