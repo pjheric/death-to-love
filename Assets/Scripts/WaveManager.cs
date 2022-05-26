@@ -98,6 +98,11 @@ public class WaveManager : MonoBehaviour
         {
             Debug.Log("No more fighting");
             Cam.Unsnap();
+            PlayerController[] PC = FindObjectsOfType<PlayerController>();
+            foreach(PlayerController player in PC)
+            {
+                player.restoreHalfHealth();
+            }
             goPanel.SetActive(true); 
             Fighting = false; 
             if(DialogueAfterFight)

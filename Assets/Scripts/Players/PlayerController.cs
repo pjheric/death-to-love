@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     private CharacterData _characterData;
     [SerializeField]
     private FloatAsset _health;
+    private float MaxHealth;
 
     [SerializeField]
     private bool Invincible;
@@ -123,6 +124,7 @@ public class PlayerController : MonoBehaviour {
         InvincibilityflickerTimer = InvincibilityFlickerRate;
         SlideflickerTimer = SlideFlickerRate;
         SlideColor = new Color(254f/255f, 236f / 255f, 44f / 255f, 255f / 255f);
+        MaxHealth = _health.Value;
         EnableUI(); // Activates player UI if player is spawned in
     }
 
@@ -561,5 +563,17 @@ public class PlayerController : MonoBehaviour {
     public bool isInvincible()
     {
         return Invincible;
+    }
+
+    public void restoreHalfHealth()
+    {
+        if(_health.Value <= _health.Value/2f)
+        {
+            _health.Value += _health.Value / 2f;
+        }
+        else
+        {
+            _health.Value = MaxHealth;
+        }
     }
 }

@@ -150,10 +150,10 @@ RectTransform:
   m_Father: {fileID: 754703041}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1531616186
 GameObject:
@@ -364,10 +364,10 @@ RectTransform:
   m_Father: {fileID: 754703041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1926019262
 CanvasRenderer:
@@ -442,7 +442,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2128370602
 CanvasRenderer:
@@ -697,7 +697,7 @@ MonoBehaviour:
   _health: {fileID: 11400000, guid: 660044cbaf09562459c5354f299328f0, type: 2}
   Invincible: 0
   InvincibilitySeconds: 1
-  InvincibilityFlickerRate: 0.2
+  InvincibilityFlickerRate: 0.01
   _attackPos: {fileID: 56146107}
   _enemyLayer:
     serializedVersion: 2
@@ -710,7 +710,7 @@ MonoBehaviour:
     m_Bits: 512
   _pausePanel: {fileID: 0}
   _playerUIPanel: {fileID: 0}
-  SlideFlickerRate: 0.2
+  SlideFlickerRate: 0.005
   _heatManager: {fileID: 0}
   mashGoal: 100
   IncreasePerPress: 5
