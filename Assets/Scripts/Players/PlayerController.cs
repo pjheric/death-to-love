@@ -446,7 +446,10 @@ public class PlayerController : MonoBehaviour {
 
         for(int i = 0; i < bulletstoHit.Length; i++)
         {
-            bulletstoHit[i].GetComponent<KnifeDamage>().Reflect();
+            if(bulletstoHit[i].GetComponent<KnifeDamage>().isHostile() == false)
+            {
+                bulletstoHit[i].GetComponent<KnifeDamage>().Reflect();
+            }
         }
 
         for (int i = 0; i < destructablestoHit.Length; i++)

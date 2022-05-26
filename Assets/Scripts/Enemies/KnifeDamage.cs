@@ -86,20 +86,28 @@ public class KnifeDamage : MonoBehaviour
 
     public void Reflect()
     {
-        hostile = false;
-        Debug.Log("Reflect");
-        if ((this.transform.position - Thrower.transform.position).x > 0)
+        if(hostile)
         {
-            Sprite.flipX = false;
-            Speed *= -1;
-        }
-        else if ((this.transform.position - Thrower.transform.position).x < 0)
-        {
-            
-            Sprite.flipX = true;
-            Speed *= -1; //if the knife is on the left, we make its speed negative so it flies the opposite direction
+            hostile = false;
+            Debug.Log("Reflect");
+            if ((this.transform.position - Thrower.transform.position).x > 0)
+            {
+                Sprite.flipX = false;
+                Speed *= -1;
+            }
+            else if ((this.transform.position - Thrower.transform.position).x < 0)
+            {
 
+                Sprite.flipX = true;
+                Speed *= -1; //if the knife is on the left, we make its speed negative so it flies the opposite direction
+
+            }
         }
 
+    }
+
+    public bool isHostile()
+    {
+        return hostile;
     }
 }
