@@ -18,6 +18,12 @@ public class PlayerController : MonoBehaviour {
     private bool Invincible;
 
     [SerializeField]
+    private float InvincibilitySeconds = 1f;
+    [SerializeField]
+    private float InvincibilityFlickerRate = 0.2f;
+    private float flickerTimer;
+
+    [SerializeField]
     private Transform _attackPos;
     [SerializeField]
     private LayerMask _enemyLayer;
@@ -109,7 +115,7 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(_input.currentControlScheme);
         _health.Value = 60;
         SetupCharacter();
-
+        flickerTimer = InvincibilityFlickerRate;
         EnableUI(); // Activates player UI if player is spawned in
     }
 
@@ -316,6 +322,25 @@ public class PlayerController : MonoBehaviour {
         {
             _movementInput = Vector2.zero;
         }
+
+        if (Invincible)
+        {
+            flickerTimer -= Time.deltaTime;
+            if (_playerSpriteRenderer.enabled == true && flickerTimer <= 0)
+            {
+                _playerSpriteRenderer.enabled = false; //deactivate sprite renderer
+                flickerTimer = InvincibilityFlickerRate;
+            }
+            else if (_playerSpriteRenderer.enabled == false && flickerTimer <= 0)
+            {
+                _playerSpriteRenderer.enabled = true; //activate sprite renderer
+                flickerTimer = InvincibilityFlickerRate;
+            }
+        }
+        else
+        {
+            _playerSpriteRenderer.enabled = true;
+        }
     }
 
     // Handles buffs that the player receives from Heat stacks, when a 0 is passed it resets the player's stats to normal
@@ -426,7 +451,15 @@ public class PlayerController : MonoBehaviour {
             {
                 PlayerDown();
             }
+            StartCoroutine(InvincibilityFrames(InvincibilitySeconds));
         }
+    }
+
+    public IEnumerator InvincibilityFrames(float time)
+    {
+        Invincible = true;
+        yield return new WaitForSeconds(time);
+        Invincible = false;
     }
 
     public void PlayerDown()
