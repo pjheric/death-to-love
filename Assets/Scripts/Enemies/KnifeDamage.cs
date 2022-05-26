@@ -27,7 +27,7 @@ public class KnifeDamage : MonoBehaviour
             Thrower = thrower;
             if ((this.transform.position - thrower.transform.position).x > 0)
             {
-                Debug.Log("Knife is flying right");
+                //Debug.Log("Knife is flying right");
                 Sprite.flipX = true;
                 /*Sprite.gameObject.transform.eulerAngles = new Vector3(
                     Sprite.gameObject.transform.eulerAngles.x,
@@ -36,7 +36,7 @@ public class KnifeDamage : MonoBehaviour
             }
             else if ((this.transform.position - thrower.transform.position).x < 0)
             {
-                Debug.Log("Knife is flying Left");
+                //Debug.Log("Knife is flying Left");
                 Sprite.flipX = false;
                 /*Sprite.gameObject.transform.eulerAngles = new Vector3(
                     Sprite.gameObject.transform.eulerAngles.x,
@@ -60,7 +60,7 @@ public class KnifeDamage : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         if(other.tag == "Player" && hostile)
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
@@ -89,7 +89,7 @@ public class KnifeDamage : MonoBehaviour
         if(hostile)
         {
             hostile = false;
-            Debug.Log("Reflect");
+            //Debug.Log("Reflect");
             if ((this.transform.position - Thrower.transform.position).x > 0)
             {
                 Sprite.flipX = false;

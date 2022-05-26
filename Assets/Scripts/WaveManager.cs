@@ -36,7 +36,7 @@ public class WaveManager : MonoBehaviour
         
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
         {
-            Debug.Log("start wave");
+            //Debug.Log("start wave");
             activateSpawners();
             this.GetComponent<Collider2D>().enabled = false;
         }
@@ -96,7 +96,7 @@ public class WaveManager : MonoBehaviour
     {
         if(enemies <= 0)
         {
-            Debug.Log("No more fighting");
+            //Debug.Log("No more fighting");
             Cam.Unsnap();
             PlayerController[] PC = FindObjectsOfType<PlayerController>();
             foreach(PlayerController player in PC)
@@ -117,7 +117,7 @@ public class WaveManager : MonoBehaviour
 
     private void resetSpawners()
     {
-        Debug.Log("Reset");
+        //Debug.Log("Reset");
         foreach (EnemySpawner spawner in UsableSpawners)
         {
             spawner.resetSpawner();

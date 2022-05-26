@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour {
 
         _input = gameObject.GetComponent<PlayerInput>();
 
-        Debug.Log(_input.currentControlScheme);
+        //Debug.Log(_input.currentControlScheme);
         _health.Value = 60;
         SetupCharacter();
         InvincibilityflickerTimer = InvincibilityFlickerRate;
@@ -439,14 +439,14 @@ public class PlayerController : MonoBehaviour {
     // Finds enemies in range and calls their TakeDamage() method.
     public void AttackEnemies()
     {
-        Debug.Log("damage: " + _lightDamage);
+        //Debug.Log("damage: " + _lightDamage);
         Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _enemyLayer);
         Collider2D[] destructablestoHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _environmentLayer);
         Collider2D[] bulletstoHit = Physics2D.OverlapCircleAll(_attackPos.position, _attackRange, _BulletLayer);
 
         for(int i = 0; i < bulletstoHit.Length; i++)
         {
-            if(bulletstoHit[i].GetComponent<KnifeDamage>().isHostile() == false)
+            if(bulletstoHit[i].GetComponent<KnifeDamage>().isHostile() == true)
             {
                 bulletstoHit[i].GetComponent<KnifeDamage>().Reflect();
             }

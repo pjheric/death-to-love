@@ -62,12 +62,12 @@ public class CinemachineController : MonoBehaviour {
         Unsnap();
     }
     public void Snap() {
-        Debug.Log("Snap");
+        //Debug.Log("Snap");
         cm.Follow= null;
     }
 
     public void Unsnap() {
-        Debug.Log("Unsnapped");
+        //Debug.Log("Unsnapped");
         cm.Follow = target;
     }
 

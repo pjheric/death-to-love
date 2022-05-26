@@ -169,7 +169,7 @@ public class EnemyAgent : MonoBehaviour
             else
             {
                 //play stagger animation
-                Debug.Log("Staggered");
+                //Debug.Log("Staggered");
                 Anim.SetTrigger("Staggered");
                 this.transform.position += new Vector3(knockbackVector.x * Time.deltaTime, 0f, 0f); //Vector3.SmoothDamp(transform.position, , ref knockbackVelocityVector, 1f);
             }
@@ -259,7 +259,7 @@ public class EnemyAgent : MonoBehaviour
 
         if(Health <= 0)
         {
-            Debug.Log("He's dead, you can stop mashing now");
+            //Debug.Log("He's dead, you can stop mashing now");
             Die();
         }
         else
