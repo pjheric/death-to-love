@@ -539,7 +539,7 @@ public class PlayerController : MonoBehaviour {
     public void EnableUI()
     {
         TextMeshProUGUI nametag = _playerUIPanel.GetComponentInChildren<TextMeshProUGUI>();
-        nametag.text = _characterName;
+        //nametag.text = _characterName;
         _playerUIPanel.SetActive(true);
     }
 
