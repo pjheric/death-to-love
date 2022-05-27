@@ -39,6 +39,12 @@ public class PlayerController : MonoBehaviour {
     
     [SerializeField]
     private GameObject _playerUIPanel;
+    [SerializeField]
+    private DashUI dashUI;
+
+
+    [SerializeField]
+    private Image portrait;
 
 
     //[SerializeField]
@@ -63,6 +69,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject _hitParticleEmitter;
     //[SerializeField]
     private GameObject _slideEffect;
+
+    private float _SlideCooldown;
     [SerializeField]
     private float SlideFlickerRate = 0.2f;
     private float SlideflickerTimer;
@@ -70,6 +78,8 @@ public class PlayerController : MonoBehaviour {
     private bool White = true;
 
     private DialogueManager _DialogueManager;
+
+    
 
 
 
@@ -85,7 +95,7 @@ public class PlayerController : MonoBehaviour {
     private PlayerInput _input;
     private bool _canMove = true;
     private bool _Downed = false;
-
+    private float _Slideduration;
     //Heat System: 
     public HeatManager _heatManager; 
 
@@ -141,7 +151,8 @@ public class PlayerController : MonoBehaviour {
         _heavyAtkCooldown = _characterData.HeavyAtkCooldown;
         _hitParticleEmitter = _characterData.HitParticleEmitter;
         _slideEffect = _characterData.SlideEffect;
-
+        _SlideCooldown = _characterData.SlideCooldown;
+        
         if (_playerAnim == null)
         {
             _playerAnim = gameObject.GetComponent<Animator>();
@@ -154,6 +165,7 @@ public class PlayerController : MonoBehaviour {
         _playerAnim.runtimeAnimatorController = _characterData.AnimatorController;
         _playerSpriteRenderer.sprite = _characterData.DefaultSprite;
         _playerAnim.SetFloat("LightAttackSpeed", _lightAtkCooldown);
+        _Slideduration = _playerAnim.GetFloat("Slide Duration") / 2f;
     }
 
     // Gets direction from player input
@@ -246,6 +258,7 @@ public class PlayerController : MonoBehaviour {
             {
                 //Debug.Log("Slide");
                 //_playerAnim.SetTrigger("Slide");
+                
                 _playerAnim.SetBool("Sliding", true);
                 AkSoundEngine.PostEvent("Player_Dash", gameObject);
                 _movementInput = _slideVector;
@@ -254,8 +267,8 @@ public class PlayerController : MonoBehaviour {
                 //_canAttack = false;
                 _characterSpeed *= 4f;
                 _startPos = this.gameObject.transform.position;
-                float duration = _playerAnim.GetFloat("Slide Duration")/2f;
-                StartCoroutine(SlideSpeedReset(duration));
+                
+                StartCoroutine(SlideSpeedReset());
             }
         }
     }
@@ -280,8 +293,10 @@ public class PlayerController : MonoBehaviour {
 
    
 
-    private IEnumerator SlideSpeedReset(float duration) {
-        yield return new WaitForSeconds(duration);
+    private IEnumerator SlideSpeedReset() 
+    {
+        yield return new WaitForSeconds(_Slideduration);
+        dashUI.Dash();
         _playerAnim.SetBool("Sliding", false);
         _characterSpeed /= 4f;
         _sliding = false;
@@ -306,8 +321,8 @@ public class PlayerController : MonoBehaviour {
 
         _movementInput = Vector2.zero;
         // extra delay so a player can't spam sliding?
-        yield return new WaitForSeconds(0.5f);
-        Debug.Log("Slide disabled");
+        yield return new WaitForSeconds(_SlideCooldown);
+        //Debug.Log("Slide disabled");
         _canSlide = true;
     }
 
@@ -540,6 +555,16 @@ public class PlayerController : MonoBehaviour {
     {
         TextMeshProUGUI nametag = _playerUIPanel.GetComponentInChildren<TextMeshProUGUI>();
         //nametag.text = _characterName;
+        portrait.sprite = _characterData.PortraitSprite;
+        if(dashUI)
+        {
+            dashUI.setSlideDuration(_Slideduration);
+            dashUI.setSlideCooldown(_SlideCooldown);
+        }
+        else
+        {
+            Debug.LogError("No Dash UI");
+        }
         _playerUIPanel.SetActive(true);
     }
 

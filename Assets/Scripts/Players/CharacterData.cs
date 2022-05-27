@@ -15,10 +15,12 @@ public class CharacterData : ScriptableObject
     [SerializeField] private float heavyHitstun;
     [SerializeField] private float lightAtkCooldown;
     [SerializeField] private float heavyAtkCooldown;
+    [SerializeField] private float slideCooldown;
     [SerializeField] private GameObject hitParticleEmitter;
     [SerializeField] private GameObject slideEffect;
     [SerializeField] private RuntimeAnimatorController animatorController;
     [SerializeField] private Sprite defaultSprite;
+    [SerializeField] private Sprite portraitSprite;
 
     public string CharacterName { get { return characterName; } }
     public float CharacterSpeed { get { return characterSpeed; } }
@@ -29,8 +31,10 @@ public class CharacterData : ScriptableObject
     public float HeavyHitStun { get { return heavyHitstun; } }
     public float LightAtkCooldown { get { return lightAtkCooldown; } }
     public float HeavyAtkCooldown { get{ return heavyAtkCooldown; } }
+    public float SlideCooldown { get { return slideCooldown; } }
     public GameObject HitParticleEmitter { get { return hitParticleEmitter; } }
     public GameObject SlideEffect { get { return slideEffect; } }
     public RuntimeAnimatorController AnimatorController { get { return animatorController; } }
     public Sprite DefaultSprite { get { return defaultSprite; } }
+    public Sprite PortraitSprite { get { return portraitSprite; } }
 }

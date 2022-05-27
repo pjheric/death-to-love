@@ -8,12 +8,13 @@ public class HealthUI : MonoBehaviour
     //[SerializeField] private Image healthBar;
     //[SerializeField] private Image[] healthTicks;
 
-    private float LerpTimer;
+    
     [SerializeField] private FloatAsset maxHealth; // Max health stored in float asset
     [SerializeField] private FloatAsset health;
     [SerializeField] private float ChipSpeed = 2f;
     [SerializeField] private Image FrontHealthBar;
     [SerializeField] private Image BackHealthBar;
+    private float LerpTimer;
     //[SerializeField] private float lerpSpeed = 3f;
 
     private float healthBarStep; // Determines how many health points each tick represents

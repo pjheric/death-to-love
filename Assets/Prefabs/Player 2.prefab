@@ -303,6 +303,7 @@ MonoBehaviour:
     m_Bits: 512
   _pausePanel: {fileID: 0}
   _playerUIPanel: {fileID: 0}
+  portrait: {fileID: 0}
   SlideFlickerRate: 0.005
   _heatManager: {fileID: 0}
   mashGoal: 100
