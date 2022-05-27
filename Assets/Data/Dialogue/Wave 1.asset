@@ -15,29 +15,29 @@ MonoBehaviour:
   dialogue:
   - speaker: Rosie
     line: 'Cheers everyone! To another successful gig! '
-    speakerImage: {fileID: 0}
+    speakerImage: {fileID: 21300000, guid: 2ffa54b12887f364c82d3890bf343bb3, type: 3}
   - speaker: Jay
     line: And to good friends!
-    speakerImage: {fileID: 0}
+    speakerImage: {fileID: 21300000, guid: d285c75ac7aa72b4ea29d6e06184c353, type: 3}
   - speaker: Liz
     line: And many more to come!
     speakerImage: {fileID: 21300000, guid: 2ad59559d76fd834a95bf3c576b3abce, type: 3}
   - speaker: Cops
     line: '**DEADNAME**, you''re under arrest.'
-    speakerImage: {fileID: 0}
+    speakerImage: {fileID: 21300000, guid: 1b7988b62e05a5749b889e3c527d9a8a, type: 3}
   - speaker: Rosie
     line: I go by Rosie now and I haven't done anything.
-    speakerImage: {fileID: 0}
+    speakerImage: {fileID: 21300000, guid: 2ffa54b12887f364c82d3890bf343bb3, type: 3}
   - speaker: Liz
     line: Leave her alone will ya pig? We're in the middle of celebrating here.
     speakerImage: {fileID: 21300000, guid: 3138e396fef97174db1eb9b59cdec3d5, type: 3}
   - speaker: Jay
     line: Yeah! Get away from my friends! I just made a toast to them!
-    speakerImage: {fileID: 0}
+    speakerImage: {fileID: 21300000, guid: d285c75ac7aa72b4ea29d6e06184c353, type: 3}
   - speaker: Cops
     line: '**DEADNAME** is charged with disturbing the peace, and slandering Loveless
       Inc. Wanna add resisting arrest to that?'
-    speakerImage: {fileID: 0}
+    speakerImage: {fileID: 21300000, guid: 1b7988b62e05a5749b889e3c527d9a8a, type: 3}
   - speaker: Liz
     line: "Her name\u2019s Rosie, and if you wanna be like that, we can add my boot
       to your ass!"
