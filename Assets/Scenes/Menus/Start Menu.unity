@@ -1391,16 +1391,17 @@ MonoBehaviour:
     Nour Hamade- Artist,
     Animator
 
-    Bassel Atout- Composer
+    Bassel Atout (polyphonic productions) - Composer
 
-    Andrew Stefani- SFX Artist
+    Andrew Stefani-
+    SFX Artist
 
-    Redford
-    Hudson- SFX Artist
+    Redford Hudson- SFX Artist
 
     Estey Boling- Vocal
 
-    Emei Wade- Artist, Animator'
+    Emei
+    Wade- Artist, Animator'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 268196c592471d043b97fd216ee54029, type: 2}
   m_sharedMaterial: {fileID: 1478255026332561205, guid: 268196c592471d043b97fd216ee54029, type: 2}
@@ -3120,7 +3121,7 @@ MonoBehaviour:
     Nathan
     More- Programmer, Designer
 
-    Sydney Leister- Concept Artist, UI Artist, Animator
+    Sydney Leister- Concept Artist, Animator
 
     Brittney
     Tran- Concept Artist, Animator, Writer
