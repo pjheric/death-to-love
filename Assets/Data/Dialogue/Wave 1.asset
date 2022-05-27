@@ -24,7 +24,7 @@ MonoBehaviour:
     speakerImage: {fileID: 21300000, guid: 2ad59559d76fd834a95bf3c576b3abce, type: 3}
   - speaker: 
     line: '*DOOR TO BAR OPENS*'
-    speakerImage: {fileID: 0}
+    speakerImage: {fileID: 21300000, guid: 1b7988b62e05a5749b889e3c527d9a8a, type: 3}
   - speaker: Cops
     line: Hey you!
     speakerImage: {fileID: 21300000, guid: 1b7988b62e05a5749b889e3c527d9a8a, type: 3}
