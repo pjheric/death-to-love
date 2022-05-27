@@ -445,7 +445,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="117531-Plucking_a_guitar_string_with_a_buzz_3" ID="{EAAB997A-79E8-4E37-94A2-79CD51E9C9A7}" ShortID="801015021">
+										<Sound Name="String pluck" ID="{EAAB997A-79E8-4E37-94A2-79CD51E9C9A7}" ShortID="801015021">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
@@ -468,7 +468,7 @@
 												<ActiveSource Name="117531-Plucking_a_guitar_string_with_a_buzz_3" ID="{8DE1E37F-8714-4BB1-A3FE-D6888B25BB7C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="117537-Plucking_a_muted_guitar_string_5" ID="{63159E52-04B3-4323-BB06-FA7DC3AC8C64}" ShortID="1044522769">
+										<Sound Name="Pluck muted guitar string" ID="{63159E52-04B3-4323-BB06-FA7DC3AC8C64}" ShortID="1044522769">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
@@ -491,7 +491,7 @@
 												<ActiveSource Name="117537-Plucking_a_muted_guitar_string_5" ID="{1C4E8768-007C-471C-9FC6-5C06E4ADC59C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="210904-Guitar_Broken_string_Notification" ID="{B1C0C18F-1460-4FE4-A0A3-DC4C38AF1232}" ShortID="761333496">
+										<Sound Name="Broken String" ID="{B1C0C18F-1460-4FE4-A0A3-DC4C38AF1232}" ShortID="761333496">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
@@ -514,7 +514,7 @@
 												<ActiveSource Name="210904-Guitar_Broken_string_Notification" ID="{7F10B028-82B9-4B9F-AE73-410712AE92D2}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="53431-MUSICAL_ELECTRIC_GUITAR_DISTORTED_ACCENT_01" ID="{CE0908B1-9EFD-4F05-BB40-2E511EE49F85}" ShortID="675080727">
+										<Sound Name="Distorted Guitar" ID="{CE0908B1-9EFD-4F05-BB40-2E511EE49F85}" ShortID="675080727">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
