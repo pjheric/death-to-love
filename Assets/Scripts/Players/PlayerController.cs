@@ -503,6 +503,10 @@ public class PlayerController : MonoBehaviour {
                 PlayerDown();
             }
             StartCoroutine(InvincibilityFrames(InvincibilitySeconds));
+            if(!_canAttack)
+            {
+                _canAttack = true;
+            }
         }
     }
 

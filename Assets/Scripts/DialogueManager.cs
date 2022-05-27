@@ -9,8 +9,9 @@ using UnityEngine.Audio;
 public class DialogueManager : MonoBehaviour
 {
     private bool _isDialogue = false; 
-    [SerializeField] GameObject DialoguePanel; 
-    
+    [SerializeField] GameObject DialoguePanel;
+    [SerializeField] GameObject GoPanel;
+
     [SerializeField] Image SpeakerImage;
  
     [SerializeField] TextMeshProUGUI SpeakerName; 
@@ -21,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueData data)
     {
         _isDialogue = true; 
+        DialoguePanel.SetActive(true);
         DialoguePanel.SetActive(true);
         //First, freeze time
         //Time.timeScale = 0;

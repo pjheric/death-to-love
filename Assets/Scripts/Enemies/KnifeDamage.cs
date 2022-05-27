@@ -86,7 +86,7 @@ public class KnifeDamage : MonoBehaviour
 
     public void Reflect()
     {
-        if(hostile)
+        if(hostile && Thrower)
         {
             hostile = false;
             //Debug.Log("Reflect");

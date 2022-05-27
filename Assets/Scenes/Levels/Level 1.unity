@@ -1200,6 +1200,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 610087252585474407, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 613817236523912508, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 660561524038952441, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
       propertyPath: m_AnchorMin.x
       value: 1
@@ -1223,6 +1231,10 @@ PrefabInstance:
     - target: {fileID: 660561524038952441, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 14.310333
+      objectReference: {fileID: 0}
+    - target: {fileID: 980956025543502889, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1483732419055787417, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1444,6 +1456,10 @@ PrefabInstance:
       propertyPath: FrontDashBar
       value: 
       objectReference: {fileID: 482641941}
+    - target: {fileID: 7994722294060424654, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9012929204892377967, guid: 38ad5fa0bfb76f141833ef377ad708a7, type: 3}
       propertyPath: m_AnchorMin.x
       value: 1
