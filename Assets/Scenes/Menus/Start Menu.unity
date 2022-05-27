@@ -2740,7 +2740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6556553203717979330, guid: c1e3c180c47d1bd4c9d2c68618727a31, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6556553203717979331, guid: c1e3c180c47d1bd4c9d2c68618727a31, type: 3}
       propertyPath: m_RootOrder
@@ -3852,7 +3852,6 @@ GameObject:
   m_Component:
   - component: {fileID: 754632797}
   - component: {fileID: 754632796}
-  - component: {fileID: 754632798}
   m_Layer: 0
   m_Name: Start Menu Manager
   m_TagString: Untagged
@@ -3887,19 +3886,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &754632798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754632795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f546a6100220931439916ad861924b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
 --- !u!1 &846368445
 GameObject:
   m_ObjectHideFlags: 0
