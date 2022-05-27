@@ -1,6 +1,1865 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B9712680-A953-4A00-9CD4-86F620649B59}" SchemaVersion="103">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{B9712680-A953-4A00-9CD4-86F620649B59}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B9712680-A953-4A00-9CD4-86F620649B59}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Music" ID="{82D939E9-2CE8-49BD-A684-49A0FB6B792A}" ShortID="300620711">
+					<ChildrenList>
+						<MusicPlaylistContainer Name="Neutral" ID="{40330F3C-0962-41A0-B837-BD564D939FCE}" ShortID="633362009">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{F9DF0842-30A6-488B-8B5B-590D3442C6C8}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Neutral" ID="{D4883807-6AB6-4DDB-8F49-23A094F35055}" ShortID="763243070">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="199783.368845634"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="NOOTRAL bass" ID="{37FF2E78-B312-46BC-A55E-8D25EBECA1D6}" ShortID="1037655497">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="NOOTRAL bass" ID="{9FBA5C12-9908-404F-AC44-5D5083B5DC1A}">
+													<Language>SFX</Language>
+													<AudioFile>NOOTRAL bass.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="710443860"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{B8DAEDB6-8D85-4805-83EC-7A74A87854AC}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{8E0AEB56-9060-4DD9-BE1E-5F647E2F1735}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="NOOTRAL bass" ID="{14ECCECA-D944-483A-837C-ABF2959CD4CB}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="190067.974928743"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="965.521727956007"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1579.9446457462"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="NOOTRAL bass" ID="{9FBA5C12-9908-404F-AC44-5D5083B5DC1A}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{C0D189C4-D637-41ED-BFE2-F5AE30AEF575}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>190.06797</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{05AD8977-562E-4A69-B938-DA9391912258}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>190.06797</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{D53A964F-91A2-40A3-8D1A-70E3A66D5584}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>190.06797</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="NOOTRAL clean guitar" ID="{88783D5B-9B40-4538-9585-8AB8D5067F8D}" ShortID="736457560">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="NOOTRAL clean guitar" ID="{51894143-EBBE-4DB6-AB79-9597A33C7E46}">
+													<Language>SFX</Language>
+													<AudioFile>NOOTRAL clean guitar.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="520646364"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{1884025B-14BA-4807-BDE7-F8ECAF741728}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{DC7E1C9D-50A0-4E01-873C-42AB8D50BC04}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="NOOTRAL clean guitar" ID="{8F1224BC-4798-43EB-88EC-EC0F9A112E45}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="118544.580498866"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="956.744257701861"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="NOOTRAL clean guitar" ID="{51894143-EBBE-4DB6-AB79-9597A33C7E46}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="NOOTRAL distorted guitar" ID="{4BA641C7-0C9D-4944-8767-3582D197469C}" ShortID="541185">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="NOOTRAL distorted guitar" ID="{642D22E3-9E92-4D31-9493-7F3BA1B7F4F4}">
+													<Language>SFX</Language>
+													<AudioFile>NOOTRAL distorted guitar.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="881420876"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{8E210242-AF10-40E5-A788-E644096EC4DB}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{5EFE3642-CBA2-4328-9CF3-51CDA19BB027}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="NOOTRAL distorted guitar" ID="{3D0E73A0-346A-4D84-910C-C8AA4BDC65F9}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="190058.351230675"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1746.71658057498"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="NOOTRAL distorted guitar" ID="{642D22E3-9E92-4D31-9493-7F3BA1B7F4F4}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{86BC7E1A-00F4-4E83-8638-5FA0FFB27F4F}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>190.05835</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{FA73A411-DFE2-49BD-A270-EF7D086F620B}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>190.05835</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{1B4B4994-B32A-48F8-8FC3-ACE6E1EFB4E0}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>190.05835</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="NOOTRAL drumz" ID="{280483E1-9DA7-462A-9EE5-8DFB715DBC6B}" ShortID="133342276">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="NOOTRAL drumz" ID="{02B80B88-606F-4DAF-8C8B-48CD84D0662D}">
+													<Language>SFX</Language>
+													<AudioFile>NOOTRAL drumz.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1047774548"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{78F24914-1CA6-4047-9D20-15156A13E6DF}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{C7A21A7E-79CD-4E12-B736-FBEB7F6450D8}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="NOOTRAL drumz" ID="{1DE2019C-C3A1-4461-85E1-B98FF3F99D8A}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="177882.154195011"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="280.879048132656"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="NOOTRAL drumz" ID="{02B80B88-606F-4DAF-8C8B-48CD84D0662D}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{76871BAB-40E8-4E41-B21E-450566D940E0}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{A68989CE-1E3F-4F1B-8E15-EA5470BAB53F}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="190049.154333786"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{13473953-8FE4-41D0-8429-ABAA3682D391}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{FA03F347-11CA-4E97-B0B3-6524D471B50D}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{7BA41386-423F-4D34-8070-1B88EF61251C}" ShortID="296020290">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{8BD98013-A672-4D43-AFC9-66E42071ED29}" ShortID="900115095">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Neutral" ID="{D4883807-6AB6-4DDB-8F49-23A094F35055}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Punk" ID="{79260C1F-2630-4E1C-9ADB-8E12C9D3F925}" ShortID="241547879">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{F9DF0842-30A6-488B-8B5B-590D3442C6C8}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Punk 1" ID="{E5C67029-B881-44DC-BAD1-8778554D5781}" ShortID="453279482">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="164727.278911565"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="PUNK! basses" ID="{F8E8CE17-B9A9-4462-87A9-B4C231181BC8}" ShortID="336563609">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK! basses" ID="{807E83AF-18EE-4D06-9BC4-61748E30768B}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK! basses.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="918823191"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{DEA7F926-894D-481E-B5DB-406AEF58DFE5}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{1FBC7DD2-2934-44B1-8340-3EADD190945A}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK! basses" ID="{8707F9D4-3680-4995-92C9-F0A0E105B90E}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="146021.315192744"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK! basses" ID="{807E83AF-18EE-4D06-9BC4-61748E30768B}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{6A3A9254-9C04-4EEB-BAD0-D86FDE198F21}">
+																<ObjectLists/>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK! drumz" ID="{D5BC21FB-0FD8-4280-B2EB-2A50CDE8B754}" ShortID="151957862">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK! drumz" ID="{39EDEE6B-96B4-48C0-8373-FC5530DDD2C3}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK! drumz.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="812315031"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{399E02AC-6256-44D9-9975-BC1ECE583C79}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{BB3FD36A-77EC-4B77-AFC0-12C650F0362B}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK! drumz" ID="{C856FF97-7C9C-402D-B442-C4385F99AEEC}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="133090.907029478"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK! drumz" ID="{39EDEE6B-96B4-48C0-8373-FC5530DDD2C3}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{A9CD674D-BAAF-4106-BADD-A66FC692A6FA}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK! drumz" ID="{3C2B790C-C119-425A-8DF5-ECEAD4D37DE5}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="133090.907029478"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK! drumz" ID="{39EDEE6B-96B4-48C0-8373-FC5530DDD2C3}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{835DD3B4-DB28-4D48-882F-1177A75BAD57}">
+																<ObjectLists/>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK! guitars" ID="{AC70299C-BE2D-44E1-BDAB-228DDA929905}" ShortID="607516751">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK! guitars" ID="{94CC00E4-8117-406C-A878-7516D85BDAFB}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK! guitars.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1015998167"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{7CAF02E7-27ED-41A4-9F7D-5856EFA0CBE9}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{738A97C3-FA3C-410F-9FD1-85D7C057ECD5}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK! guitars" ID="{BB6069F3-21C2-47F1-AD63-1DEAB97FAA6E}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="146181.836734694"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK! guitars" ID="{94CC00E4-8117-406C-A878-7516D85BDAFB}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK! vox" ID="{2E81A13C-B333-43DB-A331-24E1CF7CA2F3}" ShortID="898036780">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK! vox" ID="{C2F348C9-C8EE-4730-9C9C-BF394FC22EA0}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK! vox.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="557414481"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{260308B5-4C1F-4FB0-828C-1E5DC65BC3B3}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{D74DF254-FF69-42BC-AF11-1EA36BD50DB6}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK! vox" ID="{95B4BF80-165D-4111-B474-EF93ACCF9E52}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="146000"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK! vox" ID="{C2F348C9-C8EE-4730-9C9C-BF394FC22EA0}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{AC0FC3DE-DF84-44B4-BA12-F9C61BCC446B}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>146</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{FE702E48-5E38-4752-A757-1B79FFC89ECA}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>146</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{6ABCBEAD-4C1F-4237-B02A-9B0589540EAB}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>146</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{D9F31F82-F805-4393-8578-8002E7AD7DDD}">
+																<ObjectLists/>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK! female heys" ID="{D2831E02-EBBD-46E6-92ED-5A6CC43A01A1}" ShortID="640803960">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK! female heys" ID="{DEE7868B-2CDC-4797-A472-7BF74D0962BB}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK! female heys.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="234525785"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{9A0EB8E5-82E4-4CF5-A830-5E1E09328EBD}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{95CC2F9E-E6A9-422F-9AC8-41C5667EB84A}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK! female heys" ID="{92B72086-F868-4DAE-9C78-17E232E0FF45}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="164727.278911565"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK! female heys" ID="{DEE7868B-2CDC-4797-A472-7BF74D0962BB}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{732D9864-9469-46DD-B0FC-81414CCCF952}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{F41BBFCF-1072-40CC-B59E-91F297F14053}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="144191.201353638"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+								<MusicSegment Name="Punk 2" ID="{BAB2FE15-8632-41BD-8850-A1B1D25793BE}" ShortID="466445033">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="157090.929705215"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="PUNK 2 bass" ID="{2D955884-5742-4449-90CB-84164B7A455E}" ShortID="909947946">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK 2 bass" ID="{18D3C529-CDD4-4797-B924-7A746012312F}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK 2 bass.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="420150212"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{AB5CD50A-5CB1-4067-A266-2492BDA6FA4C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{3F4A7A22-2534-4BC6-A2EF-4A8E4C8E16FF}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 bass" ID="{9408AFBF-3C18-4714-8880-7A0092470411}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="157090.929705215"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 bass" ID="{18D3C529-CDD4-4797-B924-7A746012312F}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{ABD3922D-2194-4C29-8D42-4AEC479F7A9E}">
+																<ObjectLists/>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK 2 drumz" ID="{C5B1CA8D-6140-4FE2-B32E-68E7BAC410BB}" ShortID="1017732272">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK 2 drumz.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1057653763"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{6AF1FCF8-6A3B-4502-AA2C-4FB15C7A2E8C}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{8DA23687-ABE0-4BCF-8152-47FC3B4D0F55}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{3C2D005C-BCF1-4325-9513-219AF5B03266}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="141818.185941043"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{32A2E76B-74B7-4B82-90BD-30E38095FF1A}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{B86664F4-5A64-491C-94A7-4948811DEC3C}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="6000"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1688.84231773317"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{AFD76910-AEFD-4717-AB49-23DE22256AFE}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>6</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{DDB5D04E-8E28-4B54-A21F-5A7F0B1B878E}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>6</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{6B66B05D-F8DD-473A-94E1-D2291EB1BBA9}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>6</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{BFAA489A-0CE4-4412-BCFD-27270C215899}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="30000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="38000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1104.24305390246"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1299.10947517936"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{B278860C-7A29-4FE5-8D13-6941C428B1B6}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>30</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>38</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{C766C3EB-67E9-41F6-A28E-CA52681E2E69}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>30</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>38</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{A96749A1-1B88-4B16-9433-67C2FA170509}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>30</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>38</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{9E8EB088-5283-47DA-B9F4-380FB97E0DEA}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="46000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="54000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1364.06494893833"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1234.15400142039"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{A5D02D4A-2F85-43C7-9C4B-FFE70F89B534}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>46</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>54</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{6CA25ECB-0C63-41AA-B784-452355440808}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>46</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>54</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{97847E10-4049-4EF7-8408-92F1496378CE}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>46</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>54</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{0280D3AE-6BB6-4580-AC13-222D6E50660C}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="62000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="70000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1364.06494893833"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1364.06494893832"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{5D70EB9A-3294-4B52-AEDB-8B340AC9CAFE}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>62</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>70</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{3D830E70-53AA-491F-9EA1-5F5D69193D18}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>62</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>70</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{CA2E9827-7385-453D-85DA-67D6350519AB}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>62</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>70</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{5A04DC6B-0260-44F7-9E3C-15C1BE580C76}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="78000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="86000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1429.0204226973"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1493.97589645626"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{0CA65CCE-4AAE-45DB-84F7-A1CF6F4A4492}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>78</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>86</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{135AC125-521B-4E3E-AF63-53362035B85F}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>78</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>86</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{4D3BE7D3-8549-4A47-BFD3-8B31C1D7B955}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>78</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>86</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{219A0474-E53A-418F-8D66-173E5975EC93}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="94000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="102000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1558.93137021524"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1753.79779149214"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{37CAD7C9-9431-4C62-9A71-542CDEA44F2B}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>94</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>102</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{2B83C4E5-D55E-439F-BD8D-8265AB1588DF}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>94</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>102</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{8CD2AF38-7C41-457E-AB9E-2CCE83E454C5}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>94</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>102</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{3737396A-D653-4C44-930A-E162C42318F2}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="110000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="118000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1948.66421276903"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1688.84231773317"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{D4A367C2-E54C-4095-9339-C857DC979B6C}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>110</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>118</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{32D520E5-F983-48CD-85F5-2F6CDDE249A3}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>110</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>118</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{158E5229-C207-4CEC-9C4F-3A1225062AB3}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>110</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>118</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{52908CF1-A004-441F-8068-1B23387BE667}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="126000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="134000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1493.97589645626"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1364.06494893834"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{C4273663-F642-4101-8AAD-65441C513559}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>126</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>134</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{AC5B9E23-A7A0-4A64-A8E0-DC2F25DFEB54}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>126</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>134</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{BC97ED34-1976-409D-985D-CBE61E41D7F2}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>126</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>134</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 drumz" ID="{C9D16353-9004-485C-859A-6A878D86CBB4}">
+																					<PropertyList>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="14000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="22000"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="1883.70873901008"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1883.70873901008"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 drumz" ID="{2E8DA609-D8EF-4335-8D43-FA0D3C0566D2}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{8DFD6C3E-476A-4B30-AF4F-5EA4FD76CAF1}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>14</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>22</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Lowpass">
+																							<Curve Name="" ID="{A6AA628B-EC68-4778-8295-295DFAC409A3}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>14</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>22</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																						<PropertyCurve PropertyName="Volume">
+																							<Curve Name="" ID="{EDFAD2B1-DCA8-42D3-A49F-69313A8CB174}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="3"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>14</XPos>
+																										<YPos>0</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>22</XPos>
+																										<YPos>0</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK 2 guitars" ID="{DAF691BA-C96F-44BD-9B84-FC883E5E1046}" ShortID="56744570">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK 2 guitars" ID="{BF02F50E-F3B4-4D7B-866E-701D8DD4E184}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK 2 guitars.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="329936664"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{F8B80D3D-D8EE-4467-A5B4-8BDCC9134609}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{997A3C02-3976-4683-AD73-B8F496A9C7E9}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 guitars" ID="{801D4436-0343-47C2-BC8A-6227218230BF}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="157090.929705215"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 guitars" ID="{BF02F50E-F3B4-4D7B-866E-701D8DD4E184}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{61D32725-D1CA-41E8-A1D5-8BC15262B2C8}">
+																<ObjectLists/>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK 2 intro synth and beat" ID="{94E13457-02AA-4325-A2CC-37A58D54E402}" ShortID="707228105">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK 2 intro synth and beat" ID="{F4D76E23-9D1C-4859-A887-242A7D0E57DC}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK 2 intro synth and beat.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="579114496"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{1343FCC2-0443-42A7-A3E9-E6854C349A67}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{A861509E-B6E0-4FD6-B0E0-485669598077}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 intro synth and beat" ID="{C4E746D1-2583-4653-872A-A0C9E1810F65}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="4363.65079365079"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 intro synth and beat" ID="{F4D76E23-9D1C-4859-A887-242A7D0E57DC}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PUNK 2 main synth" ID="{4EEAF40B-375E-41FB-9A71-683EED5E2635}" ShortID="959469760">
+											<PropertyList>
+												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PUNK 2 main synth" ID="{65D02D0D-A760-49C0-9384-2C1C8E72A06D}">
+													<Language>SFX</Language>
+													<AudioFile>PUNK 2 main synth.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="605100862"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{48599A18-2990-4554-AC0A-E0062020BE5F}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{5B246190-51E5-4B14-AE38-8F6868BC93CC}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 main synth" ID="{3C192486-AEEC-43B3-8F6A-248CAEB51840}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="141818.185941043"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 main synth" ID="{65D02D0D-A760-49C0-9384-2C1C8E72A06D}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{2C42DBB0-572C-4A4B-A416-288389CEFAB2}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PUNK 2 main synth" ID="{C5434213-66BD-439E-BBB1-E914D0B0B94F}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="141818.185941043"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PUNK 2 main synth" ID="{65D02D0D-A760-49C0-9384-2C1C8E72A06D}"/>
+																					<PropertyCurveList>
+																						<PropertyCurve PropertyName="Highpass">
+																							<Curve Name="" ID="{083DD0CB-EF8B-439D-AEC7-D163D8020B47}">
+																								<PropertyList>
+																									<Property Name="Flags" Type="int32" Value="1"/>
+																								</PropertyList>
+																								<PointList>
+																									<Point>
+																										<XPos>0</XPos>
+																										<YPos>58.76226</YPos>
+																										<Flags>5</Flags>
+																									</Point>
+																									<Point>
+																										<XPos>141.818185941043</XPos>
+																										<YPos>57.67407</YPos>
+																										<Flags>37</Flags>
+																									</Point>
+																								</PointList>
+																							</Curve>
+																						</PropertyCurve>
+																					</PropertyCurveList>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{CACFA070-A4CE-4303-97F3-AC3F178D6CBE}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{A01FCE61-FD48-40C9-B487-CBADD8533A92}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="150000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{1117010E-688C-4FB3-BE8B-1E3FA8390B0F}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{98FDABCD-3973-4BBA-B78A-B200EBBF3721}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<ObjectLists/>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{E3555D2E-DE4A-4D59-A868-F6548804FC17}" ShortID="493904172">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlayMode" Type="int16" Value="2"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{6E70BDCC-0045-4A5E-9576-0FDC6BF407B2}" ShortID="643262808">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Punk 1" ID="{E5C67029-B881-44DC-BAD1-8778554D5781}"/>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{013F66E3-7E66-4164-9C93-B0FA1493DD4E}" ShortID="594853718">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Punk 2" ID="{BAB2FE15-8632-41BD-8850-A1B1D25793BE}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Playlist>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>

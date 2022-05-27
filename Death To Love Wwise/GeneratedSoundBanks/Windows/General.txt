@@ -12,25 +12,65 @@ Event	ID	Name			Wwise Object Path	Notes
 	2356404183	Game_Quit			\Default Work Unit\General\Game_Quit	
 	2394582229	Player_Dash			\Default Work Unit\General\Player_Dash	
 	2565870985	Enemy_Melee_Attack			\Default Work Unit\General\Enemy_Melee_Attack	
+	2678230382	Level1			\Default Work Unit\General\Level1	
 	2772308904	Game_Pause			\Default Work Unit\General\Game_Pause	
 	2824512041	Player_Attack			\Default Work Unit\General\Player_Attack	
 	3083087645	Player_Death			\Default Work Unit\General\Player_Death	
-	3157003241	Test			\Default Work Unit\General\Test	
+	3604647259	MainMenu			\Default Work Unit\General\MainMenu	
 	3609701047	Enemy_Gun_Fire			\Default Work Unit\General\Enemy_Gun_Fire	
 
-Game Parameter	ID	Name			Wwise Object Path	Notes
-	164852777	Player_Combo			\Default Work Unit\General\Player_Combo	
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	65865368	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence_01\Wwise Silence	
+	128292789	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence_02\Wwise Silence	
+	419020767	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence_06\Wwise Silence	
+	456365673	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence\Wwise Silence	
+	666921347	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence_07\Wwise Silence	
+	816587613	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence_05\Wwise Silence	
+	874811552	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Liz Hit\Silence_01\Wwise Silence	
+	888269532	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence_04\Wwise Silence	
+	942387165	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Liz Hit\Silence\Wwise Silence	
+	958490949	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Silence_03\Wwise Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	30503697	Impact Sound	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Impact Sound_B65B68E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Impact\Impact Sound		124762
+	124425697	210904-Guitar_Broken_string_Notification	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\210904-Guitar_Broken_string_Notification_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Guitar Element\210904-Guitar_Broken_string_Notification		192144
+	127551223	Barks_01	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_5DC72EFE.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Barks_01		63162
+	176878222	Barks_03	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_A6433720.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Liz Hit\Barks_03		54148
+	195225528	209197-EFX_SD_Punch_Bottom_02	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\209197-EFX_SD_Punch_Bottom_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Low Hit\209197-EFX_SD_Punch_Bottom_02		26688
+	234525785	PUNK! female heys	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK! female heys_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 1\PUNK! female heys		29058036
+	246843340	209200-EFX_SD_Punch_Bottom_37	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\209200-EFX_SD_Punch_Bottom_37_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Low Hit\209200-EFX_SD_Punch_Bottom_37		40000
+	247415911	117537-Plucking_a_muted_guitar_string_5	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\117537-Plucking_a_muted_guitar_string_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Guitar Element\117537-Plucking_a_muted_guitar_string_5		76864
+	329936664	PUNK 2 guitars	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK 2 guitars_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 2\PUNK 2 guitars		27710984
 	334011976	Enemy_Gun_Fire	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Enemy_Gun_Fire_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Gun_Fire		137764
-	352673697	Enemy_Hit	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Enemy_Hit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Enemy_Hit		45504
+	342062045	117531-Plucking_a_guitar_string_with_a_buzz_3	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\117531-Plucking_a_guitar_string_with_a_buzz_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Guitar Element\117531-Plucking_a_guitar_string_with_a_buzz_3		48192
+	382792587	53431-MUSICAL_ELECTRIC_GUITAR_DISTORTED_ACCENT_01	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\53431-MUSICAL_ELECTRIC_GUITAR_DISTORTED_ACCENT_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Guitar Element\53431-MUSICAL_ELECTRIC_GUITAR_DISTORTED_ACCENT_01		59764
 	382986549	Impact Sound_03	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Impact Sound_FE2065B4.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Impact\Impact Sound_03		97376
-	442883901	Whoosh 3	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Whoosh 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Melee\Whoosh 3		39576
+	420150212	PUNK 2 bass	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK 2 bass_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 2\PUNK 2 bass		27710984
+	420700183	209198-EFX_SD_Punch_Bottom_09	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\209198-EFX_SD_Punch_Bottom_09_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Low Hit\209198-EFX_SD_Punch_Bottom_09		30784
+	438435260	Barks_02	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_D7C24B15.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Barks_02		42130
+	442883901	Whoosh 3	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Whoosh 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Melee\Whoosh 3		39576
+	474124968	90412-Body_impact_punch-BLASTWAVEFX-26313	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\90412-Body_impact_punch-BLASTWAVEFX-26313_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Hit Sound\90412-Body_impact_punch-BLASTWAVEFX-26313		74644
+	520646364	NOOTRAL clean guitar	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\NOOTRAL clean guitar_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Neutral\Neutral\NOOTRAL clean guitar		20911392
+	537474129	Barks	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_11E458E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Death\Barks		147294
+	557414481	PUNK! vox	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK! vox_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 1\PUNK! vox		29058036
+	568026607	Barks_01	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_5B41CA7B.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Liz Hit\Barks_01		63162
+	579114496	PUNK 2 intro synth and beat	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK 2 intro synth and beat_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 2\PUNK 2 intro synth and beat		769892
+	605100862	PUNK 2 main synth	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK 2 main synth_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 2\PUNK 2 main synth		25016872
+	710443860	NOOTRAL bass	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\NOOTRAL bass_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Neutral\Neutral\NOOTRAL bass		34927284
+	712124410	43368-IMPACT_BODY_QUICK_PUNCH_01	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\43368-IMPACT_BODY_QUICK_PUNCH_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Hit Sound\43368-IMPACT_BODY_QUICK_PUNCH_01		21464
 	753066837	Impact Sound_02	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Impact Sound_738DDAD0.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Impact\Impact Sound_02		101952
-	859150910	Whoosh 1	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Whoosh 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Melee\Whoosh 1		42888
+	759818775	Barks	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_D6102818.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Barks		42130
+	812315031	PUNK! drumz	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK! drumz_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 1\PUNK! drumz		23477380
+	859150910	Whoosh 1	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Whoosh 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Melee\Whoosh 1		42888
 	859938227	Impact Sound_01	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Impact Sound_45E03955.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Hit\Hit Impact\Impact Sound_01		120194
+	881420876	NOOTRAL distorted guitar	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\NOOTRAL distorted guitar_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Neutral\Neutral\NOOTRAL distorted guitar		34927284
+	918823191	PUNK! basses	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK! basses_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 1\PUNK! basses		25758304
 	933698646	UI_Button_Press	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\UI_Button_Press_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\UI_Button_Press		576064
-	1020640563	Temp Title Music Implementation	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Neutral Track Trimmed_99DFD4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Temp Title Music Implementation		33370896
-	1038039954	Whoosh 2	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Whoosh 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Enemy_Melee\Whoosh 2		73620
+	975639029	Barks_03	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_4C2DC93D.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Liz Efforts\Barks_03		84194
+	1015998167	PUNK! guitars	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK! guitars_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 1\PUNK! guitars		25786620
+	1019994602	Barks_01	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_DE28E138.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Death\Barks_01		111238
+	1038039954	Whoosh 2	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Whoosh 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Attack\Melee\Whoosh 2		73620
+	1047774548	NOOTRAL drumz	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\NOOTRAL drumz_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Neutral\Neutral\NOOTRAL drumz		31378540
+	1057653763	PUNK 2 drumz	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\PUNK 2 drumz_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Punk\Punk 2\PUNK 2 drumz		25016872
+	1063676852	Barks_02	C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\.cache\Windows\SFX\Barks_6E0CAAED.wem		\Actor-Mixer Hierarchy\Default Work Unit\General\Player_Hit\Liz Hit\Barks_02		66166
 

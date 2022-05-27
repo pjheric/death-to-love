@@ -23,13 +23,14 @@ namespace AK
         static const AkUniqueID GAME_START_MULTI = 716833996U;
         static const AkUniqueID GAME_START_SOLO = 512344028U;
         static const AkUniqueID GAME_UNPAUSE = 1359982855U;
+        static const AkUniqueID LEVEL1 = 2678230382U;
         static const AkUniqueID LOGO_LOAD = 117716555U;
         static const AkUniqueID LOSE_COMBO = 2898453U;
+        static const AkUniqueID MAINMENU = 3604647259U;
         static const AkUniqueID PLAYER_ATTACK = 2824512041U;
         static const AkUniqueID PLAYER_DASH = 2394582229U;
         static const AkUniqueID PLAYER_DEATH = 3083087645U;
         static const AkUniqueID PLAYER_HIT = 871813740U;
-        static const AkUniqueID TEST = 3157003241U;
         static const AkUniqueID UI_BUTTON_PRESS = 12010446U;
     } // namespace EVENTS
 

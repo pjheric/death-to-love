@@ -5,7 +5,6 @@
 			<ChildrenList>
 				<SoundBank Name="General" ID="{FA1EA0F8-0E71-40D6-8C6A-BBFA7184C20C}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Test" ID="{B858DB35-3301-409F-8C3E-793795217156}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Logo_Load" ID="{84BA6E56-258A-4101-8169-8F269415EC71}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Attack" ID="{18276B9F-3373-4124-9479-AF33A74221CB}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Lose_Combo" ID="{7F8A1E84-4626-42A7-89F8-85FC7B82E6FA}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
@@ -15,10 +14,12 @@
 						<ObjectRef Name="Enemy_Taunt" ID="{26345218-9716-452A-A32E-B18082AD8B6F}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Death" ID="{B9346A81-E10B-45DE-9413-EB307D168AA8}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Game_Start_Multi" ID="{0D773454-50A3-4601-A5ED-212820C70BCB}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Level1" ID="{F652B5A8-36A1-460B-A6B2-BE10E34DFC55}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Gun_Fire" ID="{19A41229-850B-4934-91D9-53AF9AD60BAD}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Hit" ID="{5D4C4C5E-AA91-4B95-9DA1-43DF40352679}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Game_Pause" ID="{E5C76F00-34A3-4BD9-AAF3-24FF536DD5B7}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Dash" ID="{5E2D038F-F8A3-4C71-89A3-6008391999DB}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MainMenu" ID="{3C0CDFEA-212B-4C85-AC97-5F42C1B317AE}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Death" ID="{507FA147-1D28-4CBA-B500-3D0C40111ADE}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Game_Quit" ID="{A8F6F09F-8466-4CEB-B46E-8E81599471C7}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Hit" ID="{2BA3D0FA-42BC-4E10-9E60-BD0F8CCD94EF}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
