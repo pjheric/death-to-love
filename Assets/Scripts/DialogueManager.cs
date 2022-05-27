@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
     {
         _isDialogue = true; 
         DialoguePanel.SetActive(true);
-        DialoguePanel.SetActive(true);
+        GoPanel.SetActive(false);
         //First, freeze time
         //Time.timeScale = 0;
         privateData = data;

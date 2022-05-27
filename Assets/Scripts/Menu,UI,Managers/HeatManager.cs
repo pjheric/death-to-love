@@ -70,6 +70,7 @@ public class HeatManager : MonoBehaviour
             _heatNumber.color = Color.magenta;
         }
 
+        AkSoundEngine.SetRTPCValue("Player_Combo", CurrentHeatNum);
         applyBuffs();
 
         CurrentHeatFalloff = 1f;
