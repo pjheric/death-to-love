@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Language="SFX" Hash="2275596140">
+		<SoundBank Id="133642231" Language="SFX" Hash="3958179662">
 			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
@@ -31,9 +31,21 @@
 							<ShortName>Impact Sound.wav</ShortName>
 							<Path>SFX\Impact Sound_B65B68E4.wem</Path>
 						</File>
-						<File Id="352673697" Language="SFX">
-							<ShortName>Enemy_Hit.wav</ShortName>
-							<Path>SFX\Enemy_Hit_10C4C929.wem</Path>
+						<File Id="124425697" Language="SFX">
+							<ShortName>210904-Guitar_Broken_string_Notification.wav</ShortName>
+							<Path>SFX\210904-Guitar_Broken_string_Notification_10C4C929.wem</Path>
+						</File>
+						<File Id="247415911" Language="SFX">
+							<ShortName>117537-Plucking_a_muted_guitar_string_5.wav</ShortName>
+							<Path>SFX\117537-Plucking_a_muted_guitar_string_5_10C4C929.wem</Path>
+						</File>
+						<File Id="342062045" Language="SFX">
+							<ShortName>117531-Plucking_a_guitar_string_with_a_buzz_3.wav</ShortName>
+							<Path>SFX\117531-Plucking_a_guitar_string_with_a_buzz_3_10C4C929.wem</Path>
+						</File>
+						<File Id="382792587" Language="SFX">
+							<ShortName>53431-MUSICAL_ELECTRIC_GUITAR_DISTORTED_ACCENT_01.wav</ShortName>
+							<Path>SFX\53431-MUSICAL_ELECTRIC_GUITAR_DISTORTED_ACCENT_01_10C4C929.wem</Path>
 						</File>
 						<File Id="382986549" Language="SFX">
 							<ShortName>Impact Sound.wav</ShortName>
@@ -71,17 +83,150 @@
 				<Event Id="716833996" Name="Game_Start_Multi" ObjectPath="\Events\Default Work Unit\General\Game_Start_Multi" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="512344028" Name="Game_Start_Solo" ObjectPath="\Events\Default Work Unit\General\Game_Start_Solo" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1359982855" Name="Game_Unpause" ObjectPath="\Events\Default Work Unit\General\Game_Unpause" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2678230382" Name="Level1" ObjectPath="\Events\Default Work Unit\General\Level1" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="234525785" Language="SFX">
+							<ShortName>PUNK! female heys.wav</ShortName>
+							<Path>SFX\PUNK! female heys_D79FB2B7.wem</Path>
+						</File>
+						<File Id="329936664" Language="SFX">
+							<ShortName>PUNK 2 guitars.wav</ShortName>
+							<Path>SFX\PUNK 2 guitars_D79FB2B7.wem</Path>
+						</File>
+						<File Id="420150212" Language="SFX">
+							<ShortName>PUNK 2 bass.wav</ShortName>
+							<Path>SFX\PUNK 2 bass_D79FB2B7.wem</Path>
+						</File>
+						<File Id="557414481" Language="SFX">
+							<ShortName>PUNK! vox.wav</ShortName>
+							<Path>SFX\PUNK! vox_D79FB2B7.wem</Path>
+						</File>
+						<File Id="579114496" Language="SFX">
+							<ShortName>PUNK 2 intro synth and beat.wav</ShortName>
+							<Path>SFX\PUNK 2 intro synth and beat_D79FB2B7.wem</Path>
+						</File>
+						<File Id="605100862" Language="SFX">
+							<ShortName>PUNK 2 main synth.wav</ShortName>
+							<Path>SFX\PUNK 2 main synth_D79FB2B7.wem</Path>
+						</File>
+						<File Id="812315031" Language="SFX">
+							<ShortName>PUNK! drumz.wav</ShortName>
+							<Path>SFX\PUNK! drumz_D79FB2B7.wem</Path>
+						</File>
+						<File Id="918823191" Language="SFX">
+							<ShortName>PUNK! basses.wav</ShortName>
+							<Path>SFX\PUNK! basses_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1015998167" Language="SFX">
+							<ShortName>PUNK! guitars.wav</ShortName>
+							<Path>SFX\PUNK! guitars_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1057653763" Language="SFX">
+							<ShortName>PUNK 2 drumz.wav</ShortName>
+							<Path>SFX\PUNK 2 drumz_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="117716555" Name="Logo_Load" ObjectPath="\Events\Default Work Unit\General\Logo_Load" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2898453" Name="Lose_Combo" ObjectPath="\Events\Default Work Unit\General\Lose_Combo" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2824512041" Name="Player_Attack" ObjectPath="\Events\Default Work Unit\General\Player_Attack" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="2394582229" Name="Player_Dash" ObjectPath="\Events\Default Work Unit\General\Player_Dash" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\General\Player_Death" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="871813740" Name="Player_Hit" ObjectPath="\Events\Default Work Unit\General\Player_Hit" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\General\Test" DurationType="Infinite">
+				<Event Id="3604647259" Name="MainMenu" ObjectPath="\Events\Default Work Unit\General\MainMenu" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="1020640563" Language="SFX">
-							<ShortName>Neutral Track Trimmed.wav</ShortName>
-							<Path>SFX\Neutral Track Trimmed_99DFD4A2.wem</Path>
+						<File Id="520646364" Language="SFX">
+							<ShortName>NOOTRAL clean guitar.wav</ShortName>
+							<Path>SFX\NOOTRAL clean guitar_D79FB2B7.wem</Path>
+						</File>
+						<File Id="710443860" Language="SFX">
+							<ShortName>NOOTRAL bass.wav</ShortName>
+							<Path>SFX\NOOTRAL bass_D79FB2B7.wem</Path>
+						</File>
+						<File Id="881420876" Language="SFX">
+							<ShortName>NOOTRAL distorted guitar.wav</ShortName>
+							<Path>SFX\NOOTRAL distorted guitar_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1047774548" Language="SFX">
+							<ShortName>NOOTRAL drumz.wav</ShortName>
+							<Path>SFX\NOOTRAL drumz_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2824512041" Name="Player_Attack" ObjectPath="\Events\Default Work Unit\General\Player_Attack" DurationType="OneShot" DurationMin="0.526933" DurationMax="1.003867">
+					<IncludedMemoryFiles>
+						<File Id="127551223" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_9A075DFF.wem</Path>
+						</File>
+						<File Id="438435260" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_FB41EE70.wem</Path>
+						</File>
+						<File Id="442883901" Language="SFX">
+							<ShortName>Whoosh 3.wav</ShortName>
+							<Path>SFX\Whoosh 3_10C4C929.wem</Path>
+						</File>
+						<File Id="759818775" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_F2678CDD.wem</Path>
+						</File>
+						<File Id="859150910" Language="SFX">
+							<ShortName>Whoosh 1.wav</ShortName>
+							<Path>SFX\Whoosh 1_10C4C929.wem</Path>
+						</File>
+						<File Id="975639029" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_43D24012.wem</Path>
+						</File>
+						<File Id="1038039954" Language="SFX">
+							<ShortName>Whoosh 2.wav</ShortName>
+							<Path>SFX\Whoosh 2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2394582229" Name="Player_Dash" ObjectPath="\Events\Default Work Unit\General\Player_Dash" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3083087645" Name="Player_Death" ObjectPath="\Events\Default Work Unit\General\Player_Death" DurationType="OneShot" DurationMin="1.260466" DurationMax="1.669266">
+					<IncludedMemoryFiles>
+						<File Id="537474129" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_627DFC08.wem</Path>
+						</File>
+						<File Id="1019994602" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_E496FA4D.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="871813740" Name="Player_Hit" ObjectPath="\Events\Default Work Unit\General\Player_Hit" DurationType="OneShot" DurationMin="0.6132" DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="176878222" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_3DBAC706.wem</Path>
+						</File>
+						<File Id="195225528" Language="SFX">
+							<ShortName>209197-EFX_SD_Punch_Bottom_02.wav</ShortName>
+							<Path>SFX\209197-EFX_SD_Punch_Bottom_02_10C4C929.wem</Path>
+						</File>
+						<File Id="246843340" Language="SFX">
+							<ShortName>209200-EFX_SD_Punch_Bottom_37.wav</ShortName>
+							<Path>SFX\209200-EFX_SD_Punch_Bottom_37_10C4C929.wem</Path>
+						</File>
+						<File Id="420700183" Language="SFX">
+							<ShortName>209198-EFX_SD_Punch_Bottom_09.wav</ShortName>
+							<Path>SFX\209198-EFX_SD_Punch_Bottom_09_10C4C929.wem</Path>
+						</File>
+						<File Id="474124968" Language="SFX">
+							<ShortName>90412-Body_impact_punch-BLASTWAVEFX-26313.wav</ShortName>
+							<Path>SFX\90412-Body_impact_punch-BLASTWAVEFX-26313_10C4C929.wem</Path>
+						</File>
+						<File Id="568026607" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_6729F2A4.wem</Path>
+						</File>
+						<File Id="712124410" Language="SFX">
+							<ShortName>43368-IMPACT_BODY_QUICK_PUNCH_01.wav</ShortName>
+							<Path>SFX\43368-IMPACT_BODY_QUICK_PUNCH_01_10C4C929.wem</Path>
+						</File>
+						<File Id="1063676852" Language="SFX">
+							<ShortName>Barks.wav</ShortName>
+							<Path>SFX\Barks_DB41C6C2.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -98,7 +243,7 @@
 				<GameParameter Id="164852777" Name="Player_Combo" ObjectPath="\Game Parameters\Default Work Unit\General\Player_Combo"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1239135990">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1907906589">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
