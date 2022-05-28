@@ -293,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6401065719937997916, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: SpawnRate
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6401065719937997916, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: maxEnemies
@@ -1500,6 +1500,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
+      propertyPath: postFightDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: _dialogueManager
       value: 
       objectReference: {fileID: 294033671176417200}
@@ -2303,6 +2307,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
+      propertyPath: postFightDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: endWithDialogue
       value: 0
       objectReference: {fileID: 0}
@@ -2495,7 +2503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6401065719937997916, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: SpawnRate
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6401065719937997917, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: m_RootOrder
@@ -2804,7 +2812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6401065719937997916, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: SpawnRate
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6401065719937997916, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: maxEnemies
@@ -4386,7 +4394,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6401065719937997916, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: SpawnRate
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6401065719937997917, guid: 0f68a1e66f3cb1446a3f4a4ee582a1ec, type: 3}
       propertyPath: m_RootOrder
@@ -4886,10 +4894,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heatPanel: {fileID: 1626601786}
   _heatNumber: {fileID: 1237542840}
-  HeatFalloff: 10
+  HeatFalloff: 5
   HeatPerHit: 1
-  _heatlevel1: 60
-  _heatlevel2: 180
+  _heatlevel1: 40
+  _heatlevel2: 100
 --- !u!4 &2086886661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2818222155004744739, guid: 2ca6c2c5dfcbacc4ba17447f1a078c74, type: 3}
@@ -5187,6 +5195,10 @@ PrefabInstance:
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: HenchmanWeight
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
+      propertyPath: postFightDelay
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9086285373127927016, guid: 6da6989f427c746498303625316f2e70, type: 3}
       propertyPath: _dialogueManager

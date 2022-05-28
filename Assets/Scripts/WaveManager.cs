@@ -12,6 +12,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private bool lockCam = false;
     [SerializeField] private List<EnemySpawner> UsableSpawners;
     [SerializeField] private GameObject goPanel; 
+    [SerializeField] private float postFightDelay = 2f;
 
     private int completeSpawners = 0;
     private CinemachineController Cam;
@@ -97,20 +98,27 @@ public class WaveManager : MonoBehaviour
         if(enemies <= 0)
         {
             //Debug.Log("No more fighting");
-            Cam.Unsnap();
-            PlayerController[] PC = FindObjectsOfType<PlayerController>();
-            foreach(PlayerController player in PC)
+            StartCoroutine(PostFightDelay());
+            
+        }
+    }
+
+    IEnumerator PostFightDelay()
+    {
+        yield return new WaitForSeconds(postFightDelay);
+        Cam.Unsnap();
+        PlayerController[] PC = FindObjectsOfType<PlayerController>();
+        foreach (PlayerController player in PC)
+        {
+            player.restoreHalfHealth();
+        }
+        goPanel.SetActive(true);
+        Fighting = false;
+        if (DialogueAfterFight)
+        {
+            if (DT)
             {
-                player.restoreHalfHealth();
-            }
-            goPanel.SetActive(true); 
-            Fighting = false; 
-            if(DialogueAfterFight)
-            {
-                if(DT)
-                {
-                    DT.triggerDialogue();
-                }
+                DT.triggerDialogue();
             }
         }
     }
