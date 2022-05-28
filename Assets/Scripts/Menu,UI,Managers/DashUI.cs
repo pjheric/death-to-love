@@ -13,10 +13,15 @@ public class DashUI : MonoBehaviour
     private float slideCooldown;
     private float slideRegenProgress;
     private bool regen = false;
+
+    [SerializeField] private float flashRate = 0.2f;
+    [SerializeField] private Color flashColor;
+    private float flashTimer;
+    private bool colored = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        flashTimer = flashRate;
     }
 
     // Update is called once per frame
@@ -56,13 +61,27 @@ public class DashUI : MonoBehaviour
             FrontDashBar.fillAmount = Mathf.Lerp(fillFront, BackDashBar.fillAmount, percentComplete);
         }
 
-        if(percentSlide == 0)
+        if(percentSlide < 1)
         {
             regen = true;
+            FrontDashBar.color = Color.white;
         }
         else if(percentSlide == 1)
         {
             regen = false;
+            flashTimer -= Time.deltaTime;
+            if (colored == false && flashTimer <= 0)
+            {
+                FrontDashBar.color = flashColor;
+                colored = true;
+                flashTimer = flashRate;
+            }
+            else if (colored == true && flashTimer <= 0)
+            {
+                FrontDashBar.color = Color.white;
+                colored = false;
+                flashTimer = flashRate;
+            }
         }
     }
 

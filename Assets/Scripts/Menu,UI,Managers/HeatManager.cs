@@ -71,6 +71,7 @@ public class HeatManager : MonoBehaviour
         }
 
         AkSoundEngine.SetRTPCValue("Player_Combo", CurrentHeatNum);
+        AkSoundEngine.SetRTPCValue("Heat_Level", heatLevel);
         applyBuffs();
 
         CurrentHeatFalloff = 1f;
