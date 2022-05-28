@@ -818,7 +818,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: b22b623a7d1af34ba94650e0c9e84c4b
     GuidInternal: 
-    m_lastTime: -8585480885307650492
+    m_lastTime: -8585478956393929065
     List:
     - name: General
       guid: c560cf375ef0094481c71054e9ac4941
@@ -834,6 +834,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: c560cf375ef0094481c71054e9ac4941
       Path: Game Parameters\Default Work Unit\General
+    - name: Heat_Level
+      guid: ffe08b0ee2523d48b5987e13d30344b7
+      id: 1975356116
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b22b623a7d1af34ba94650e0c9e84c4b
+      - ElementName: General
+        ObjectType: 4
+        guid: c560cf375ef0094481c71054e9ac4941
+      - ElementName: Heat_Level
+        ObjectType: 13
+        guid: ffe08b0ee2523d48b5987e13d30344b7
+      Path: Game Parameters\Default Work Unit\General\Heat_Level
     - name: MasterVolume
       guid: 9c88fec2f356e04e87ac2778d5fdfd68
       id: 2918011349
