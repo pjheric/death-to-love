@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Language="SFX" Hash="248337688">
+		<SoundBank Id="133642231" Language="SFX" Hash="3958179662">
 			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
@@ -153,11 +153,11 @@
 					<IncludedMemoryFiles>
 						<File Id="127551223" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_5DC72EFE.wem</Path>
+							<Path>SFX\Barks_9A075DFF.wem</Path>
 						</File>
 						<File Id="438435260" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_D7C24B15.wem</Path>
+							<Path>SFX\Barks_FB41EE70.wem</Path>
 						</File>
 						<File Id="442883901" Language="SFX">
 							<ShortName>Whoosh 3.wav</ShortName>
@@ -165,7 +165,7 @@
 						</File>
 						<File Id="759818775" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_D6102818.wem</Path>
+							<Path>SFX\Barks_F2678CDD.wem</Path>
 						</File>
 						<File Id="859150910" Language="SFX">
 							<ShortName>Whoosh 1.wav</ShortName>
@@ -173,7 +173,7 @@
 						</File>
 						<File Id="975639029" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_4C2DC93D.wem</Path>
+							<Path>SFX\Barks_43D24012.wem</Path>
 						</File>
 						<File Id="1038039954" Language="SFX">
 							<ShortName>Whoosh 2.wav</ShortName>
@@ -186,11 +186,11 @@
 					<IncludedMemoryFiles>
 						<File Id="537474129" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_11E458E8.wem</Path>
+							<Path>SFX\Barks_627DFC08.wem</Path>
 						</File>
 						<File Id="1019994602" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_DE28E138.wem</Path>
+							<Path>SFX\Barks_E496FA4D.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -198,7 +198,7 @@
 					<IncludedMemoryFiles>
 						<File Id="176878222" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_A6433720.wem</Path>
+							<Path>SFX\Barks_3DBAC706.wem</Path>
 						</File>
 						<File Id="195225528" Language="SFX">
 							<ShortName>209197-EFX_SD_Punch_Bottom_02.wav</ShortName>
@@ -218,7 +218,7 @@
 						</File>
 						<File Id="568026607" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_5B41CA7B.wem</Path>
+							<Path>SFX\Barks_6729F2A4.wem</Path>
 						</File>
 						<File Id="712124410" Language="SFX">
 							<ShortName>43368-IMPACT_BODY_QUICK_PUNCH_01.wav</ShortName>
@@ -226,7 +226,7 @@
 						</File>
 						<File Id="1063676852" Language="SFX">
 							<ShortName>Barks.wav</ShortName>
-							<Path>SFX\Barks_6E0CAAED.wem</Path>
+							<Path>SFX\Barks_DB41C6C2.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -239,6 +239,9 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="164852777" Name="Player_Combo" ObjectPath="\Game Parameters\Default Work Unit\General\Player_Combo"/>
+			</GameParameters>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="1907906589">
 			<ObjectPath>Init</ObjectPath>

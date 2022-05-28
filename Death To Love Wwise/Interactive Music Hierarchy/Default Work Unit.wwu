@@ -401,7 +401,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -621,7 +621,44 @@
 										</MusicTrack>
 										<MusicTrack Name="PUNK! vox" ID="{2E81A13C-B333-43DB-A331-24E1CF7CA2F3}" ShortID="898036780">
 											<PropertyList>
-												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{9E7B5F83-B774-409B-83C4-B4A0F8B1C82A}" ShortID="184183562">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="Player_Combo" ID="{408B90EB-27D8-4757-BDB0-5CB35E328AA7}" WorkUnitID="{3A622BB2-1A7D-4BF3-A946-50E0C9E84C4B}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{4A6E4FB5-4802-4100-B848-BA3D97C218A0}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>59.9</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>60</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>1000</XPos>
+																		<YPos>-0.18287</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -728,17 +765,50 @@
 															</MusicTrackSequence>
 														</Local>
 													</Reference>
-													<Reference>
-														<Local>
-															<MusicTrackSequence Name="" ID="{D9F31F82-F805-4393-8578-8002E7AD7DDD}">
-																<ObjectLists/>
-															</MusicTrackSequence>
-														</Local>
-													</Reference>
 												</ObjectList>
 											</ObjectLists>
 										</MusicTrack>
 										<MusicTrack Name="PUNK! female heys" ID="{D2831E02-EBBD-46E6-92ED-5A6CC43A01A1}" ShortID="640803960">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{F6AA9192-36B7-476B-AF53-2EC4D33C9F61}" ShortID="451696639">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="Player_Combo" ID="{408B90EB-27D8-4757-BDB0-5CB35E328AA7}" WorkUnitID="{3A622BB2-1A7D-4BF3-A946-50E0C9E84C4B}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{72EF56BF-6EB1-4BCB-A7D7-A538F2E67F4E}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>179.9</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>180</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>1000</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
