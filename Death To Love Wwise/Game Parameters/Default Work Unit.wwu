@@ -18,6 +18,12 @@
 								<Property Name="Max" Type="Real64" Value="1000"/>
 							</PropertyList>
 						</GameParameter>
+						<GameParameter Name="Heat_Level" ID="{0E8BE0FF-52E2-483D-B598-7E13D30344B7}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="Max" Type="Real64" Value="2"/>
+							</PropertyList>
+						</GameParameter>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

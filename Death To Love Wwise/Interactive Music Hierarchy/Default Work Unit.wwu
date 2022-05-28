@@ -626,7 +626,7 @@
 														<RTPC Name="" ID="{9E7B5F83-B774-409B-83C4-B4A0F8B1C82A}" ShortID="184183562">
 															<ReferenceList>
 																<Reference Name="ControlInput">
-																	<ObjectRef Name="Player_Combo" ID="{408B90EB-27D8-4757-BDB0-5CB35E328AA7}" WorkUnitID="{3A622BB2-1A7D-4BF3-A946-50E0C9E84C4B}"/>
+																	<ObjectRef Name="Heat_Level" ID="{0E8BE0FF-52E2-483D-B598-7E13D30344B7}" WorkUnitID="{3A622BB2-1A7D-4BF3-A946-50E0C9E84C4B}"/>
 																</Reference>
 															</ReferenceList>
 															<Curve Name="" ID="{4A6E4FB5-4802-4100-B848-BA3D97C218A0}">
@@ -640,18 +640,18 @@
 																		<Flags>5</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>59.9</XPos>
+																		<XPos>0.999</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>60</XPos>
+																		<XPos>1</XPos>
 																		<YPos>0</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>1000</XPos>
-																		<YPos>-0.18287</YPos>
+																		<XPos>2</XPos>
+																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>
@@ -775,7 +775,7 @@
 														<RTPC Name="" ID="{F6AA9192-36B7-476B-AF53-2EC4D33C9F61}" ShortID="451696639">
 															<ReferenceList>
 																<Reference Name="ControlInput">
-																	<ObjectRef Name="Player_Combo" ID="{408B90EB-27D8-4757-BDB0-5CB35E328AA7}" WorkUnitID="{3A622BB2-1A7D-4BF3-A946-50E0C9E84C4B}"/>
+																	<ObjectRef Name="Heat_Level" ID="{0E8BE0FF-52E2-483D-B598-7E13D30344B7}" WorkUnitID="{3A622BB2-1A7D-4BF3-A946-50E0C9E84C4B}"/>
 																</Reference>
 															</ReferenceList>
 															<Curve Name="" ID="{72EF56BF-6EB1-4BCB-A7D7-A538F2E67F4E}">
@@ -789,18 +789,13 @@
 																		<Flags>5</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>179.9</XPos>
+																		<XPos>1.999</XPos>
 																		<YPos>-200</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>180</XPos>
-																		<YPos>0</YPos>
-																		<Flags>0</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>1000</XPos>
-																		<YPos>0</YPos>
+																		<XPos>2</XPos>
+																		<YPos>-0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>

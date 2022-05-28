@@ -36,6 +36,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID HEAT_LEVEL = 1975356116U;
         static const AkUniqueID MASTERVOLUME = 2918011349U;
         static const AkUniqueID MUSICVOLUME = 2346531308U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
