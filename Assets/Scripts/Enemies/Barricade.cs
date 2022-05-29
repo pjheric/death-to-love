@@ -7,6 +7,7 @@ public class Barricade : EnemyAgent
 {
     [SerializeField] WaveManager WM;
     [SerializeField] Slider HealthBar;
+    [SerializeField] LevelLoader LL;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -44,6 +45,7 @@ public class Barricade : EnemyAgent
         {
             WM.completeSpawning();
             dying = true;
+            LL.LoadLevel("Start Menu");
             Destroy(this.gameObject); //destroy actually has the ability to add a delay, so once we get an animation for death we can delay destroying until the animation is done
         }
 
