@@ -121,6 +121,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{09F72FB7-3B4B-458D-B28A-74D6E91CDB0E}" ShortID="1021823111">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Neutral" ID="{40330F3C-0962-41A0-B837-BD564D939FCE}" WorkUnitID="{B9712680-A953-4A00-9CD4-86F620649B59}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MainMenu" ID="{3C0CDFEA-212B-4C85-AC97-5F42C1B317AE}">
@@ -129,6 +139,16 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Neutral" ID="{40330F3C-0962-41A0-B837-BD564D939FCE}" WorkUnitID="{B9712680-A953-4A00-9CD4-86F620649B59}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6F264C52-937B-4F2B-B574-CE8B533E9AD5}" ShortID="504851418">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Punk" ID="{79260C1F-2630-4E1C-9ADB-8E12C9D3F925}" WorkUnitID="{B9712680-A953-4A00-9CD4-86F620649B59}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
