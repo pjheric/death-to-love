@@ -67,6 +67,7 @@ public class KnifeDamage : MonoBehaviour
             if (player.isInvincible() == false)
             {
                 player.TakeDamage(Damage);
+                Instantiate(Thrower.GetComponent<EnemyAgent>().getParticleEffect(), player.gameObject.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
                 Destroy(this.gameObject);
             }
         }

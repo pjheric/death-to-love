@@ -233,5 +233,6 @@ MonoBehaviour:
   knockbackDist: 2
   KnockbackVelocity: 2
   tauntChance: 0
+  hitParticles: {fileID: 3798439677663074714, guid: ef9e3979c435a76429a61c218b215aac, type: 3}
   Anim: {fileID: 0}
   Knife: {fileID: 7087842027889347651, guid: 4a9b452bb9dbd4b47a98a4a46c64b73d, type: 3}

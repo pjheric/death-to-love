@@ -21,6 +21,7 @@ public class EnemyAgent : MonoBehaviour
     [SerializeField] private float knockbackDist = 1f;
     [SerializeField] protected float KnockbackVelocity = 1f;
     [SerializeField] protected float tauntChance = 1f;
+    [SerializeField] protected GameObject hitParticles;
 
 
 
@@ -352,11 +353,17 @@ public class EnemyAgent : MonoBehaviour
         {
             //Debug.Log("At least one player");
             enemiesToHit[i].GetComponent<PlayerController>().TakeDamage(attackDamage);
+            Instantiate(hitParticles, enemiesToHit[i].gameObject.transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
         }
     }
 
     public void setSpawner(EnemySpawner spawner)
     {
         _spawner = spawner;
+    }
+
+    public GameObject getParticleEffect()
+    {
+        return hitParticles;
     }
 }
