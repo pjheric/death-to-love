@@ -20,7 +20,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3609701047	Enemy_Gun_Fire			\Default Work Unit\General\Enemy_Gun_Fire	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
-	164852777	Player_Combo			\Default Work Unit\General\Player_Combo	
+	1975356116	Heat_Level			\Default Work Unit\General\Heat_Level	
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	65865368	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\General\Player SFX\Player_Attack\Liz Efforts\Silence_01\Wwise Silence	
