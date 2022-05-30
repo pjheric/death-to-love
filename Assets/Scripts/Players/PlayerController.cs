@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject _playerUIPanel;
     [SerializeField]
     private DashUI dashUI;
+    [SerializeField] 
+    private Canvas DashCanvas;
 
 
     [SerializeField]
@@ -153,6 +155,11 @@ public class PlayerController : MonoBehaviour {
         _slideEffect = _characterData.SlideEffect;
         _SlideCooldown = _characterData.SlideCooldown;
         
+        if(dashUI)
+        {
+            dashUI.gameObject.SetActive(false);
+        }
+
         if (_playerAnim == null)
         {
             _playerAnim = gameObject.GetComponent<Animator>();
@@ -297,6 +304,7 @@ public class PlayerController : MonoBehaviour {
     {
         yield return new WaitForSeconds(_Slideduration);
         dashUI.Dash();
+        dashUI.gameObject.SetActive(true);
         _playerAnim.SetBool("Sliding", false);
         _characterSpeed /= 4f;
         _sliding = false;
@@ -323,6 +331,7 @@ public class PlayerController : MonoBehaviour {
         // extra delay so a player can't spam sliding?
         yield return new WaitForSeconds(_SlideCooldown);
         //Debug.Log("Slide disabled");
+        dashUI.gameObject.SetActive(false);
         _canSlide = true;
     }
 
@@ -449,6 +458,7 @@ public class PlayerController : MonoBehaviour {
         _slideVector *= -1;
         transform.Rotate(Vector3.up * 180);
         DownCanvas.gameObject.GetComponent<RectTransform>().LookAt(Camera.main.transform.position);
+        DashCanvas.gameObject.GetComponent<RectTransform>().LookAt(Camera.main.transform.position);
     }
 
     // Finds enemies in range and calls their TakeDamage() method.
