@@ -8,10 +8,51 @@
 		<ExternalSourcesOutputRoot>C:\Users\andre\OneDrive\Desktop\SORT\COLLEGE\2022 SPRING\death-to-love\Death To Love Wwise\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
+	<StreamedFiles>
+		<File Id="234525785" Language="SFX">
+			<ShortName>PUNK! female heys.wav</ShortName>
+			<Path>SFX\PUNK! female heys_D79FB2B7.wem</Path>
+		</File>
+		<File Id="329936664" Language="SFX">
+			<ShortName>PUNK 2 guitars.wav</ShortName>
+			<Path>SFX\PUNK 2 guitars_D79FB2B7.wem</Path>
+		</File>
+		<File Id="420150212" Language="SFX">
+			<ShortName>PUNK 2 bass.wav</ShortName>
+			<Path>SFX\PUNK 2 bass_D79FB2B7.wem</Path>
+		</File>
+		<File Id="557414481" Language="SFX">
+			<ShortName>PUNK! vox.wav</ShortName>
+			<Path>SFX\PUNK! vox_D79FB2B7.wem</Path>
+		</File>
+		<File Id="579114496" Language="SFX">
+			<ShortName>PUNK 2 intro synth and beat.wav</ShortName>
+			<Path>SFX\PUNK 2 intro synth and beat_D79FB2B7.wem</Path>
+		</File>
+		<File Id="605100862" Language="SFX">
+			<ShortName>PUNK 2 main synth.wav</ShortName>
+			<Path>SFX\PUNK 2 main synth_D79FB2B7.wem</Path>
+		</File>
+		<File Id="812315031" Language="SFX">
+			<ShortName>PUNK! drumz.wav</ShortName>
+			<Path>SFX\PUNK! drumz_D79FB2B7.wem</Path>
+		</File>
+		<File Id="918823191" Language="SFX">
+			<ShortName>PUNK! basses.wav</ShortName>
+			<Path>SFX\PUNK! basses_D79FB2B7.wem</Path>
+		</File>
+		<File Id="1015998167" Language="SFX">
+			<ShortName>PUNK! guitars.wav</ShortName>
+			<Path>SFX\PUNK! guitars_D79FB2B7.wem</Path>
+		</File>
+		<File Id="1057653763" Language="SFX">
+			<ShortName>PUNK 2 drumz.wav</ShortName>
+			<Path>SFX\PUNK 2 drumz_D79FB2B7.wem</Path>
+		</File>
+	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Language="SFX" Hash="2044029362">
+		<SoundBank Id="133642231" Language="SFX" Hash="353655620">
 			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
@@ -84,7 +125,7 @@
 				<Event Id="512344028" Name="Game_Start_Solo" ObjectPath="\Events\Default Work Unit\General\Game_Start_Solo" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="1359982855" Name="Game_Unpause" ObjectPath="\Events\Default Work Unit\General\Game_Unpause" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2678230382" Name="Level1" ObjectPath="\Events\Default Work Unit\General\Level1" DurationType="Infinite">
-					<IncludedMemoryFiles>
+					<ReferencedStreamedFiles>
 						<File Id="234525785" Language="SFX">
 							<ShortName>PUNK! female heys.wav</ShortName>
 							<Path>SFX\PUNK! female heys_D79FB2B7.wem</Path>
@@ -125,7 +166,7 @@
 							<ShortName>PUNK 2 drumz.wav</ShortName>
 							<Path>SFX\PUNK 2 drumz_D79FB2B7.wem</Path>
 						</File>
-					</IncludedMemoryFiles>
+					</ReferencedStreamedFiles>
 				</Event>
 				<Event Id="117716555" Name="Logo_Load" ObjectPath="\Events\Default Work Unit\General\Logo_Load" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2898453" Name="Lose_Combo" ObjectPath="\Events\Default Work Unit\General\Lose_Combo" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>

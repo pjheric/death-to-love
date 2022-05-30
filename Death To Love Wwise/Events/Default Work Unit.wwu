@@ -105,7 +105,16 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Player_Dash" ID="{5E2D038F-F8A3-4C71-89A3-6008391999DB}"/>
-						<Event Name="Game_Start_Multi" ID="{0D773454-50A3-4601-A5ED-212820C70BCB}"/>
+						<Event Name="Game_Start_Multi" ID="{0D773454-50A3-4601-A5ED-212820C70BCB}">
+							<ChildrenList>
+								<Action Name="" ID="{9C9B8CF5-67FF-4CD0-88CE-7F98D4693435}" ShortID="864274393">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+							</ChildrenList>
+						</Event>
 						<Event Name="Game_Start_Solo" ID="{C3749017-22C4-4326-9514-EA3B72958619}"/>
 						<Event Name="Game_Quit" ID="{A8F6F09F-8466-4CEB-B46E-8E81599471C7}"/>
 						<Event Name="Game_Pause" ID="{E5C76F00-34A3-4BD9-AAF3-24FF536DD5B7}"/>
@@ -114,13 +123,6 @@
 						<Event Name="Enemy_Taunt" ID="{26345218-9716-452A-A32E-B18082AD8B6F}"/>
 						<Event Name="Level1" ID="{F652B5A8-36A1-460B-A6B2-BE10E34DFC55}">
 							<ChildrenList>
-								<Action Name="" ID="{22A4C3B0-A226-44C7-A7C1-E6FE07FE11CA}" ShortID="513761635">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Punk" ID="{79260C1F-2630-4E1C-9ADB-8E12C9D3F925}" WorkUnitID="{B9712680-A953-4A00-9CD4-86F620649B59}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{09F72FB7-3B4B-458D-B28A-74D6E91CDB0E}" ShortID="1021823111">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
@@ -131,24 +133,27 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{22A4C3B0-A226-44C7-A7C1-E6FE07FE11CA}" ShortID="513761635">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Punk" ID="{79260C1F-2630-4E1C-9ADB-8E12C9D3F925}" WorkUnitID="{B9712680-A953-4A00-9CD4-86F620649B59}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="MainMenu" ID="{3C0CDFEA-212B-4C85-AC97-5F42C1B317AE}">
 							<ChildrenList>
+								<Action Name="" ID="{FCB7DDFA-CED1-4B1B-AC33-82DA12632785}" ShortID="717398894">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
 								<Action Name="" ID="{63DC7E2A-73B2-4501-A9DE-9D47A0BD77AB}" ShortID="871320406">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Neutral" ID="{40330F3C-0962-41A0-B837-BD564D939FCE}" WorkUnitID="{B9712680-A953-4A00-9CD4-86F620649B59}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{6F264C52-937B-4F2B-B574-CE8B533E9AD5}" ShortID="504851418">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Punk" ID="{79260C1F-2630-4E1C-9ADB-8E12C9D3F925}" WorkUnitID="{B9712680-A953-4A00-9CD4-86F620649B59}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

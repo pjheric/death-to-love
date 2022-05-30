@@ -6,6 +6,9 @@
 				<Folder Name="Music" ID="{82D939E9-2CE8-49BD-A684-49A0FB6B792A}" ShortID="300620711">
 					<ChildrenList>
 						<MusicPlaylistContainer Name="Neutral" ID="{40330F3C-0962-41A0-B837-BD564D939FCE}" ShortID="633362009">
+							<PropertyList>
+								<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBDD689C-E849-49D3-912F-9E407B65E6A5}"/>
@@ -29,6 +32,9 @@
 									</ReferenceList>
 									<ChildrenList>
 										<MusicTrack Name="NOOTRAL bass" ID="{37FF2E78-B312-46BC-A55E-8D25EBECA1D6}" ShortID="1037655497">
+											<PropertyList>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
@@ -138,6 +144,9 @@
 											</ObjectLists>
 										</MusicTrack>
 										<MusicTrack Name="NOOTRAL clean guitar" ID="{88783D5B-9B40-4538-9585-8AB8D5067F8D}" ShortID="736457560">
+											<PropertyList>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
@@ -188,6 +197,9 @@
 											</ObjectLists>
 										</MusicTrack>
 										<MusicTrack Name="NOOTRAL distorted guitar" ID="{4BA641C7-0C9D-4944-8767-3582D197469C}" ShortID="541185">
+											<PropertyList>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
@@ -296,6 +308,10 @@
 											</ObjectLists>
 										</MusicTrack>
 										<MusicTrack Name="NOOTRAL drumz" ID="{280483E1-9DA7-462A-9EE5-8DFB715DBC6B}" ShortID="133342276">
+											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
@@ -399,6 +415,8 @@
 						</MusicPlaylistContainer>
 						<MusicPlaylistContainer Name="Punk" ID="{79260C1F-2630-4E1C-9ADB-8E12C9D3F925}" ShortID="241547879">
 							<PropertyList>
+								<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+								<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-2</Value>
@@ -416,7 +434,9 @@
 							<ChildrenList>
 								<MusicSegment Name="Punk 1" ID="{E5C67029-B881-44DC-BAD1-8778554D5781}" ShortID="453279482">
 									<PropertyList>
+										<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 										<Property Name="EndPosition" Type="Real64" Value="164727.278911565"/>
+										<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -429,7 +449,14 @@
 									<ChildrenList>
 										<MusicTrack Name="PUNK! basses" ID="{F8E8CE17-B9A9-4462-87A9-B4C231181BC8}" ShortID="336563609">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -489,7 +516,14 @@
 										</MusicTrack>
 										<MusicTrack Name="PUNK! drumz" ID="{D5BC21FB-0FD8-4280-B2EB-2A50CDE8B754}" ShortID="151957862">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -570,6 +604,15 @@
 											</ObjectLists>
 										</MusicTrack>
 										<MusicTrack Name="PUNK! guitars" ID="{AC70299C-BE2D-44E1-BDAB-228DDA929905}" ShortID="607516751">
+											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
@@ -621,6 +664,13 @@
 										</MusicTrack>
 										<MusicTrack Name="PUNK! vox" ID="{2E81A13C-B333-43DB-A331-24E1CF7CA2F3}" ShortID="898036780">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
 													<RTPCList>
 														<RTPC Name="" ID="{9E7B5F83-B774-409B-83C4-B4A0F8B1C82A}" ShortID="184183562">
@@ -770,6 +820,13 @@
 										</MusicTrack>
 										<MusicTrack Name="PUNK! female heys" ID="{D2831E02-EBBD-46E6-92ED-5A6CC43A01A1}" ShortID="640803960">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
 													<RTPCList>
 														<RTPC Name="" ID="{F6AA9192-36B7-476B-AF53-2EC4D33C9F61}" ShortID="451696639">
@@ -795,7 +852,7 @@
 																	</Point>
 																	<Point>
 																		<XPos>2</XPos>
-																		<YPos>-0</YPos>
+																		<YPos>0</YPos>
 																		<Flags>37</Flags>
 																	</Point>
 																</PointList>
@@ -876,7 +933,9 @@
 								</MusicSegment>
 								<MusicSegment Name="Punk 2" ID="{BAB2FE15-8632-41BD-8850-A1B1D25793BE}" ShortID="466445033">
 									<PropertyList>
+										<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 										<Property Name="EndPosition" Type="Real64" Value="157090.929705215"/>
+										<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -889,7 +948,14 @@
 									<ChildrenList>
 										<MusicTrack Name="PUNK 2 bass" ID="{2D955884-5742-4449-90CB-84164B7A455E}" ShortID="909947946">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -949,7 +1015,14 @@
 										</MusicTrack>
 										<MusicTrack Name="PUNK 2 drumz" ID="{C5B1CA8D-6140-4FE2-B32E-68E7BAC410BB}" ShortID="1017732272">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -1659,7 +1732,14 @@
 										</MusicTrack>
 										<MusicTrack Name="PUNK 2 guitars" ID="{DAF691BA-C96F-44BD-9B84-FC883E5E1046}" ShortID="56744570">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -1718,6 +1798,15 @@
 											</ObjectLists>
 										</MusicTrack>
 										<MusicTrack Name="PUNK 2 intro synth and beat" ID="{94E13457-02AA-4325-A2CC-37A58D54E402}" ShortID="707228105">
+											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{16A8FE50-82A6-499F-9920-05BFD3BE4F5C}"/>
@@ -1769,7 +1858,14 @@
 										</MusicTrack>
 										<MusicTrack Name="PUNK 2 main synth" ID="{4EEAF40B-375E-41FB-9A71-683EED5E2635}" ShortID="959469760">
 											<PropertyList>
+												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="MusicTrackType" Type="int16" Value="1"/>
+												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
