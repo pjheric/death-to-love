@@ -10,7 +10,7 @@ public class StartMenu : MonoBehaviour
 
     private void Awake()
     {
-        AkSoundEngine.PostEvent("Main_Menu", null);
+        AkSoundEngine.PostEvent("Main_Menu", this.gameObject);
     }
 
     private void Start()
@@ -37,7 +37,7 @@ public class StartMenu : MonoBehaviour
 
     public void Singleplayer()
     {
-        AkSoundEngine.PostEvent("Game_Start_Solo", null) ;
+        AkSoundEngine.PostEvent("Game_Start_Solo", this.gameObject) ;
         GameManagerScript.Instance.IsMultiplayer = false;
         if (levelLoader)
         {
@@ -51,7 +51,7 @@ public class StartMenu : MonoBehaviour
 
     public void Multiplayer()
     {
-        AkSoundEngine.PostEvent("Game_Start_Multi", null);
+        AkSoundEngine.PostEvent("Game_Start_Multi", this.gameObject);
         GameManagerScript.Instance.IsMultiplayer = true; 
         if (levelLoader)
         {
@@ -65,14 +65,14 @@ public class StartMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        AkSoundEngine.PostEvent("Game_Quit", null);
+        AkSoundEngine.PostEvent("Game_Quit", this.gameObject);
         Application.Quit(); 
     }
 
     public void ButtonClickSound()
     {
         Debug.Log("Click");
-        AkSoundEngine.PostEvent("UI_Button_Press", null) ;
+        AkSoundEngine.PostEvent("UI_Button_Press", this.gameObject) ;
     }
 
 }

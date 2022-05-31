@@ -19,7 +19,7 @@
 						<ObjectRef Name="Player_Hit" ID="{5D4C4C5E-AA91-4B95-9DA1-43DF40352679}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Game_Pause" ID="{E5C76F00-34A3-4BD9-AAF3-24FF536DD5B7}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player_Dash" ID="{5E2D038F-F8A3-4C71-89A3-6008391999DB}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="MainMenu" ID="{3C0CDFEA-212B-4C85-AC97-5F42C1B317AE}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Main_Menu" ID="{3C0CDFEA-212B-4C85-AC97-5F42C1B317AE}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Death" ID="{507FA147-1D28-4CBA-B500-3D0C40111ADE}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Game_Quit" ID="{A8F6F09F-8466-4CEB-B46E-8E81599471C7}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy_Hit" ID="{2BA3D0FA-42BC-4E10-9E60-BD0F8CCD94EF}" WorkUnitID="{4476668C-B009-4DDC-A6BC-6B672EF6B79D}" Origin="Manual" Filter="7"/>

@@ -26,7 +26,7 @@ namespace AK
         static const AkUniqueID LEVEL1 = 2678230382U;
         static const AkUniqueID LOGO_LOAD = 117716555U;
         static const AkUniqueID LOSE_COMBO = 2898453U;
-        static const AkUniqueID MAINMENU = 3604647259U;
+        static const AkUniqueID MAIN_MENU = 2005704188U;
         static const AkUniqueID PLAYER_ATTACK = 2824512041U;
         static const AkUniqueID PLAYER_DASH = 2394582229U;
         static const AkUniqueID PLAYER_DEATH = 3083087645U;
