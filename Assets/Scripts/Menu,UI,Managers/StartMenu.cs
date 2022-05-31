@@ -7,6 +7,12 @@ public class StartMenu : MonoBehaviour
 {
     [SerializeField] GameObject _mainMenuPanel;
     private LevelLoader levelLoader;
+
+    private void Awake()
+    {
+        AkSoundEngine.PostEvent("Main_Menu", null);
+    }
+
     private void Start()
     {
         levelLoader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
@@ -31,7 +37,7 @@ public class StartMenu : MonoBehaviour
 
     public void Singleplayer()
     {
-        AkSoundEngine.PostEvent("Game_Start_Solo", gameObject);
+        AkSoundEngine.PostEvent("Game_Start_Solo", null) ;
         GameManagerScript.Instance.IsMultiplayer = false;
         if (levelLoader)
         {
@@ -45,7 +51,7 @@ public class StartMenu : MonoBehaviour
 
     public void Multiplayer()
     {
-        AkSoundEngine.PostEvent("Game_Start_Multi", gameObject);
+        AkSoundEngine.PostEvent("Game_Start_Multi", null);
         GameManagerScript.Instance.IsMultiplayer = true; 
         if (levelLoader)
         {
@@ -59,14 +65,14 @@ public class StartMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        AkSoundEngine.PostEvent("Game_Quit", gameObject);
+        AkSoundEngine.PostEvent("Game_Quit", null);
         Application.Quit(); 
     }
 
     public void ButtonClickSound()
     {
         Debug.Log("Click");
-        AkSoundEngine.PostEvent("UI_Button_Press", gameObject);
+        AkSoundEngine.PostEvent("UI_Button_Press", null) ;
     }
 
 }
