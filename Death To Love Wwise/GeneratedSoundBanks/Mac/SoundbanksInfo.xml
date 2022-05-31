@@ -21,6 +21,10 @@
 			<ShortName>PUNK 2 bass.wav</ShortName>
 			<Path>SFX\PUNK 2 bass_D79FB2B7.wem</Path>
 		</File>
+		<File Id="520646364" Language="SFX">
+			<ShortName>NOOTRAL clean guitar.wav</ShortName>
+			<Path>SFX\NOOTRAL clean guitar_D79FB2B7.wem</Path>
+		</File>
 		<File Id="557414481" Language="SFX">
 			<ShortName>PUNK! vox.wav</ShortName>
 			<Path>SFX\PUNK! vox_D79FB2B7.wem</Path>
@@ -33,9 +37,17 @@
 			<ShortName>PUNK 2 main synth.wav</ShortName>
 			<Path>SFX\PUNK 2 main synth_D79FB2B7.wem</Path>
 		</File>
+		<File Id="710443860" Language="SFX">
+			<ShortName>NOOTRAL bass.wav</ShortName>
+			<Path>SFX\NOOTRAL bass_D79FB2B7.wem</Path>
+		</File>
 		<File Id="812315031" Language="SFX">
 			<ShortName>PUNK! drumz.wav</ShortName>
 			<Path>SFX\PUNK! drumz_D79FB2B7.wem</Path>
+		</File>
+		<File Id="881420876" Language="SFX">
+			<ShortName>NOOTRAL distorted guitar.wav</ShortName>
+			<Path>SFX\NOOTRAL distorted guitar_D79FB2B7.wem</Path>
 		</File>
 		<File Id="918823191" Language="SFX">
 			<ShortName>PUNK! basses.wav</ShortName>
@@ -45,6 +57,10 @@
 			<ShortName>PUNK! guitars.wav</ShortName>
 			<Path>SFX\PUNK! guitars_D79FB2B7.wem</Path>
 		</File>
+		<File Id="1047774548" Language="SFX">
+			<ShortName>NOOTRAL drumz.wav</ShortName>
+			<Path>SFX\NOOTRAL drumz_D79FB2B7.wem</Path>
+		</File>
 		<File Id="1057653763" Language="SFX">
 			<ShortName>PUNK 2 drumz.wav</ShortName>
 			<Path>SFX\PUNK 2 drumz_D79FB2B7.wem</Path>
@@ -52,7 +68,7 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Language="SFX" Hash="1732742802">
+		<SoundBank Id="133642231" Language="SFX" Hash="2916330586">
 			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
@@ -171,7 +187,7 @@
 				<Event Id="117716555" Name="Logo_Load" ObjectPath="\Events\Default Work Unit\General\Logo_Load" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2898453" Name="Lose_Combo" ObjectPath="\Events\Default Work Unit\General\Lose_Combo" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2005704188" Name="Main_Menu" ObjectPath="\Events\Default Work Unit\General\Main_Menu" DurationType="Infinite">
-					<IncludedMemoryFiles>
+					<ReferencedStreamedFiles>
 						<File Id="520646364" Language="SFX">
 							<ShortName>NOOTRAL clean guitar.wav</ShortName>
 							<Path>SFX\NOOTRAL clean guitar_D79FB2B7.wem</Path>
@@ -188,7 +204,7 @@
 							<ShortName>NOOTRAL drumz.wav</ShortName>
 							<Path>SFX\NOOTRAL drumz_D79FB2B7.wem</Path>
 						</File>
-					</IncludedMemoryFiles>
+					</ReferencedStreamedFiles>
 				</Event>
 				<Event Id="2824512041" Name="Player_Attack" ObjectPath="\Events\Default Work Unit\General\Player_Attack" DurationType="OneShot" DurationMin="0.526933" DurationMax="1.003867">
 					<IncludedMemoryFiles>

@@ -33,6 +33,11 @@
 									<ChildrenList>
 										<MusicTrack Name="NOOTRAL bass" ID="{37FF2E78-B312-46BC-A55E-8D25EBECA1D6}" ShortID="1037655497">
 											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
@@ -145,6 +150,11 @@
 										</MusicTrack>
 										<MusicTrack Name="NOOTRAL clean guitar" ID="{88783D5B-9B40-4538-9585-8AB8D5067F8D}" ShortID="736457560">
 											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
@@ -198,6 +208,11 @@
 										</MusicTrack>
 										<MusicTrack Name="NOOTRAL distorted guitar" ID="{4BA641C7-0C9D-4944-8767-3582D197469C}" ShortID="541185">
 											<PropertyList>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
@@ -310,6 +325,11 @@
 										<MusicTrack Name="NOOTRAL drumz" ID="{280483E1-9DA7-462A-9EE5-8DFB715DBC6B}" ShortID="133342276">
 											<PropertyList>
 												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
+												<Property Name="IsStreamingEnabled" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
